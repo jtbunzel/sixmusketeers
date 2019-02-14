@@ -39,7 +39,7 @@ class TestAdd(unittest.TestCase):
         self.assertEqual(result4, Rational('-77', '36'))
 
 
-def test_AddOfTwoIntegerRationalNumbers(self):
+    def test_AddOfTwoIntegerRationalNumbers(self):
         a = Rational('3', '1')
         b = Rational('5', '1')
         c = Rational('-4', '1')
@@ -49,23 +49,23 @@ def test_AddOfTwoIntegerRationalNumbers(self):
         g = Rational('-9', '1')
         h = Rational('-8', '1)')
         result1 = a.__add__(b)
-        result2 = a.__add__(b)
-        result3 = a.__add__(b)
-        result4 = a.__add__(b)
+        result2 = c.__add__(d)
+        result3 = e.__add__(f)
+        result4 = g.__add__(h)
         self.assertEqual(result1, Rational('8', '1'))
-        self.assertEqual(result2, Rational('8', '1'))
-        self.assertEqual(result3, Rational('8', '1'))
-        self.assertEqual(result4, Rational('8', '1'))
+        self.assertEqual(result2, Rational('2', '1'))
+        self.assertEqual(result3, Rational('1', '1'))
+        self.assertEqual(result4, Rational('-17', '1'))
 
-    def test_DivisionByZero(self):
+    def test_AdditionByZero(self):
         a = Rational('4', '3')
         b = Rational('0', '1')
-        self.assertRaises(a.__div__(b), ZeroDivisionError)
-
-    def test_LCD(self):
-        a = Rational('2', '3')
-        b = Rational('3', '4')
-        result = a.__div__(b)
+        c = Rational('-7', '4')
+        d = Rational('0', '-5')
+        result1 = a.__add__(b)
+        result2 = c.__add__(d)
+        self.assertEqual(result1, Rational('4', '3'))
+        self.assertEqual(result2, Rational('-7', '4'))
 
 if __name__ == '__main__':
     unittest.main()
