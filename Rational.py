@@ -44,3 +44,6 @@ class Rational:
         """
         result = float((self.n / self.d))
         return result
+
+    def __eq__(self, other, msg = None):
+        return self.n == other.n and self.d == other.d
