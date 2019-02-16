@@ -42,4 +42,5 @@ class Rational:
     def __float__(self):
         """Implement the float() conversion function.
         """
-        return 0.0
+        result = float((self.n / self.d))
+        return result
