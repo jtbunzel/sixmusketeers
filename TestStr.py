@@ -12,10 +12,10 @@ class TestStr(unittest.TestCase):
 		self.assertEqual(str(Rational(1, -2)), "-1/2")
 
 	def test_str_neg_both(self):
-    	self.assertEqual(str(Rational(-1, -2)), "1/2")
+		self.assertEqual(str(Rational(-1, -2)), "1/2")
 
 	def test_str_whole_num(self):
 		self.assertEqual(str(Rational(2)), "2/1")
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()

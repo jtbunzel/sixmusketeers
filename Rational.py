@@ -37,7 +37,7 @@ class Rational:
     def __str__(self):
         """Display self as a string.
         """
-        return "0/1"
+        return "%d/%d" % (self.a, self.b)
 
     def __float__(self):
         """Implement the float() conversion function.
