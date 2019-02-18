@@ -1,12 +1,12 @@
 from unittest import TestCase
-from Solver import Rational
+from Rational import Rational
 
 s1 = Rational(1,  2)
 s3 = Rational(2.5, 2)
 s4 = Rational(1, 0.5)
 
 
-class TestSolver(TestCase):
+class TesSolver(TestCase):
     def test_float_denm(self):
         self.assertGreaterEqual(s1.d, 0, "denominator can't be negative")
         self.assertFalse(s1.d < 0, "denominator can't be negative")
