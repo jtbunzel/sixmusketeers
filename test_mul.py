@@ -20,12 +20,12 @@ class TestMul(unittest.TestCase):
         self.assertTrue(a.__mul__(f) == Rational(0, 1))
 
     def test_multiplyByZero(self):
-            self.assertTrue(f.__mul__(a) == Rational(0, 1))
-            self.assertTrue(f.__mul__(b) == Rational(0, 20))
-            self.assertTrue(f.__mul__(c) == Rational(0, -7))
-            self.assertTrue(f.__mul__(d) == Rational(0, -3))
-            self.assertTrue(f.__mul__(e) == Rational(0, 7))
-            self.assertTrue(f.__mul__(f) == Rational(0, 1))
+        self.assertTrue(f.__mul__(a) == Rational(0, 1))
+        self.assertTrue(f.__mul__(b) == Rational(0, 20))
+        self.assertTrue(f.__mul__(c) == Rational(0, -7))
+        self.assertTrue(f.__mul__(d) == Rational(0, -3))
+        self.assertTrue(f.__mul__(e) == Rational(0, 7))
+        self.assertTrue(f.__mul__(f) == Rational(0, 1))
 
     def test_multiplyBySelf(self):
         self.assertTrue(a.__mul__(a) == Rational(1, 1))
@@ -52,12 +52,12 @@ class TestMul(unittest.TestCase):
         self.assertTrue(e.__mul__(f) == Rational(0, 7))
 
     def test_multiplyByNegativeRational(self):
-            self.assertTrue(c.__mul__(a) == Rational(-5, -7))
-            self.assertTrue(c.__mul__(b) == Rational(-50, -140))
-            self.assertTrue(c.__mul__(c) == Rational(25, 49))
-            self.assertTrue(c.__mul__(d) == Rational(-15, 21))
-            self.assertTrue(c.__mul__(e) == Rational(35, -49))
-            self.assertTrue(c.__mul__(f) == Rational(0, -7))
+        self.assertTrue(c.__mul__(a) == Rational(-5, -7))
+        self.assertTrue(c.__mul__(b) == Rational(-50, -140))
+        self.assertTrue(c.__mul__(c) == Rational(25, 49))
+        self.assertTrue(c.__mul__(d) == Rational(-15, 21))
+        self.assertTrue(c.__mul__(e) == Rational(35, -49))
+        self.assertTrue(c.__mul__(f) == Rational(0, -7))
 
 
 if __name__ == '__main__':
