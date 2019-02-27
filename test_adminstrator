@@ -1,10 +1,12 @@
 import unittest
 import app
 
+
 class testAdministrator(unittest.Testcase):
+
     def setup(self):
 
-    def tearDown(selfself):
+    def tearDown(self):
         pass
 
     def test_AdministratorLogin(self):
