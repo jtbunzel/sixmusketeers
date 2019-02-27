@@ -37,6 +37,10 @@ class TestAdd(unittest.TestCase):
         self.assertEqual(result2, Rational('-44', '15'))
         self.assertEqual(result3, Rational('31', '12'))
         self.assertEqual(result4, Rational('-77', '36'))
+    
+    def test_Exception(self)
+        r = Rational()
+        self.assertRaises(ValueError, r.__add__(True), "Booleans not allowed")
 
 
     def test_AddOfTwoIntegerRationalNumbers(self):
