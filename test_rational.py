@@ -327,6 +327,18 @@ class TestRational(unittest.TestCase):
         self.assertEqual(s4.__float__(), 2, "wrong result")
         self.assertEqual(s7.__float__(), 0.0, "denominator is really big so value is 0")
 
+    def test_AddATrueBool(self):
+        b = Rational()
+        self.assertRaises(TypeError, b.__add__(True))
+
+    def test_AddAFalseBool(self):
+        b = Rational()
+        self.assertRaises(TypeError, b.__add__(False))
+
+    def test_AddAStr(self):
+        s = Rational()
+        self.assertRaises(TypeError, s.__add__("String"))
+
 
 if __name__ == '__main__':
     unittest.main()
