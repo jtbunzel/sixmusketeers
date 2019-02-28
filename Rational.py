@@ -27,7 +27,9 @@ class Rational:
     def __mul__(self, other):
         """Implement multiplication.
         """
-        return Rational()
+        a1 = self.n * other.n
+        b1 = self.d * other.d
+        return Rational(a1, b1)
 
     def __div__(self, other):
         """Implement division.
