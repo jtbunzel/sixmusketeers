@@ -1,5 +1,5 @@
 import unittest
-from Rational import *
+from Lab4Tests.Rational import *
 
 a7 = Rational(1, 1)
 b7 = Rational(10, 20)

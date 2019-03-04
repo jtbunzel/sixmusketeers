@@ -1,5 +1,5 @@
 import unittest
-from Rational import *
+from Lab4Tests.Rational import *
 
 class TestStr(unittest.TestCase):
 	default = Rational()

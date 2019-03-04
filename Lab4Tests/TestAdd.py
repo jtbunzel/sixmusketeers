@@ -1,5 +1,6 @@
 import unittest
-import Rational
+from Lab4Tests import Rational
+
 
 class TestAdd(unittest.TestCase):
     def test_AddBySelf(self):

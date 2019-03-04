@@ -1,6 +1,6 @@
 import unittest
 
-from Rational import Rational
+from Lab4Tests.Rational import Rational
 
 s1 = Rational(1,  2)
 s2 = Rational(1, 0.00000000000000000000000000000001)
