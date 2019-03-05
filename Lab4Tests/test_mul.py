@@ -70,14 +70,6 @@ class TestMul(unittest.TestCase):
         self.assertTrue(c.__mul__(f) == Rational(0, -7))
         self.assertTrue(c.__mul__(g) == Rational(-5, -699999999999999999999999999999999993))
 
-        def test_init_zero_denominator(self):
-            num = 3
-            den = 0
-
-            Rational(num, den)
-
-            self.assertRaises(ZeroDivisionError)
-
 
 if __name__ == '__main__':
     unittest.main()
