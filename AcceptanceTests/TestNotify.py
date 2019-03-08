@@ -1,7 +1,7 @@
 import unittest as bk
 
 
-class TestLogin(bk):
+class TestNotify(bk):
     # assume user exists
     # assume user is logged in
     # assume receiver has UWM email address
