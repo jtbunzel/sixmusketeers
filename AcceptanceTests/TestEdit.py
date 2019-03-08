@@ -260,7 +260,7 @@ class TestEdit(bk):
             #Admin can not edit supervisor's password
 
 
-def test_AdminEditCourse(self):
+    def test_AdminEditCourse(self):
         # assume user is Admin
         result= a.command('edit course successfully')
         self.assertEqual(result, 'edit successfully')
@@ -400,7 +400,7 @@ def test_AdminEditCourse(self):
         # TA can not edit supervisor's password
 
 
-def test_taEditCourse(self):
+    def test_taEditCourse(self):
         # assume user is TA
         result= a.command('edit course successfully')
         self.assertEqual(result, 'edit unsuccessfully')
