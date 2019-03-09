@@ -4,6 +4,7 @@ import unittest as ut
 class TestLogin(ut):
     def test_correct_login(self):
         # assume user exists
+        a=app()
         result = a.command('login username password')
         self.assertEqual(result, 'Login successful.')
 
