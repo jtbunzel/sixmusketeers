@@ -1,8 +1,8 @@
 import unittest
-from AcceptanceTests import App
+import App
 
 
-class MyTestCase(unittest.TestCase):
+class TestLogout(unittest.TestCase):
     def test_logout(self):
         # assume user logged in
         a = App()

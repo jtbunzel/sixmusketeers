@@ -3,5 +3,5 @@ class App(object):
     def command(self, a):
         pass
 
-    def respondToPrompt(self, a):
+    def respond_to_prompt(self, a):
         pass
