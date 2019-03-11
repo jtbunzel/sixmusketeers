@@ -3,7 +3,7 @@ import unittest
 
 class TestAccess(unittest.TestCase):
     def test_userCanAccess(self):
-        a = app() 
+        a = app()
         result = a.command("access account")
         # will fail if :
         #               - user is not (Supervisor or Secretary)
@@ -41,8 +41,8 @@ class TestAccess(unittest.TestCase):
     def test_accessphoneNumber(self):
         a = app()
         a.command('access account')
-        a.command('user1')
-        a.command("will smith")
+        a.command('user0')
+        a.command("Bijaya khanal")
         a.command('TA')
         result = a.command('phone number')
         self.assertEqual(result, "phone number is accessed")
@@ -50,21 +50,21 @@ class TestAccess(unittest.TestCase):
     def test_accessemail(self):
         a = app()
         a.command('access account')
-        a.command('user1')
-        a.command("will smith")
+        a.command('user0')
+        a.command("Bijaya khanal")
         a.command('TA')
         # email must at least contains @
-        result = a.command('aaabb@uwm.edu')
+        result = a.command('bkhanal.edu')
         self.assertEqual(result, "email is accessed")
 
     def test_accesshomeaddress(self):
         a = app()
         a.command('access account')
-        a.command('user1')
-        a.command("will smith")
+        a.command('user0')
+        a.command("Bijaya khanal")
         a.command('TA')
         a.command('phone number')
-        a.command('aaabb@uwm.edu')
+        a.command('bkhanal@uwm.edu')
         result = a.command('home address')
         self.assertEqual(result, "home address is accessed")
 
