@@ -4,7 +4,6 @@ from App import *
 a = App()
 
 
-
 class testAdministrator(unittest.Testcase):
 
     def setup(self):
