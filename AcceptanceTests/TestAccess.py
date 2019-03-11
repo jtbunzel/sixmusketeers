@@ -3,7 +3,7 @@ import unittest
 
 class TestAccess(unittest.TestCase):
     def test_userCanAccess(self):
-        a = app()
+        a = app() 
         result = a.command("access account")
         # will fail if :
         #               - user is not (Supervisor or Secretary)
