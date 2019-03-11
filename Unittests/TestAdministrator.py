@@ -1,19 +1,18 @@
 import unittest
-from App import *
-
-a = App()
+from Administrator import *
+import App
 
 
 class testAdministrator(unittest.Testcase):
-
     def setup(self):
+
 
     def tearDown(self):
         pass
 
     def test_AdministratorLogin(self):
         #assume username is in the database with password
-        a= app();
+        a = App();
         result= a.command("login username password")
         self.asserEqual("username logged in", result)
 

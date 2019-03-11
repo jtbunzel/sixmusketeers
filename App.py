@@ -5,3 +5,10 @@ class App(object):
 
     def respond_to_prompt(self, a):
         pass
+
+    def edit(accountDetails, newDetails):
+        pass
+
+    def assignments(courses):
+        pass
+    
