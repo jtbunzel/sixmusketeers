@@ -1,7 +1,7 @@
 import unittest
 
 
-class AccessTestCase(unittest.TestCase):
+class TestAccess(unittest.TestCase):
     def test_userCanAccess(self):
         a = app()
         result = a.command("access account")
