@@ -1,5 +1,8 @@
 import unittest
-import app
+from App import *
+
+a = App()
+
 
 
 class testAdministrator(unittest.Testcase):
