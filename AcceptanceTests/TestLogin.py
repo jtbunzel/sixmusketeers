@@ -1,33 +1,36 @@
 import unittest as ut
+from App import *
 
 
 class TestLogin(ut):
-    def test_correctlogin(self):
+
+    def test_correct_login(self):
         # assume user exists
+        a = App()
         result = a.command('login username password')
         self.assertEqual(result, 'Login successful.')
 
-    def test_LoginIncorrectPassword(self):
+    def test_login_incorrect_password(self):
         # assume user exists
-        a = app()
+        a = App()
         result = a.command('login username notthepassword')
         self.assertEqual(result, 'Login unsuccessful. Password is incorrect.')
 
-    def test_loginincorrectusername(self):
+    def test_login_incorrect_username(self):
         # assume user exists
-        a = app()
+        a = App()
         result = a.command('login nottheusername password')
         self.assertEqual(result, 'Login unsuccessful. User not found.')
 
-    def test_loginusernamepasswordincorrect(self):
+    def test_login_username_password_incorrect(self):
         # assume user exists
-        a = app()
+        a = App()
         result = a.command('login nottheusername notthepassword')
         self.assertEqual(result, 'Login unsuccessful. User not found.')
 
-    def test_loginuserdoesnotexist(self):
+    def test_login_user_does_not_exist(self):
         # assume user does not exist in system
-        a = app()
+        a = App()
         result = a.command('login username password')
         self.assertEqual(result, 'Login unsuccessful. User not found.')
 
