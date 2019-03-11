@@ -11,4 +11,6 @@ class App(object):
 
     def assignments(courses):
         pass
-    
+
+    def access(self):
+        pass
