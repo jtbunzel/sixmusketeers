@@ -8,3 +8,6 @@ class Administrator(User):
 
     def __str__(self):
         pass
+
+    def get_public_contact_info(self):
+        pass
