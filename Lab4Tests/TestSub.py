@@ -1,15 +1,14 @@
 import unittest
-from Lab4Tests import Rational
-
+import Rational
 
 class TestSub(unittest.TestCase):
     def test_subtractBySelf(self):
         a = Rational('2', '3')
         b = Rational('2', '3')
         result = a.__sub__(b)
-        self.assertEqual(result, Rational('0', '3'))
+        self.assertEqual(result, Rational('0','0'))
         result = b.__sub__(a)
-        self.assertEqual(result, Rational('0', '3'))
+        self.assertEqual(result, Rational('0','0'))
 
     def test_substractionOfTwoDifferentRationalNumbers(self):
         a = Rational('2', '3')
