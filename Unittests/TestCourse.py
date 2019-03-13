@@ -6,7 +6,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self):
         self.c1 = Course("Math", "MTH", "Bob", "101")
 
-    def test_getters(self):
+    def test_setup(self):
         self.assertEqual(self.c1.course_name, "Math")
         self.assertEqual(self.c1.course_type, "MTH")
         self.assertEqual(self.c1.course_instructor, "Bob")
@@ -19,7 +19,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.c1.get_number(), "101")
 
     def test_edit_course_instructor(self):
-        self.test_edit_course_instructor("Rock")
+        self.edit_course_instructor("Rock")
         self.assertEqual(self.c1.course_instructor, "Rock")
 
     def test_add_lab(self):

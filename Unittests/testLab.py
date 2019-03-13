@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_edit_lab_time(self):
         self.lab.edit_lab_time("3-6")
-        self.assertEqual(self.lab.time, "3-6")
+        self.assertEqual(self.lab.lab_time, "3-6")
 
 
 if __name__ == '__main__':

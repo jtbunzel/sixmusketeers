@@ -22,7 +22,7 @@ class Course:
         return self.course_instructor
 
     def get_number(self):
-        return self.cousre_number
+        return self.course_number
 
     # adds an empty lab section, further steps needed
     # further steps needed to finish lab assignment from
