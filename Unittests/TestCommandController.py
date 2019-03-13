@@ -30,7 +30,6 @@ class TestCommandController(bk.TestCase):
 
 
     def test_parse(self):
-        pass
 
     def test_login(self):
         user = User('bkhana', 'hellyeah')
@@ -50,22 +49,11 @@ class TestCommandController(bk.TestCase):
         self.assertEqual(courseinstructor, 'Rock')
         self.assertEqual(coursenumber, '361')
 
-
     def test_notify(self):
 
-    def test_assign(self):
-        course = Course("Computer", "CS", "Rock", "361")
-        instructor = Instrcutor("Rock", "okdone")
-        ta = TA("Nat", "okso")
-        coursenum = course.course_number
-        insname = instructor.username
-        taname = ta.username
-        self.assertEqual(coursenum, '361')
-        self.assertEqual(insname, 'Rock')
-        self.assertEqual(taname, 'Nat')
+    def test_assing(self):
 
     def test_logout(self):
-        none
 
     def test_edit(self):
 
