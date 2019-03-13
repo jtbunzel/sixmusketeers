@@ -21,6 +21,11 @@ class TestCommandController(bk.TestCase):
         self.command.supervisor.set_address('1107 N. Oregon St. Milwaukee WI 53405')
         self.command.supervisor.set_email('hunterg@uwm.edu')
         self.Command.supervisor.set_phone_number('414-569-8784')
+        self.admin = Administrator('hunterg', 'passwerd')
+        self.command.admin.set_full_name('Hunter Green')
+        self.command.admin.set_address('1107 N. Oregon St. Milwaukee WI 53405')
+        self.commanad.admin.set_email('hunterg@uwm.edu')
+        self.command.admin.set_phone_number('414-569-8784')
 
 
     def test_parse(self):
