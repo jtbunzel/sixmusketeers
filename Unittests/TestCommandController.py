@@ -11,9 +11,6 @@ from  Skeleton_Classes.Supervisor import*
 from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
-    def setup(self):
-
-
 
     def test_parse(self):
         self.assertEqual(None )
@@ -96,8 +93,11 @@ class TestCommandController(bk.TestCase):
 
 
     def test_assignments(self):
+        self.assertEqual(None )
+
 
     def test_verify(self):
+        self.assertEqual(None )
 
 if __name__ == '__main__':
     unittest.main()
