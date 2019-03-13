@@ -9,6 +9,7 @@ class MyTestCase(unittest.TestCase):
         self.supervisor.set_address('1107 N. Oregon St. Milwaukee WI 53405')
         self.supervisor.set_email('hunterg@uwm.edu')
         self.supervisor.set_phone_number('414-569-8784')
+        
 
     def test_constructor(self):
         test_supervisor = Supervisor('hunterg', 'passwerd')
