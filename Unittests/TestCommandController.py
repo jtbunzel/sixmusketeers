@@ -110,9 +110,6 @@ class TestCommandController(unittest.TestCase):
         self.delete.course('Computer')
         self.assertEquals(None)
 
-
-    def test_assignments(self):
-        pass
     def test_verify(self):
         ta = TA("bis", "007")
         admin = Administrator("dan", "213")
@@ -122,7 +119,6 @@ class TestCommandController(unittest.TestCase):
         com2 = app.set_loggedin(sup.username)
         self.assertFalse(com1)
         self.assertTrue(com2)
-
 
 
 if __name__ == '__main__':
