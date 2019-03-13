@@ -16,7 +16,7 @@ class TestCommandController(bk.TestCase):
 
 
     def test_parse(self):
-        self.assertEqual(true, )
+        self.assertEqual(None )
 
     def test_login(self):
         user = User('bkhana', 'hellyeah')
@@ -38,7 +38,7 @@ class TestCommandController(bk.TestCase):
 
 
     def test_notify(self):
-        self.Notification = 'Class Cancelled'
+        self.Notification = 'Class Cancelled'e
         self.assertEqual( self.notification, 'Class Cancelled')
 
     def test_assign(self):
@@ -49,8 +49,19 @@ class TestCommandController(bk.TestCase):
         password = user.password
         self.assertEqual(None)
 
-
     def test_edit(self):
+        user = User('bkhana', 'hellyeah')
+        username = user.username
+        password = user.password
+        course = Course("Computer", "CS", "Rock", "361")
+        coursename = course.course_name
+        coursetype = course.course_type
+        courseinstructor = course.course_instructor
+        coursenumber = course.course_number
+        self.edit.coursename('science')
+        self.assertEquals(course.course_name, 'science')
+        self.edit.username('bchha')
+        self.assertEquals(user.username, 'bchha')
 
 
     def test_access(self):
