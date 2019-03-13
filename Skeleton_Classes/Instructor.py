@@ -1,4 +1,4 @@
-import User
+from Skeleton_Classes.User import *
 
 
 class Instructor(User):

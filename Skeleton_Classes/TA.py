@@ -1,4 +1,4 @@
-import Instructor
+from Skeleton_Classes.Instructor import *
 
 
 class TA(Instructor):
