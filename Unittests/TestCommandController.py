@@ -32,10 +32,10 @@ class TestCommandController(bk.TestCase):
     def test_parse(self):
 
     def test_login(self):
-        user = User('bkhanal', 'hellyeah')
+        user = User('bkhana', 'hellyeah')
         username = user.username
         password = user.password
-        self.assertEqual(username, 'bkhanal')
+        self.assertEqual(username, 'bkhana')
         self.assertEqual(password, 'hellyeah')
 
     def test_create(self):
