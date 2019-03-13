@@ -7,6 +7,7 @@ from Instructor import *
 from Lab_section import *
 from Supervisor import *
 from TA import *
+from App import *
 
 class TestCommandController(bk.TestCase):
     def setup(self):
@@ -31,6 +32,11 @@ class TestCommandController(bk.TestCase):
     def test_parse(self):
 
     def test_login(self):
+        user = User('bkhanal', 'hellyeah')
+        username = user.username
+        password = user.password
+        self.assertEqual(username, 'bkhanal')
+        self.assertEqual(password, 'hellyeah')
 
     def test_create(self):
 
