@@ -12,22 +12,7 @@ from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
     def setup(self):
-        self.command= CommandController(self, Course)
-        self.command.User('wheelerg', '1234')
-        self.command.set_full_name('Grant Wheeler')
-        self.command.set_address('3200 N. Cramer St. Milwaukee, WI 53211')
-        self.command.user.set_email('wheelerg@uwm.edu')
-        self.command.set_phone_number('4148857236')
-        self.command.supervisor = Supervisor('hunterg', 'passwerd')
-        self.command.supervisor.set_full_name('Hunter Green')
-        self.command.supervisor.set_address('1107 N. Oregon St. Milwaukee WI 53405')
-        self.command.supervisor.set_email('hunterg@uwm.edu')
-        self.Command.supervisor.set_phone_number('414-569-8784')
-        self.admin = Administrator('hunterg', 'passwerd')
-        self.command.admin.set_full_name('Hunter Green')
-        self.command.admin.set_address('1107 N. Oregon St. Milwaukee WI 53405')
-        self.commanad.admin.set_email('hunterg@uwm.edu')
-        self.command.admin.set_phone_number('414-569-8784')
+       
 
 
     def test_parse(self):
