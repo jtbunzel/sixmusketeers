@@ -14,3 +14,9 @@ class App(object):
 
     def access(self):
         pass
+
+    def get_loggedin(self):
+        pass
+
+    def set_loggedin(self, username):
+        psss

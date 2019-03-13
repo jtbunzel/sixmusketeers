@@ -11,7 +11,6 @@ from  Skeleton_Classes.Supervisor import*
 from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
-    def setup(self):
 
 
 
@@ -94,7 +93,12 @@ class TestCommandController(bk.TestCase):
     def test_assignments(self):
         pass
     def test_verify(self):
-        pass
+        ta = TA("bis", "007")
+        admin = Administrator("dan", "213")
+        sup = Supervisor("jon", "556")
+        ins = Instructor("jat", "778")
+        com = app.set_loggedin(ta.username)
+
 
 if __name__ == '__main__':
     unittest.main()
