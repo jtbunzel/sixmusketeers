@@ -1,10 +1,10 @@
 import unittest
-from Skeleton_Classes.Lab_section import Lab_section
+from Skeleton_Classes.LabSection import *
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        self.lab = Lab_section("801", "Henry", "12-3")
+        self.lab = LabSection("801", "Henry", "12-3")
 
     def test_setUp(self):
         self.assertEqual(self.lab.lab_number, "801")

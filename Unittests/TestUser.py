@@ -1,5 +1,5 @@
 import unittest
-from User import *
+from Skeleton_Classes.User import *
 
 
 class MyTestCase(unittest.TestCase):
@@ -19,11 +19,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_username(self):
         result = self.user.get_username()
-        self.assertEquals(result, 'wheelerg')
+        self.assertEqual(result, 'wheelerg')
 
     def test_get_password(self):
         result = self.user.get_password()
-        self.assertEquals(result, '1234')
+        self.assertEqual(result, '1234')
 
     def test_get_full_name(self):
         result = self.user.get_full_name()
@@ -31,15 +31,15 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_address(self):
         result = self.user.get_address()
-        self.assertEquals(result, '3200 N. Cramer St. Milwaukee, WI 53211')
+        self.assertEqual(result, '3200 N. Cramer St. Milwaukee, WI 53211')
 
     def test_get_phone_number(self):
         result = self.user.get_phone_number()
-        self.assertEquals(result, '4148857236')
+        self.assertEqual(result, '4148857236')
 
     def test_get_email(self):
         result = self.user.get_email()
-        self.assertEquals(result, 'wheelerg@uwm.edu')
+        self.assertEqual(result, 'wheelerg@uwm.edu')
 
     def test_set_username(self):
         self.user.set_username('gwheeler')
