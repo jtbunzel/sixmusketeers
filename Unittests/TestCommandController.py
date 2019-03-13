@@ -1,4 +1,4 @@
-import unittest as bk
+import unittest
 from  Skeleton_Classes.CommandController import*
 from  Skeleton_Classes.Administrator import*
 from  Skeleton_Classes.Course import*
@@ -10,7 +10,7 @@ from  Skeleton_Classes.Lab_section import*
 from  Skeleton_Classes.Supervisor import*
 from  Skeleton_Classes.TA import*
 
-class TestCommandController(bk.TestCase):
+class TestCommandController(unittest.TestCase):
 
     def test_parse(self):
         self.assertEqual(None)
@@ -35,8 +35,10 @@ class TestCommandController(bk.TestCase):
 
 
     def test_notify(self):
-        self.Notification = 'Class Cancelled'
-        self.assertEqual( self.notification, 'Class Cancelled')
+        self.Supervisor= Supervisor('Harry', '1234')
+        self.message= 'Class Cancelled'
+        self.notify.Supervisor= (self.message)
+        self.assetEquals('Class Cancelled')
 
     def test_assign(self):
         course = Course("Computer", "CS", "Rock", "361")
@@ -87,7 +89,6 @@ class TestCommandController(bk.TestCase):
 
 
     def test_delete(self):
-        def test_delete(self):
         user = User('bkhana', 'hellyeah')
         username = user.username
         password = user.password
@@ -105,7 +106,9 @@ class TestCommandController(bk.TestCase):
     def test_assignments(self):
         pass
     def test_verify(self):
-        pass
+       pass
+
+
 
 if __name__ == '__main__':
     unittest.main()
