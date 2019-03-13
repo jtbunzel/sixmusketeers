@@ -96,7 +96,7 @@ class TestCommandController(bk.TestCase):
         ta = TA("bis", "007")
         admin = Administrator("dan", "213")
         sup = Supervisor("jon", "556")
-        ins = Instructor("jat", "778")
+        ins = Instructor("jat", "779")
         com = app.set_loggedin(ta.username)
 
 
