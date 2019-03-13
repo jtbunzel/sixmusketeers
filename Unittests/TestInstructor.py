@@ -24,7 +24,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, 'Intro to Software Engineering\nIntro to Artificial Intelligence ')
 
     def test_add_courses(self):
-        self.instructor.add_course('Intro to Computer Security', 'CS', 'John', '999')
+        self.instructor.add_course('Intro to Computer Security', 'CS', 'Johnny', '999')
         result = self.instructor.get_courses()
         self.assertEqual(result,
                          'Intro to Software Engineering\nIntro to Artificial Intelligence\nIntro to Computer Security ')
