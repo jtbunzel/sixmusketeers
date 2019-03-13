@@ -49,8 +49,10 @@ class TestCommandController(bk.TestCase):
         self.assertEqual(courseinstructor, 'Rock')
         self.assertEqual(coursenumber, '361')
 
-    def test_notify(self):
 
+    def test_notify(self):
+        notification = 'Class Cancelled'
+        self.assertEqual(notification, 'Class Cancelled')
     def test_assing(self):
 
     def test_logout(self):
