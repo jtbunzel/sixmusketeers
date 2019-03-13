@@ -2,7 +2,7 @@ import unittest
 from Skeleton_Classes.TA import *
 
 
-class MyTestCase(unittest.Testcase):
+class MyTestCase(unittest.TestCase):
     def setUp(self):
         self.TA = TA('JBravo', 'abc123')
         self.TA.set_full_name('Johnny Bravo')
