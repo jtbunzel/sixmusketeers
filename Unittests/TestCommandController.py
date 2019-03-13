@@ -1,6 +1,8 @@
 import unittest as bk
 from Skeleton_Classes.CommandController import CommandController
-
+from User import *
+from Administrator import *
+from Course import *
 class TestCommandController(bk.TestCase):
     def setup(self):
         self.command= CommandController()
