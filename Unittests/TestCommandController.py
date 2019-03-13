@@ -58,6 +58,20 @@ class TestCommandController(bk.TestCase):
     def test_edit(self):
 
     def test_access(self):
+        self.Supervisor()
+        self.TA= TA('Ben', '23***abc')
+        self.TA.set_full_name('Ben Step')
+        self.TA.set_address('2922 N. Kenwood. Milwaukee WI 53211')
+        self.TA.set_email('ben7@uwm.edu')
+        self.TA.set_PhonNumber('414-883-6231')
+        self.TA.add_lab_section('CS351', '701')
+        self.TA.add_lab_section('CS251', '552')
+        self.TA.add_grader_course('CS351')
+        self.TA.add_grader_course('CS251')
+        self.access.TA()
+        self.assetEqual('Ben Step', )
+
+
 
     def test_delete(self):
 
