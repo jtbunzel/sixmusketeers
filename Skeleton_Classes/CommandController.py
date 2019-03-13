@@ -9,7 +9,7 @@ class CommandController(object):
     def create(self, credentials):
         pass
 
-    def notify(self, message, emailaddress):
+    def notify(self, message):
         pass
 
     def assign(self, username, course):
