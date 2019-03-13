@@ -93,7 +93,7 @@ class TestCommandController(bk.TestCase):
         self.assertEquals(course.courseinstructor, None)
         self.delete.course('Computer')
         self.assertEquals(None)
-        
+
 
     def test_assignments(self):
 
