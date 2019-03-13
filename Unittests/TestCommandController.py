@@ -106,7 +106,14 @@ class TestCommandController(unittest.TestCase):
     def test_assignments(self):
         pass
     def test_verify(self):
-       pass
+        ta = TA("bis", "007")
+        admin = Administrator("dan", "213")
+        sup = Supervisor("jon", "556")
+        ins = Instructor("jat", "778")
+        com1 = app.set_loggedin(ta.username)
+        com2 = app.set_loggedin(sup.username)
+        self.assertFalse(com1)
+        self.assertTrue(com2)
 
 
 
