@@ -1,13 +1,14 @@
 import unittest as bk
-from  CommandController import*
-from User import *
-from Administrator import *
-from Course import *
-from Instructor import *
-from Lab_section import *
-from Supervisor import *
-from TA import *
-from App import *
+from  Skeleton_Classes.CommandController import*
+from  Skeleton_Classes.Administrator import*
+from  Skeleton_Classes.Course import*
+from  Skeleton_Classes.User import*
+from  Skeleton_Classes.App import*
+from  Skeleton_Classes.Database import*
+from  Skeleton_Classes.Supervisor import*
+from  Skeleton_Classes.Lab_section import*
+from  Skeleton_Classes.Supervisor import*
+from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
     def setup(self):
@@ -51,8 +52,8 @@ class TestCommandController(bk.TestCase):
 
 
     def test_notify(self):
-        notification = 'Class Cancelled'
-        self.assertEqual(notification, 'Class Cancelled')
+        self.Notification = 'Class Cancelled'
+        self.assertEqual( self.notification, 'Class Cancelled')
 
     def test_assign(self):
 
