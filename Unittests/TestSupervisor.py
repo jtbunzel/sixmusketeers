@@ -10,6 +10,7 @@ class MyTestCase(unittest.TestCase):
         self.supervisor.set_email('hunterg@uwm.edu')
         self.supervisor.set_phone_number('414-569-8784')
 
+
     def test_constructor(self):
         test_supervisor = Supervisor('hunterg', 'passwerd')
         result = test_supervisor.get_username()
