@@ -12,10 +12,11 @@ from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
     def setup(self):
-       
+
 
 
     def test_parse(self):
+        self.assertEqual(true, )
 
     def test_login(self):
         user = User('bkhana', 'hellyeah')
@@ -43,9 +44,14 @@ class TestCommandController(bk.TestCase):
     def test_assign(self):
 
     def test_logout(self):
+        user = User('bkhana', 'hellyeah')
+        username = user.username
+        password = user.password
+        self.assertEqual(None)
 
 
     def test_edit(self):
+
 
     def test_access(self):
 
