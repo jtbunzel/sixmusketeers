@@ -1,5 +1,12 @@
 import unittest as bk
 from Skeleton_Classes.CommandController import CommandController
+from User import *
+from Administrator import *
+from Course import *
+from Instructor import *
+from Lab_section import *
+from Supervisor import *
+from TA import *
 
 class TestCommandController(bk.TestCase):
     def setup(self):
