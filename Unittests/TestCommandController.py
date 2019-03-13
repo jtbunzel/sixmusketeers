@@ -42,6 +42,15 @@ class TestCommandController(bk.TestCase):
         self.assertEqual( self.notification, 'Class Cancelled')
 
     def test_assign(self):
+        course = Course("Computer", "CS", "Rock", "361")
+        ins = Instructor("bkhanal", "okall")
+        ta = TA("bish", "nepal")
+        coursenum = course.course_number
+        insname = ins.username
+        taname = ta.username
+        self.assertEqual(coursenum, '361')
+        self.assertEqual(insname, 'bkhanal')
+        self.assertEqual(taname, 'bish')
 
     def test_logout(self):
         user = User('bkhana', 'hellyeah')
