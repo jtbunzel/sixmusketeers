@@ -38,7 +38,7 @@ class TestCommandController(bk.TestCase):
 
 
     def test_notify(self):
-        self.Notification = 'Class Cancelled'e
+        self.Notification = 'Class Cancelled'
         self.assertEqual( self.notification, 'Class Cancelled')
 
     def test_assign(self):
@@ -81,10 +81,11 @@ class TestCommandController(bk.TestCase):
 
 
     def test_delete(self):
-
+        pass
     def test_assignments(self):
-
+        pass
     def test_verify(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
