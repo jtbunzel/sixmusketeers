@@ -13,11 +13,10 @@ class MyTestCase(unittest.TestCase):
         self.instructor.add_course('Intro to Artificial Intelligence ', 'CS', 'Johnny', '289')
 
     def test_constructor(self):
-        ins = Instructor('Wiz', 'Khalifa')
-        username = ins.get_username()
-        self.assertEqual(username, 'Wiz')
-        pw = ins.get_password()
-        self.assertEqual(pw, 'Khalifa')
+        username = self.instructor.get_username()
+        self.assertEqual(username, 'John')
+        pw = self.instructor.get_password()
+        self.assertEqual(pw, 'Doe')
 
     def test_get_courses(self):
         result = self.instructor.get_courses()
