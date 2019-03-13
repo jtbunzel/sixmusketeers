@@ -6,7 +6,7 @@ class CommandController(object):
     def login(self, username, password):
         pass
 
-    def create(sell, credentials):
+    def create(self, credentials):
         pass
 
     def notify(self, message, emailaddress):
