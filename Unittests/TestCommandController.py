@@ -44,6 +44,10 @@ class TestCommandController(bk.TestCase):
         coursetype = course.course_type
         courseinstructor = course.course_instructor
         coursenumber = course.course_number
+        self.assertEqual(coursename, 'Computer')
+        self.assertEqual(coursetype, 'CS')
+        self.assertEqual(courseinstructor, 'Rock')
+        self.assertEqual(coursenumber, '361')
 
     def test_notify(self):
 
