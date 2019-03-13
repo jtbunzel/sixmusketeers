@@ -8,8 +8,8 @@ class MyTestCase(unittest.Testcase):
         self.TA.set_full_name('Johnny Bravo')
         self.TA.set_address('2911 N. Oakland Ave. Milwaukee WI 53211')
         self.TA.set_email('JBravo7@uwm.edu')
-        self.TA.add_lab_section('414', 'Intro to Software Engineering', '10-12')
-        self.TA.add_lab_section('552', 'Intro to Artificial Intelligence', '2-4')
+        self.TA.add_lab_section('Intro to Software Engineering', '414')
+        self.TA.add_lab_section('Intro to Artificial Intelligence', '552')
         self.TA.add_grader_course('Intro to Software Engineering')
         self.TA.add_grader_course('Intro to Artificial Intelligence')
 
@@ -24,7 +24,7 @@ class MyTestCase(unittest.Testcase):
         self.assertEqual(result, '[414] Intro to Software Engineering\n[552] Intro to Artificial Intelligence\n')
 
     def test_add_lab_section(self):
-        self.TA.add_lab_section('777', 'Intro to Computer Security', '4-6')
+        self.TA.add_lab_section('Intro to Computer Security', '777')
         result = self.TA.get_lab_sections()
         self.assertEqual(result,
                          '[414] Intro to Software Engineering\n[552] Intro to Artificial Intelligence\n[777] Intro to Computer Security\n')

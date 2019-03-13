@@ -8,8 +8,8 @@ class MyTestCase(unittest.TestCase):
         self.instructor.set_full_name('Johnny Cage')
         self.instructor.set_address('3208 N. Oakland Ave. Milwaukee WI 53211')
         self.instructor.set_email('JCage7@uwm.edu')
-        self.instructor.add_course('Intro to Software Engineering', 'CS', 'Johnny', '414')
-        self.instructor.add_course('Intro to Artificial Intelligence ', 'CS', 'Johnny', '289')
+        self.instructor.add_course('Intro to Software Engineering')
+        self.instructor.add_course('Intro to Artificial Intelligence')
 
     def test_constructor(self):
         username = self.instructor.get_username()
@@ -22,7 +22,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, 'Intro to Software Engineering\nIntro to Artificial Intelligence ')
 
     def test_add_courses(self):
-        self.instructor.add_course('Intro to Computer Security', 'CS', 'Johnny', '999')
+        self.instructor.add_course('Intro to Computer Security')
         result = self.instructor.get_courses()
         self.assertEqual(result,
                          'Intro to Software Engineering\nIntro to Artificial Intelligence\nIntro to Computer Security ')
