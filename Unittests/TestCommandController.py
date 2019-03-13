@@ -39,6 +39,11 @@ class TestCommandController(bk.TestCase):
         self.assertEqual(password, 'hellyeah')
 
     def test_create(self):
+        course = Course("Computer", "CS", "Rock", "361")
+        coursename = course.course_name
+        coursetype = course.course_type
+        courseinstructor = course.course_instructor
+        coursenumber = course.course_number
 
     def test_notify(self):
 
