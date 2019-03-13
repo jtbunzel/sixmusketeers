@@ -8,7 +8,6 @@ class MyTestCase(unittest.TestCase):
         self.instructor.set_full_name('Johnny Cage')
         self.instructor.set_address('3208 N. Oakland Ave. Milwaukee WI 53211')
         self.instructor.set_email('JCage7@uwm.edu')
-        self.instructor.set_phone_number('414-289-3784')
         self.instructor.add_course('Intro to Software Engineering', 'CS', 'Johnny', '414')
         self.instructor.add_course('Intro to Artificial Intelligence ', 'CS', 'Johnny', '289')
 
