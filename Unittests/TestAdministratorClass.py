@@ -1,5 +1,5 @@
 import unittest
-from Administrator import *
+from Skeleton_Classes.Administrator import Administrator
 
 
 class MyTestCase(unittest.TestCase):
@@ -14,26 +14,22 @@ class MyTestCase(unittest.TestCase):
         admin = Administrator('hunterg', 'passwerd')
         result = admin.get_username()
         expected = 'hunterg'
-        self.assertEquals(result, expected)
+        self.assertEqual(result, expected)
         result = admin.get_password()
         expected = 'passwerd'
-        self.assertEquals(result, expected)
+        self.assertEqual(result, expected)
 
     def test_str(self):
         self.setUp()
         result = self.admin.__str__()
         expected = 'Hunter Green\nAdministrator\nhunterg\npasswerd\n1107 N. Oregon St.\nhunterg@uwm.edu\n414-569-8784'
-        self.assertEquals(result, expected)
+        self.assertEqual(result, expected)
 
     def test_get_public_contact_info(self):
         self.setUp()
         result = self.admin.get_public_contact_info()
         expected = 'Hunter Green\nAdministrator\nhunterg@uwm.edu'
-        self.assertEquals(result, expected)
-
-
-
-
+        self.assertEqual(result, expected)
 
 
 if __name__ == '__main__':

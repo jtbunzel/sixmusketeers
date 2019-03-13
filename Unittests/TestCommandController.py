@@ -1,35 +1,22 @@
 import unittest as bk
-from  CommandController import*
-from User import *
-from Administrator import *
-from Course import *
-from Instructor import *
-from Lab_section import *
-from Supervisor import *
-from TA import *
-from App import *
+from  Skeleton_Classes.CommandController import*
+from  Skeleton_Classes.Administrator import*
+from  Skeleton_Classes.Course import*
+from  Skeleton_Classes.User import*
+from  Skeleton_Classes.App import*
+from  Skeleton_Classes.Database import*
+from  Skeleton_Classes.Supervisor import*
+from  Skeleton_Classes.Lab_section import*
+from  Skeleton_Classes.Supervisor import*
+from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
     def setup(self):
-        self.command= CommandController(self, Course)
-        self.command.User('wheelerg', '1234')
-        self.command.set_full_name('Grant Wheeler')
-        self.command.set_address('3200 N. Cramer St. Milwaukee, WI 53211')
-        self.command.user.set_email('wheelerg@uwm.edu')
-        self.command.set_phone_number('4148857236')
-        self.command.supervisor = Supervisor('hunterg', 'passwerd')
-        self.command.supervisor.set_full_name('Hunter Green')
-        self.command.supervisor.set_address('1107 N. Oregon St. Milwaukee WI 53405')
-        self.command.supervisor.set_email('hunterg@uwm.edu')
-        self.Command.supervisor.set_phone_number('414-569-8784')
-        self.admin = Administrator('hunterg', 'passwerd')
-        self.command.admin.set_full_name('Hunter Green')
-        self.command.admin.set_address('1107 N. Oregon St. Milwaukee WI 53405')
-        self.commanad.admin.set_email('hunterg@uwm.edu')
-        self.command.admin.set_phone_number('414-569-8784')
+
 
 
     def test_parse(self):
+        self.assertEqual(None )
 
     def test_login(self):
         user = User('bkhana', 'hellyeah')
@@ -49,22 +36,33 @@ class TestCommandController(bk.TestCase):
         self.assertEqual(courseinstructor, 'Rock')
         self.assertEqual(coursenumber, '361')
 
+
     def test_notify(self):
+        self.Notification = 'Class Cancelled'
+        self.assertEqual( self.notification, 'Class Cancelled')
 
     def test_assign(self):
-        course = Course("Computer", "CS", "Rock", "361")
-        ins = Instructor("bkhanal", "okall")
-        ta = TA("bish", "nepal")
-        coursenum = course.course_number
-        insname = ins.username
-        taname = ta.username
-        self.assertEqual(coursenum, '361')
-        self.assertEqual(insname, 'bkhanal')
-        self.assertEqual(taname, 'bish')
 
     def test_logout(self):
+        user = User('bkhana', 'hellyeah')
+        username = user.username
+        password = user.password
+        self.assertEqual(None)
 
     def test_edit(self):
+        user = User('bkhana', 'hellyeah')
+        username = user.username
+        password = user.password
+        course = Course("Computer", "CS", "Rock", "361")
+        coursename = course.course_name
+        coursetype = course.course_type
+        courseinstructor = course.course_instructor
+        coursenumber = course.course_number
+        self.edit.coursename('science')
+        self.assertEquals(course.course_name, 'science')
+        self.edit.username('bchha')
+        self.assertEquals(user.username, 'bchha')
+
 
     def test_access(self):
         self.Supervisor()
@@ -83,10 +81,11 @@ class TestCommandController(bk.TestCase):
 
 
     def test_delete(self):
-
+        pass
     def test_assignments(self):
-
+        pass
     def test_verify(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
