@@ -51,7 +51,16 @@ class TestCommandController(bk.TestCase):
 
     def test_notify(self):
 
-    def test_assing(self):
+    def test_assign(self):
+        course = Course("Computer", "CS", "Rock", "361")
+        ins = Instructor("bkhanal", "okall")
+        ta = TA("bish", "nepal")
+        coursenum = course.course_number
+        insname = ins.username
+        taname = ta.username
+        self.assertEqual(coursenum, '361')
+        self.assertEqual(insname, 'bkhanal')
+        self.assertEqual(taname, 'bish')
 
     def test_logout(self):
 
