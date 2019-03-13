@@ -1,5 +1,5 @@
 
-class Lab_section:
+class LabSection:
     def __init__(self, lab_number="n/a", TA="n/a", lab_time="n/a"):
         self.lab_number = lab_number
         self.TA = TA
