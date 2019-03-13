@@ -12,10 +12,8 @@ from  Skeleton_Classes.TA import*
 
 class TestCommandController(bk.TestCase):
 
-
-
     def test_parse(self):
-        self.assertEqual(None )
+        self.assertEqual(None)
 
     def test_login(self):
         user = User('bkhana', 'hellyeah')
@@ -73,7 +71,7 @@ class TestCommandController(bk.TestCase):
 
 
     def test_access(self):
-        self.Supervisor()
+        self.Supervisor= Supervisor('Harry', '1234')
         self.TA= TA('Ben', '23***abc')
         self.TA.set_full_name('Ben Step')
         self.TA.set_address('2922 N. Kenwood. Milwaukee WI 53211')
@@ -84,21 +82,30 @@ class TestCommandController(bk.TestCase):
         self.TA.add_grader_course('CS351')
         self.TA.add_grader_course('CS251')
         self.access.TA()
-        self.assetEqual('Ben Step', )
+        self.assetEquals('Ben Step', '2922 N. Kenwood. Milwaukee WI 53211', 'ben7@uwm.edu' 'CS351', '701' )
 
 
 
     def test_delete(self):
-        pass
+        def test_delete(self):
+        user = User('bkhana', 'hellyeah')
+        username = user.username
+        password = user.password
+        course = Course("Computer", "CS", "Rock", "361")
+        coursename = course.course_name
+        coursetype = course.course_type
+        courseinstructor = course.course_instructor
+        coursenumber = course.course_number
+        self.delete.courseinstructor('Rock')
+        self.assertEquals(course.courseinstructor, None)
+        self.delete.course('Computer')
+        self.assertEquals(None)
+
+
     def test_assignments(self):
         pass
     def test_verify(self):
-        ta = TA("bis", "007")
-        admin = Administrator("dan", "213")
-        sup = Supervisor("jon", "556")
-        ins = Instructor("jat", "779")
-        com = app.set_loggedin(ta.username)
-
+        pass
 
 if __name__ == '__main__':
     unittest.main()
