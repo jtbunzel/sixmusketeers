@@ -1,7 +1,7 @@
 import unittest as bk
 
 
-class TestNotify(bk):
+class TestNotification(bk):
     # assume user exists
     # assume user is logged in
     # assume sender are Supervsiro/Admin/Instructor
