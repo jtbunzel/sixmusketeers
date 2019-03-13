@@ -66,10 +66,18 @@ class TestCommandController(unittest.TestCase):
         coursetype = course.course_type
         courseinstructor = course.course_instructor
         coursenumber = course.course_number
-        self.edit.coursename('science')
-        self.assertEquals(course.course_name, 'science')
         self.edit.username('bchha')
-        self.assertEquals(user.username, 'bchha')
+        self.assertEquals(username, 'bchha')
+        self.edit.password('hellno')
+        self.assertEquals(password, 'hellno')
+        self.edit.coursename('science')
+        self.assertEquals(coursename, 'science')
+        self.edit.coursetype('SCI')
+        self.assertEquals(coursetype, 'SCI')
+        self.edit.courseinstructor('Joe')
+        self.assertEquals(courseinstructor, 'Joe')
+        self.edit.coursenumber('371')
+        self.assertEquals(coursenumber, '371')
 
 
     def test_access(self):
