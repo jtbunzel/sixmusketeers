@@ -23,13 +23,13 @@ class MyTestCase(unittest.TestCase):
         result = self.instructor.get_courses()
         self.assertEqual(result, 'Intro to Software Engineering\nIntro to Artificial Intelligence ')
 
-    def test_add_courses(self, new_course):
+    def test_add_courses(self):
         self.instructor.add_course('Intro to Computer Security', 'CS', 'John', '999')
         result = self.instructor.get_courses()
         self.assertEqual(result,
                          'Intro to Software Engineering\nIntro to Artificial Intelligence\nIntro to Computer Security ')
 
-    def test_remove_course(self, course_to_be_removed):
+    def test_remove_course(self):
         course_to_be_removed = 'Intro to Artificial Intelligence'
         self.instructor.remove_course(course_to_be_removed)
         result = self.instructor.get_courses()
