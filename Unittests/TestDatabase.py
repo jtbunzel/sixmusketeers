@@ -1,75 +1,44 @@
 import unittest
-from User import *
+from Skeleton_Classes.Database import *
+from Skeleton_Classes.Course import *
+from Skeleton_Classes.Supervisor import *
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        self.user = User('wheelerg', '1234')
-        self.user.set_full_name('Grant Wheeler')
-        self.user.set_address('3200 N. Cramer St. Milwaukee, WI 53211')
-        self.user.set_email('wheelerg@uwm.edu')
-        self.user.set_phone_number('4148857236')
+        self.account = Supervisor('hunterg', 'passwerd')
+        self.account.set_full_name('Hunter Green')
+        self.account.set_address('1107 N. Oregon St. Milwaukee WI 53405')
+        self.account.set_email('hunterg@uwm.edu')
+        self.account.set_phone_number('414-569-8784')
 
-    def test_constructor(self):
-        user = User('patel59', 'iamawesome')
-        username = user.username
-        password = user.password
-        self.assertEqual(username, 'patel59')
-        self.assertEqual(password, 'iamawesome')
+        self.course = Course("Math", "MTH", "Bob", "101")
 
-    def test_get_username(self):
-        result = self.user.get_username()
-        self.assertEquals(result, 'wheelerg')
+    def test_read_account(self):
+        self.setUp()
+        result = self.read()
+        self.assertEquals(result, self.account)
 
-    def test_get_password(self):
-        result = self.user.get_password()
-        self.assertEquals(result, '1234')
+    def test_read_course(self):
+        self.setUp()
+        result = self.read()
+        self.assertEquals(result, self.course)
 
-    def test_get_full_name(self):
-        result = self.user.get_full_name()
-        self.assertEquals(result, 'Grant Wheeler')
+    def test_write_account(self):
+        self.setUp()
+        expected = self.account
 
-    def test_get_address(self):
-        result = self.user.get_address()
-        self.assertEquals(result, '3200 N. Cramer St. Milwaukee, WI 53211')
+        self.write()
+        result = self.read()
+        self.assertEquals(result, expected)
 
-    def test_get_phone_number(self):
-        result = self.user.get_phone_number()
-        self.assertEquals(result, '4148857236')
+    def test_write_course(self):
+        self.setUp()
+        expected = self.course
 
-    def test_get_email(self):
-        result = self.user.get_email()
-        self.assertEquals(result, 'wheelerg@uwm.edu')
-
-    def test_set_username(self):
-        self.user.set_username('gwheeler')
-        result = self.user.get_username()
-        self.assertEquals(result, 'gwheeler')
-
-    def test_set_password(self):
-        self.user.set_password('4321')
-        result = self.user.get_password()
-        self.assertEquals(result, '4321')
-
-    def test_set_full_name(self):
-        self.user.set_full_name('Gina Wheeler')
-        result = self.user.get_full_name()
-        self.assertEquals(result, 'Gina Wheeler')
-
-    def test_set_address(self):
-        self.user.set_address('3400 N. Maryland Av. Milwaukee, WI 53211')
-        result = self.user.get_address()
-        self.assertEquals(result, '3400 N. Maryland Av. Milwaukee, WI 53211')
-
-    def test_set_phone_number(self):
-        self.user.set_phone_number('4145882300')
-        result = self.user.get_phone_number()
-        self.assertEquals(result, '4145882300')
-
-    def test_set_email(self):
-        self.user.set_email('gwheeler@uwm.edu')
-        result = self.user.get_email()
-        self.assertEquals(result, 'gwheeler@uwm.edu')
+        self.write()
+        result = self.read()
+        self.assertEquals(result, expected)
 
 
 if __name__ == '__main__':
