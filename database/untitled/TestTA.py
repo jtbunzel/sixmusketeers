@@ -1,5 +1,5 @@
 from django.test import TestCase
-import Skeleton_Classes.TA
+from Skeleton_Classes.TA import *
 
 class AnimalTestCase(TestCase):
     def setUp(self):
