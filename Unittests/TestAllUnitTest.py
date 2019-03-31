@@ -47,7 +47,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.c1.course_name, "Math")
         self.assertEqual(self.c1.course_type, "MTH")
         self.assertEqual(self.c1.course_instructor, "Bob")
-        self.assertEqual(self.c1.course_number, "101")
+        self.assertEqual(self.c1.course_code, "101")
 
     def test_getters(self):
         self.assertEqual(self.c1.get_name(), "Math")
@@ -318,7 +318,7 @@ class MyTestCase(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.assertEqual(coursename, 'Computer')
         self.assertEqual(coursetype, 'CS')
         self.assertEqual(courseinstructor, 'Rock')
@@ -334,7 +334,7 @@ class MyTestCase(unittest.TestCase):
         course = Course("Computer", "CS", "Rock", "361")
         ins = Instructor("bkhanal", "okall")
         ta = TA("bishe", "nepal")
-        coursenum = course.course_number
+        coursenum = course.course_code
         insname = ins.username
         taname = ta.username
         self.assertEqual(coursenum, '361')
@@ -355,7 +355,7 @@ class MyTestCase(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.edit.username('bchha')
         self.assertEquals(username, 'bchha')
         self.edit.password('hellno')
@@ -391,7 +391,7 @@ class MyTestCase(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.delete.courseinstructor('Rock')
         self.assertEquals(course.courseinstructor, None)
         self.delete.course('Computer')

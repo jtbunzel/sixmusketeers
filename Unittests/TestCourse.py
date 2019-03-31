@@ -10,7 +10,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.c1.course_name, "Math")
         self.assertEqual(self.c1.course_type, "MTH")
         self.assertEqual(self.c1.course_instructor, "Bob")
-        self.assertEqual(self.c1.course_number, "101")
+        self.assertEqual(self.c1.course_code, "101")
 
     def test_getters(self):
         self.assertEqual(self.c1.get_name(), "Math")

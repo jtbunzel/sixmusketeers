@@ -27,7 +27,7 @@ class TestCommandController(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.assertEqual(coursename, 'Computer')
         self.assertEqual(coursetype, 'CS')
         self.assertEqual(courseinstructor, 'Rock')
@@ -44,7 +44,7 @@ class TestCommandController(unittest.TestCase):
         course = Course("Computer", "CS", "Rock", "361")
         ins = Instructor("bkhanal", "okall")
         ta = TA("bishe", "nepal")
-        coursenum = course.course_number
+        coursenum = course.course_code
         insname = ins.username
         taname = ta.username
         self.assertEqual(coursenum, '361')
@@ -65,7 +65,7 @@ class TestCommandController(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.edit.username('bchha')
         self.assertEquals(username, 'bchha')
         self.edit.password('hellno')
@@ -104,7 +104,7 @@ class TestCommandController(unittest.TestCase):
         coursename = course.course_name
         coursetype = course.course_type
         courseinstructor = course.course_instructor
-        coursenumber = course.course_number
+        coursenumber = course.course_code
         self.delete.courseinstructor('Rock')
         self.assertEquals(course.courseinstructor, None)
         self.delete.course('Computer')
