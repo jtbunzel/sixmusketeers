@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class User(models.Model):
     username = models.CharField(max_length=30)
@@ -25,19 +26,12 @@ class Supervisor(models.Model, User):
 class Administrator(models.Model, User):
     pass
 
-
-class Instructor2Course(models.Model):
-    pass
-
-
-class TA2Course(models.Model):
-    pass
-
-
 class Course(models.Model):
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=60)
     course_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
+    course_TA_grader = models.ManyToManyField(TA)
+    course_TAs = models.ManyToManyField(TA)
 
 
 class LabSection(models.Model):
