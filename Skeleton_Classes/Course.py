@@ -13,7 +13,7 @@ class Course:
 
     def get_type(self):
         return self.course_type
-f
+    
     def edit_course_instructor(self, instructor):
         pass
 
