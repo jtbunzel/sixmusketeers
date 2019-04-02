@@ -106,7 +106,7 @@ class TestCommandController(unittest.TestCase):
         courseinstructor = course.course_instructor
         coursenumber = course.course_code
         self.delete.courseinstructor('Rock')
-        self.assertEquals(course.courseinstructor, None)
+        self.assertEquals(courseinstructor, None)
         self.delete.course('Computer')
         self.assertEquals(None)
 
