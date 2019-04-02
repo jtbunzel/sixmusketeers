@@ -13,7 +13,7 @@ class Course:
 
     def get_type(self):
         return self.course_type
-
+    
     def edit_course_instructor(self, instructor):
         pass
 
@@ -29,7 +29,7 @@ class Course:
     def add_lab(self, lab_name):
         # create an instance of lab
         pass
-
+    
     def add_TA(self, TA):
         pass
 
