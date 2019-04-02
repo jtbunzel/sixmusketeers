@@ -23,7 +23,7 @@ class Administrator(User):
 
     def assign_instructor_to_course(self, instructor_to_be_assign, course):
         pass
-    
+
     def get_courses(self):
         pass
 
