@@ -9,4 +9,7 @@ class LabSection:
 
     def edit_lab_TA(self, TA):
         pass
+    
+    def edit_lab_course(self, course):
+        pass
 
