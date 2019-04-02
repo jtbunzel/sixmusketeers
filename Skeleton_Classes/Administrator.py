@@ -10,7 +10,7 @@ class Administrator(User):
         pass
 
     def get_instructor(self):
-        pass
+        return " "
 
     def create_instructor(self, new_instructor ):
         pass
@@ -25,7 +25,7 @@ class Administrator(User):
         pass
 
     def get_courses(self):
-        pass
+        return " "
 
     def create_course(self, new_course):
         pass
@@ -34,10 +34,10 @@ class Administrator(User):
         pass
 
     def get_public_contact_info(self):
-        pass
+        return " "
 
     def get_lab_sections(self):
-        pass
+        return " "
 
     def create_lab_section(self, course, section):
         pass

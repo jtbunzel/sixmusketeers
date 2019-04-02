@@ -1,4 +1,4 @@
-import User
+from Skeleton_Classes.User import *
 
 
 class Supervisor(User):
@@ -9,8 +9,20 @@ class Supervisor(User):
     def __str__(self):
         pass
 
-    def get_instructor(self):
+    def get_administrator(self):
+        return " "
+
+    def create_administrator(self, new_administrator):
         pass
+
+    def remove_administrator(self, administrator_to_be_removed):
+        pass
+
+    def edit_administrator(self, administrator_to_be_edited):
+        pass
+
+    def get_instructor(self):
+        return " "
 
     def create_instructor(self, new_instructor ):
         pass
@@ -25,7 +37,7 @@ class Supervisor(User):
         pass
 
     def get_courses(self):
-        pass
+        return " "
 
     def create_course(self, new_course):
         pass
@@ -34,10 +46,10 @@ class Supervisor(User):
         pass
 
     def get_public_contact_info(self):
-        pass
+        return " "
 
     def get_lab_sections(self):
-        pass
+        return " "
 
     def create_lab_section(self, course, section):
         pass
