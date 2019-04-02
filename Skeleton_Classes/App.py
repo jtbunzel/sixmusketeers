@@ -19,4 +19,4 @@ class App(object):
         pass
 
     def set_loggedin(self, username):
-        psss
+        pass
