@@ -10,18 +10,15 @@ class LabSection:
 
     def set_lab_number(self, new_lab_number):
         self.lab_number = new_lab_number
-        return self.lab_number
 
     def get_lab_TA(self):
         return self.TA
 
     def set_lab_TA(self, new_lab_TA):
         self.TA = new_lab_TA
-        return self.TA
 
     def get_lab_course(self):
         return self.course
 
     def set_lab_course(self, new_course):
         self.course = new_course
-        return self.course
