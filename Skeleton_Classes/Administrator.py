@@ -3,13 +3,23 @@ from Skeleton_Classes.User import *
 
 class Administrator(User):
 
-    def __init__(self, username, password):
-        self.username=username
-        self.password=password
+    def __init__(self, username, password, Administrator, instructor, course,
+                 lab_section, edit, create, assign, remove):
+        self.username = username
+        self.password = password
+        self.Administrator= Administrator
+        self.instructor = instructor
+        self.course = course
+        self.lab_section = lab_section
+        self.create = create
+        self.assign = assign
+        self.edit = edit
+        self.remove = remove
+
 
 
     def __str__(self):
-        self.administrator_name
+        self.Administrator
 
     def get_instructor(self):
         return self.instructor

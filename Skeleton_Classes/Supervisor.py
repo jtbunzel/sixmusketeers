@@ -1,11 +1,20 @@
 from Skeleton_Classes.User import *
 
-
 class Supervisor(User):
 
-    def __init__(self, username, password):
-        self.login.username= username
-        self.login.password= password
+    def __init__(self, username, password, supervisor, administrator, instructor, course,
+                 lab_section, edit, create, assign, remove):
+        self.login.username = username
+        self.login.password = password
+        self.supervisor_name = supervisor
+        self.administrator = administrator
+        self.instructor = instructor
+        self.course = course
+        self.lab_section = lab_section
+        self.create = create
+        self.assign = assign
+        self.edit = edit
+        self.remove = remove
 
     def __str__(self):
         self.supervisor_name
@@ -39,7 +48,7 @@ class Supervisor(User):
         self.assign.instructor= instructor_to_be_assign
 
     def get_courses(self):
-        return self.cours
+        return self.course
 
     def create_course(self, new_course):
         self.create.course= new_course
