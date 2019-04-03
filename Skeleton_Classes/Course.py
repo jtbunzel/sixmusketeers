@@ -15,7 +15,7 @@ class Course:
         return self.course_type
     
     def edit_course_instructor(self, instructor):
-        pass
+        return self.course_instructor
 
     def get_instructor(self):
         return self.course_instructor
@@ -28,13 +28,13 @@ class Course:
     # class Lab_section#
     def add_lab(self, lab_name):
         # create an instance of lab
-        pass
+        return lab_name
     
     def add_TA(self, TA):
-        pass
+        return TA
 
     def get_TA(self):
         return self.course_TA
 
     def edit_TA(self, TA):
-        pass
+        return TA
