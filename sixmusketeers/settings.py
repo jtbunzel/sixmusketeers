@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'school_database.apps.SchoolDatabaseConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'untitled.urls'
+ROOT_URLCONF = 'sixmusketeers.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'untitled.wsgi.application'
+WSGI_APPLICATION = 'sixmusketeers.wsgi.application'
 
 
 # Database
@@ -78,7 +77,7 @@ WSGI_APPLICATION = 'untitled.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'Database'),
     }
 }
 
