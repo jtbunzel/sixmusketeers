@@ -38,6 +38,4 @@ class TA(Instructor):
         else:
             return "Grader to be removed not found"
 
-    def __str__(self):
-        pass
 
