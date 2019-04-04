@@ -2,6 +2,9 @@ from typing import List, Any
 
 # import Skeleton_Classes
 from Skeleton_Classes.MOCK_user import *  # mock because testing classes is independent
+from Skeleton_Classes.User import *
+from Skeleton_Classes.Course import *
+
 
 
 class Instructor(User):
@@ -13,8 +16,7 @@ class Instructor(User):
         """
         self.username=username
         self.password=password
-        self.courses: List[Skeleton_Classes.Course]=[]
-        self.rank= 3
+        self.courses: List[Course]=[]
 
     def get_courses(self):
         str_courses=""

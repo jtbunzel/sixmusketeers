@@ -5,3 +5,6 @@ class Database(object):
 
     def write(self, database, target, edit):
         pass
+
+    def delete(self, database, target, edit):
+        pass

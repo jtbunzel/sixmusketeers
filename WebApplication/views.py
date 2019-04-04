@@ -1,3 +1,10 @@
 from django.shortcuts import render
+from django.views import View
+import hashlib
 
-# Create your views here.
+class Home(View):
+    def get(self,request):
+        return render(request, 'main/index.html')
+
+    def post(self, request):
+        return render(request, 'main/index.html')
