@@ -1,4 +1,10 @@
 from django.shortcuts import render
-from school_database.models import MyModel
-# Create your views here.
+from django.views import View
+import hashlib
 
+class Home(View):
+    def get(self,request):
+        return render(request, 'main/index.html')
+
+    def post(self, request):
+        return render(request, 'main/index.html')
