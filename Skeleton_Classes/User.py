@@ -4,7 +4,7 @@ from Skeleton_Classes.MOCK_user import *
 
 class User:
 
-    def __init__(self, username, password):
+    def __init__(self, username, password, rank):
         self.username = username
         self.password = password
         self.first_name = " "
@@ -12,6 +12,7 @@ class User:
         self.address = " "
         self.phone_number = " "
         self.email = " "
+        self.rank= rank
 
     def get_username(self):
         return self.username
