@@ -14,7 +14,7 @@ class CommandController(object):
     def login(self, username, password):
         if self.app.get_loggedin() is not None:
             return 'User already logged in. Log out to log in as a different user.'
-        user_logging_in = self.database_interface.read(username=username)
+        user_logging_in = self.database_interface.read('username=username')
         if user_logging_in is None:
             return 'User not found.'
         if user_logging_in.password != password:
@@ -33,6 +33,10 @@ class CommandController(object):
         pass
 
     def logout(self, username):
+        user_to_be_saved = self.app.get_loggedin()
+        self.database_interface.write(user_to_be_saved)
+        self.app.set_loggedin(None)
+        return 'User logged out.'
         pass
 
     def edit(self, accountDetails, newDetails):
