@@ -1,16 +1,17 @@
 class CommandController(object):
 
     def parse(self, a):
-        pass
+        self.command= a
 
     def login(self, username, password):
-        pass
+        self.login.username = username
+        self.login.password = password
 
     def create(self, credentials):
         pass
 
     def notify(self, message):
-        pass
+        self.notify.message= message
 
     def assign(self, username, course):
         pass
