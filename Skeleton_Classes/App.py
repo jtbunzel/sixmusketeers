@@ -1,7 +1,11 @@
 class App(object):
 
     def command(self, a):
-        pass
+        self.command = a
+
+    def verify(self, commandstr , user):
+        if (user.rank < 3 && commandstr == "assign" )
+            command.
 
     def respond_to_prompt(self, a):
         pass

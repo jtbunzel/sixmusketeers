@@ -3,18 +3,11 @@ from Skeleton_Classes.User import *
 
 class Administrator(User):
 
-    def __init__(self, username, password, Administrator, instructor, course,
-                 lab_section, edit, create, assign, remove):
+    def __init__(self, username, password):
         self.username = username
         self.password = password
         self.Administrator= Administrator
-        self.instructor = instructor
-        self.course = course
-        self.lab_section = lab_section
-        self.create = create
-        self.assign = assign
-        self.edit = edit
-        self.remove = remove
+        self.rank = 2
 
 
 
@@ -57,7 +50,8 @@ class Administrator(User):
         self.create.lab_section= lab_section
 
     def remove_lab_section(self, course, lab_section):
-        self.remove.couse.lab_section= lab_section
+        self.course = course
+        course.remove_lab_section= lab_section
 
     def assign_lab_section_TA(self, course, lab_section, TA_to_be_assign):
         self.assign.course= course
