@@ -1,7 +1,10 @@
-from django.http import HttpResponse
-from django.template import Context, loader
+from django.shortcuts import render
+from django.views import View
+import hashlib
 
-def index(request):
-    template = loader.get_template("template/index.html")
-    return HttpResponse(template.render())
+class Home(View):
+    def get(self,request):
+        return render(request, 'main/index.html')
 
+    def post(self, request):
+        return render(request, 'main/index.html')
