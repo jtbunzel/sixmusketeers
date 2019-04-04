@@ -17,6 +17,7 @@ class Instructor(User):
         self.username=username
         self.password=password
         self.courses: List[Course]=[]
+        self.rank =3
 
     def get_courses(self):
         str_courses=""
