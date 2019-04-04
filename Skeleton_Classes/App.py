@@ -1,5 +1,9 @@
+from Skeleton_Class
+
 class App(object):
 
+    def __init__(self):
+        self.command_controller = CommandController()
     def command(self, a):
         self.command = a
 
@@ -22,5 +26,5 @@ class App(object):
     def get_loggedin(self):
         pass
 
-    def set_loggedin(self, username):
+    def set_loggedin(self, user):
         pass

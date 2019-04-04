@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextFIles/DanPatel.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trash/Skeleton Classes/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" afterDir="false" />
+    </list>
+    <ignored path="DanPatel.txt" />
+    <ignored path="DanPatelDNC.txt" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv.coverage" NAME="Unittests for TestDiv.TestDiv Coverage Results" MODIFIED="1550167020127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv_test_DivisionOfTwoDifferentRationalNumbers.coverage" NAME="Unittests for TestDiv.TestDiv.test_DivisionOfTwoDifferentRationalNumbers Coverage Results" MODIFIED="1550354580608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$TestTA.coverage" NAME="TestTA Coverage Results" MODIFIED="1552445976572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_MyTestCase.coverage" NAME="Unittests for TestDiv.MyTestCase Coverage Results" MODIFIED="1551331370584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Rational.coverage" NAME="Rational Coverage Results" MODIFIED="1550354507243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_Lab4Tests_TestDiv.coverage" NAME="Unittests for Lab4Tests.TestDiv Coverage Results" MODIFIED="1552435277864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestSupervisor_py.coverage" NAME="Unittests in TestSupervisor.py Coverage Results" MODIFIED="1552435747441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestAdministratorClass_py.coverage" NAME="Unittests in TestAdministratorClass.py Coverage Results" MODIFIED="1552436054823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestDiv_py.coverage" NAME="Unittests in TestDiv.py Coverage Results" MODIFIED="1550166979062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_Unittests.coverage" NAME="Unittests in Unittests Coverage Results" MODIFIED="1552435456718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_testLab_py.coverage" NAME="Unittests in testLab.py Coverage Results" MODIFIED="1552435928629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sixmusketeers" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Python Unit Test" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>'</find>
+      <find>assertEqual</find>
+      <find>__</find>
+      <find>.equals(</find>
+      <find>a = App()</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>assertTrue</replace>
+      <replace>==</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="acceptance_tests" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="jtbunzel" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="sixmusketeers" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DanPatelDNC.text" />
+        <option value="$PROJECT_DIR$/Rational.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$USER_HOME$/Desktop/lab4/lab4/test_rational_SeanMcCook.py" />
+        <option value="$PROJECT_DIR$/TASetup.py" />
+        <option value="$PROJECT_DIR$/TestTAFunctionality.py" />
+        <option value="$PROJECT_DIR$/TestDiv.py" />
+        <option value="$PROJECT_DIR$/TestLogin.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/App.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssign.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignTA.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignTAAsSupervisor.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignTAAsInstructor.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestLogout.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestLogin.py" />
+        <option value="$PROJECT_DIR$/TA.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignNotAuthorized.py" />
+        <option value="$PROJECT_DIR$/App.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignAsAdministrator.py" />
+        <option value="$PROJECT_DIR$/Instructor.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAssignAsSupervisor.py" />
+        <option value="$PROJECT_DIR$/Administrator.py" />
+        <option value="$PROJECT_DIR$/Supervisor.py" />
+        <option value="$PROJECT_DIR$/User.py" />
+        <option value="$PROJECT_DIR$/Skeleton Classes/User.py" />
+        <option value="$PROJECT_DIR$/Skeleton Classes/Instructor.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/Lab_section.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/User.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/Administrator.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestAdministratorClass.py" />
+        <option value="$PROJECT_DIR$/Unittests/testLab.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestUser.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestSupervisor.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestTA.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestAllAcceptance.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestAllUnitTest.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestDjangoModels.py" />
+        <option value="$PROJECT_DIR$/database/school_database/models.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/Database.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/App.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="100" />
+    <option name="y" value="10" />
+    <option name="width" value="710" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\dtsp\PycharmProjects\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\dtsp\PycharmProjects\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Skeleton_Classes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/lab4/lab4/rational.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dtsp\PycharmProjects\sixmusketeers\Trash" />
+      <recent name="C:\Users\dtsp\PycharmProjects\sixmusketeers\Skeleton Classes" />
+      <recent name="C:\Users\dtsp\PycharmProjects\sixmusketeers\Lab4Tests" />
+      <recent name="C:\Users\dtsp\PycharmProjects\sixmusketeers" />
+      <recent name="C:\Users\dtsp\PycharmProjects\sixmusketeers\AcceptanceTests" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests in testDjangoModels.py">
+    <configuration name="Rational" type="PythonConfigurationType" factoryName="Python">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\dtsp\PycharmProjects\sixmusketeers\Lab4Tests\Rational.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestTA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unittests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Unittests/TestTA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database/untitled" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/untitled/settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in testDjangoModels.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unittests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Unittests/testDjangoModels.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in testLab.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unittests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Unittests/testLab.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests in testDjangoModels.py" />
+        <item itemvalue="Python tests.Unittests in testLab.py" />
+        <item itemvalue="Python.settings" />
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.TestTA" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="" />
+      <created>1549392326204</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549392326204</updated>
+      <workItem from="1549392328363" duration="476000" />
+      <workItem from="1550165503449" duration="5458000" />
+      <workItem from="1550354145006" duration="688000" />
+      <workItem from="1550355299857" duration="3763000" />
+      <workItem from="1550447924174" duration="310000" />
+      <workItem from="1550708602345" duration="2647000" />
+      <workItem from="1551201598748" duration="4224000" />
+      <workItem from="1551331298344" duration="3274000" />
+      <workItem from="1551395334464" duration="2277000" />
+      <workItem from="1551742899018" duration="2729000" />
+      <workItem from="1552172673732" duration="15533000" />
+      <workItem from="1552358455010" duration="3391000" />
+      <workItem from="1552407178852" duration="93000" />
+      <workItem from="1552411359202" duration="2157000" />
+      <workItem from="1552433705350" duration="11369000" />
+      <workItem from="1553616762995" duration="990000" />
+      <workItem from="1553788703448" duration="4425000" />
+      <workItem from="1554051343603" duration="79000" />
+      <workItem from="1554051648969" duration="5929000" />
+      <workItem from="1554074589555" duration="2496000" />
+      <workItem from="1554222606289" duration="653000" />
+      <workItem from="1554242096559" duration="1465000" />
+      <workItem from="1554401218793" duration="3413000" />
+    </task>
+    <task id="LOCAL-00001" summary="I'm committing again">
+      <created>1549392466874</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549392466874</updated>
+    </task>
+    <task id="LOCAL-00002" summary="I've pushed my tests and the Rational class">
+      <created>1550169655548</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550169655548</updated>
+    </task>
+    <task id="LOCAL-00003" summary="I've pushed my tests and the Rational class">
+      <created>1550354747953</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1550354747953</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Pushing the Python interpreter">
+      <created>1550448114085</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1550448114085</updated>
+    </task>
+    <task id="LOCAL-00005" summary="I'm pushing my changes to the tests">
+      <created>1551375549219</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551375549219</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Reformatted the repository">
+      <created>1551743201219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551743201219</updated>
+    </task>
+    <task id="LOCAL-00007" summary="I'm working on TestAssign and I finished the other two">
+      <created>1552175255921</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552175255921</updated>
+    </task>
+    <task id="LOCAL-00008" summary="I finished TestAssign and am now working on the skeleton classes for User and its subclasses">
+      <created>1552257796391</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552257796391</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Made a few changes to stuff I've already committed. Also wrote TestUser">
+      <created>1552261580561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1552261580561</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Made a few changes to stuff I've already committed. Also wrote TestAdministratorClass and TestSupervisor.">
+      <created>1552360601363</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1552360601363</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Moved some stuff around">
+      <created>1552363146679</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1552363146679</updated>
+    </task>
+    <task id="LOCAL-00012" summary="I'm pushing as hard as I can">
+      <created>1552450175113</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1552450175113</updated>
+    </task>
+    <task id="LOCAL-00013" summary="I'm pushing as hard as I can">
+      <created>1554051776966</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1554051776966</updated>
+    </task>
+    <task id="LOCAL-00014" summary="I think I'm done with the models, still writing the tests">
+      <created>1554075492537</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1554075492537</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Small formatting changes">
+      <created>1554242215708</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1554242215708</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Small formatting changes">
+      <created>1554401475994</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554401475994</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_TestAdministratorClass_py - 2019.03.12 at 19h 05m 23s.xml">
+      <configuration name="Unittests in TestAdministratorClass.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestAdministratorClass_py - 2019.03.12 at 19h 05m 55s.xml">
+      <configuration name="Unittests in TestAdministratorClass.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestSupervisor_py - 2019.03.12 at 19h 09m 07s.xml">
+      <configuration name="Unittests in TestSupervisor.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testLab_py - 2019.03.12 at 19h 12m 08s.xml">
+      <configuration name="Unittests in testLab.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestAdministratorClass_py - 2019.03.12 at 19h 14m 15s.xml">
+      <configuration name="Unittests in TestAdministratorClass.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestDjangoModels_py - 2019.03.31 at 18h 15m 59s.xml">
+      <configuration name="Unittests in TestDjangoModels.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testDjangoModels_py - 2019.03.31 at 18h 28m 15s.xml">
+      <configuration name="Unittests in testDjangoModels.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testLab_py - 2019.03.31 at 18h 31m 23s.xml">
+      <configuration name="Unittests in testLab.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testDjangoModels_py - 2019.03.31 at 18h 31m 47s.xml">
+      <configuration name="Unittests in testDjangoModels.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testDjangoModels_py - 2019.03.31 at 18h 36m 20s.xml">
+      <configuration name="Unittests in testDjangoModels.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="77839000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.17426273" />
+      <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.73659515" visible="true" weight="0.39886847" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49597856" visible="true" weight="0.3281471" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50402147" side_tool="true" visible="true" weight="0.3281471" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731904" weight="0.3281471" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3281471" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.02010724" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I'm committing again" />
+    <MESSAGE value="I've pushed my tests and the Rational class" />
+    <MESSAGE value="Pushing the Python interpreter" />
+    <MESSAGE value="I'm pushing my changes to the tests" />
+    <MESSAGE value="Reformatted the repository" />
+    <MESSAGE value="I'm working on TestAssign and I finished the other two" />
+    <MESSAGE value="I finished TestAssign and am now working on the skeleton classes for User and its subclasses" />
+    <MESSAGE value="Made a few changes to stuff I've already committed. Also wrote TestUser" />
+    <MESSAGE value="Made a few changes to stuff I've already committed. Also wrote TestAdministratorClass and TestSupervisor." />
+    <MESSAGE value="Moved some stuff around" />
+    <MESSAGE value="I'm pushing as hard as I can" />
+    <MESSAGE value="I think I'm done with the models, still writing the tests" />
+    <MESSAGE value="Small formatting changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small formatting changes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sixmusketeers$manage.coverage" NAME="manage Coverage Results" MODIFIED="1554074906335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_testLab_py.coverage" NAME="Unittests in testLab.py Coverage Results" MODIFIED="1554075083396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$settings.coverage" NAME="settings Coverage Results" MODIFIED="1554074963052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/database/untitled" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$TestTA.coverage" NAME="TestTA Coverage Results" MODIFIED="1554074138813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_testDjangoModels_py.coverage" NAME="Unittests in testDjangoModels.py Coverage Results" MODIFIED="1554075379270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestDjangoModels_py.coverage" NAME="Unittests in TestDjangoModels.py Coverage Results" MODIFIED="1554074156362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/App.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/unitTest/user.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/unitTest/lab.py" />
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignAsSupervisor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/Administrator.py" />
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestNotify.py" />
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestEdit.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trash/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Lab4Tests/test_rational.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/testFloat.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/TestTAFunctionality.py" />
+    <entry file="file://$PROJECT_DIR$/Lab4Tests/testFloat.py" />
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAccess.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trash/test_supervisor.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/TestAccess.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/test_rational.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/TASetup.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/test_adminstrator" />
+    <entry file="file://$PROJECT_DIR$/Trash/TestAdministrator.py" />
+    <entry file="file://$PROJECT_DIR$/Trash/Skeleton Classes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/TA.py" />
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/Supervisor.py" />
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/User.py" />
+    <entry file="file://$PROJECT_DIR$/Skeleton Classes/Instructor.py" />
+    <entry file="file://$PROJECT_DIR$/Unittests/TestDatabase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestAdministratorClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestInstructor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/TA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestTA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="4" column="36" lean-forward="true" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestAllUnitTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAllAcceptance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10676">
+          <caret line="629" column="9" selection-start-line="629" selection-start-column="9" selection-end-line="629" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestCourse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestUser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/test_database.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/testDjangoModels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/testLab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trash/TestTA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/untitled/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/school_database/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Administrator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/LabSection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/school_database/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
