@@ -11,26 +11,25 @@ class User(models.Model):
     email = models.CharField(max_length=30)
 
 
-class Instructor(models.Model, User):
+class Instructor(User):
     pass
 
 
-class TA(models.Model, Instructor):
+class TA(User):
     pass
 
 
-class Supervisor(models.Model, User):
+class Supervisor(User):
     pass
 
 
-class Administrator(models.Model, User):
+class Administrator(User):
     pass
 
 class Course(models.Model):
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=60)
     course_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
-    course_TA_grader = models.ManyToManyField(TA)
     course_TAs = models.ManyToManyField(TA)
 
 
@@ -38,3 +37,11 @@ class LabSection(models.Model):
     section_number = models.IntegerField(max_length=3)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     section_TA = models.ForeignKey(TA, on_delete=models.CASCADE)
+
+
+
+
+
+
+
+
