@@ -1,5 +1,5 @@
 from django.test import TestCase
-from database.school_database.models import *
+from WebApplication.models import *
 
 
 class TestDjangoModels(TestCase):
