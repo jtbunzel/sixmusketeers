@@ -1,3 +1,4 @@
+
 class Database(object):
 
     def read(self, database, target, edit):

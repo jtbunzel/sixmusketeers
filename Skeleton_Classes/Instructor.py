@@ -1,10 +1,9 @@
 from typing import List, Any
 
-# import Skeleton_Classes
 from Skeleton_Classes.MOCK_user import *  # mock because testing classes is independent
 from Skeleton_Classes.User import *
 from Skeleton_Classes.Course import *
-
+from WebApplication.models import *
 
 
 class Instructor(User):

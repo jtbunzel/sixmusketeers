@@ -11,7 +11,6 @@ from  Skeleton_Classes.Supervisor import*
 from  Skeleton_Classes.TA import*
 
 class TestCommandController(unittest.TestCase):
-
     def test_parse(self):
         self.assertEqual(None)
 
