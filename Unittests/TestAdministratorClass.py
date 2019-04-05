@@ -17,6 +17,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, expected)
         result = admin.get_password()
         expected = 'passwerd'
+
         self.assertEqual(result, expected)
 
     def test_str(self):
