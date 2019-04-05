@@ -1,9 +1,25 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 
-    <center>
-        <br>
-        <h1>Hello world!</h1>
-    </center>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img clsss="signin-logo" src="{% static 'images/logo.svg' %}" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
+            <p>Sign into your account below</p>
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputEmail">Email address</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <label for="inputPassword">Password</label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
 
 {% endblock content %}
