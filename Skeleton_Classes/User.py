@@ -4,14 +4,14 @@ from Skeleton_Classes.MOCK_user import *
 
 class User:
 
-    def __init__(self,username, password, firstname, lastname, role, address, phone, email,rank):
-        self.username=username
-        self.password=password
-        self.first_name=firstname
-        self.last_name=lastname
-        self.address=address
-        self.phone_number=phone
-        self.email=email
+    def __init__(self, username, password, rank):
+        self.username = username
+        self.password = password
+        self.first_name = " "
+        self.last_name = " "
+        self.address = " "
+        self.phone_number = " "
+        self.email = " "
         self.rank= rank
 
     def get_username(self):

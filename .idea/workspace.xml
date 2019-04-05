@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/TextFIles/DanPatel.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Trash/Skeleton Classes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/Administrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/Administrator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton_Classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/Instructor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/Instructor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/Supervisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/Supervisor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/TA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/TA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton_Classes/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/User.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/TestAdministratorClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestAdministratorClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unittests/TestCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestCommandController.py" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -55,7 +47,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49186128">
+    <splitter split-orientation="horizontal" split-proportion="0.55870765">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -73,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="381">
-                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+                <state relative-caret-position="-119">
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -101,19 +93,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Course.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="157">
-                  <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+                <state relative-caret-position="-272">
+                  <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -121,16 +104,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+                <state relative-caret-position="221">
+                  <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#30#0" expanded="true" />
                   </folding>
@@ -211,16 +189,16 @@
         <option value="$PROJECT_DIR$/Unittests/TestSupervisor.py" />
         <option value="$PROJECT_DIR$/Unittests/TestTA.py" />
         <option value="$PROJECT_DIR$/AcceptanceTests/TestAllAcceptance.py" />
-        <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestAllUnitTest.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
         <option value="$PROJECT_DIR$/Unittests/TestDjangoModels.py" />
         <option value="$PROJECT_DIR$/database/school_database/models.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Database.py" />
-        <option value="$PROJECT_DIR$/Skeleton_Classes/App.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/MOCK_database.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/App.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/User.py" />
       </list>
     </option>
@@ -295,7 +273,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in testDjangoModels.py">
+  <component name="RunManager" selected="JavaScript Debug.base.html">
+    <configuration name="base.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/sixmusketeers/templates/base.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Rational" type="PythonConfigurationType" factoryName="Python">
       <module name="sixmusketeers" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,28 +291,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\dtsp\PycharmProjects\sixmusketeers\Lab4Tests\Rational.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestTA" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="sixmusketeers" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Unittests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Unittests/TestTA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -416,11 +375,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.base.html" />
         <item itemvalue="Python tests.Unittests in testDjangoModels.py" />
         <item itemvalue="Python tests.Unittests in testLab.py" />
         <item itemvalue="Python.settings" />
         <item itemvalue="Python.manage" />
-        <item itemvalue="Python.TestTA" />
       </list>
     </recent_temporary>
   </component>
@@ -570,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554401475994</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Skeleton_Classes/CommandController.py&#10;#&#9;Skeleton_Classes/User.py">
+      <created>1554500929112</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554500929112</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -606,7 +572,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78463000" />
+    <option name="totallyTimeSpent" value="79118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -625,7 +591,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49597856" weight="0.3281471" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24731903" side_tool="true" visible="true" weight="0.45327756" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24731903" side_tool="true" visible="true" weight="0.29567644" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731904" weight="0.3281471" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3281471" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -668,7 +634,8 @@
     <MESSAGE value="I'm pushing as hard as I can" />
     <MESSAGE value="I think I'm done with the models, still writing the tests" />
     <MESSAGE value="Small formatting changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small formatting changes" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Skeleton_Classes/CommandController.py&#10;#&#9;Skeleton_Classes/User.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Skeleton_Classes/CommandController.py&#10;#&#9;Skeleton_Classes/User.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_add_courses.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_add_courses Coverage Results" MODIFIED="1554189655192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
@@ -689,16 +656,6 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_get_public_contact_info.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_get_public_contact_info Coverage Results" MODIFIED="1554190275241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignAsSupervisor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton Classes/Administrator.py" />
     <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestNotify.py" />
     <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestEdit.py">
@@ -865,9 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -885,16 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Instructor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -905,20 +849,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="-119">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="221">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
