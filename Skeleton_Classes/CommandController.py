@@ -1,5 +1,6 @@
 from Skeleton_Classes.Database import *
 from Skeleton_Classes.App import *
+from Skeleton_Classes.User import *
 
 
 class CommandController(object):
@@ -9,7 +10,7 @@ class CommandController(object):
         self.app = app
 
     def parse(self, a):
-        self.command= a
+        self.command = a
 
     def login(self, username, password):
         if self.app.get_loggedin() is not None:
@@ -21,28 +22,34 @@ class CommandController(object):
             return 'Password is incorrect.'
         self.app.set_loggedin(user_logging_in)
         return
+
     pass
 
     def create(self, credentials):
         if credentials:
             return Exception
             "enter credentionals"
-        credentials_array=credentials.split(" ")
+        credentials_array = credentials.split(" ")
         if "user" == type:
-            username=credentials_array[0]
-            password=credentials_array[1]
-            firstname=credentials_array[2]
-            lastname=credentials_array[3]
-            role=credentials_array[4]
-            email=credentials_array[5]
-            phone=credentials_array[6]
-            address=credentials_array[7]
-            user1=User(username, password, firstname, lastname, role, address, phone, email)
-            model=user()
+            username = credentials_array[0]
+            password = credentials_array[1]
+            firstname = credentials_array[2]
+            lastname = credentials_array[3]
+            role = credentials_array[4]
+            email = credentials_array[5]
+            phone = credentials_array[6]
+            address = credentials_array[7]
+            user1 = User(username, password, role)
+            user1.set_first_name(firstname)
+            user1.set_last_name(lastname)
+            user1.set_email(email)
+            user1.set_phone_number(phone)
+            user1.set_address(address)
+            model = user()
             model.save(user1)
 
     def notify(self, message):
-        self.notify.message= message
+        self.notify.message = message
 
     def assign(self, username, course):
         pass
@@ -57,7 +64,7 @@ class CommandController(object):
     def edit(self, accountDetails, newDetails):
         pass
 
-    def access(self , dataType):
+    def access(self, dataType):
         pass
 
     def delete(self, dataType):

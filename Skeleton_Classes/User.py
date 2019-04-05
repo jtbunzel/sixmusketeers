@@ -1,5 +1,4 @@
 from abc import abstractmethod
-from Skeleton_Classes.MOCK_user import *
 
 
 class User:
@@ -12,7 +11,7 @@ class User:
         self.address = " "
         self.phone_number = " "
         self.email = " "
-        self.rank= rank
+        self.rank = rank
 
     def get_username(self):
         return self.username
