@@ -7,19 +7,19 @@ class App(object):
 
     def command(self, a):
         if ( a.parse == 'create'):
-            self.create
+            self.CommandController.create()
 
         if (a.parse == 'assign'):
-            self.assign
+            self.CommandController.assign()
 
         if (a.parse == 'delete'):
-            self.delete
+            self.CommandController.delete()
 
         if (a.parse == 'edit'):
-            self.edit
+            self.CommandController.edit()
 
         if (a.parse == 'notify'):
-            self.notiy
+            self.CommandController.notification()
 
 
 def respond_to_prompt(self, a):
