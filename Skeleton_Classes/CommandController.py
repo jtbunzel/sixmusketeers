@@ -54,7 +54,8 @@ class CommandController(object):
         self.notify.message = message
 
     def assign(self, username, course):
-        pass
+        user_to_assign = self.database_interface.read(username)
+        user_to_assign.add_course(course)
 
     def logout(self, username):
         user_to_be_saved = self.app.get_loggedin()

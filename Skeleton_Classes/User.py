@@ -1,6 +1,7 @@
 from abc import abstractmethod
 
 
+
 class User:
 
     def __init__(self, username="", password ="", rank=""):
@@ -57,6 +58,9 @@ class User:
 
     def set_email(self, new_email):
         self.email = new_email
+
+    def get_rank(self):
+        return self.rank
 
     @abstractmethod
     def get_public_contact_info(self):
