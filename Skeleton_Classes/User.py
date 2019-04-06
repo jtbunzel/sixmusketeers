@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 class User:
 
-    def __init__(self, username, password, rank):
+    def __init__(self, username="", password ="", rank=""):
         self.username = username
         self.password = password
         self.first_name = " "

@@ -4,13 +4,16 @@ from Skeleton_Classes.User import *
 
 
 class CommandController(object):
-
-    def __init__(self, app):
+    def __init__(self):
         self.database_interface = Database()
-        self.app = app
+        self.command = ""
 
     def parse(self, a):
-        self.command = a
+        self.command = a.split(" ", 1)
+        return self.command[0]
+
+    def set_pointer_to_app(self, app):
+        self.app = app
 
     def login(self, username, password):
         if self.app.get_loggedin() is not None:
@@ -25,11 +28,10 @@ class CommandController(object):
 
     pass
 
-    def create(self, credentials):
-        if credentials:
+    def create(self, credentials_array):
+        if credentials_array == "":
             return Exception
             "enter credentionals"
-        credentials_array = credentials.split(" ")
         if "user" == type:
             username = credentials_array[0]
             password = credentials_array[1]
@@ -47,6 +49,7 @@ class CommandController(object):
             user1.set_address(address)
             model = user()
             model.save(user1)
+            return user1  # for testing
 
     def notify(self, message):
         self.notify.message = message

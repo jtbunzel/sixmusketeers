@@ -1,14 +1,15 @@
 import unittest
-from  Skeleton_Classes.CommandController import*
-from  Skeleton_Classes.Administrator import*
-from  Skeleton_Classes.Course import*
-from  Skeleton_Classes.User import*
-from  Skeleton_Classes.App import*
-from  Skeleton_Classes.Database import*
-from  Skeleton_Classes.Supervisor import*
-from  Skeleton_Classes.Lab_section import*
-from  Skeleton_Classes.Supervisor import*
-from  Skeleton_Classes.TA import*
+from Skeleton_Classes.Administrator import *
+from Skeleton_Classes.Course import *
+from Skeleton_Classes.User import *
+from Skeleton_Classes.App import *
+from Skeleton_Classes.Database import *
+from Skeleton_Classes.Supervisor import *
+# from Skeleton_Classes.Lab_section import *
+from Skeleton_Classes.Supervisor import *
+#from Skeleton_Classes.TA import *
+from Skeleton_Classes.App import *
+
 
 class TestCommandController(unittest.TestCase):
     def test_parse(self):
@@ -22,21 +23,25 @@ class TestCommandController(unittest.TestCase):
         self.assertEqual(password, 'hellyeah')
 
     def test_create(self):
-        course = Course("Computer", "CS", "Rock", "361")
-        coursename = course.course_name
-        coursetype = course.course_type
-        courseinstructor = course.course_instructor
-        coursenumber = course.course_code
-        self.assertEqual(coursename, 'Computer')
-        self.assertEqual(coursetype, 'CS')
-        self.assertEqual(courseinstructor, 'Rock')
-        self.assertEqual(coursenumber, '361')
-
+        # course = Course("Computer", "CS", "Rock", "361")
+        # coursename = course.course_name
+        # coursetype = course.course_type
+        # courseinstructor = course.course_instructor
+        # coursenumber = course.course_code
+        # self.assertEqual(coursename, 'Computer')
+        # self.assertEqual(coursetype, 'CS')
+        # self.assertEqual(courseinstructor, 'Rock')
+        # self.assertEqual(coursenumber, '361')
+        # test user
+        a = App()
+        a.set_cmd_controller()
+        user1 = a.command("create username_test, pass_test, firstname_test, last_test, role_test, email_test, phone_test, address_test")
+        self.assertEqual(user1.get_useraname(), "dmarsh@uwm.edu")
 
     def test_notify(self):
-        self.Supervisor= Supervisor('Harry', '1234')
-        self.message= 'Class Cancelled'
-        self.notify.Supervisor= (self.message)
+        self.Supervisor = Supervisor('Harry', '1234')
+        self.message = 'Class Cancelled'
+        self.notify.Supervisor = (self.message)
         self.assetEquals('Class Cancelled')
 
     def test_assign(self):
@@ -78,10 +83,9 @@ class TestCommandController(unittest.TestCase):
         self.edit.coursenumber('371')
         self.assertEquals(coursenumber, '371')
 
-
     def test_access(self):
-        self.Supervisor= Supervisor('Harry', '1234')
-        self.TA= TA('Ben', '23***abc')
+        self.Supervisor = Supervisor('Harry', '1234')
+        self.TA = TA('Ben', '23***abc')
         self.TA.set_full_name('Ben Step')
         self.TA.set_address('2922 N. Kenwood. Milwaukee WI 53211')
         self.TA.set_email('ben7@uwm.edu')
@@ -91,9 +95,7 @@ class TestCommandController(unittest.TestCase):
         self.TA.add_grader_course('CS351')
         self.TA.add_grader_course('CS251')
         self.access.TA()
-        self.assetEquals('Ben Step', '2922 N. Kenwood. Milwaukee WI 53211', 'ben7@uwm.edu' 'CS351', '701' )
-
-
+        self.assetEquals('Ben Step', '2922 N. Kenwood. Milwaukee WI 53211', 'ben7@uwm.edu' 'CS351', '701')
 
     def test_delete(self):
         user = User('bkhana', 'hellyeah')
@@ -122,4 +124,3 @@ class TestCommandController(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

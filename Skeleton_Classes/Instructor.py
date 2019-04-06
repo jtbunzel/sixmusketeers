@@ -13,16 +13,16 @@ class Instructor(User):
         :type username: string
         :type password: string
         """
-        self.username=username
-        self.password=password
-        self.courses: List[Course]=[]
-        self.rank =3
+        self.username = username
+        self.password = password
+        self.courses: List[Course] = []
+        self.rank = 3
 
     def get_courses(self):
-        str_courses=""
+        str_courses = ""
         for i in self.courses:
-            str_courses+=i
-            str_courses+="\n"
+            str_courses += i
+            str_courses += "\n"
         return str_courses
 
     def add_course(self, new_course=None):
