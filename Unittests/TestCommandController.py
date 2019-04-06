@@ -23,20 +23,10 @@ class TestCommandController(unittest.TestCase):
         self.assertEqual(password, 'hellyeah')
 
     def test_create(self):
-        # course = Course("Computer", "CS", "Rock", "361")
-        # coursename = course.course_name
-        # coursetype = course.course_type
-        # courseinstructor = course.course_instructor
-        # coursenumber = course.course_code
-        # self.assertEqual(coursename, 'Computer')
-        # self.assertEqual(coursetype, 'CS')
-        # self.assertEqual(courseinstructor, 'Rock')
-        # self.assertEqual(coursenumber, '361')
-        # test user
         a = App()
         a.set_cmd_controller()
-        user1 = a.command("create username_test, pass_test, firstname_test, last_test, role_test, email_test, phone_test, address_test")
-        self.assertEqual(user1.get_useraname(), "dmarsh@uwm.edu")
+        user1 = a.command("create username_test pass_test firstname_test last_test user email_test phone_test address_test")
+        self.assertEqual(user1.username, "username_test")
 
     def test_notify(self):
         self.Supervisor = Supervisor('Harry', '1234')

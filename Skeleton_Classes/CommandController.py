@@ -31,8 +31,8 @@ class CommandController(object):
     def create(self, credentials_array):
         if credentials_array == "":
             return Exception
-            "enter credentionals"
-        if "user" == type:
+        print (credentials_array[4])
+        if "user" == credentials_array[4]:
             username = credentials_array[0]
             password = credentials_array[1]
             firstname = credentials_array[2]
@@ -47,8 +47,7 @@ class CommandController(object):
             user1.set_email(email)
             user1.set_phone_number(phone)
             user1.set_address(address)
-            model = user()
-            model.save(user1)
+            #Database.write(user1)
             return user1  # for testing
 
     def notify(self, message):

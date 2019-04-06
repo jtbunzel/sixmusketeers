@@ -1,5 +1,5 @@
 from Skeleton_Classes.CommandController import CommandController
-
+from Skeleton_Classes.User import *
 
 class App(object):
     def __init__(self):
@@ -13,14 +13,16 @@ class App(object):
 
     def command(self, a):
         command = self.command_controller.parse(a)
-        print(command) # test your command
+        print(command)  # test your command
         data = []
         data = a.split()
+        print(data)
         data.remove(command)
         print(data)
         if command == 'create':
-            return self.command_controller.create(data)
-
+            user1 = User()
+            user1 = self.command_controller.create(data)
+            return user1
         elif self.command_controller.parse(a) == 'assign':
             self.assign
 
