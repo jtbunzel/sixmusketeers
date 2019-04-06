@@ -76,5 +76,4 @@ class CommandController(object):
     def assignments(dataType):
         pass
 
-    def verify(self, username, a):
-        pass
+
