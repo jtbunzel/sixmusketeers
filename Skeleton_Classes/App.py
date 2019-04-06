@@ -24,18 +24,24 @@ class App(object):
             user1 = self.command_controller.create(data)
             return user1
         elif self.command_controller.parse(a) == 'assign':
-            self.assign
+            user1 = User()
+            user1 = self.command_controller.assign(data)
+            return user1
 
         elif self.command_controller.parse(a) == 'delete':
-            self.delete
+            user1 = User()
+            user1 = self.command_controller.delete(data)
+            return user1
 
         elif self.command_controller.parse(a) == 'edit':
-            self.edit
+            user1 = User()
+            user1 = self.command_controller.edit(data)
+            return user1
 
         elif self.command_controller.parse(a) == 'notify':
-            self.notiy
-
-
+            user1 = User()
+            user1 = self.command_controller.notify(data)
+            return user1
 
 
     def respond_to_prompt(self, a):
