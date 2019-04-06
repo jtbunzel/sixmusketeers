@@ -34,7 +34,7 @@ class Course(models.Model):
 
 
 class LabSection(models.Model):
-    section_number = models.IntegerField(max_length=3)
+    section_number = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     section_TA = models.ForeignKey(TA, on_delete=models.CASCADE)
 

@@ -25,8 +25,17 @@ class TestCommandController(unittest.TestCase):
     def test_create(self):
         a = App()
         a.set_cmd_controller()
-        user1 = a.command("create username_test pass_test firstname_test last_test user email_test phone_test address_test")
+        ## assume this is the way create a user
+        user1 = a.command("create user username_test pass_test firstname_test last_test admin email_test phone_test address_test")
         self.assertEqual(user1.username, "username_test")
+
+        a = App()
+        a.set_cmd_controller()
+        course1 = a.command("create course")# the user will be prompted for the rest of the info
+        #assume CS395 as prompted from the user
+        self.assertEqual(course1.course_code,  "CS395")
+
+
 
     def test_notify(self):
         self.Supervisor = Supervisor('Harry', '1234')

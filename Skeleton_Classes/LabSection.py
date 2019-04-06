@@ -1,6 +1,6 @@
 
 class LabSection:
-    def __init__(self, lab_number, TA):
+    def __init__(self, lab_number="", TA=""):
         self.lab_number = lab_number
         self.TA = TA
         self.course = " "

@@ -1,6 +1,7 @@
 from Skeleton_Classes.Database import *
 from Skeleton_Classes.App import *
 from Skeleton_Classes.User import *
+from Skeleton_Classes.Course import *
 
 
 class CommandController(object):
@@ -28,11 +29,11 @@ class CommandController(object):
 
     pass
 
-    def create(self, credentials_array):
+    def create(self, credentials_array, type):
         if credentials_array == "":
             return Exception
-        print (credentials_array[4])
-        if "user" == credentials_array[4]:
+        print(type)
+        if "user" == type:
             username = credentials_array[0]
             password = credentials_array[1]
             firstname = credentials_array[2]
@@ -47,9 +48,24 @@ class CommandController(object):
             user1.set_email(email)
             user1.set_phone_number(phone)
             user1.set_address(address)
-            #Database.write(user1)
+            # Database.write(user1)
             return user1  # for testing
-
+        elif "course" == type:
+            course = Course()
+            print('Enter course name:')
+            x = input()
+            course.set_name(x)
+            print('Enter course code:')
+            x = input()
+            course.set_course_code(x)
+            print('Enter teacher name:')
+            x = input()
+            course.set_instructor(x)
+            print('Enter number of lab sections:')
+            x = input()
+            course.set_number_of_lab_sections(x)
+            #Database.save()
+            return course
     def notify(self, message):
         self.notify.message = message
 
@@ -75,5 +91,3 @@ class CommandController(object):
 
     def assignments(dataType):
         pass
-
-
