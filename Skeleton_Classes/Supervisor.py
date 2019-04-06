@@ -2,19 +2,11 @@ from Skeleton_Classes.User import *
 
 class Supervisor(User):
 
-    def __init__(self, username, password, supervisor, administrator, instructor, course,
-                 lab_section, edit, create, assign, remove):
+    def __init__(self, username, password, supervisor):
         self.login.username = username
         self.login.password = password
         self.supervisor_name = supervisor
-        self.administrator = administrator
-        self.instructor = instructor
-        self.course = course
-        self.lab_section = lab_section
-        self.create = create
-        self.assign = assign
-        self.edit = edit
-        self.remove = remove
+        self.rank= 1
 
     def __str__(self):
         self.supervisor_name

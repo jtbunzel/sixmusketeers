@@ -9,6 +9,7 @@ class TA(Instructor):
         self.password = password
         self.list_labs = []
         self.list_graders = []
+        self.rank= 4
 
     def get_lab_sections(self):
         return self.list_labs

@@ -1,10 +1,9 @@
 from typing import List, Any
 
-# import Skeleton_Classes
 from Skeleton_Classes.MOCK_user import *  # mock because testing classes is independent
 from Skeleton_Classes.User import *
 from Skeleton_Classes.Course import *
-
+from WebApplication.models import *
 
 
 class Instructor(User):
@@ -14,15 +13,16 @@ class Instructor(User):
         :type username: string
         :type password: string
         """
-        self.username=username
-        self.password=password
-        self.courses: List[Course]=[]
+        self.username = username
+        self.password = password
+        self.courses: List[Course] = []
+        self.rank = 3
 
     def get_courses(self):
-        str_courses=""
+        str_courses = ""
         for i in self.courses:
-            str_courses+=i
-            str_courses+="\n"
+            str_courses += i
+            str_courses += "\n"
         return str_courses
 
     def add_course(self, new_course=None):
