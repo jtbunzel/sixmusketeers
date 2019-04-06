@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sixmusketeers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sixmusketeers/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -21,6 +22,7 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_Lab4Tests_TestDiv.coverage" NAME="Unittests for Lab4Tests.TestDiv Coverage Results" MODIFIED="1552435277864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv.coverage" NAME="Unittests for TestDiv.TestDiv Coverage Results" MODIFIED="1550167020127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_Unittests.coverage" NAME="Unittests in Unittests Coverage Results" MODIFIED="1552435456718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
+    <SUITE FILE_PATH="coverage/sixmusketeers3$Unittests_for_TestCommandController_TestCommandController_test_create.coverage" NAME="Unittests for TestCommandController.TestCommandController.test_create Coverage Results" MODIFIED="1554527981070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv_test_DivisionOfTwoDifferentRationalNumbers.coverage" NAME="Unittests for TestDiv.TestDiv.test_DivisionOfTwoDifferentRationalNumbers Coverage Results" MODIFIED="1550354580608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_MyTestCase.coverage" NAME="Unittests for TestDiv.MyTestCase Coverage Results" MODIFIED="1551331370584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestAdministratorClass_py.coverage" NAME="Unittests in TestAdministratorClass.py Coverage Results" MODIFIED="1552436054823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
@@ -60,109 +62,47 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-851">
-                  <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-                  <folding>
-                    <element signature="e#0#15#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Instructor.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#0#28#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="339">
-                  <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sixmusketeers/settings.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="167">
-                  <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/conf/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="159">
-                  <caret line="63" selection-start-line="63" selection-end-line="63" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Course.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="32" selection-start-line="32" selection-end-line="32" />
-                  <folding>
-                    <element signature="e#0#64#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Skeleton_Classes/LabSection.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Instructor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3911">
+              <caret line="296" column="28" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-343">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -244,10 +184,10 @@
         <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
         <option value="$PROJECT_DIR$/Unittests/TestCourse.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
-        <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/admin.py" />
         <option value="$PROJECT_DIR$/sixmusketeers/settings.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
       </list>
     </option>
   </component>
@@ -266,18 +206,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="sixmusketeers3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
+              <item name="sixmusketeers3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers3" type="462c0819:PsiDirectoryNode" />
+              <item name="Skeleton_Classes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -708,15 +643,15 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104043000" />
+    <option name="totallyTimeSpent" value="104491000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="66" y="81" width="944" height="667" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.16471216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2572062" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
-      <window_info active="true" anchor="bottom" id="manage.py@sixmusketeers" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.75159913" weight="0.45980707" />
@@ -730,6 +665,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24840085" side_tool="true" weight="0.2915327" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49731904" weight="0.3281471" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3281471" />
+      <window_info active="true" anchor="bottom" id="manage.py@sixmusketeers" order="13" visible="true" weight="0.3290461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -990,21 +926,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190406_0040.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190406_0040.py" />
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/LabSection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1028,16 +955,6 @@
           <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1066,33 +983,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/conf/__init__.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="101" column="46" selection-start-line="101" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/db/models/base.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1107,6 +1002,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-343">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3911">
+          <caret line="296" column="28" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
         </state>
       </provider>
     </entry>
