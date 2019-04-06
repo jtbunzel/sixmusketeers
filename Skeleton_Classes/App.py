@@ -21,6 +21,9 @@ class App(object):
         if (a.parse == 'notify'):
             self.CommandController.notification()
 
+        if (a.parse == access):
+            self.CommandController.access()
+
 
 def respond_to_prompt(self, a):
         pass
