@@ -25,7 +25,7 @@ class CommandController(object):
         if user_logging_in.password != password:
             return 'Password is incorrect.'
         self.app.set_loggedin(user_logging_in)
-        return
+        return 'User logged in.'
 
     pass
 
@@ -92,9 +92,9 @@ class CommandController(object):
     def verify(self, user, a):
         if (user.rank <3):
 
-            if (self.parse(a)== 'create_TA'):
+            if self.parse(a)=='create_TA':
                 return True
-            if (self.parse(a)== 'create_instructor'):
+            if (self.parse(a)== 'create instructor'):
                 return True
             if (self.parse(a)== 'create_course'):
                 return True
