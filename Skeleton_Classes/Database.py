@@ -1,14 +1,24 @@
+from Skeleton_Classes.App import *
+
 
 class Database(object):
+    _commands = ['parse', 'set_pointer_to_app', 'login', 'create', 'notify', 'assign', 'logout', 'edit', 'access',
+                 'delete', 'assignments', 'verify']
 
-    def create(self, target):
-        pass
+    def read(self, user_input):
+        app = App()
 
-    def read(self, target):
-        pass
+        # Parse user input
+        input_list = self.parse(user_input)
+        user_command = input_list[0]
 
-    def update(self, target):
-        pass
+        # Compare command to list of commands to find a match
+        for command in self._commands:
+            # If command matches one of the commands from the list
+            if command in self._commands:
+                # Perform the command
+                return app.command(user_command)
 
-    def delete(self, target):
+
+    def write(self, target):
         pass
