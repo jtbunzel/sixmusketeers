@@ -26,6 +26,7 @@ class Supervisor(User):
 class Administrator(User):
     pass
 
+
 class Course(models.Model):
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=60)
@@ -37,11 +38,3 @@ class LabSection(models.Model):
     section_number = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     section_TA = models.ForeignKey(TA, on_delete=models.CASCADE)
-
-
-
-
-
-
-
-
