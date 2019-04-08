@@ -52,18 +52,16 @@ class CommandController(object):
             return user1  # for testing
         elif "course" == type:
             course = Course()
-            print('Enter course name:')
-            x = input()
-            course.set_name(x)
-            print('Enter course code:')
-            x = input()
-            course.set_course_code(x)
-            print('Enter teacher name:')
-            x = input()
-            course.set_instructor(x)
-            print('Enter number of lab sections:')
-            x = input()
-            course.set_number_of_lab_sections(x)
+            course_name = credentials_array[0]
+            course_code = credentials_array[1]
+            instructor = credentials_array[2]
+            labsections_count = credentials_array[3]
+            TAs = credentials_array[4] # assume only one TA can be entered in create
+            course.set_name(course_name)
+            course.set_course_code(course_code)
+            course.set_instructor(instructor)
+            course.set_number_of_lab_sections(labsections_count)
+            course.set_assigned_TA(TAs)
             #Database.save()
             return course
     def notify(self, message):
