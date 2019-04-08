@@ -9,6 +9,7 @@ class User(models.Model):
     address = models.CharField(max_length=60)
     phone_number = models.IntegerField()
     email = models.CharField(max_length=30)
+    rank = models.IntegerField(max_length=1)
 
 
 class Instructor(User):

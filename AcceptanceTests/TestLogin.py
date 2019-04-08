@@ -1,8 +1,8 @@
-import unittest as ut
-from App import *
+import unittest
+from Skeleton_Classes.App import *
 
 
-class TestLogin(ut):
+class TestLogin(unittest):
 
     def test_correct_login(self):
         # assume user exists
