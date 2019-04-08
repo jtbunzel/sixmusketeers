@@ -11,7 +11,7 @@ class App(object):
         self.command_controller = CommandController()
         self.command_controller.set_pointer_to_app(self)
 
-    def command(self, a):
+    def command(self, a): # a is the input array example: create user..etc
         command = self.command_controller.parse(a)
         print(command)  # test your command
         data = []
