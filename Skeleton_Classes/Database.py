@@ -1,11 +1,14 @@
 
 class Database(object):
 
-    def read(self, database, target, edit):
+    def create(self, target):
         pass
 
-    def write(self, database, target, edit):
+    def read(self, target):
         pass
 
-    def delete(self, database, target, edit):
+    def update(self, target):
+        pass
+
+    def delete(self, target):
         pass
