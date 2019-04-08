@@ -18,6 +18,8 @@ class Database(object):
             if command in self._commands:
                 # Perform the command
                 return app.command(user_command)
+            else:
+                return "Command does not exist"
 
 
     def write(self, target):
