@@ -9,6 +9,7 @@ class User(models.Model):
     address = models.CharField(max_length=60)
     phone_number = models.IntegerField()
     email = models.CharField(max_length=30)
+    rank = models.IntegerField(max_length=1)
 
 
 class Instructor(User):
@@ -26,6 +27,7 @@ class Supervisor(User):
 class Administrator(User):
     pass
 
+
 class Course(models.Model):
     course_code = models.CharField(max_length=10)
     course_name = models.CharField(max_length=60)
@@ -37,11 +39,3 @@ class LabSection(models.Model):
     section_number = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     section_TA = models.ForeignKey(TA, on_delete=models.CASCADE)
-
-
-
-
-
-
-
-

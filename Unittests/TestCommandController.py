@@ -7,7 +7,7 @@ from Skeleton_Classes.Database import *
 from Skeleton_Classes.Supervisor import *
 # from Skeleton_Classes.Lab_section import *
 from Skeleton_Classes.Supervisor import *
-#from Skeleton_Classes.TA import *
+# from Skeleton_Classes.TA import *
 from Skeleton_Classes.App import *
 
 
@@ -26,16 +26,16 @@ class TestCommandController(unittest.TestCase):
         a = App()
         a.set_cmd_controller()
         ## assume this is the way create a user
-        user1 = a.command("create user username_test pass_test firstname_test last_test admin email_test phone_test address_test")
-        self.assertEqual(user1.username, "username_test")
+        user = a.command(
+            "create user username_test pass_test firstname_test last_test admin email_test phone_test address_test")
+        user1 = user.split(" ") # remove created in confirmation message
+        self.assertEqual(user1[1], "username_test")
 
         a = App()
         a.set_cmd_controller()
-        course1 = a.command("create course")# the user will be prompted for the rest of the info
-        #assume CS395 as prompted from the user
-        self.assertEqual(course1.course_code,  "CS395")
-
-
+        course1 = a.command("create course intro_to_software CS395 Rock 4 tanat")
+        course = course1.split(" ")
+        self.assertEqual(course[1], "intro_to_software")
 
     def test_notify(self):
         self.Supervisor = Supervisor('Harry', '1234')
