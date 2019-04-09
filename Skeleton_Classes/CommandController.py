@@ -21,16 +21,14 @@ class CommandController(object):
                 if i < 1:
                     continue
             credentials_array.append(command_array[i])
-        return self.create(credentials_array, creationtype)
-
-    if command == 'login':
-        username = command_array[1]
-        password = command_array[2]
-        return self.login(username, password)
-    if command == 'logout':
-        return self.logout()
-
-    return
+            return self.create(credentials_array, creationtype)
+        if command == 'login':
+            username = command_array[1]
+            password = command_array[2]
+            return self.login(username, password)
+        if command == 'logout':
+            return self.logout()
+        return
 
 
 def login(self, username, password):
