@@ -28,6 +28,7 @@ class TestCommandController(unittest.TestCase):
         ## assume this is the way create a user
         user = a.command(
             "create user username_test pass_test firstname_test last_test admin email_test phone_test address_test")
+        print(user)
         user1 = user.split(" ") # remove created in confirmation message
         self.assertEqual(user1[1], "username_test")
 

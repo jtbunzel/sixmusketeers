@@ -21,7 +21,6 @@ class Database(object):
             else:
                 return "Command does not exist"
 
-
-    def write(self,database, target):
-        event=self.edit(database,target)
+    def write(self, database, target):
+        event = self.edit(database, target)
         event.save()
