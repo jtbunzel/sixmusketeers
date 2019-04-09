@@ -12,28 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='administrator',
-            name='user_ptr',
-        ),
-        migrations.RemoveField(
-            model_name='supervisor',
-            name='user_ptr',
-        ),
-        migrations.RemoveField(
             model_name='course',
             name='course_TAs',
         ),
         migrations.RemoveField(
             model_name='labsection',
             name='section_TA',
-        ),
-        migrations.RemoveField(
-            model_name='user',
-            name='full_name',
-        ),
-        migrations.RemoveField(
-            model_name='user',
-            name='phone_number',
         ),
         migrations.AddField(
             model_name='course',
