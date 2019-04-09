@@ -12,11 +12,11 @@ class User(models.Model):
     address = models.CharField(max_length=50, default='None')
 
 
-class TA(models.Model):
+class TA(User):
     ta = models.CharField(max_length=50, default='None')
 
 
-class Instructor(models.Model):
+class Instructor(User):
     instructor = models.CharField(max_length=50, default='None')
 
 
