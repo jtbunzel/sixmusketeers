@@ -13,11 +13,11 @@ class User(models.Model):
 
 
 class TA(User):
-    ta = models.CharField(max_length=50, default='None')
+    ta_field = models.CharField(max_length=50, default='None')
 
 
 class Instructor(User):
-    instructor = models.CharField(max_length=50, default='None')
+    instructor_field = models.CharField(max_length=50, default='None')
 
 
 class Course(models.Model):
