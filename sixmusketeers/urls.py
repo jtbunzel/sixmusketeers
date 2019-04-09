@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import include, path
 from django.contrib import admin
-from WebApplication.views import Home
+from WebApplication.views import Home, Command
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     path('', Home.as_view()),
+    path('commandline/', Command.as_view(), name='commandLine'),
 ]
