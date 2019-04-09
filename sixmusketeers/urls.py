@@ -20,6 +20,6 @@ from WebApplication.views import Home, CommandView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('', Home.as_view()),
-    path('command', CommandView.as_view())
+    #path('', Home.as_view()),
+    path('', CommandView.as_view())
 ]

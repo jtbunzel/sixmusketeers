@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/66aaba12-6698-45a6-8b5c-39359eea51df.corrupted.20190409-031023.reason.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/66aaba12-6698-45a6-8b5c-39359eea51df.corrupted.20190409-031023.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/66aaba12-6698-45a6-8b5c-39359eea51df.corrupted.20190409-031138.reason.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/66aaba12-6698-45a6-8b5c-39359eea51df.corrupted.20190409-031138.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Trash/Database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/TestAllUnitTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestAllUnitTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/TestCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestCommandController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/TestDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sixmusketeers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sixmusketeers/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/commandLine.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/commandLine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -105,30 +88,32 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="75" />
-          <entry key="py" value="1343" />
+          <entry key="py" value="1358" />
           <entry key="py@sixmusketeers" value="62" />
+          <entry key="txt" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CommandLine" value="62" />
           <entry key="HTML" value="75" />
-          <entry key="Python" value="1343" />
+          <entry key="PLAIN_TEXT" value="75" />
+          <entry key="Python" value="1358" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="47" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-                <marker date="1554849035000" expanded="true" signature="196:201" ph="..." />
-                <marker date="1554849035000" expanded="true" signature="576:579" ph="..." />
+                <marker date="1554851073000" expanded="true" signature="196:201" ph="..." />
+                <marker date="1554851073000" expanded="true" signature="576:579" ph="..." />
               </folding>
             </state>
           </provider>
@@ -176,8 +161,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="330">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
               <folding>
                 <element signature="e#632#664#0" expanded="true" />
               </folding>
@@ -215,15 +200,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+            <state relative-caret-position="675">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1554850063000" expanded="true" signature="147:153" ph="..." />
-                <marker date="1554850063000" expanded="true" signature="1566:1573" ph="..." />
+                <marker date="1554850942000" expanded="true" signature="147:153" ph="..." />
+                <marker date="1554850942000" expanded="true" signature="1566:1571" ph="..." />
+                <marker date="1554850942000" expanded="true" signature="1566:1585" ph="..." />
               </folding>
             </state>
           </provider>
@@ -307,15 +293,15 @@
         <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/WebApplication/migrations/0003_auto_20190409_0104.py" />
-        <option value="$PROJECT_DIR$/sixmusketeers/urls.py" />
         <option value="$PROJECT_DIR$/templates/main/index.html" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Database.py" />
         <option value="$PROJECT_DIR$/templates/main/commandLine.html" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/App.py" />
-        <option value="$PROJECT_DIR$/WebApplication/views.py" />
         <option value="$PROJECT_DIR$/WebApplication/models.py" />
-        <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/User.py" />
+        <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
+        <option value="$PROJECT_DIR$/sixmusketeers/urls.py" />
+        <option value="$PROJECT_DIR$/WebApplication/views.py" />
       </list>
     </option>
   </component>
@@ -858,7 +844,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554790144491</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="We can finally login and logout.&#10;Webpage is looking a little better.">
+      <created>1554850119492</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1554850119492</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -898,13 +891,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1337" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.27601272" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.27601272" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.74185765" weight="0.32690763" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.74185765" visible="true" weight="0.32690763" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31832796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -915,7 +909,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.25814235" side_tool="true" weight="0.32738096" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4960867" weight="0.32610443" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3279743" />
-      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" sideWeight="0.49577805" visible="true" weight="0.32690763" />
+      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" sideWeight="0.49577805" weight="0.32690763" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -973,7 +967,8 @@
     <MESSAGE value="Fixing models" />
     <MESSAGE value="Fixed models.py" />
     <MESSAGE value="Migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrations" />
+    <MESSAGE value="We can finally login and logout.&#10;Webpage is looking a little better." />
+    <option name="LAST_COMMIT_MESSAGE" value="We can finally login and logout.&#10;Webpage is looking a little better." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_remove_course.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_remove_course Coverage Results" MODIFIED="1554189958455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
@@ -1145,35 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1554849035000" expanded="true" signature="196:201" ph="..." />
-            <marker date="1554849035000" expanded="true" signature="576:579" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1198,13 +1164,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding>
-            <element signature="e#632#664#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1215,21 +1185,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        <state relative-caret-position="675">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1554850942000" expanded="true" signature="147:153" ph="..." />
+            <marker date="1554850942000" expanded="true" signature="1566:1571" ph="..." />
+            <marker date="1554850942000" expanded="true" signature="1566:1585" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+    <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="330">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1554850063000" expanded="true" signature="147:153" ph="..." />
-            <marker date="1554850063000" expanded="true" signature="1566:1573" ph="..." />
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1554851073000" expanded="true" signature="196:201" ph="..." />
+            <marker date="1554851073000" expanded="true" signature="576:579" ph="..." />
           </folding>
         </state>
       </provider>

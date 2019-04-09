@@ -42,7 +42,7 @@ class CommandController(object):
         return True
 
     def createCourse(self, course_code, course_name):
-
+        pass
 
     def create(self, credentials_array, type):
         if credentials_array == "":
