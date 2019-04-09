@@ -2,13 +2,17 @@ from Skeleton_Classes.LabSection import *
 
 
 class Course:
+    lab_sections = [None]
+    assigned_TA = None
+    assigned_Grader = None
+
     def __init__(self, course_name="", course_instructor="n/a", course_code="n/a"):
         self.course_name = course_name
         self.course_instructor = course_instructor
         self.course_code = course_code
-        self.lab_sections = []
-        self.list_assigned_TA = []
-        self.list_graders = []
+        self.lab_sections = [None]
+        self.assigned_TA = None
+        self.assigned_Grader = None
 
     def get_name(self):
         return self.course_name
@@ -35,20 +39,13 @@ class Course:
         self.lab_sections.append(new_lab_section)
 
     def get_assigned_TA(self):
-        return self.list_assigned_TA
+        return self.assigned_TA
 
     def set_assigned_TA(self, new_TA):
-        self.list_assigned_TA.append(new_TA)
+        self.assigned_TA = new_TA
 
     def get_graders(self):
-        return self.get_graders()
+        return self.assigned_Grader
 
     def set_graders(self, new_grader):
-        self.list_graders.append(new_grader)
-
-    def set_number_of_lab_sections(self, number="0"):
-
-        for i in range(0, int(number)):
-            section = LabSection()
-            self.lab_sections.append(section)
-        return self.lab_sections
+        self.assigned_Grader = new_grader

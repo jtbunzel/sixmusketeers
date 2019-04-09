@@ -5,9 +5,9 @@ from Skeleton_Classes.User import *
 from Skeleton_Classes.App import *
 from Skeleton_Classes.Database import *
 from Skeleton_Classes.Supervisor import *
-# from Skeleton_Classes.Lab_section import *
+from Skeleton_Classes.LabSection import *
 from Skeleton_Classes.Supervisor import *
-# from Skeleton_Classes.TA import *
+from Skeleton_Classes.TA import *
 from Skeleton_Classes.App import *
 
 
@@ -110,16 +110,6 @@ class TestCommandController(unittest.TestCase):
         self.assertEquals(courseinstructor, None)
         self.delete.course('Computer')
         self.assertEquals(None)
-
-    def test_verify(self):
-        ta = TA("bis", "007")
-        admin = Administrator("dan", "213")
-        sup = Supervisor("jon", "556")
-        ins = Instructor("jat", "778")
-        com1 = app.set_loggedin(ta.username)
-        com2 = app.set_loggedin(sup.username)
-        self.assertFalse(com1)
-        self.assertTrue(com2)
 
 
 if __name__ == '__main__':
