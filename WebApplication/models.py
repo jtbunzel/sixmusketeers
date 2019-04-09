@@ -1,40 +1,27 @@
 from django.db import models
 
-
 # Create your models here.
+
 class User(models.Model):
-    username = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
-    full_name = models.CharField(max_length=40)
-    address = models.CharField(max_length=60)
-    phone_number = models.IntegerField()
-    email = models.CharField(max_length=30)
-    rank = models.IntegerField()
-
-
-class Instructor(User):
-    pass
-
-
-class TA(User):
-    pass
-
-
-class Supervisor(User):
-    pass
-
-
-class Administrator(User):
-    pass
-
+    first_name = models.CharField(max_length=50, default='None')
+    last_name = models.CharField(max_length=50, default='None')
+    username = models.CharField(max_length=50, default='None')
+    password = models.CharField(max_length=50, default='None')
+    role = models.CharField(max_length=50, default='None')
+    phone = models.CharField(max_length=50, default='None')
+    email = models.CharField(max_length=50, default='None')
+    address = models.CharField(max_length=50, default='None')
 
 class Course(models.Model):
-    course_code = models.CharField(max_length=10)
-    course_name = models.CharField(max_length=60)
-    course_instructor = models.ForeignKey(Instructor, on_delete=models.SET(None))
-    course_TAs = models.ManyToManyField(TA)
+    course_name = models.CharField(max_length=50, default='None')
+    course_code = models.CharField(max_length=5)
+    instructor = models.ForeignKey(User, on_delete=models.CASCADE, default='None')
+    grader_ta = models.ForeignKey(User, on_delete=models.SET(None) default='None')
 
-class LabSection(models.Model):
-    section_number = models.IntegerField()
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    section_TA = models.ForeignKey(TA, on_delete=models.SET(None))
+class Lab(models.Model):
+    section_number = models.CharField(max_length=5)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE())
+
+
+
+

@@ -5,29 +5,41 @@ from Skeleton_Classes.Course import *
 
 
 class CommandController(object):
-    def __init__(self):
+    def __init__(self, app):
         self.database_interface = Database()
-        self.command = ""
-
-    def parse(self, a):
-        self.command = a.split(" ", 1)
-        return self.command[0]
-
-    def set_pointer_to_app(self, app):
         self.app = app
+
+    def parse(self, command_string):
+        command_array = command_string.split(" ")
+        command = command_array[0]
+        if command == 'create':
+            creationtype = command_array[1]
+            credentials_array = []
+            for i in range(command_array.length()):
+                if i < 1:
+                    continue
+                credentials_array[i-2] = command_array[i]
+            return self.create(credentials_array, creationtype)
+        if command == 'login':
+            username = command_array[1]
+            password = command_array[2]
+            return self.login(username, password)
+        if command == 'logout'
+            return self.logout()
+
+
+        return
 
     def login(self, username, password):
         if self.app.get_loggedin() is not None:
             return 'User already logged in. Log out to log in as a different user.'
-        user_logging_in = self.database_interface.read('username=username')
+        user_logging_in = self.database_interface.read(username=username)
         if user_logging_in is None:
             return 'User not found.'
         if user_logging_in.password != password:
             return 'Password is incorrect.'
         self.app.set_loggedin(user_logging_in)
         return 'User logged in.'
-
-    pass
 
     def create(self, credentials_array, type):
         if credentials_array == "":
@@ -71,7 +83,7 @@ class CommandController(object):
         user_to_assign = self.database_interface.read(username)
         user_to_assign.add_course(course)
 
-    def logout(self, username):
+    def logout(self):
         user_to_be_saved = self.app.get_loggedin()
         self.database_interface.write(user_to_be_saved)
         self.app.set_loggedin(None)
@@ -89,6 +101,7 @@ class CommandController(object):
 
     def assignments(dataType):
         pass
+
     def verify(self, user, a):
         if (user.rank <3):
 
