@@ -454,10 +454,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.Launch Server" />
       <item itemvalue="Python.Rational" />
       <item itemvalue="Python.admin" />
       <item itemvalue="Python.models" />
+      <item itemvalue="Django server.Launch Server" />
       <item itemvalue="Python tests.Unittests for TestCommandController.TestCommandController.test_create" />
       <item itemvalue="Python tests.Unittests for TestCourse.MyTestCase.test_add_lab" />
       <item itemvalue="Python tests.Unittests for TestCourse.MyTestCase.test_set_assigned_TA" />
