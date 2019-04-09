@@ -21,7 +21,3 @@ class Course(models.Model):
 class Lab(models.Model):
     section_number = models.CharField(max_length=5)
     course = models.ForeignKey(Course, on_delete=models.CASCADE())
-
-
-
-
