@@ -12,21 +12,21 @@ class User(models.Model):
     address = models.CharField(max_length=50, default='None')
 
 
-class TA(models.model, User):
-    ta = models.CharField(max_length=10)
+class TA(models.Model):
+    ta_username = models.CharField(max_length=50, default='None')
 
 
-class Instructor(models.model, User):
-    instructor = models.CharField(max_length=10)
+class Instructor(models.Model):
+    instructor_username = models.CharField(max_length=50, default='None')
 
 
 class Course(models.Model):
     course_name = models.CharField(max_length=50, default='None')
-    course_code = models.CharField(max_length=5)
-    course_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE, default='None')
-    course_tas = models.ManyToManyField(TA, on_delete=models.SET(None), default='None')
+    course_code = models.CharField(max_length=5, default='None')
+    course_instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE, default=None)
+    course_tas = models.ManyToManyField(TA, default=None)
 
 
 class LabSection(models.Model):
-    section_number = models.CharField(max_length=5)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    section_number = models.CharField(max_length=5, default='None')
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, default=None)
