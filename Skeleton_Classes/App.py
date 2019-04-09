@@ -15,7 +15,7 @@ class App(object):
 
     def command(self, a):
         response = self.command_controller.parse(a)
-        print(response)
+        return response
 
     def get_loggedin(self):
         return self.loggedin

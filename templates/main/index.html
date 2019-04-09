@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 
-    <form class="form-signin" method="post" action="/admin/">
+    <form class="form-signin" method="post" action="#">
         <div class="text-center mb-4">
             <img clsss="signin-logo" src="{% static 'images/logo.svg' %}" alt="">
             <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
@@ -10,12 +10,12 @@
         </div>
 
         <div class="form-label-group">
-            <input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            <input type="text" id="inputUsername" class="form-control" placeholder="Username" name = "username" required autofocus>
             <label for="inputUsername">Username</label>
         </div>
 
         <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" required>
             <label for="inputPassword">Password</label>
         </div>
 

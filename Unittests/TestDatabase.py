@@ -1,5 +1,4 @@
 import unittest
-from Skeleton_Classes.Database import *
 from Skeleton_Classes.Course import *
 from Skeleton_Classes.Supervisor import *
 

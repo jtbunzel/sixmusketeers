@@ -1,11 +1,5 @@
 import unittest
 from Skeleton_Classes.Administrator import Administrator
-from Skeleton_Classes.Database import *
-from Skeleton_Classes.Course import *
-from Skeleton_Classes.Supervisor import *
-from Skeleton_Classes.Course import Course
-from Skeleton_Classes.Instructor import *
-from Skeleton_Classes.LabSection import *
 from Skeleton_Classes.Supervisor import *
 from Skeleton_Classes.TA import *
 from Skeleton_Classes.User import *
