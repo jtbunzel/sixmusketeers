@@ -24,7 +24,7 @@ class CommandController(object):
             username = command_array[1]
             password = command_array[2]
             return self.login(username, password)
-        if command == 'logout'
+        if command == 'logout':
             return self.logout()
 
 
