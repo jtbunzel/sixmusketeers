@@ -5,8 +5,10 @@ from Skeleton_Classes.Course import *
 
 
 class CommandController(object):
-    def __init__(self, app):
+    def __init__(self):
         self.database_interface = Database()
+
+    def set_pointer_to_app(self, app):
         self.app = app
 
     def parse(self, command_string):
@@ -18,7 +20,7 @@ class CommandController(object):
             for i in range(command_array.length()):
                 if i < 1:
                     continue
-                credentials_array[i-2] = command_array[i]
+                credentials_array[i - 2] = command_array[i]
             return self.create(credentials_array, creationtype)
         if command == 'login':
             username = command_array[1]
@@ -26,7 +28,6 @@ class CommandController(object):
             return self.login(username, password)
         if command == 'logout':
             return self.logout()
-
 
         return
 
@@ -68,14 +69,15 @@ class CommandController(object):
             course_code = credentials_array[1]
             instructor = credentials_array[2]
             labsections_count = credentials_array[3]
-            TAs = credentials_array[4] # assume only one TA can be entered in create
+            TAs = credentials_array[4]  # assume only one TA can be entered in create
             course.set_name(course_name)
             course.set_course_code(course_code)
             course.set_instructor(instructor)
             course.set_number_of_lab_sections(labsections_count)
             course.set_assigned_TA(TAs)
-            #Database.save()
+            # Database.save()
             return course
+
     def notify(self, message):
         self.notify.message = message
 
@@ -103,40 +105,40 @@ class CommandController(object):
         pass
 
     def verify(self, user, a):
-        if (user.rank <3):
+        if (user.rank < 3):
 
-            if self.parse(a)=='create_TA':
+            if self.parse(a) == 'create_TA':
                 return True
-            if (self.parse(a)== 'create instructor'):
+            if (self.parse(a) == 'create instructor'):
                 return True
-            if (self.parse(a)== 'create_course'):
+            if (self.parse(a) == 'create_course'):
                 return True
-            if (self.parse(a)== 'create_labSection'):
+            if (self.parse(a) == 'create_labSection'):
                 return True
             if (self.parse(a) == 'create_supervisor'):
                 return False
 
-            if (self.parse(a)== 'notify_admin'):
+            if (self.parse(a) == 'notify_admin'):
                 return True
-            if (self.parse(a)== 'notify_TA'):
+            if (self.parse(a) == 'notify_TA'):
                 return True
-            if (self.parse(a)== 'notify_instructor'):
+            if (self.parse(a) == 'notify_instructor'):
                 return True
 
-            if (self.parse(a)== 'assign_TA_labSection'):
+            if (self.parse(a) == 'assign_TA_labSection'):
                 return True
-            if (self.parse(a)== 'assign_instructor_cousre'):
+            if (self.parse(a) == 'assign_instructor_cousre'):
                 return True
             if (self.parse(a) == 'assign_Adminsistrator'):
                 return False
             if (self.parse(a) == 'assign_supervisor'):
                 return False
 
-            if (self.parse(a)== 'edit_TA'):
+            if (self.parse(a) == 'edit_TA'):
                 return True
-            if (self.parse(a)== 'edit_instructor'):
+            if (self.parse(a) == 'edit_instructor'):
                 return True
-            if (self.parse(a)== 'edit_course'):
+            if (self.parse(a) == 'edit_course'):
                 return True
             if (self.parse(a) == 'edit_labSection'):
                 return True
@@ -172,44 +174,42 @@ class CommandController(object):
                 return True
 
         if (user.rank == 3):
-            if (self.parse(a)== 'create_TA'):
+            if (self.parse(a) == 'create_TA'):
                 return False
-            if (self.parse(a)== 'create_instructor'):
+            if (self.parse(a) == 'create_instructor'):
                 return False
-            if (self.parse(a)== 'create_course'):
+            if (self.parse(a) == 'create_course'):
                 return False
-            if (self.parse(a)== 'create_labSection'):
+            if (self.parse(a) == 'create_labSection'):
                 return False
             if (self.parse(a) == 'create_Adminsistrator'):
                 return False
             if (self.parse(a) == 'create_supervisor'):
                 return False
 
-
-            if (self.parse(a)== 'notify_TA'):
+            if (self.parse(a) == 'notify_TA'):
                 return True
-            if (self.parse(a)== 'notify_instructor'):
+            if (self.parse(a) == 'notify_instructor'):
                 return False
             if (self.parse(a) == 'notify_Adminsistrator'):
                 return False
             if (self.parse(a) == 'notify_supervisor'):
                 return False
 
-
-            if (self.parse(a)== 'assign_TA_labSection'):
+            if (self.parse(a) == 'assign_TA_labSection'):
                 return True
-            if (self.parse(a)== 'assign_instructor_cousre'):
+            if (self.parse(a) == 'assign_instructor_cousre'):
                 return True
             if (self.parse(a) == 'assign_Adminsistrator'):
                 return False
             if (self.parse(a) == 'assign_supervisor'):
                 return False
 
-            if (self.parse(a)== 'edit_TA'):
+            if (self.parse(a) == 'edit_TA'):
                 return True
-            if (self.parse(a)== 'edit_instructor'):
+            if (self.parse(a) == 'edit_instructor'):
                 return False
-            if (self.parse(a)== 'edit_course'):
+            if (self.parse(a) == 'edit_course'):
                 return True
             if (self.parse(a) == 'edit_labSection'):
                 return True
@@ -245,44 +245,42 @@ class CommandController(object):
                 return False
 
         if (user.rank == 4):
-            if (self.parse(a)== 'create_TA'):
+            if (self.parse(a) == 'create_TA'):
                 return False
-            if (self.parse(a)== 'create_instructor'):
+            if (self.parse(a) == 'create_instructor'):
                 return False
-            if (self.parse(a)== 'create_course'):
+            if (self.parse(a) == 'create_course'):
                 return False
-            if (self.parse(a)== 'create_labSection'):
+            if (self.parse(a) == 'create_labSection'):
                 return False
             if (self.parse(a) == 'create_Adminsistrator'):
                 return False
             if (self.parse(a) == 'create_supervisor'):
                 return False
 
-
-            if (self.parse(a)== 'notify_TA'):
+            if (self.parse(a) == 'notify_TA'):
                 return False
-            if (self.parse(a)== 'notify_instructor'):
+            if (self.parse(a) == 'notify_instructor'):
                 return False
             if (self.parse(a) == 'notify_Adminsistrator'):
                 return False
             if (self.parse(a) == 'notify_supervisor'):
                 return False
 
-
-            if (self.parse(a)== 'assign_TA_labSection'):
+            if (self.parse(a) == 'assign_TA_labSection'):
                 return False
-            if (self.parse(a)== 'assign_instructor_cousre'):
+            if (self.parse(a) == 'assign_instructor_cousre'):
                 return False
             if (self.parse(a) == 'assign_Adminsistrator'):
                 return False
             if (self.parse(a) == 'assign_supervisor'):
                 return False
 
-            if (self.parse(a)== 'edit_TA'):
+            if (self.parse(a) == 'edit_TA'):
                 return False
-            if (self.parse(a)== 'edit_instructor'):
+            if (self.parse(a) == 'edit_instructor'):
                 return False
-            if (self.parse(a)== 'edit_course'):
+            if (self.parse(a) == 'edit_course'):
                 return False
             if (self.parse(a) == 'edit_labSection'):
                 return False
@@ -316,4 +314,3 @@ class CommandController(object):
                 return False
             if (self.parse(a) == 'access_supervisor'):
                 return False
-
