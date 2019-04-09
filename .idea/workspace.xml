@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Skeleton_Classes/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Skeleton_Classes/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sixmusketeers/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sixmusketeers/urls.py" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -14,17 +15,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/sixmusketeers$Rational.coverage" NAME="Rational Coverage Results" MODIFIED="1550354507243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_testLab_py.coverage" NAME="Unittests in testLab.py Coverage Results" MODIFIED="1552435928629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestDiv_py.coverage" NAME="Unittests in TestDiv.py Coverage Results" MODIFIED="1550166979062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestSupervisor_py.coverage" NAME="Unittests in TestSupervisor.py Coverage Results" MODIFIED="1552435747441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
-    <SUITE FILE_PATH="coverage/sixmusketeers$Rational.coverage" NAME="Rational Coverage Results" MODIFIED="1550354507243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_Lab4Tests_TestDiv.coverage" NAME="Unittests for Lab4Tests.TestDiv Coverage Results" MODIFIED="1552435277864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv.coverage" NAME="Unittests for TestDiv.TestDiv Coverage Results" MODIFIED="1550167020127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_Unittests.coverage" NAME="Unittests in Unittests Coverage Results" MODIFIED="1552435456718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers3$Unittests_for_TestCommandController_TestCommandController_test_create.coverage" NAME="Unittests for TestCommandController.TestCommandController.test_create Coverage Results" MODIFIED="1554527981070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv_test_DivisionOfTwoDifferentRationalNumbers.coverage" NAME="Unittests for TestDiv.TestDiv.test_DivisionOfTwoDifferentRationalNumbers Coverage Results" MODIFIED="1550354580608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_Unittests.coverage" NAME="Unittests in Unittests Coverage Results" MODIFIED="1552435456718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_MyTestCase.coverage" NAME="Unittests for TestDiv.MyTestCase Coverage Results" MODIFIED="1551331370584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_Lab4Tests_TestDiv.coverage" NAME="Unittests for Lab4Tests.TestDiv Coverage Results" MODIFIED="1552435277864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv.coverage" NAME="Unittests for TestDiv.TestDiv Coverage Results" MODIFIED="1550167020127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestAdministratorClass_py.coverage" NAME="Unittests in TestAdministratorClass.py Coverage Results" MODIFIED="1552436054823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
-    <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_testLab_py.coverage" NAME="Unittests in testLab.py Coverage Results" MODIFIED="1552435928629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$TestTA.coverage" NAME="TestTA Coverage Results" MODIFIED="1552445976572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="DatabaseView">
@@ -62,19 +63,48 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
+        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-969">
-              <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
+        <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="146">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding>
+                <element signature="e#632#664#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -123,8 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Rational.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/../Desktop/lab4/lab4/test_rational_SeanMcCook.py" />
         <option value="$PROJECT_DIR$/TASetup.py" />
         <option value="$PROJECT_DIR$/TestTAFunctionality.py" />
@@ -174,41 +202,22 @@
         <option value="$PROJECT_DIR$/WebApplication/models.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Database.py" />
+        <option value="$PROJECT_DIR$/WebApplication/views.py" />
+        <option value="$PROJECT_DIR$/sixmusketeers/urls.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1456" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="2577" />
+    <option name="height" value="1457" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="Skeleton_Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -230,6 +239,43 @@
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="Skeleton_Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -485,6 +531,7 @@
       <workItem from="1554671320453" duration="1558000" />
       <workItem from="1554687274936" duration="1533000" />
       <workItem from="1554694440873" duration="12105000" />
+      <workItem from="1554784779376" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="I'm committing again">
       <created>1549392466874</created>
@@ -676,26 +723,26 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119687000" />
+    <option name="totallyTimeSpent" value="119996000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2647059" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2679109" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7498243" weight="0.589057" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7489464" visible="true" weight="0.5890411" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31832796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49483308" visible="true" weight="0.15419501" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49428055" weight="0.15317559" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50516695" side_tool="true" visible="true" weight="0.15419501" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.25105357" side_tool="true" visible="true" weight="0.5890411" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49683768" weight="0.32712457" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3279743" />
       <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" weight="0.3290461" />
@@ -794,9 +841,6 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_remove_course.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_remove_course Coverage Results" MODIFIED="1554189958455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Skeleton Classes/TA.py" />
-    <entry file="file://$PROJECT_DIR$/Skeleton Classes/Supervisor.py" />
-    <entry file="file://$PROJECT_DIR$/Skeleton Classes/User.py" />
     <entry file="file://$PROJECT_DIR$/Skeleton Classes/Instructor.py" />
     <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -890,13 +934,6 @@
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/MOCK_database.py" />
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/TA.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -985,37 +1022,11 @@
     <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/data/UserUtility.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/commands/ShowCommand.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/commands/HelpCommand.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/main_app.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/CommandsList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/data/UserUtility.py" />
+    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/commands/ShowCommand.py" />
+    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/commands/HelpCommand.py" />
+    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/main_app.py" />
+    <entry file="file://$USER_HOME$/Downloads/TA-Scheduling-App3/TA-Scheduling-App3/application/CommandsList.py" />
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/User.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1048,8 +1059,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969">
-          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -1060,10 +1078,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/Database.py">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
