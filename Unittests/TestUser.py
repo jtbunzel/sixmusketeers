@@ -4,8 +4,9 @@ from Skeleton_Classes.User import *
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        self.user = User('wheelerg', '1234')
-        self.user.set_full_name('Grant Wheeler')
+        self.user = User('wheelerg', '1234', 'Supervisor')
+        self.user.set_first_name('Grant')
+        self.user.set_last_name('Wheeler')
         self.user.set_address('3200 N. Cramer St. Milwaukee, WI 53211')
         self.user.set_email('wheelerg@uwm.edu')
         self.user.set_phone_number('4148857236')
@@ -27,7 +28,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_get_full_name(self):
         result = self.user.get_full_name()
-        self.assertEquals(result, 'Grant Wheeler')
+        self.assertEqual(result, 'Grant Wheeler')
 
     def test_get_address(self):
         result = self.user.get_address()
@@ -44,32 +45,36 @@ class MyTestCase(unittest.TestCase):
     def test_set_username(self):
         self.user.set_username('gwheeler')
         result = self.user.get_username()
-        self.assertEquals(result, 'gwheeler')
+        self.assertEqual(result, 'gwheeler')
 
     def test_set_password(self):
         self.user.set_password('4321')
         result = self.user.get_password()
-        self.assertEquals(result, '4321')
-
-    def test_set_full_name(self):
-        self.user.set_full_name('Gina Wheeler')
-        result = self.user.get_full_name()
-        self.assertEquals(result, 'Gina Wheeler')
+        self.assertEqual(result, '4321')
 
     def test_set_address(self):
         self.user.set_address('3400 N. Maryland Av. Milwaukee, WI 53211')
         result = self.user.get_address()
-        self.assertEquals(result, '3400 N. Maryland Av. Milwaukee, WI 53211')
+        self.assertEqual(result, '3400 N. Maryland Av. Milwaukee, WI 53211')
 
     def test_set_phone_number(self):
         self.user.set_phone_number('4145882300')
         result = self.user.get_phone_number()
-        self.assertEquals(result, '4145882300')
+        self.assertEqual(result, '4145882300')
 
     def test_set_email(self):
         self.user.set_email('gwheeler@uwm.edu')
         result = self.user.get_email()
-        self.assertEquals(result, 'gwheeler@uwm.edu')
+        self.assertEqual(result, 'gwheeler@uwm.edu')
+
+    def test_get_rank(self):
+        result = self.user.get_rank()
+        self.assertEqual(result, 'Supervisor')
+
+    def test_set_rank(self):
+        self.user.set_rank('TA')
+        result = self.user.get_rank()
+        self.assertEqual(result, 'TA')
 
 
 if __name__ == '__main__':

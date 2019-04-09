@@ -58,6 +58,9 @@ class User:
     def get_rank(self):
         return self.rank
 
+    def set_rank(self, new_rank):
+        self.rank = new_rank
+
     def get_public_contact_info(self):
         return
         pass
