@@ -1,34 +1,63 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from Skeleton_Classes.App import App
+from ApplicationSession import Credentials
 
 # Create your views here.
 
 a = App()
 
 class Home(View):
-    def get(self,request):
-        return render(request, 'main/index.html')
+    def __init__(self):
+        self.credentials = Credentials.Credentials(a, DEBUG=True)
 
-    def post(self, request):
-        username = request.POST['username']
-        password = request.POST['password']
-        res = a.command_controller.login(username, password)
-        if res == 'User logged in.':
-            return redirect('/command')
+    def init_logged_in(self, request):
+        if "user" in request.session and request.session["user"] != "":
+            self.credentials.user = self.credentials.controller.get_loggedin()
         else:
-            return redirect('/')
+            self.credentials.user = None
 
-
-class CommandView(View):
     def get(self, request):
-        return render(request, 'main/commandLine.html')
+        self.init_logged_in(request)
+
+        user = None
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+
+        return render(request, "main/index.html", {"user": user})
 
     def post(self, request):
-        commandInput = request.POST["command"]
+        self.init_logged_in(request)
+        user = self.credentials.user
 
-        if commandInput:
-            response = a.command(commandInput)
+        command_type = request.POST.get("command", False)
+        command_input = request.POST.get("commandStr", False)
+        response = ""
+
+        if user is not None:
+            if command_type is not None:
+                if command_type == 'logout':
+                    a.command_controller.logout()
+                    request.session["user"] = ""
+                    user = None
+                    self.init_logged_in(request)
+                    response = "Logged out"
+                else:
+                    response = a.command(command_input)
         else:
-            response = ""
-        return render(request, 'main/commandLine.html',{"message":response})
+            if command_type is not None:
+                if command_type == 'login':
+                    username = request.POST.get('username')
+                    password = request.POST.get('password')
+
+                    res = a.command_controller.login(username, password)
+                    if res == 'User logged in.':
+                        response = "Logged in"
+                        request.session["user"] = request.POST["username"]
+                        self.init_logged_in(request)
+                        user = self.credentials.user
+                    else:
+                        response = "Incorrect login"
+
+        return render(request, 'main/index.html', {"message": response, "user": user})
+
