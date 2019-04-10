@@ -1,5 +1,5 @@
 from Skeleton_Classes.App import *
-
+from WebApplication.models import *
 
 
 class Database(object):
