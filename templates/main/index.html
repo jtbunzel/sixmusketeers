@@ -2,27 +2,46 @@
 {% load staticfiles %}
 {% block content %}
 
-    <form class="form-signin" method="post" action="#">
-        <div class="text-center mb-4">
-            <img clsss="signin-logo" src="{% static 'images/logo.svg' %}" alt="">
-            <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
-            <p>Sign into your account below</p>
-        </div>
+    {% if user == None %}
+        <form class="form-signin" method="post" action="">
+            <div class="text-center mb-4">
+                <img clsss="signin-logo" src="{% static 'images/logo.svg' %}" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
+                <p>Sign into your account below</p>
+            </div>
 
-        <div class="form-label-group">
-            <input type="text" id="inputUsername" class="form-control" placeholder="Username" name = "username" required autofocus>
-            <label for="inputUsername">Username</label>
-        </div>
+            <div class="form-label-group">
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" name = "username" required autofocus>
+                <label for="inputUsername">Username</label>
+            </div>
 
-        <div class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" required>
-            <label for="inputPassword">Password</label>
-        </div>
+            <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name = "password" required>
+                <label for="inputPassword">Password</label>
+            </div>
 
-        {% csrf_token %}
-        {{ form.as_p }}
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="command" value="login">
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p>{{message}}</p>
+        </form>
+
+    {% else %}
+        <form method="post" action="">
+          {% csrf_token %}
+          Command: <input type="text" name="command"><br/>
+          <input type="submit"/>
+        </form>
+        <br>
+        <form method="post" action="#">
+            {% csrf_token %}
+            <input type="hidden" name="command" value="logout">
+            <input type="submit" value="Logout"/>
+        </form>
+        <p>{{message}}</p>
+    {% endif %}
+
 
 {% endblock content %}

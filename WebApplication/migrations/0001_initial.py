@@ -40,47 +40,19 @@ class Migration(migrations.Migration):
                 ('email', models.CharField(max_length=30)),
             ],
         ),
-        migrations.CreateModel(
-            name='Administrator',
-            fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='WebApplication.User')),
-            ],
-            bases=('WebApplication.user',),
-        ),
-        migrations.CreateModel(
-            name='Instructor',
-            fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='WebApplication.User')),
-            ],
-            bases=('WebApplication.user',),
-        ),
-        migrations.CreateModel(
-            name='Supervisor',
-            fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='WebApplication.User')),
-            ],
-            bases=('WebApplication.user',),
-        ),
-        migrations.CreateModel(
-            name='TA',
-            fields=[
-                ('user_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='WebApplication.User')),
-            ],
-            bases=('WebApplication.user',),
-        ),
         migrations.AddField(
             model_name='labsection',
             name='section_TA',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='WebApplication.TA'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='WebApplication.User'),
         ),
         migrations.AddField(
             model_name='course',
             name='course_TAs',
-            field=models.ManyToManyField(to='WebApplication.TA'),
+            field=models.ManyToManyField(to='WebApplication.User'),
         ),
         migrations.AddField(
             model_name='course',
             name='course_instructor',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='WebApplication.Instructor'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='WebApplication.User'),
         ),
     ]

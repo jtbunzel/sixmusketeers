@@ -23,7 +23,7 @@ class CommandController(object):
         return
 
     def login(self, username, password):
-        print (self.app.get_loggedin())
+        print(self.app.get_loggedin())
         if self.app.get_loggedin() is not None:
             return 'User already logged in. Log out to log in as a different user.'
         user_logging_in = User.objects.filter(username=username)
