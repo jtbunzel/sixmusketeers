@@ -1,5 +1,5 @@
 class Credentials:
-    def __init__(self, controller, user=None, DEBUG=False):
+    def __init__(self, controller, user = None, DEBUG = False):
         self.controller = controller
         self.user = user
         self.DEBUG = DEBUG

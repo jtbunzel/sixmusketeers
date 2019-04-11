@@ -43,7 +43,8 @@ class Home(View):
                     self.init_logged_in(request)
                     response = "Logged out"
                 else:
-                    response = a.command(command_input)
+                    if command_input:
+                        response = a.command(command_input)
         else:
             if command_type is not None:
                 if command_type == 'login':
