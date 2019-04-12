@@ -7,7 +7,8 @@ from ApplicationSession import Credentials
 
 a = App()
 
-class Home(View):
+
+class BaseView(View):
     def __init__(self):
         self.credentials = Credentials.Credentials(a, DEBUG=True)
 
@@ -17,19 +18,7 @@ class Home(View):
         else:
             self.credentials.user = None
 
-    def get(self, request):
-        self.init_logged_in(request)
-
-        user = None
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-
-        return render(request, "main/index.html", {"user": user})
-
-    def post(self, request):
-        self.init_logged_in(request)
-        user = self.credentials.user
-
+    def post_response(self, request, user):
         command_type = request.POST.get("command", False)
         command_input = request.POST.get("commandStr", False)
         response = ""
@@ -60,5 +49,52 @@ class Home(View):
                     else:
                         response = "Incorrect login"
 
-        return render(request, 'main/index.html', {"message": response, "user": user})
+        return user, response
 
+
+class Home(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = None
+        name = ""
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+            name = self.credentials.user.first_name
+
+        return render(request, "main/index.html", {"user": user, "name": name})
+
+    def post(self, request):
+        self.init_logged_in(request)
+        user = self.credentials.user
+        name = ""
+        if user is not None:
+            name = self.credentials.user.first_name
+
+        user, response = self.post_response(request, user)
+
+        return render(request, 'main/index.html', {"message": response, "user": user, "name": name})
+
+
+class Create(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = None
+        fullname = "Nope"
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+            name = self.credentials.user.first_name
+
+            print(fullname)
+
+        return render(request, "main/create.html", {"user": user, "name": name})
+
+    def post(self, request):
+        self.init_logged_in(request)
+        user = self.credentials.user
+        name = self.credentials.user.first_name
+
+        user, response = self.post_response(request, user)
+
+        return render(request, 'main/create.html', {"message": response, "user": user, "name": name})
