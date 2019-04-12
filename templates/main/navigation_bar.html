@@ -6,8 +6,8 @@
             <img src="{% static 'images/logo.svg' %}" alt="" height="30px" width="30px" class="d-inline-block nav-logo">
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/create">Create</a></li>
+            <li class="{% if navbar == 'home' %}active{% endif %}"><a href="/">Home</a></li>
+            <li class="{% if navbar == 'create' %}active{% endif %}"><a href="/create">Create</a></li>
         </ul>
 
         <form method="post" action="/" id="logout-form">

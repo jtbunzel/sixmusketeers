@@ -62,7 +62,7 @@ class Home(BaseView):
             user = self.credentials.user.username
             name = self.credentials.user.first_name
 
-        return render(request, "main/index.html", {"user": user, "name": name})
+        return render(request, "main/index.html", {"navbar": "home", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -73,7 +73,7 @@ class Home(BaseView):
 
         user, response = self.post_response(request, user)
 
-        return render(request, 'main/index.html', {"message": response, "user": user, "name": name})
+        return render(request, 'main/index.html', {"navbar": "home", "message": response, "user": user, "name": name})
 
 
 class Create(BaseView):
@@ -88,7 +88,7 @@ class Create(BaseView):
 
             print(fullname)
 
-        return render(request, "main/create.html", {"user": user, "name": name})
+        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -97,4 +97,4 @@ class Create(BaseView):
 
         user, response = self.post_response(request, user)
 
-        return render(request, 'main/create.html', {"message": response, "user": user, "name": name})
+        return render(request, 'main/create.html', {"navbar": "create", "message": response, "user": user, "name": name})

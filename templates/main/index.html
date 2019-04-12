@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block content %}
 
+<script>
+    $(function () {
+        $('#home').addClass('active');
+    });
+</script>
+
+{% block content %}
     {% if user == None %}
         <div class="sign-in-container">
             <form class="form-signin" method="post" action="">
@@ -32,7 +38,7 @@
 
     {% else %}
         {% include "main/navigation_bar.html" %}
-        <div class="container_block">
+        <div class="container_block home-page">
             <form method="post" action="">
               {% csrf_token %}
               Command: <input type="text" name="command"><br/>
