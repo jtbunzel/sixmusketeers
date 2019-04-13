@@ -18,7 +18,7 @@ class UserCommandController:
 #        #Check if user exists
 #        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentUserInfo = User.objects.get(username = userInfo[0])
+            currentUserInfo = User.objects.filter(username__iexact=userInfo[0])
         except ObjectDoesNotExist:
             print("User could not be found.")
 
