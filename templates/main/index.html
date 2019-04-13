@@ -12,9 +12,10 @@
         <div class="sign-in-container">
             <form class="form-signin" method="post" action="">
                 <div class="text-center mb-4">
-                    <img clsss="signin-logo" src="{% static 'images/logo.svg' %}" alt="">
+                    <img class="signin-logo" src="{% static 'images/logo-2.svg' %}">
                     <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
                     <p>Sign into your account below</p>
+                    <p class="login-message">{{message}}</p>
                 </div>
 
                 <div class="form-label-group">
@@ -32,13 +33,12 @@
                 <input type="hidden" name="command" value="login">
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                <p>{{message}}</p>
             </form>
         </div>
 
     {% else %}
         {% include "main/navigation_bar.html" %}
-        <div class="container_block home-page">
+        <div class="container_block">
             <form method="post" action="">
               {% csrf_token %}
               Command: <input type="text" name="command"><br/>

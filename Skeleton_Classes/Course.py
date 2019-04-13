@@ -1,16 +1,16 @@
-from Skeleton_Classes.LabSection import *
-
-
 class Course:
-    lab_sections = [None]
+    course_name = ""
+    course_instructor = None
+    course_code = None
+    lab_sections = []
     assigned_TA = None
     assigned_Grader = None
 
-    def __init__(self, course_name="", course_instructor="n/a", course_code="n/a"):
+    def __init__(self, course_name, course_instructor, course_code):
         self.course_name = course_name
         self.course_instructor = course_instructor
         self.course_code = course_code
-        self.lab_sections = [None]
+        self.lab_sections = []
         self.assigned_TA = None
         self.assigned_Grader = None
 
