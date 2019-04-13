@@ -81,12 +81,10 @@ class Create(BaseView):
         self.init_logged_in(request)
 
         user = None
-        fullname = "Nope"
+        name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
             name = self.credentials.user.first_name
-
-            print(fullname)
 
         return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name})
 
@@ -98,3 +96,69 @@ class Create(BaseView):
         user, response = self.post_response(request, user)
 
         return render(request, 'main/create.html', {"navbar": "create", "message": response, "user": user, "name": name})
+
+
+class Users(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = None
+        name = ""
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+            name = self.credentials.user.first_name
+
+        return render(request, "main/users.html", {"navbar": "users", "user": user, "name": name})
+
+    def post(self, request):
+        self.init_logged_in(request)
+        user = self.credentials.user
+        name = self.credentials.user.first_name
+
+        user, response = self.post_response(request, user)
+
+        return render(request, 'main/users.html', {"navbar": "users", "message": response, "user": user, "name": name})
+
+
+class Courses(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = None
+        name = ""
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+            name = self.credentials.user.first_name
+
+        return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name})
+
+    def post(self, request):
+        self.init_logged_in(request)
+        user = self.credentials.user
+        name = self.credentials.user.first_name
+
+        user, response = self.post_response(request, user)
+
+        return render(request, 'main/courses.html', {"navbar": "courses", "message": response, "user": user, "name": name})
+
+
+class Account(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = None
+        name = ""
+        if self.credentials.user is not None:
+            user = self.credentials.user.username
+            name = self.credentials.user.first_name
+
+        return render(request, "main/account.html", {"navbar": "account", "user": user, "name": name})
+
+    def post(self, request):
+        self.init_logged_in(request)
+        user = self.credentials.user
+        name = self.credentials.user.first_name
+
+        user, response = self.post_response(request, user)
+
+        return render(request, 'main/account.html', {"navbar": "account", "message": response, "user": user, "name": name})
