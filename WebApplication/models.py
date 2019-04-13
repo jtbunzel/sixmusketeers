@@ -27,5 +27,5 @@ class Course(models.Model):
 
 class LabSection(models.Model):
     lab_tas = models.ManyToManyField(User, related_name='ta_list', default=None)
-    section_number = models.CharField(max_length=5, default='')
+    lab_number = models.CharField(max_length=5, default='')
     course = models.ForeignKey(Course, on_delete=models.CASCADE, default=None)

@@ -1,8 +1,5 @@
-from Skeleton_Classes.LabSection import *
-
-
 class Course:
-    course_name = None
+    course_name = ""
     course_instructor = None
     course_code = None
     lab_sections = []

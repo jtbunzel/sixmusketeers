@@ -2,7 +2,7 @@ from .models import User, Course
 from django.core.exceptions import ObjectDoesNotExist
 
 
-class UserCommandController:
+class CourseCommandController:
     user = User
 
     def editCourse(self, course_name, course_instructor, course_code):
