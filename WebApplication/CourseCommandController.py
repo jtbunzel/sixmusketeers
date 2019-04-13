@@ -3,7 +3,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserCommandController:
-    user = User()
+    user = User
 
     def editCourse(self, course_name, course_instructor, course_code):
         # Check for user logged in
@@ -17,7 +17,7 @@ class UserCommandController:
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentCourse = Course.objects.filter(course_name=course_name)
+            currentCourse = Course.objects.filter(course_code=course_code)
         except ObjectDoesNotExist:
             print("Course could not be found or does not exist.")
 
@@ -36,3 +36,23 @@ class UserCommandController:
         currentCourse.save()
 
         return "Course has been edited."
+
+    def deleteCourse(self, course_code):
+        # Check for user logged in
+        if self.user is None:
+            return "You must be logged in"
+
+#        #Check for Supervisor or Admin role
+        if self.user.rank < 2:
+            return "You do not have permission to use this command"
+
+#        Check if course exists
+#        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
+        try:
+            currentCourse = Course.objects.filter(course_code=course_code)
+        except ObjectDoesNotExist:
+            print("Course could not be found or does not exist.")
+
+        currentCourse.delete()
+
+        return "Course has been deleted."
