@@ -58,6 +58,18 @@ class UserCommandController:
 
         return "User information has been successfully updated"
 
+    def showUser(self):
+        if self.user is None:
+            return "you must be logged in"
+
+        print("First name = ",self.user.first_name)
+        print("Last name = ", self.user.last_name)
+        print("Address = ", self.user.address)
+        print("Phone = ", self.user.phone)
+        print("Email = ", self.user.email)
+
+        return "Personal informations has succesfully shown"
+
 
 
 
