@@ -30,7 +30,6 @@ class BaseView(View):
                     request.session["user"] = ""
                     user = None
                     self.init_logged_in(request)
-                    response = "Logged out"
                 else:
                     if command_input:
                         response = a.command(command_input)
@@ -42,7 +41,6 @@ class BaseView(View):
 
                     res = a.command_controller.login(username, password)
                     if res == 'User logged in.':
-                        response = "Logged in"
                         request.session["user"] = request.POST["username"]
                         self.init_logged_in(request)
                         user = self.credentials.user
