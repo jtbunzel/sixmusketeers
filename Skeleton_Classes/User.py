@@ -1,13 +1,22 @@
 class User:
+    username = ""
+    password = ""
+    first_name = ""
+    last_name = ""
+    phone_number = ""
+    address = ""
+    email = ""
+    rank = ""
 
-    def __init__(self, username="", password ="", rank=""):
+    #Constructor
+    def __init__(self, username, password, first_name, last_name, phone_number, address, email, rank):
         self.username = username
         self.password = password
-        self.first_name = " "
-        self.last_name = " "
-        self.address = " "
-        self.phone_number = " "
-        self.email = " "
+        self.first_name = first_name
+        self.last_name = last_name
+        self.phone_number = phone_number
+        self.address = address
+        self.email = email
         self.rank = rank
 
     def get_username(self):
