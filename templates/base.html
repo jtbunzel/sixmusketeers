@@ -4,7 +4,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Web Application</title>
+    {% if navbar == "home" %}
+        {% if user != None %}
+            <title>S.A.S.S. - Home</title>
+        {% else %}
+            <title>S.A.S.S. - Login</title>
+        {% endif %}
+    {% endif %}
+    {% if navbar == "create" %}<title>S.A.S.S. - Create</title>{% endif %}
+    {% if navbar == "users" %}<title>S.A.S.S. - Users</title>{% endif %}
+    {% if navbar == "courses" %}<title>S.A.S.S. - Courses</title>{% endif %}
+    {% if navbar == "account" %}<title>S.A.S.S. - Account</title>{% endif %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 

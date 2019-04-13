@@ -38,7 +38,7 @@
 
     {% else %}
         {% include "main/navigation_bar.html" %}
-        <div class="container_block home-page">
+        <div class="container_block">
             <form method="post" action="">
               {% csrf_token %}
               Command: <input type="text" name="command"><br/>
