@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="{% static 'images/logo.svg' %}" alt="" height="30px" width="30px" class="d-inline-block nav-logo">
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="{% if navbar == 'home' %}active{% endif %}"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            <li class="{% if navbar == 'create' %}active{% endif %}"><a href="/create"><span class="glyphicon glyphicon-plus-sign"></span> Create</a></li>
+            <li class="{% if navbar == 'users' %}active{% endif %}"><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
+            <li class="{% if navbar == 'courses' %}active{% endif %}"><a href="/courses"><span class="glyphicon glyphicon-pencil"></span> Courses</a></li>
+            <li class="{% if navbar == 'account' %}active{% endif %}"><a href="/account"><span class="	glyphicon glyphicon-cog"></span> Account</a></li>
+        </ul>
+
+        <form method="post" action="/" id="logout-form">
+            {% csrf_token %}
+            <input type="hidden" name="command" value="logout">
+            <ul class="nav navbar-nav navbar-right">
+                {% if name != "" %}
+                    <li><span class="navbar-text">Hello, {{name}}</span></li>
+                {% endif %}
+                <li><a href="#" onclick="document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </form>
+
+    </div>
+</nav>

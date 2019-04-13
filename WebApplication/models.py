@@ -13,7 +13,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=50, default='')
     username = models.CharField(max_length=50, default='')
     password = models.CharField(max_length=50, default='')
-    role = models.CharField(max_length=9, choices=ROLE_CHOICES, default='1')
+    role = models.CharField(max_length=13, choices=ROLE_CHOICES, default='1')
     phone = models.CharField(max_length=50, default='')
     email = models.CharField(max_length=50, default='')
     address = models.CharField(max_length=50, default='')
