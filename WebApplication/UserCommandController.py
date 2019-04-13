@@ -11,39 +11,47 @@ class UserCommandController:
         if self.user is None:
             return "You must be logged in"
 
-        #Check for Supervisor or Admin role
+#        #Check for Supervisor or Admin role
         if self.user.rank < 2:
             return "You do not have permission to use this command"
 
-        #Check if user exists
-        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
+#        #Check if user exists
+#        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
             currentUserInfo = User.objects.get(username = userInfo[0])
         except ObjectDoesNotExist:
             print("User could not be found.")
 
-        if newInfo[0] != None:
+#       #If Username not blank edit Username
+        if newInfo[0] != '':
             currentUserInfo.username = newInfo[0]
 
-        if newInfo[1] != None:
+#       #If Password not blank edit Password
+        if newInfo[1] != '':
             currentUserInfo.password = newInfo[1]
 
-        if newInfo[2] != None:
+#       #If First Name not blank edit First Name
+        if newInfo[2] != '':
             currentUserInfo.first_name = newInfo[2]
 
-        if newInfo[3] != None:
+#       #If Last Name not blank edit Last Name
+        if newInfo[3] != '':
             currentUserInfo.last_name = newInfo[3]
 
-        if newInfo[4] != None:
+#       #If Phone Number not blank edit Phone Number
+        if newInfo[4] != '':
             currentUserInfo.phone_number = newInfo[4]
 
-        if newInfo[5] != None:
+#       #If Address not blank edit Address
+        if newInfo[5] != '':
             currentUserInfo.address = newInfo[5]
 
-        if newInfo[6] != None:
+#       #If Email not blank edit Email
+        if newInfo[6] != '':
             currentUserInfo.email = newInfo[6]
 
-        if newInfo[7] != None:
+#       #If Rank not blank edit Rank
+        if newInfo[7] != '':
             currentUserInfo.rank = newInfo[7]
 
         currentUserInfo.save()
