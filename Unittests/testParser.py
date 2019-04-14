@@ -1,22 +1,21 @@
 import unittest
-import WebApplication.Parser
+from WebApplication.Parser import *
+
 
 class TestParser(unittest):
 
     def setUp(self):
         parser = Parser()
 
-
     def test_call_correct_command(self):
         parser.parse('createUser rock')
         self.assertEquals('createUser', parser.last_command_called)
 
-        string_returned = parser.parse('logout')
+        parser.parse('logout')
         self.assertEqual('logout', parser.last_command_called)
 
-        string_returned = parser.parse('editUser username newUsername')
+        parser.parse('editUser username newUsername')
         self.assertEquals('createUser', parser.last_command_called)
-
 
     def test_correct_parameters(self):
         parser.parse('createUser rock')
@@ -30,5 +29,5 @@ class TestParser(unittest):
             parser.parse('loogout')
 
         with self.assertException():
-            parser.parse('ediyUser username rocker')
+            parser.parse('ediyuser username rocker')
 
