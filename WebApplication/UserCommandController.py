@@ -1,4 +1,4 @@
-from Skeleton_Classes.User import User
+from Application_Classes.User import User
 from .models import User
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -32,7 +32,7 @@ class UserCommandController:
 
 #       #If First Name not blank edit First Name
         if newInfo[2] != '':
-            currentUserInfo.first_name = newInfo[2]
+            currentUserInfo.name = newInfo[2]
 
 #       #If Last Name not blank edit Last Name
         if newInfo[3] != '':

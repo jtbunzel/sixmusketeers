@@ -1,4 +1,4 @@
-from Skeleton_Classes.CommandController import *
+from Application_Classes.CommandController import *
 
 
 class app(object):

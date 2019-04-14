@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApplication/Commands.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190411_1049.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApplication/migrations/0003_auto_20190411_1056.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApplication/migrations/0004_auto_20190411_2200.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/testParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/testParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application_Classes/MOCK_app" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/MOCK_app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trash/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Trash/Database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/UserCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/UserCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -65,20 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestCreate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
+            <state relative-caret-position="469">
               <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/Parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -86,20 +86,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/Commands.py">
+        <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/MOCK_app">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -107,28 +113,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Unittests/testParser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="255">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py">
+        <entry file="file://$PROJECT_DIR$/Trash/Database.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/LabSectionCommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -171,6 +175,10 @@
       <find>set_loggedin</find>
       <find>logged out</find>
       <find>response</find>
+      <find>webapplication</find>
+      <find>skeleton_classes</find>
+      <find>sqlite3.OperationalError: no such column:</find>
+      <find>first_name</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -190,10 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Skeleton Classes/User.py" />
-        <option value="$PROJECT_DIR$/Skeleton Classes/Instructor.py" />
-        <option value="$PROJECT_DIR$/Skeleton_Classes/Lab_section.py" />
-        <option value="$PROJECT_DIR$/Skeleton_Classes/Administrator.py" />
         <option value="$PROJECT_DIR$/Unittests/TestAdministratorClass.py" />
         <option value="$PROJECT_DIR$/Unittests/testLab.py" />
         <option value="$PROJECT_DIR$/Unittests/TestUser.py" />
@@ -229,7 +233,6 @@
         <option value="$PROJECT_DIR$/templates/main/navigation_bar.html" />
         <option value="$PROJECT_DIR$/templates/main/index.html" />
         <option value="$PROJECT_DIR$/WebApplication/static/css/style.css" />
-        <option value="$PROJECT_DIR$/WebApplication/views.py" />
         <option value="$PROJECT_DIR$/WebApplication/SuperUserCommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
@@ -237,10 +240,15 @@
         <option value="$PROJECT_DIR$/WebApplication/LabSectionCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/CourseCommandController.py" />
         <option value="$PROJECT_DIR$/AcceptanceTests/TestCreate.py" />
-        <option value="$PROJECT_DIR$/WebApplication/UserCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/Parser.py" />
         <option value="$PROJECT_DIR$/WebApplication/Commands.py" />
         <option value="$PROJECT_DIR$/Unittests/testParser.py" />
+        <option value="$PROJECT_DIR$/Trash/Database.py" />
+        <option value="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/MOCK_app" />
+        <option value="$PROJECT_DIR$/WebApplication/views.py" />
+        <option value="$PROJECT_DIR$/WebApplication/UserCommandController.py" />
+        <option value="$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190411_1049.py" />
       </list>
     </option>
   </component>
@@ -250,10 +258,42 @@
     <option name="height" value="1103" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="AcceptanceTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="Skeleton_Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -270,7 +310,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,7 +444,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="sixmusketeers.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\dtsp\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\1redl\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -493,10 +532,10 @@
       <item itemvalue="Django server.Launch Server" />
       <item itemvalue="Python.Rational" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Python.testParser" />
       <item itemvalue="Python tests.Unittests for TestCommandController.TestCommandController.test_create" />
       <item itemvalue="Python tests.Unittests in TestUser.py" />
       <item itemvalue="Python tests.Unittests in testDjangoModels.py" />
-      <item itemvalue="Python.testParser" />
     </list>
     <recent_temporary>
       <list>
@@ -894,28 +933,29 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188948000" />
+    <option name="totallyTimeSpent" value="189742000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="1718" height="972" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.22386059" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.21954161" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7381804" visible="true" weight="0.32673267" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.31785715" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7381804" visible="true" weight="0.3255814" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31701347" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49428055" weight="0.15275814" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49428055" weight="0.378213" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3290461" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26181963" side_tool="true" weight="0.32673267" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4960867" weight="0.32531825" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.32673267" />
-      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" sideWeight="0.49577805" weight="0.32673267" />
+      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" sideWeight="0.49577805" weight="0.2619339" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -923,31 +963,6 @@
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.17217484" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.0731029" />
-      <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
-      <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7381804" visible="true" weight="0.32679245" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.31785715" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49428055" weight="0.15317559" />
-      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26181963" side_tool="true" visible="true" weight="0.32679245" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4960867" weight="0.32627645" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.6038874" weight="0.3279743" />
-      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="13" sideWeight="0.49577805" weight="0.32738096" />
-      <window_info anchor="bottom" id="Messages" order="14" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.17217484" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1026,14 +1041,6 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestInstructor_py.coverage" NAME="Unittests in TestInstructor.py Coverage Results" MODIFIED="1554190364791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Skeleton_Classes/MOCK_database.py" />
-    <entry file="file://$PROJECT_DIR$/sixmusketeers/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/commandLine.html" />
     <entry file="file://$PROJECT_DIR$/WebApplication/static/images/logo.svg">
       <provider selected="true" editor-type-id="images" />
@@ -1189,7 +1196,7 @@
     <entry file="file://$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/LabSectionCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
+        <state relative-caret-position="136">
           <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
@@ -1211,16 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1234,43 +1231,15 @@
     <entry file="file://$PROJECT_DIR$/WebApplication/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestCreate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database.patch">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0003_merge_20190409_0032.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190409_0018.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0003_merge_20190409_0032.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190409_0018.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/Parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1294,6 +1263,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trash/Database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/MOCK_app">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestCreate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
         </state>
       </provider>
     </entry>
