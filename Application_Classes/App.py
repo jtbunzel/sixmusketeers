@@ -1,6 +1,6 @@
-from Skeleton_Classes.CommandController import CommandController
-from Skeleton_Classes.User import *
-from Skeleton_Classes.Course import *
+from Application_Classes.CommandController import CommandController
+from Application_Classes.User import *
+from Application_Classes.Course import *
 
 
 class App(object):

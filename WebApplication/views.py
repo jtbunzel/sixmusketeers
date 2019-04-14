@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from Skeleton_Classes.App import App
+from Application_Classes.App import App
 from ApplicationSession import Credentials
 
 # Create your views here.

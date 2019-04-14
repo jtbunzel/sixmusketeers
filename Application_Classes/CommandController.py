@@ -1,5 +1,5 @@
-from Skeleton_Classes.User import *
-from Skeleton_Classes.Course import *
+from Application_Classes.User import *
+from Application_Classes.Course import *
 from WebApplication.models import User
 
 

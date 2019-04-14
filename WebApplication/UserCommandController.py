@@ -70,6 +70,8 @@ class UserCommandController:
 
         return "Personal informations has succesfully shown"
 
+    
+
 
 
 

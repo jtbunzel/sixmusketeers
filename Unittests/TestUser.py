@@ -1,5 +1,5 @@
 import unittest
-from Skeleton_Classes.User import *
+from Application_Classes.User import *
 
 
 class MyTestCase(unittest.TestCase):

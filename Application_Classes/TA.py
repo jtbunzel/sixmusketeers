@@ -1,5 +1,5 @@
-from Skeleton_Classes.Instructor import *
-from Skeleton_Classes.MOCK_Instructor import *
+from Application_Classes.Instructor import *
+from Application_Classes.MOCK_Instructor import *
 
 
 class TA(Instructor):

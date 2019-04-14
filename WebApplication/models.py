@@ -9,8 +9,7 @@ class User(models.Model):
         ("TA", "Ta"),
     )
 
-    first_name = models.CharField(max_length=50, default='')
-    last_name = models.CharField(max_length=50, default='')
+    name = models.CharField(max_length=50, default='')
     username = models.CharField(max_length=50, default='')
     password = models.CharField(max_length=50, default='')
     role = models.CharField(max_length=13, choices=ROLE_CHOICES, default='1')

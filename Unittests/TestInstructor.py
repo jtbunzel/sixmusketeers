@@ -1,6 +1,6 @@
 import unittest
-from Skeleton_Classes.Instructor import *
-from Skeleton_Classes.MOCK_course import *
+from Application_Classes.Instructor import *
+from Application_Classes.MOCK_course import *
 
 
 class MyTestCase(unittest.TestCase):

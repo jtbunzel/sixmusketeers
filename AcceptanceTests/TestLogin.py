@@ -1,5 +1,5 @@
 import unittest
-from Skeleton_Classes.App import *
+from Application_Classes.App import *
 
 
 class TestLogin(unittest):
