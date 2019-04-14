@@ -58,7 +58,7 @@ class Home(BaseView):
         name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         return render(request, "main/index.html", {"navbar": "home", "user": user, "name": name})
 
@@ -67,7 +67,7 @@ class Home(BaseView):
         user = self.credentials.user
         name = ""
         if user is not None:
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         user, response = self.post_response(request, user)
 
@@ -82,14 +82,14 @@ class Create(BaseView):
         name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
         user = self.credentials.user
-        name = self.credentials.user.first_name
+        name = self.credentials.user.name
 
         user, response = self.post_response(request, user)
 
@@ -104,14 +104,14 @@ class Users(BaseView):
         name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         return render(request, "main/users.html", {"navbar": "users", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
         user = self.credentials.user
-        name = self.credentials.user.first_name
+        name = self.credentials.user.name
 
         user, response = self.post_response(request, user)
 
@@ -126,14 +126,14 @@ class Courses(BaseView):
         name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
         user = self.credentials.user
-        name = self.credentials.user.first_name
+        name = self.credentials.user.name
 
         user, response = self.post_response(request, user)
 
@@ -148,14 +148,14 @@ class Account(BaseView):
         name = ""
         if self.credentials.user is not None:
             user = self.credentials.user.username
-            name = self.credentials.user.first_name
+            name = self.credentials.user.name
 
         return render(request, "main/account.html", {"navbar": "account", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
         user = self.credentials.user
-        name = self.credentials.user.first_name
+        name = self.credentials.user.name
 
         user, response = self.post_response(request, user)
 

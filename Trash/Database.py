@@ -1,4 +1,4 @@
-from Skeleton_Classes.App import *
+from Application_Classes.App import *
 from WebApplication.models import *
 
 
