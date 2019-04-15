@@ -71,5 +71,6 @@ class User:
         self.rank = new_rank
 
     def get_public_contact_info(self):
-        return
-        pass
+        return self.get_first_name() + " " + self.get_last_name() + " " + "\n" \
+               + self.get_address + " " + self.get_phone_number + " " + self.get_email() \
+               + "\n" + self.get_username() + " " + self.get_rank() + "\n"
