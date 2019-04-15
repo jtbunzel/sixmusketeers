@@ -26,6 +26,9 @@ class SuperUserCommandController:
         if self.user.username == currentUser.username:
             return "You can not delete your own account"
 
+        if self.user.username == 'Admin'.casefold():
+            return "Can not delete Admin account"
+
         currentUser.delete()
 
         return "User successfully deleted."

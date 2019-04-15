@@ -4,19 +4,17 @@ from Application_Classes.User import User
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
-        self.user = User('wheelerg', '1234', 'Supervisor')
-        self.user.set_first_name('Grant')
-        self.user.set_last_name('Wheeler')
-        self.user.set_address('3200 N. Cramer St. Milwaukee, WI 53211')
-        self.user.set_email('wheelerg@uwm.edu')
-        self.user.set_phone_number('4148857236')
+        self.user = User('wheelerg', '1234', 'Grant', 'Wheeler', '4148857236', '3200 N. Cramer St. Milwaukee, WI 53211', 'wheelerg@uwm.edu', 'Supervisor')
 
     def test_constructor(self):
-        user = User('patel59', 'iamawesome')
-        username = user.username
-        password = user.password
-        self.assertEqual(username, 'patel59')
-        self.assertEqual(password, 'iamawesome')
+        self.assertEqual(self.user.username, 'wheelerg')
+        self.assertEqual(self.user.password, '1234')
+        self.assertEqual(self.user.first_name, 'Grant')
+        self.assertEqual(self.user.last_name, 'Wheeler')
+        self.assertEqual(self.user.phone_number, '4148857236')
+        self.assertEqual(self.user.address, '3200 N. Cramer St. Milwaukee, WI 53211')
+        self.assertEqual(self.user.email, 'wheelerg@uwm.edu')
+        self.assertEqual(self.user.rank, 'Supervisor')
 
     def test_get_username(self):
         result = self.user.get_username()
@@ -75,6 +73,10 @@ class MyTestCase(unittest.TestCase):
         self.user.set_rank('TA')
         result = self.user.get_rank()
         self.assertEqual(result, 'TA')
+
+    def test_public_info(self):
+        result = self.user.get_public_contact_info()
+        self.assertTrue(result, 'wheelerg 1234 Grant Wheeler 4148857236 3200 N. Cramer St. Milwaukee, WI 53211 wheelerg@uwm.edu Supervisor')
 
 
 if __name__ == '__main__':
