@@ -1,19 +1,29 @@
 from django.test import TestCase
-from WebApplication.models import User, Course
+from WebApplication.CourseCommandController import CourseCommandController
 
 
 class TestCourseCommandController(TestCase):
+    cmd = CourseCommandController()
 
     def setUp(self):
-        user = User()
-        course = Course()
         pass
 
     def test_create_course(self):
-        pass
+        cmd = CourseCommandController()
+        action = cmd.createCourse("Intro to Comp Sci", "Jojo", "007")
+        result = "Successfully created a new Course"
+        self.assertEqual(result, action)
 
     def test_edit_course(self):
-        pass
+        cmd = CourseCommandController()
+        cmd.createCourse("Intro to Comp Sci", "Jojo", "007")
+        action = cmd.editCourse("001", "Intro to Comp Security", "Billy", "008")
+        result = "Course has been edited."
+        self.assertEqual(result, action)
 
     def test_delete_course(self):
-        pass
+        cmd = CourseCommandController()
+        cmd.createCourse("Intro to Comp Sci", "Jojo", "007")
+        action = cmd.deleteCourse("007")
+        result = "Course has been deleted."
+        self.assertEqual(result, action)
