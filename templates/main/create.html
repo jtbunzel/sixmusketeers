@@ -4,16 +4,27 @@
 {% block content %}
 
     <div class="container_block" style="width:100%">
-    {% if user == None %}
-       <meta http-equiv="refresh" content="0; URL=''" />
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
 
-    {% else %}
-        {% include "main/navigation_bar.html" %}
-        <div class="container_block">
-            Create page
-            <p>{{message}}</p>
-        </div>
-    {% endif %}
+        {% else %}
+            {% include "main/navigation_bar.html" %}
+            <div class="container_block">
+                Create user
+                <form method="post" action="#" id="logout-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="command" value="create">
+                    <input type="Text" name="username" for="username">
+                    <br>
+                    <input type="radio" name="usertype" value="Instructor" checked> Instructor<br>
+                    <input type="radio" name="usertype" value="TA">TA<br>
+                    <br>
+
+                    <input type="Submit">
+                </form>
+                <p>{{ message }}</p>
+            </div>
+        {% endif %}
 
     </div>
 
