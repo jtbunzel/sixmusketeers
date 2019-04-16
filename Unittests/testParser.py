@@ -1,8 +1,7 @@
 import unittest
-from WebApplication.Parser import *
+from Application_Classes.Parser import *
 
-
-class TestParser(unittest):
+class TestParser(unittest.TestCase):
 
     def setUp(self):
         parser = Parser()
