@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unittests/TestUserCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestUserCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -24,6 +23,7 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$TestTA.coverage" NAME="TestTA Coverage Results" MODIFIED="1552445976572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv_test_DivisionOfTwoDifferentRationalNumbers.coverage" NAME="Unittests for TestDiv.TestDiv.test_DivisionOfTwoDifferentRationalNumbers Coverage Results" MODIFIED="1550354580608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_MyTestCase.coverage" NAME="Unittests for TestDiv.MyTestCase Coverage Results" MODIFIED="1551331370584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sixmusketeers2$Test__Unittests_TestCourseCommandController_TestCourseCommandController.coverage" NAME="Test: Unittests.TestCourseCommandController.TestCourseCommandController Coverage Results" MODIFIED="1555379188932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_Unittests.coverage" NAME="Unittests in Unittests Coverage Results" MODIFIED="1552435456718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestDiv_py.coverage" NAME="Unittests in TestDiv.py Coverage Results" MODIFIED="1550166979062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestUser_py.coverage" NAME="Unittests in TestUser.py Coverage Results" MODIFIED="1554822820875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -281,10 +281,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1456" />
+    <option name="x" value="-10" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
@@ -920,22 +919,17 @@
       <option name="project" value="LOCAL" />
       <updated>1555377773744</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="show user test">
+      <created>1555378333383</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1555378333383</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 30m 40s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 31m 14s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 31m 29s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 32m 20s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
     <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 32m 28s.xml">
       <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
@@ -954,9 +948,21 @@
     <history-entry file="Test__Unittests_TestCourseCommandController_TestCourseCommandController - 2019.04.15 at 02h 57m 53s.xml">
       <configuration name="Test: Unittests.TestCourseCommandController.TestCourseCommandController" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Test__Unittests_TestCourseCommandController_TestCourseCommandController - 2019.04.15 at 20h 33m 09s.xml">
+      <configuration name="Test: Unittests.TestCourseCommandController.TestCourseCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.15 at 20h 43m 43s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.15 at 20h 45m 32s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestCourseCommandController_TestCourseCommandController - 2019.04.15 at 20h 46m 30s.xml">
+      <configuration name="Test: Unittests.TestCourseCommandController.TestCourseCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200532000" />
+    <option name="totallyTimeSpent" value="201834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -968,15 +974,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="1386" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.18702866" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.18759455" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7372814" visible="true" weight="0.28495842" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7372814" weight="0.28477904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31785715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1426,6 +1432,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="64" column="57" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/TestLabSectionCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1436,17 +1449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="64" column="57" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
