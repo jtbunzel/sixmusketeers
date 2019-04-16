@@ -13,6 +13,6 @@ class TestAdminSuperCommandController(TestCase):
 
     def test_showUser(self):
         user = UserCommandController()
-        action = user.showUser()
-
-        pass
+        action = user.showUser(self)
+        result = "First name = " + "Rock" + "\n" + "Last name = " + "gomez" + "\n" + "Address = " + "Milwaukee" + "\n" + "Phone = " + "4148563625" + "\n" + "Email = " + "rock@uwm.edu" + "\n"
+        self.assertEqual(action,result)
