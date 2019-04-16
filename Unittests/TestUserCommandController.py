@@ -1,6 +1,6 @@
 from django.test import TestCase
 from WebApplication.models import User
-
+from WebApplication.UserCommandController import UserCommandController
 
 class TestAdminSuperCommandController(TestCase):
 
@@ -12,4 +12,7 @@ class TestAdminSuperCommandController(TestCase):
         pass
 
     def test_showUser(self):
+        user = UserCommandController()
+        action = user.showUser()
+
         pass
