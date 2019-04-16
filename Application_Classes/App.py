@@ -17,9 +17,8 @@ class App(object):
         response = self.command_controller.parse(a)
         return response
 
-    def get_loggedin(self):
-        return self.loggedin
-        pass
+    def get_loggedin(self, username):
+        return self.command_controller.get_logged_in(username)
 
     def set_loggedin(self, new_loggedin):
         self.loggedin = new_loggedin
