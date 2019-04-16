@@ -2,7 +2,7 @@ from django.test import TestCase
 from WebApplication.models import User
 from WebApplication.UserCommandController import UserCommandController
 
-class TestAdminSuperCommandController(TestCase):
+class TestUserCommandController(TestCase):
 
     def setUp(self):
         user = User()
