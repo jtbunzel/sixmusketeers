@@ -1,5 +1,5 @@
 import unittest
-from Skeleton_Classes.TA import *
+from Application_Classes.TA import *
 
 
 class MyTestCase(unittest.TestCase):

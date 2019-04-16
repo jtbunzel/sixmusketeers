@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container_block" style="width:100%">
+    {% if user == None %}
+       <meta http-equiv="refresh" content="0; URL=''" />
+
+    {% else %}
+        {% include "main/navigation_bar.html" %}
+        <div class="container_block">
+            Course page
+            <p>{{message}}</p>
+        </div>
+    {% endif %}
+
+    </div>
+
+{% endblock content %}

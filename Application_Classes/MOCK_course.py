@@ -1,4 +1,4 @@
-from Skeleton_Classes.LabSection import *
+from Application_Classes.LabSection import *
 
 
 class Course:

@@ -1,5 +1,5 @@
 import unittest
-from Skeleton_Classes.Supervisor import *
+from Application_Classes.Supervisor import *
 
 
 class MyTestCase(unittest.TestCase):

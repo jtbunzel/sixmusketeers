@@ -1,6 +1,6 @@
-from Skeleton_Classes.CommandController import CommandController
-from Skeleton_Classes.User import *
-from Skeleton_Classes.Course import *
+from Application_Classes.CommandController import CommandController
+from Application_Classes.User import *
+from Application_Classes.Course import *
 
 
 class App(object):
@@ -15,7 +15,7 @@ class App(object):
 
     def command(self, a):
         response = self.command_controller.parse(a)
-        print(response)
+        return response
 
     def get_loggedin(self):
         return self.loggedin

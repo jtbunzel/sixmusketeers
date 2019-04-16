@@ -1,5 +1,5 @@
 import unittest
-from Skeleton_Classes.Administrator import Administrator
+from Application_Classes.Administrator import Administrator
 
 
 class MyTestCase(unittest.TestCase):

@@ -1,14 +1,7 @@
 import unittest
-from Skeleton_Classes.Administrator import *
-from Skeleton_Classes.Course import *
-from Skeleton_Classes.User import *
-from Skeleton_Classes.App import *
-from Skeleton_Classes.Database import *
-from Skeleton_Classes.Supervisor import *
-from Skeleton_Classes.LabSection import *
-from Skeleton_Classes.Supervisor import *
-from Skeleton_Classes.TA import *
-from Skeleton_Classes.App import *
+from Application_Classes.Supervisor import *
+from Application_Classes.TA import *
+from Application_Classes.App import *
 
 
 class TestCommandController(unittest.TestCase):
