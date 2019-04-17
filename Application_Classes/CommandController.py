@@ -19,7 +19,7 @@ class CommandController(object):
         command = command_array[0]
         if command == 'create':
             creationtype = command_array[1]
-            return self.adminsuper_stuff.create(command_array[2:], creationtype)
+            return self.adminsuper_stuff.create(creationtype, command_array[2:])
         if command == 'login':
             username = command_array[1]
             password = command_array[2]
