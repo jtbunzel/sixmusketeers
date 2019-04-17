@@ -22,17 +22,23 @@ class CommandController(object):
             return self.logout()
         return
 
+
+    def get_logged_in(self, username):
+        user_object = User.objects.filter(username=username)
+        if user_object.count() == 0:
+            return None
+        else:
+            return user_object.values()[0]
+
+
     def login(self, username, password):
-        print(self.app.get_loggedin())
-        if self.app.get_loggedin() is not None:
-            return 'User already logged in. Log out to log in as a different user.'
         user_logging_in = User.objects.filter(username=username)
         if user_logging_in.count() == 0:
-            return 'User not found.'
+            return 'Username not found.'
         if user_logging_in[0].password != password:
             return 'Password is incorrect.'
-        self.app.set_loggedin(user_logging_in[0])
-        return 'User logged in.'
+
+        return True
 
     def createUser(self, username):
         num_users_with_same_username = User.objects.filter(username=username).count()

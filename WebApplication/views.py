@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views import View
 from Application_Classes.App import App
-from ApplicationSession import Credentials
 
 # Create your views here.
 
@@ -9,14 +8,14 @@ a = App()
 
 
 class BaseView(View):
-    def __init__(self):
-        self.credentials = Credentials.Credentials(a, DEBUG=True)
-
     def init_logged_in(self, request):
-        if "user" in request.session and request.session["user"] != "":
-            self.credentials.user = self.credentials.controller.get_loggedin()
+        username = request.session.get("user", "")
+        if "user" in request.session and username != "":
+            print("logged in: " + username)
+            request.session["user"] = username
         else:
-            self.credentials.user = None
+            print("no session")
+            return False
 
     def post_response(self, request, user):
         command_type = request.POST.get("command", False)
@@ -24,29 +23,28 @@ class BaseView(View):
         response = ""
 
         if user is not None:
-            if command_type is not None:
+            if command_type is not False:
                 if command_type == 'logout':
                     a.command_controller.logout()
                     request.session["user"] = ""
-                    user = None
-                    self.init_logged_in(request)
                 else:
                     if command_input:
                         response = a.command(command_input)
         else:
-            if command_type is not None:
+            if command_type is not False:
                 if command_type == 'login':
-                    username = request.POST.get('username')
-                    password = request.POST.get('password')
+                    username = request.POST.get('username', '')
+                    password = request.POST.get('password', '')
 
                     res = a.command_controller.login(username, password)
-                    if res == 'User logged in.':
-                        request.session["user"] = request.POST["username"]
-                        self.init_logged_in(request)
-                        user = self.credentials.user
+                    print(res)
+                    if res:
+                        print("log in")
+                        request.session["user"] = username
                     else:
                         response = "Incorrect login"
 
+        user = a.get_loggedin(request.session.get("user", ""))
         return user, response
 
 
@@ -54,22 +52,27 @@ class Home(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        user = None
+        user = a.get_loggedin(request.session.get("user", ""))
         name = ""
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-            name = self.credentials.user.name
+        if user is not None:
+            print(user)
+            name = user['name']
 
         return render(request, "main/index.html", {"navbar": "home", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
-        user = self.credentials.user
+
+        user = a.get_loggedin(request.session.get("user", ""))
         name = ""
         if user is not None:
-            name = self.credentials.user.name
+            name = user['name']
+        else:
+            print("no user")
 
         user, response = self.post_response(request, user)
+
+        print(user)
 
         return render(request, 'main/index.html', {"navbar": "home", "message": response, "user": user, "name": name})
 
@@ -78,18 +81,24 @@ class Create(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        user = None
-        name = ""
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-            name = self.credentials.user.name
+        print(request.GET.get("type"))
 
-        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name})
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
+
+        type = request.GET.get("type")
+
+        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name, "type": type})
 
     def post(self, request):
         self.init_logged_in(request)
-        user = self.credentials.user
-        name = self.credentials.user.name
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
 
         user, response = self.post_response(request, user)
 
@@ -100,18 +109,20 @@ class Users(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        user = None
+        user = a.get_loggedin(request.session.get("user", ""))
         name = ""
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-            name = self.credentials.user.name
+        if user is not None:
+            name = user['name']
 
         return render(request, "main/users.html", {"navbar": "users", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
-        user = self.credentials.user
-        name = self.credentials.user.name
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
 
         user, response = self.post_response(request, user)
 
@@ -122,18 +133,20 @@ class Courses(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        user = None
+        user = a.get_loggedin(request.session.get("user", ""))
         name = ""
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-            name = self.credentials.user.name
+        if user is not None:
+            name = user['name']
 
         return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
-        user = self.credentials.user
-        name = self.credentials.user.name
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
 
         user, response = self.post_response(request, user)
 
@@ -144,18 +157,20 @@ class Account(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        user = None
+        user = a.get_loggedin(request.session.get("user", ""))
         name = ""
-        if self.credentials.user is not None:
-            user = self.credentials.user.username
-            name = self.credentials.user.name
+        if user is not None:
+            name = user['name']
 
         return render(request, "main/account.html", {"navbar": "account", "user": user, "name": name})
 
     def post(self, request):
         self.init_logged_in(request)
-        user = self.credentials.user
-        name = self.credentials.user.name
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
 
         user, response = self.post_response(request, user)
 
