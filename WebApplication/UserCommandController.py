@@ -70,28 +70,6 @@ class UserCommandController:
 
         return a+b+c+d+e
 
-    def create(self, username, user_type):
-        if username == "":
-            return Exception
-        print("\nin create in cmd cntrler ", user_type)
-        print("\nin create in cmd cntrler", username)
-
-        if "course" is not user_type:
-            print("I\nam\nhere\n")
-            user1 = User()
-            user1.username = username
-            user1.role = user_type
-            user1.password = "password"
-            user1.phone_number = "414 123 1234"
-            print(user1.username + " createdd\n")
-            user1.save()
-            array = list(User.objects.all())
-            for e in User.objects.all():
-                print(e.username)
-            if User.objects.filter(username=user1.username).exists():
-                return "user already created"
-
-        return user1.username + " created"
 
 
 
