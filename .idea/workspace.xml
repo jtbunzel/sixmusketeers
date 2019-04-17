@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/238ceaa7-c09c-47f9-bd02-4f1e8852ada8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ce331f1-ad51-4e9b-962f-5aa94f0d7b78.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application_Classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/CommandController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190411_1049.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190414_1731.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/0003_auto_20190411_1056.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/0004_auto_20190411_2200.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sixmusketeers/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sixmusketeers/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/create.html" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -101,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-87">
+            <state relative-caret-position="146">
               <caret line="107" selection-start-line="107" selection-end-line="107" />
               <folding>
                 <element signature="e#3294#3988#0" />
@@ -113,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
@@ -586,7 +569,7 @@
       <workItem from="1555285233971" duration="1876000" />
       <workItem from="1555297861382" duration="14667000" />
       <workItem from="1555426755719" duration="8487000" />
-      <workItem from="1555460266576" duration="4011000" />
+      <workItem from="1555460266576" duration="4198000" />
     </task>
     <task id="LOCAL-00001" summary="I'm committing again">
       <created>1549392466874</created>
@@ -910,7 +893,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555313926872</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="#create is fully working now&#10;# structure of classes was totally missed up, I fixed    # and hopefull is correct">
+      <created>1555525965180</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1555525965180</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -946,7 +936,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211006000" />
+    <option name="totallyTimeSpent" value="211193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -959,7 +949,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.2272118" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
@@ -1006,7 +995,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I think I'm done with the models, still writing the tests" />
     <MESSAGE value="Small formatting changes" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Skeleton_Classes/CommandController.py&#10;#&#9;Skeleton_Classes/User.py" />
     <MESSAGE value="Database:&#10;&#10;CRUD" />
@@ -1031,7 +1019,8 @@
     <MESSAGE value="TestUser - Repaired TestPublicInfo&#10;User - Repaired publicInfo" />
     <MESSAGE value="TestCourse - Repaired TestCourse UnitTest&#10;TestLabSection - Repaired LabSection UnitTest" />
     <MESSAGE value="*Still needs work* TestDjangoModels - Updated to work with database design changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="*Still needs work* TestDjangoModels - Updated to work with database design changes." />
+    <MESSAGE value="#create is fully working now&#10;# structure of classes was totally missed up, I fixed    # and hopefull is correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="#create is fully working now&#10;# structure of classes was totally missed up, I fixed    # and hopefull is correct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1409,22 +1398,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-87">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-          <folding>
-            <element signature="e#3294#3988#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="e#3294#3988#0" />
           </folding>
         </state>
       </provider>
