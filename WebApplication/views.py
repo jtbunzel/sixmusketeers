@@ -21,7 +21,8 @@ class BaseView(View):
         command_type = request.POST.get("command", False)
         command_input = request.POST.get("commandStr", False)
         response = ""
-
+        print(command_type)
+        print(command_input)
         if user is not None:
             if command_type is not False:
                 if command_type == 'logout':
@@ -99,10 +100,16 @@ class Create(BaseView):
         name = ""
         if user is not None:
             name = user['name']
+        command = request.POST.get("command", False)
+        new_name = request.POST.get("username", False)
+        new_pass = request.POST.get("password", "password")
+        user_type = request.POST.get("usertype", False)
+        string_to_command = command + " " + user_type + " " + new_name  # +new_pass
+        response = a.command(string_to_command)
+        # user, response = self.post_response(request, user)
 
-        user, response = self.post_response(request, user)
-
-        return render(request, 'main/create.html', {"navbar": "create", "message": response, "user": user, "name": name})
+        return render(request, 'main/create.html',
+                      {"navbar": "create", "message": response, "user": user, "name": name})
 
 
 class Users(BaseView):
@@ -150,7 +157,8 @@ class Courses(BaseView):
 
         user, response = self.post_response(request, user)
 
-        return render(request, 'main/courses.html', {"navbar": "courses", "message": response, "user": user, "name": name})
+        return render(request, 'main/courses.html',
+                      {"navbar": "courses", "message": response, "user": user, "name": name})
 
 
 class Account(BaseView):
@@ -174,4 +182,5 @@ class Account(BaseView):
 
         user, response = self.post_response(request, user)
 
-        return render(request, 'main/account.html', {"navbar": "account", "message": response, "user": user, "name": name})
+        return render(request, 'main/account.html',
+                      {"navbar": "account", "message": response, "user": user, "name": name})

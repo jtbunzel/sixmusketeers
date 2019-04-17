@@ -11,10 +11,12 @@
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
                 Create user
-                <form method="post" action="#" id="logout-form">
+                <form method="post" action="#">
                     {% csrf_token %}
                     <input type="hidden" name="command" value="create">
                     <input type="Text" name="username" for="username">
+                    <br>
+                    <input type="password" name="password" for="password">
                     <br>
                     <input type="radio" name="usertype" value="Instructor" checked> Instructor<br>
                     <input type="radio" name="usertype" value="TA">TA<br>

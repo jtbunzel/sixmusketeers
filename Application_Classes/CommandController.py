@@ -1,19 +1,25 @@
 from Application_Classes.User import *
 from Application_Classes.Course import *
 from WebApplication.models import User
+from WebApplication.AdminSuperCommandController import SuperUserCommandController
+from WebApplication.Searcher import Searcher
+from WebApplication.UserCommandController import UserCommandController
 
 
 class CommandController(object):
 
     def set_pointer_to_app(self, app):
         self.app = app
+        self.adminsuper_stuff = SuperUserCommandController()
+        self.searcher = Searcher
+        self.UserCommandCntrl = UserCommandController()
 
     def parse(self, command_string):
         command_array = command_string.split(" ")
         command = command_array[0]
         if command == 'create':
             creationtype = command_array[1]
-            return self.create(command_array[2:], creationtype)
+            return self.adminsuper_stuff.create(command_array[2:], creationtype)
         if command == 'login':
             username = command_array[1]
             password = command_array[2]
@@ -22,14 +28,12 @@ class CommandController(object):
             return self.logout()
         return
 
-
     def get_logged_in(self, username):
         user_object = User.objects.filter(username=username)
         if user_object.count() == 0:
             return None
         else:
             return user_object.values()[0]
-
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username=username)
@@ -47,50 +51,8 @@ class CommandController(object):
         User.objects.create(username=username)
         return True
 
-    def createCourse(self, course_code, course_name):
-        pass
-
-    def create(self, credentials_array, type):
-        if credentials_array == "":
-            return Exception
-        print(type)
-        if "user" == type:
-            username = credentials_array[0]
-            password = credentials_array[1]
-            firstname = credentials_array[2]
-            lastname = credentials_array[3]
-            role = credentials_array[4]
-            email = credentials_array[5]
-            phone = credentials_array[6]
-            address = credentials_array[7]
-            user1 = User(username, password, role)
-            user1.set_first_name(firstname)
-            user1.set_last_name(lastname)
-            user1.set_email(email)
-            user1.set_phone_number(phone)
-            user1.set_address(address)
-            # Database.write(user1)
-            user1.save() #Saves user1 to database
-            return user1  # for testing
-        elif "course" == type:
-            course = Course()
-            course_name = credentials_array[0]
-            course_code = credentials_array[1]
-            instructor = credentials_array[2]
-            labsections_count = credentials_array[3]
-            TAs = credentials_array[4]  # assume only one TA can be entered in create
-            course.set_name(course_name)
-            course.set_course_code(course_code)
-            course.set_instructor(instructor)
-            course.set_number_of_lab_sections(labsections_count)
-            course.set_assigned_TA(TAs)
-            # Database.save()
-            return course
-
-
     def notify(self, message):
         self.notify.message = message
-
 
     def assign(self, username, course):
         user_to_assign = self.database_interface.read(username)
@@ -100,23 +62,17 @@ class CommandController(object):
         self.app.set_loggedin(None)
         return 'User logged out.'
 
-
-
     def edit(self, accountDetails, newDetails):
         pass
-
 
     def access(self, dataType):
         pass
 
-
     def delete(self, dataType):
         pass
 
-
     def assignments(dataType):
         pass
-
 
     def verify(self, user, a):
         if (user.rank < 3):
