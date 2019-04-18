@@ -26,7 +26,6 @@ class BaseView(View):
         if user is not None:
             if command_type is not False:
                 if command_type == 'logout':
-                    a.command_controller.logout()
                     request.session["user"] = ""
                 else:
                     if command_input:
