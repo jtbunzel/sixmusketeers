@@ -6,7 +6,7 @@ class User(models.Model):
         ("SUPERVISOR", "Supervisor"),
         ("ADMINISTRATOR", "Administrator"),
         ("INSTRUCTOR", "Instructor"),
-        ("TA", "Ta"),
+        ("TA", "TA"),
     )
 
     name = models.CharField(max_length=50, default='')

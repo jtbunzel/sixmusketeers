@@ -14,15 +14,13 @@ class CommandController(object):
         self.searcher = Searcher
         self.UserCommandCntrl = UserCommandController()
 
-    def parse(self, command_string):
-        command_array = command_string.split(" ")
-        command = command_array[0]
+    def parse(self, command, table_data):
         if command == 'create':
-            creationtype = command_array[1]
-            return self.adminsuper_stuff.create(creationtype, command_array[2:])
+            creation_type = table_data['data_type']
+            return self.adminsuper_stuff.create(creation_type, table_data)
         if command == 'login':
-            username = command_array[1]
-            password = command_array[2]
+            username = table_data['username']
+            password = table_data['password']
             return self.login(username, password)
         if command == 'logout':
             return self.logout()

@@ -13,8 +13,8 @@ class App(object):
     def set_cmd_controller(self):
         self.command_controller.set_pointer_to_app(self)
 
-    def command(self, a):
-        response = self.command_controller.parse(a)
+    def command(self, command, table_data):
+        response = self.command_controller.parse(command, table_data)
         print("response in app:", response)
         return response
 

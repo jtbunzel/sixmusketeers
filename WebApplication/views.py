@@ -81,36 +81,36 @@ class Create(BaseView):
     def get(self, request):
         self.init_logged_in(request)
 
-        print(request.GET.get("type"))
-
         user = a.get_loggedin(request.session.get("user", ""))
         name = ""
         if user is not None:
             name = user['name']
 
-        type = request.GET.get("type")
+        create_type = request.GET.get("type", "")
 
-        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name, "type": type})
+        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name, "type": create_type})
 
     def post(self, request):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
         name = ""
+        response = ""
         if user is not None:
             name = user['name']
-        command = request.POST.get("command", False)
-        firstname = request.POST.get("firstname", False)
-        lastname = request.POST.get("lastname", False)
-        new_name = request.POST.get("username", False)
-        new_pass = request.POST.get("password", "password")
-        user_type = request.POST.get("usertype", False)
-        user_email = request.POST.get("email", False)
-        user_phone = request.POST.get("phone", False)
-        address = request.POST.get("address", False)
-        string_to_command = command + " " + user_type + " " + new_name + " " + new_pass + " " + user_email + " " + user_phone
-        response = a.command(string_to_command)
-        # user, response = self.post_response(request, user)
+
+            userInfo = {
+                'data_type': "user",
+                'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
+                'username': request.POST.get("username", ""),
+                'password': request.POST.get("password", ""),
+                'user_type': request.POST.get("usertype", "").upper(),
+                'email': request.POST.get("email", ""),
+                'phone': request.POST.get("phone", ""),
+                'address': request.POST.get("address", "")
+            }
+
+            response = a.command('create', userInfo)
 
         return render(request, 'main/create.html',
                       {"navbar": "create", "message": response, "user": user, "name": name})

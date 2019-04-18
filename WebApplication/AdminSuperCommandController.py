@@ -58,18 +58,22 @@ class SuperUserCommandController:
 
     def create(self, user_type, credential_array):
         print(credential_array)
-        if credential_array[0] == "" or credential_array[1] == "":
+        if credential_array['username'] == "" or credential_array['password'] == "":
             return "input something!"
         print(credential_array)
+
         user1 = User()
-        user1.username = credential_array[0]
-        user1.password = credential_array[1]
-        user1.email = credential_array[2]
-        user1.phone_number = credential_array[3]
+        user1.name = credential_array['name']
+        user1.username = credential_array['username']
+        user1.password = credential_array['password']
+        user1.role = credential_array['user_type']
+        user1.email = credential_array['email']
+        user1.phone = credential_array['phone']
+        user1.address = credential_array['address']
+
         if User.objects.filter(username=user1.username).exists():
             return "user already created"
         if "course" is not user_type:
-            user1.role = user_type
             user1.save()
             # username1 = User.objects.filter(username=username)
             # print(username1.username)

@@ -3,18 +3,18 @@ class User:
     password = ""
     first_name = ""
     last_name = ""
-    phone_number = ""
+    phone = ""
     address = ""
     email = ""
     rank = ""
 
     #Constructor
-    def __init__(self, username, password, first_name, last_name, phone_number, address, email, rank):
+    def __init__(self, username, password, first_name, last_name, phone, address, email, rank):
         self.username = username
         self.password = password
         self.first_name = first_name
         self.last_name = last_name
-        self.phone_number = phone_number
+        self.phone = phone
         self.address = address
         self.email = email
         self.rank = rank
