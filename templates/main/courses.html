@@ -9,10 +9,21 @@
 
     {% else %}
         {% include "main/navigation_bar.html" %}
-        <div class="container_block">
-            Course page
-            <p>{{message}}</p>
-        </div>
+        <form>
+            <div class="container_block">
+
+                <div>
+                   <h1> List of Courses </h1>
+                        <div>
+                            <label>Course Name </label>
+                            <label>Course section</label>
+                        </div>
+
+                </div>
+
+                <p>{{message}}</p>
+            </div>
+        </form>
     {% endif %}
 
     </div>
