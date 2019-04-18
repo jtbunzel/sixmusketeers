@@ -12,7 +12,7 @@ class Administrator(User):
 
 
     def __str__(self):
-       Administrator
+       self.Administrator
 
     def get_instructor(self):
         return self.instructor
