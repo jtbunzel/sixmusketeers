@@ -10,29 +10,75 @@
         {% else %}
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
-                <h2>Create user</h2>
-                <form method="post" action="#">
-                    {% csrf_token %}
-                    <input type="hidden" name="command" value="create">
-                    Username<br>
-                    <input type="Text" name="username" for="username">
-                    <br>
-                    Password<br>
-                    <input type="password" name="password" for="password">
-                    <br>
-                    User type
-                    <input type="radio" name="usertype" value="Instructor" checked> Instructor<br>
-                    <input type="radio" name="usertype" value="TA">TA<br>
-                    <br>
-                    Enter email<br>
-                    <input type="email" name="email">
-                    <br>
-                    Enter phone number<br>
-                    <input type="number" name="phone">
+                <div class="container">
+                    <div class="py-5 text-center">
+                        <button type="button" class="btn btn-primary btn-lg">Create User</button>
+                        <button type="button" class="btn btn-primary btn-lg">Create Course</button>
+                        <button type="button" class="btn btn-primary btn-lg">Create Lab Section</button>
+                    </div>
 
-                    <input type="Submit">
-                </form>
-                <p>{{ message }}</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <h2>Create user</h2>
+                            <form method="post" action="#">
+                                {% csrf_token %}
+                                <input type="hidden" name="command" value="create">
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label>First name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                               required="">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label>Last name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="" value=""
+                                               required="">
+                                    </div>
+                                </div>
+                                <br>
+                                <label>Username</label>
+                                <input class="form-control" type="Text" name="username" for="username">
+                                <br>
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="password" for="password">
+                                <br>
+                                <label>User Type</label>
+                                <br>
+                                <div class="d-block my-3">
+                                    <div class="custom-control custom-radio">
+                                        <input id="administrator" name="usertype" type="radio"
+                                               class="custom-control-input" checked="" required=""
+                                               value="Administrator">
+                                        <label class="custom-control-label">Administrator</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="instructor" name="usertype" type="radio"
+                                               class="custom-control-input" checked="" required="" value="Instructor">
+                                        <label class="custom-control-label">Instructor</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="ta" name="usertype" type="radio"
+                                               class="custom-control-input" checked="" required="" value="TA">
+                                        <label class="custom-control-label">TA</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <label>Email</label>
+                                <input class="form-control" type="email" name="email" for="email">
+                                <br>
+                                <label>Phone Number</label>
+                                <input class="form-control" type="number" name="phone" for="phone">
+                                <br>
+                                <label>Address</label>
+                                <input class="form-control" type="address" name="address" for="address">
+                                <br>
+                                <input class="btn btn-primary" type="Submit" value="Create User">
+                            </form>
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         {% endif %}
 

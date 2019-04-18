@@ -24,3 +24,7 @@ html, body{
   height:50px;
   margin-right:20px;
 }
+
+.create-form {
+    padding-right:25%;
+}

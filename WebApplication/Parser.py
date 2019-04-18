@@ -6,7 +6,7 @@ class Parser:
 
     def parse(self, command_string):
         words = command_string.split(" ")
-        if(len(words)==0)
+        if(len(words)==0):
             raise Exception
 
         user_inputted_command = words[0]

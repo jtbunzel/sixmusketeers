@@ -100,11 +100,14 @@ class Create(BaseView):
         if user is not None:
             name = user['name']
         command = request.POST.get("command", False)
+        firstname = request.POST.get("firstname", False)
+        lastname = request.POST.get("lastname", False)
         new_name = request.POST.get("username", False)
         new_pass = request.POST.get("password", "password")
         user_type = request.POST.get("usertype", False)
         user_email = request.POST.get("email", False)
         user_phone = request.POST.get("phone", False)
+        address = request.POST.get("address", False)
         string_to_command = command + " " + user_type + " " + new_name + " " + new_pass + " " + user_email + " " + user_phone
         response = a.command(string_to_command)
         # user, response = self.post_response(request, user)

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/Parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/Parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/create.html" afterDir="false" />
     </list>
@@ -65,89 +68,98 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4964216">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="192">
-                  <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-                  <folding>
-                    <element signature="e#3294#3988#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="true" />
-                    <element signature="e#3651#11438#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/main/create.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/WebApplication/static/css/fashionable_create.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="108" column="18" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/User.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="6" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main/navigation_bar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="24" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/main/create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="73" column="102" selection-start-line="73" selection-start-column="102" selection-end-line="73" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -231,7 +243,6 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/main/navigation_bar.html" />
         <option value="$PROJECT_DIR$/templates/main/index.html" />
-        <option value="$PROJECT_DIR$/WebApplication/static/css/style.css" />
         <option value="$PROJECT_DIR$/WebApplication/SuperUserCommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
@@ -256,11 +267,12 @@
         <option value="$PROJECT_DIR$/WebApplication/UserCommandController.py" />
         <option value="$PROJECT_DIR$/Application_Classes/CommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" />
-        <option value="$PROJECT_DIR$/WebApplication/views.py" />
         <option value="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" />
-        <option value="$PROJECT_DIR$/templates/main/create.html" />
         <option value="$PROJECT_DIR$/WebApplication/static/css/fashionanble.css" />
         <option value="$PROJECT_DIR$/WebApplication/static/css/fashionable_create.css" />
+        <option value="$PROJECT_DIR$/WebApplication/static/css/style.css" />
+        <option value="$PROJECT_DIR$/WebApplication/views.py" />
+        <option value="$PROJECT_DIR$/templates/main/create.html" />
       </list>
     </option>
   </component>
@@ -280,27 +292,38 @@
           <expand>
             <path>
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="sixmusketeers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="WebApplication" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="WebApplication" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\a_gha\sixmusketeers" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="WebApplication" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="css" type="9f88c78c:ScopeViewTreeModel$FileNode" />
@@ -518,9 +541,9 @@
       <item itemvalue="Django tests.Test: Unittests.testDjangoModels" />
       <item itemvalue="Django tests.Test: Unittests.TestLabSectionCommandController.TestCourseCommandController.test_delete_lab_section" />
       <item itemvalue="Django tests.Test: Unittests.TestCourseCommandController.TestCourseCommandController" />
+      <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_User_can_create" />
       <item itemvalue="Python.Rational" />
       <item itemvalue="Python tests.Unittests in testDjangoModels.py" />
-      <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_User_can_create" />
     </list>
     <recent_temporary>
       <list>
@@ -965,7 +988,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219635000" />
+    <option name="totallyTimeSpent" value="222375000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,10 +1000,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.18070363" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.22456351" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -993,7 +1016,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49329758" weight="0.15244755" />
       <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.49932975" weight="0.32867134" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50268096" side_tool="true" weight="0.31748253" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.50268096" side_tool="true" visible="true" weight="0.31748253" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4953083" weight="0.32447553" />
       <window_info anchor="bottom" id="manage.py@sixmusketeers" order="12" sideWeight="0.49577805" weight="0.32738096" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -1105,8 +1128,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/navigation_bar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="24" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1314,13 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1328,23 +1344,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/views/generic/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/views/generic/base.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1364,32 +1364,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="136">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#3651#11438#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/db/models/query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="407" selection-start-line="407" selection-end-line="407" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="101" column="31" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-          <folding>
-            <element signature="e#3294#3988#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/db/models/query.py" />
     <entry file="file://$PROJECT_DIR$/sixmusketeers/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1018">
@@ -1417,24 +1400,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/create.html">
+    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/fashionable_create.css" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/User.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="2" />
+          <caret column="10" selection-start-column="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="255">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/fashionable_create.css">
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="340">
+          <caret line="108" column="18" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="73" column="102" selection-start-line="73" selection-start-column="102" selection-end-line="73" selection-end-column="102" />
         </state>
       </provider>
     </entry>
