@@ -10,11 +10,12 @@
     {% else %}
         {% include "main/navigation_bar.html" %}
         <div class="container_block">
-
             <div>
-                <h3> Users </h3>
-                <div><label for="Search"> List of User </label> </div>
+            <a href="?type=user">
+                <button type="button" class="{% if type == 'user' or  type == "" %}active{% endif %}">List of User</button>
+            </a>
             </div>
+
             <p>{{message}}</p>
         </div>
         </form>
