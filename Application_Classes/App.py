@@ -15,7 +15,6 @@ class App(object):
 
     def command(self, command, table_data):
         response = self.command_controller.parse(command, table_data)
-        print("response in app:", response)
         return response
 
     def get_loggedin(self, username):

@@ -1,8 +1,8 @@
 from Application_Classes.User import User
 from .models import User
-from Application_Classes.App import App
+#from Application_Classes.App import App
 
-app = App()
+#app = App()
 
 
 class Searcher:
@@ -14,6 +14,7 @@ class Searcher:
             return "You must be logged in"
 
         if type == "user":
-            return app.command("search", {'data_type': 'user', 'input': user1})
+            return \
+                #app.command("search", {'data_type': 'user', 'input': user1})
 
 
