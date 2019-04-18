@@ -104,7 +104,9 @@ class Create(BaseView):
         new_name = request.POST.get("username", False)
         new_pass = request.POST.get("password", "password")
         user_type = request.POST.get("usertype", False)
-        string_to_command = command + " " + user_type + " " + new_name + " " + new_pass
+        user_email = request.POST.get("email", False)
+        user_phone = request.POST.get("phone", False)
+        string_to_command = command + " " + user_type + " " + new_name + " " + new_pass + " " + user_email + " " + user_phone
         response = a.command(string_to_command)
         # user, response = self.post_response(request, user)
 

@@ -60,9 +60,12 @@ class SuperUserCommandController:
         print(credential_array)
         if credential_array[0] == "" or credential_array[1] == "":
             return "input something!"
+        print(credential_array)
         user1 = User()
         user1.username = credential_array[0]
         user1.password = credential_array[1]
+        user1.email = credential_array[2]
+        user1.phone_number = credential_array[3]
         if User.objects.filter(username=user1.username).exists():
             return "user already created"
         if "course" is not user_type:

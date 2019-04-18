@@ -10,17 +10,25 @@
         {% else %}
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
-                Create user
+                <h2>Create user</h2>
                 <form method="post" action="#">
                     {% csrf_token %}
                     <input type="hidden" name="command" value="create">
+                    Username<br>
                     <input type="Text" name="username" for="username">
                     <br>
+                    Password<br>
                     <input type="password" name="password" for="password">
                     <br>
+                    User type
                     <input type="radio" name="usertype" value="Instructor" checked> Instructor<br>
                     <input type="radio" name="usertype" value="TA">TA<br>
                     <br>
+                    Enter email<br>
+                    <input type="email" name="email">
+                    <br>
+                    Enter phone number<br>
+                    <input type="number" name="phone">
 
                     <input type="Submit">
                 </form>
