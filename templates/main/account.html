@@ -12,39 +12,36 @@
             <div class="container_block">
                 <div>
                     <a href="?type=user">
-                        <button type="button">Account Detail</button>
+                        <button type="button" class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">Account Detail</button>
                     </a>
                 </div>
                     <form method="post" action="">
                         {% csrf_token %}
-                            <div>
-                                Username:<span class="account-text">{{name}}</span>  <br/>
-                            </div>
+                        <div>
+                            Username:<input  type= text name="username"  >  <br/>
 
-                            <div>
-                               First Name:<span class="account-text">{{name}}</span> <br/>
-                            </div>
+                        </div>
 
-                            <div>
-                              Last Name:<span class="account-text">{{last_Name}}</span> <br/>
-                            </div>
-                            <div>
-                                Role :<span class="account-text">{{role}}</span> <br/>
-                            </div>
+                        <div>
+                            First Name:<input type ="text" name="firstName" value="{{ firstName }}"> <br/>
+                        </div>
 
-                            <div>
-                                Address:<span class="account-text">{{address}}</span> <br/>
-                            </div>
+                        <div>
+                            Last Name:<input  type="Text"   name="lastName" value="{{ lastname}}"> <br/>
+                        </div>
 
-                            <div>
-                                Phone Number:<span class="account-text">{{phone}}</span> <br/>
-                            </div>
+                        <div>
+                            Address:<input type="Text" name="Address" value="{{ Address}}"> <br/>
+                        </div>
 
-                            <div>
-                               Email Address:<span class="account-text">{{email}}</span> <br/>
-                            </div>
-                    </form>
-                <br>
+                        <div>
+                            Phone Number:<input type="Text" name="phoneNumber" value="{{ phoneNumber}}"> <br/>
+                        </div>
+
+                        <div>
+                            Email Address:<input type="Text" name="emailAddress" value="{{ emailAddress }}"> <br/>
+                        </div>
+                        </form> <br>
                 <p>{{message}}</p>
             </div>
         {% endif %}

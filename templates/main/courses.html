@@ -11,30 +11,32 @@
         {% include "main/navigation_bar.html" %}
             <div class="container_block">
                 <div class="container">
-                    <div class="py-5 text-center">
+                    <div>
+                        <label>
                         <a href="?type=course">
-                            <button type="button" class=" {% if type == "course"  %}active{% endif %}"> Course</button>
+                            <button type="button" class="btn btn-primary btn-lg{% if type == "course"  %}active{% endif %}"> Course</button>
                         </a>
+                        </label>
+                        <label>
                         <a href="?type=lab">
-                            <button type="button" class="{% if type == "lab"  %}active{% endif %}">Lab Section</button>
+                            <button type="button" class="btn btn-primary btn-lg{% if type == "lab"  %}active{% endif %}">Lab Section</button>
                         </a>
+                        </label>
                     </div>
 
                     {% if type == "course"%}
-                        <form method="post" action="#">
-                            {% csrf_token %}
-                            List of Course
+                        <form>
+                            <h3> List of Courses </h3>  <br/>
                         </form>
 
                         {% elif type == "Lab" %}
-                        <form method="post" action="#">
-                            {% csrf_token %}
-                           List of Lab
+                        <form>
+                            <h3> List of Lab Sections </h3> <br/>
                         </form>
                     {% endif %}
 
 
-                    <p>{{message}}</p>
+                <p>{{message}}</p>
                 </div>
             </div>
 
