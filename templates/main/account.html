@@ -11,15 +11,14 @@
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
                 <div>
-                    <a href="?type=user">
+                    <a href="?type=account_details">
                         <button type="button" class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">Account Detail</button>
                     </a>
-                    <a href="?type=edit">
-                        <button type="button" class="btn btn-primary btn-lg {% if type == 'edit' or  type == "" %}active{% endif %}">Account Edit</button>
-                    </a>
+
                 </div>
-
-
+                <div class="row">
+                    <br>
+                    <div class="col-md-4 mb-4"> </div> </div>
 
                 <form method="post" action="">
                     {% csrf_token %}
@@ -51,7 +50,17 @@
                         Email Address:<span class="account-text"> {{email}}</span> <br/>
                     </div>
                 </form>
-                {% if type == "edit" or type == "" %}
+
+
+            <div class="row">
+                <br>
+                <div class="col-md-4 mb-4"> </div> </div>
+            <div class="container_block">
+                <a href="?type=edit_account">
+                    <button type="button" class="btn btn-primary btn-lg {% if type == 'edit' or  type == "" %}active{% endif %}">Account Edit</button>
+                </a>
+
+            </div>
                     <div class="row">
                         <br>
                         <div class="col-md-4 mb-4">
@@ -81,37 +90,9 @@
                                     <div>
                                         Email Address:<input type="Text" name="emailAddress" value="{{ emailAddress }}"> <br/>
                                     </div>
-                            </form>
-                        {% elif type == "user" %}
-                            <form method="post" action="">
-                                {% csrf_token %}
-                                <div>
-                                    Username:<span class="navbar-text">Hello, {{name}}</span>  <br/>
-
-                                </div>
-
-                                <div>
-                                    First Name:<span class="navbar-text">Hello, {{name}}</span> <br/>
-                                </div>
-
-                                <div>
-                                    Last Name:<span class="navbar-text">Hello, {{name}}</span> <br/>
-                                </div>
-
-                                <div>
-                                    Address:<span class="navbar-text">Hello, {{name}}</span> <br/>
-                                </div>
-
-                                <div>
-                                    Phone Number:<span class="navbar-text">Hello, {{name}}</span><br/>
-                                </div>
-
-                                <div>
-                                    Email Address:<span class="navbar-text">Hello, {{name}}</span> <br/>
-                                </div>
+                                <input type="submit"/>
                             </form>
 
-                        {% endif %}
                         <p>{{message}}</p>
                     </div>
                 </div>
