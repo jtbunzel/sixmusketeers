@@ -88,7 +88,8 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
-        return render(request, "main/create.html", {"navbar": "create", "user": user, "name": name, "type": create_type})
+        return render(request, "main/create.html",
+                      {"navbar": "create", "user": user, "name": name, "type": create_type})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -173,18 +174,42 @@ class Account(BaseView):
         name = ""
         if user is not None:
             name = user['name']
+        first_name= name
 
-        return render(request, "main/account.html", {"navbar": "account", "user": user, "name": name})
+        user_name = request.POST.get("username", "")
+        last_name = user ['username']
 
+        user_role = request.POST.get("role", "")
+        role = user['role']
+
+        user_phone = request.POST.get("phone", "")
+        Phone= user['phone']
+
+        user_email = request.POST.get("email","")
+        Email= user['email']
+
+        user_address = request.POST.get("address", "")
+        address = user['address']
+
+        response = "User Info displayed"
+        print(user_name)
+        return render(request, 'main/account.html',
+                      {"navbar": "account", "message": response, "user": user, "name": name, "first_name":first_name,
+                       "last_name": last_name, "role": role, "phone":Phone, "email":Email, "address":address })
     def post(self, request):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
-        name = ""
+        name = "",
         if user is not None:
             name = user['name']
 
-        user, response = self.post_response(request, user)
-
+        # user, response = self.post_response(request, user)
+        user_name = request.POST.get("username", "")
+        user_first = request.POST.get("firstname", "")
+        response = "User Info displayed"
+        print(user_first)
+        print(user_name)
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name})
+                      {"navbar": "account", "message": response, "user": user, "name": name, "user_name": user_name,
+                       "user_first": user_first})
