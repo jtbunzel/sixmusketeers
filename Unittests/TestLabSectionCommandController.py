@@ -23,7 +23,7 @@ class TestCourseCommandController(TestCase):
 
     def test_delete_lab_section(self):
         cmd = LabSectionCommandController()
-        cmd.createLabSection("Jojo" , "001", "CS101")
+        cmd.createLabSection("Jojo", "001", "CS101")
         action = cmd.deleteLabSection("001")
         result = "Lab Section has been deleted."
         self.assertEqual(result, action)

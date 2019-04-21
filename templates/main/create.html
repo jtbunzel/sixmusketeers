@@ -90,9 +90,45 @@
                             <input class="btn btn-primary" type="Submit" value="Create User">
                         </form>
                     {% elif type == "course" %}
-                        make course
+                        <div class="row">
+                        <br>
+                        <div class="col-md-4 mb-4">
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <input type="hidden" name="command" value="create">
+
+                            <br>
+                            <label>Course Name</label>
+                            <input class="form-control" type="text" name="course_name">
+                            <br>
+                            <label>Course Instructor</label>
+                            <input class="form-control" type="text" name="course_instructor">
+                            <br>
+                            <label>Course_Code</label>
+                            <input class="form-control" type="text" name="course_code">
+                            <br>
+                            <input class="btn btn-primary" type="Submit" value="Create Course">
+                        </form>
                     {% elif type == "lab" %}
-                        make lab section
+                        <div class="row">
+                        <br>
+                        <div class="col-md-4 mb-4">
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <input type="hidden" name="command" value="create">
+
+                            <br>
+                            <label>Lab TA</label>
+                            <input class="form-control" type="text" name="TA">
+                            <br>
+                            <label>Lab Number</label>
+                            <input class="form-control" type="text" name="lab_number">
+                            <br>
+                            <label>Course</label>
+                            <input class="form-control" type="text" name="course">
+                            <br>
+                            <input class="btn btn-primary" type="Submit" value="Create Lab Section">
+                        </form>
                     {% endif %}
                     <p>{{ message }}</p>
                     </div>
