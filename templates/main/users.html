@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block content %}
-
     <div class="container_block" style="width:100%">
         {% if user == None %}
             <meta http-equiv="refresh" content="0; URL=''"/>
@@ -25,9 +24,8 @@
                     </form>
                     {#                    </a>#}
                 </div>
-
-                <p>{{ message }}</p>
-            </div>
+                <br>
+                {{ message }}
             </form>
         {% endif %}
 

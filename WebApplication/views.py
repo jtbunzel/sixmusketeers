@@ -141,6 +141,7 @@ class Users(BaseView):
         search = {'criteria': search_criteria,
                   'string': search_string}
         response = a.command('search', search)
+
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
         return render(request, 'main/users.html', {"navbar": "users", "message": response, "user": user, "name": name})

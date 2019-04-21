@@ -72,9 +72,9 @@ class SuperUserCommandController:
 
         if User.objects.filter(username=user1.username).exists():
             return "user already exists"
-        if "course" is not user_type:
-            user1.save()
-            for e in User.objects.all():
-                print(e.username)
+        # if "course" is not user_type:
+        #     user1.save()
+        #     for e in User.objects.all():
+        #         print(e.username)
             if User.objects.filter(username=user1.username).exists():
                 return user1.username + "created as " + user1.role
