@@ -97,22 +97,23 @@ class Create(BaseView):
         user = a.get_loggedin(request.session.get("user", ""))
         name = ""
         response = ""
+        current_role = str(user['role'])
         if user is not None:
-            name = user['name']
-
-            userInfo = {
-                'data_type': "user",
-                'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
-                'username': request.POST.get("username", ""),
-                'password': request.POST.get("password", ""),
-                'user_type': request.POST.get("usertype", "").upper(),
-                'email': request.POST.get("email", ""),
-                'phone': request.POST.get("phone", ""),
-                'address': request.POST.get("address", "")
-            }
-
-            response = a.command('create', userInfo)
-
+            if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
+                response = current_role + " type cannot create"
+            else:
+                name = user['name']
+                userInfo = {
+                    'data_type': "user",
+                    'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
+                    'username': request.POST.get("username", ""),
+                    'password': request.POST.get("password", ""),
+                    'user_type': request.POST.get("usertype", "").upper(),
+                    'email': request.POST.get("email", ""),
+                    'phone': request.POST.get("phone", ""),
+                    'address': request.POST.get("address", "")
+                }
+                response = a.command('create', userInfo)
         return render(request, 'main/create.html',
                       {"navbar": "create", "message": response, "user": user, "name": name})
 
@@ -135,9 +136,13 @@ class Users(BaseView):
         name = ""
         if user is not None:
             name = user['name']
-
-        user, response = self.post_response(request, user)
-
+        search_criteria = request.POST.get("search_criteria", "")
+        search_string = request.POST.get("search_string", "")
+        search = {'criteria': search_criteria,
+                  'string': search_string}
+        response = a.command('search', search)
+        # user, response = self.post_response(request, user)
+        # response = search_criteria + search_string
         return render(request, 'main/users.html', {"navbar": "users", "message": response, "user": user, "name": name})
 
 
@@ -174,19 +179,19 @@ class Account(BaseView):
         name = ""
         if user is not None:
             name = user['name']
-        first_name= name
+        first_name = name
 
         user_name = request.POST.get("username", "")
-        last_name = user ['username']
+        last_name = user['username']
 
         user_role = request.POST.get("role", "")
         role = user['role']
 
         user_phone = request.POST.get("phone", "")
-        Phone= user['phone']
+        Phone = user['phone']
 
-        user_email = request.POST.get("email","")
-        Email= user['email']
+        user_email = request.POST.get("email", "")
+        Email = user['email']
 
         user_address = request.POST.get("address", "")
         address = user['address']
@@ -194,8 +199,9 @@ class Account(BaseView):
         response = ""
         print(user_name)
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name, "first_name":first_name,
-                       "last_name": last_name, "role": role, "phone":Phone, "email":Email, "address":address })
+                      {"navbar": "account", "message": response, "user": user, "name": name, "first_name": first_name,
+                       "last_name": last_name, "role": role, "phone": Phone, "email": Email, "address": address})
+
     def post(self, request):
         self.init_logged_in(request)
 

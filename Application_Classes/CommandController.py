@@ -11,19 +11,22 @@ class CommandController(object):
     def set_pointer_to_app(self, app):
         self.app = app
         self.adminsuper_stuff = SuperUserCommandController()
-        self.searcher = Searcher
+        self.searcher = Searcher()
         self.UserCommandCntrl = UserCommandController()
 
     def parse(self, command, table_data):
         if command == 'create':
             creation_type = table_data['data_type']
             return self.adminsuper_stuff.create(creation_type, table_data)
-        if command == 'login':
+        elif command == 'login':
             username = table_data['username']
             password = table_data['password']
             return self.login(username, password)
-        if command == 'logout':
+        elif command == 'logout':
             return self.logout()
+        elif command == 'search':
+            print(table_data)
+            return self.searcher.searchuser(table_data)
         return
 
     def get_logged_in(self, username):
@@ -42,12 +45,6 @@ class CommandController(object):
 
         return True
 
-    def createUser(self, username):
-        num_users_with_same_username = User.objects.filter(username=username).count()
-        if num_users_with_same_username != 0:
-            return False
-        User.objects.create(username=username)
-        return True
 
     def notify(self, message):
         self.notify.message = message
