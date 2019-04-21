@@ -181,8 +181,8 @@ class Account(BaseView):
             name = user['name']
         first_name = name
 
-        user_name = request.POST.get("username", "")
-        last_name = user['username']
+        get_user = request.POST.get("username", "")
+        userName = user['username']
 
         user_role = request.POST.get("role", "")
         role = user['role']
@@ -197,10 +197,11 @@ class Account(BaseView):
         address = user['address']
 
         response = ""
-        print(user_name)
+        print(get_user)
+#       #Still needs LastName to be fixed.
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name, "first_name": first_name,
-                       "last_name": last_name, "role": role, "phone": Phone, "email": Email, "address": address})
+                      {"navbar": "account", "message": response, "user": get_user, "name": userName, "first_name": first_name,
+                       "last_name": first_name, "role": role, "phone": Phone, "email": Email, "address": address})
 
     def post(self, request):
         self.init_logged_in(request)

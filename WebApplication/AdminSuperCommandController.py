@@ -77,4 +77,4 @@ class SuperUserCommandController:
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(username=user1.username).exists():
-                return user1.username + "created as " + user1.role
+                return user1.username + " created as " + user1.role
