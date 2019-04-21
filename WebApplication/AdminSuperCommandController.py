@@ -11,9 +11,9 @@ class SuperUserCommandController:
         if self.user is None:
             return "You must be logged in"
 
-        #        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role  ** Edited out because we removed User Rank **
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
         #        #Check if user exists
         #        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
@@ -22,9 +22,9 @@ class SuperUserCommandController:
         except ObjectDoesNotExist:
             print("User could not be found.")
 
-        #       #Check if user is attempting to delete its own account
-        if self.user.username == currentUser.username:
-            return "You can not delete your own account"
+        #       #Check if user is attempting to delete its own account ** Edited out because we removed User Rank **
+#        if self.user.username == currentUser.username:
+#            return "You can not delete your own account"
 
         if self.user.username == 'Admin'.casefold():
             return "Can not delete Admin account"
@@ -40,8 +40,8 @@ class SuperUserCommandController:
             return "You must be logged in"
 
         #        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
         #        If no entries in database return "Database is Empty"
         databaseCount = User.objects.count()

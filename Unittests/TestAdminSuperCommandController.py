@@ -16,18 +16,48 @@ class TestAdminSuperCommandController(TestCase):
 
     def test_delete_user(self):
         cmd = SuperUserCommandController()
-        cmd.createUser(johnDoe, TA)
-        action = cmd.deleteUser(johnDoe)
+        userInfo = {
+            'data_type': "user",
+            'username': "johnDoe",
+            'name': "john",
+            'password': "password",
+            'user_type': "TA".upper(),
+            'email': "johnDoe123@yahoo.com",
+            'phone': "4142240088",
+            'address': "1234 fake st."
+        }
+        cmd.create("TA", userInfo)
+        action = cmd.deleteUser("johnDoe")
         result = "User successfully deleted."
         self.assertEqual(result, action)
 
     def test_showAll(self):
         cmd = SuperUserCommandController()
-        cmd.createUser(johnDoe, TA)
-        cmd.createUser(HarryPotter, Instructor)
+        userInfo = {
+            'data_type': "user",
+            'username': "johnDoe",
+            'name': "john",
+            'password': "password",
+            'user_type': "TA".upper(),
+            'email': "johnDoe123@yahoo.com",
+            'phone': "4142240088",
+            'address': "1234 fake st."
+        }
+        userInfo2 = {
+            'data_type': "user",
+            'username': "HarryPotter",
+            'name': "Harry",
+            'password': "password",
+            'user_type': "Instructor".upper(),
+            'email': "HarryPotter@yahoo.com",
+            'phone': "4142245326",
+            'address': "123 fake st."
+        }
+        cmd.create("TA", userInfo)
+        cmd.create("Instructor", userInfo2)
         result = cmd.showAll()
         #       #When it works replace default fields with ''
-        newResult = "'johnDoe' 'last' 'phone' 'address' 'email' 'TA' \n 'HarryPotter'  'last' 'phone' 'address' 'email' 'Instructor'"
+        newResult = "'johnDoe' 'john' '4142240088' '1234 fake st.' 'johnDoe123@yahoo.com' 'TA' \n 'HarryPotter'  'Harry' '4142245326' '123 fake st.' 'HarryPotter@yahoo.com' 'Instructor'"
         self.assertEqual(result, newResult)
 
     # database testing for create

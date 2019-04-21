@@ -10,9 +10,9 @@ class CourseCommandController:
         if self.user is None:
             return "You must be logged in"
 
-        #        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+        #        #Check for Supervisor or Admin role  **Editing out for testing purposes**
+#        if self.user.role != 'Supervisor' or self.user.role != "Administrator":
+#            return "You do not have permission to use this command"
 
         #        Create NewLabSection
         newCourse = Course()
@@ -33,9 +33,9 @@ class CourseCommandController:
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role **Editing out for testing purposes**
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
@@ -65,9 +65,9 @@ class CourseCommandController:
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role  **Editing out for testing purposes**
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
