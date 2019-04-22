@@ -88,8 +88,10 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
+        instructors = a.command('get_instructors', None)
+
         return render(request, "main/create.html",
-                      {"navbar": "create", "user": user, "name": name, "type": create_type})
+                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'instructors': instructors})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -176,32 +178,16 @@ class Account(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
-        name = ""
+        name_list = {}
         if user is not None:
             name = user['name']
-        first_name = name
+            name_list = name.split(' ')
 
-        get_user = request.POST.get("username", "")
-        userName = user['username']
-
-        user_role = request.POST.get("role", "")
-        role = user['role']
-
-        user_phone = request.POST.get("phone", "")
-        Phone = user['phone']
-
-        user_email = request.POST.get("email", "")
-        Email = user['email']
-
-        user_address = request.POST.get("address", "")
-        address = user['address']
+        edit = request.GET.get("edit", False)
 
         response = ""
-        print(get_user)
-#       #Still needs LastName to be fixed.
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": get_user, "name": userName, "first_name": first_name,
-                       "last_name": first_name, "role": role, "phone": Phone, "email": Email, "address": address})
+                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name': name_list})
 
     def post(self, request):
         self.init_logged_in(request)

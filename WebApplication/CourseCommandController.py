@@ -74,3 +74,11 @@ class CourseCommandController:
         currentCourse.delete()
 
         return "Course has been deleted."
+
+
+    def get_instructors(self):
+        instructors = User.objects.all().filter(role='INSTRUCTOR').values_list('name', flat=True)
+
+        print(instructors)
+        return instructors
+
