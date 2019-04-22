@@ -56,8 +56,7 @@ class TestAdminSuperCommandController(TestCase):
         cmd.create("TA", userInfo)
         cmd.create("Instructor", userInfo2)
         result = cmd.showAll()
-        #       #When it works replace default fields with ''
-        newResult = "'johnDoe' 'john' '4142240088' '1234 fake st.' 'johnDoe123@yahoo.com' 'TA' \n 'HarryPotter'  'Harry' '4142245326' '123 fake st.' 'HarryPotter@yahoo.com' 'Instructor'"
+        newResult = "johnDoe john TA 4142240088 johnDoe123@yahoo.com 1234 fake st.\nHarryPotter Harry INSTRUCTOR 4142245326 HarryPotter@yahoo.com 123 fake st.\n"
         self.assertEqual(result, newResult)
 
     # database testing for create

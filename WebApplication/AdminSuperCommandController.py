@@ -22,7 +22,7 @@ class SuperUserCommandController:
         except ObjectDoesNotExist:
             print("User could not be found.")
 
-        #       #Check if user is attempting to delete its own account ** Edited out because we removed User Rank **
+#       #Check if user is attempting to delete its own account
 #        if self.user.username == currentUser.username:
 #            return "You can not delete your own account"
 
@@ -52,8 +52,7 @@ class SuperUserCommandController:
         #        #Print all userInfo
         userInfo = ""
         for user in User.objects.all():
-            userInfo += user.get_public_contact_info()
-
+            userInfo += (user.username + " " + user.name + " " + user.role + " " + user.phone + " " + user.email + " " + user.address + "\n")
         return userInfo
 
     def create(self, user_type, credential_array):
