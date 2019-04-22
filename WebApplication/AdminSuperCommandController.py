@@ -57,7 +57,6 @@ class SuperUserCommandController:
         return userInfo
 
     def create(self, user_type, credential_array):
-        print(credential_array)
         if credential_array['username'] == "" or credential_array['password'] == "":
             return "input something!"
         print(credential_array)
@@ -72,13 +71,10 @@ class SuperUserCommandController:
         user1.address = credential_array['address']
 
         if User.objects.filter(username=user1.username).exists():
-            return "user already created"
+            return "user already exists"
         if "course" is not user_type:
             user1.save()
-            # username1 = User.objects.filter(username=username)
-            # print(username1.username)
-            # array = list(User.objects.all())
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(username=user1.username).exists():
-                return user1.username, "created"
+                return user1.username + "created as " + user1.role

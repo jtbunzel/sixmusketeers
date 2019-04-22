@@ -29,12 +29,22 @@ class TestAdminSuperCommandController(TestCase):
         #       #When it works replace default fields with ''
         newResult = "'johnDoe' 'last' 'phone' 'address' 'email' 'TA' \n 'HarryPotter'  'last' 'phone' 'address' 'email' 'Instructor'"
         self.assertEqual(result, newResult)
+
     # database testing for create
     def test_User_can_create(self):
         with self.assertRaises(Exception):
             User.objects.get(username="boyland123").username
-        credentials_array = ["boyland123", "password"]
-        str = cmd.create("instructor", credentials_array)
+        userInfo = {
+            'data_type': "user",
+            'username': "boyland123",
+            'name': "boyland123",
+            'password': "password",
+            'user_type': "TA".upper(),
+            'email': "email@uwm.edu",
+            'phone': "phone",
+            'address': "address"
+        }
+        str = cmd.create("instructor", userInfo)
         self.assertEqual(User.objects.get(username="boyland123").username
                          , 'boyland123')
         self.assertEqual(User.objects.get(username="boyland123").password
@@ -43,3 +53,15 @@ class TestAdminSuperCommandController(TestCase):
                         is not 'passwordddd')
         self.assertTrue(User.objects.get(username="boyland123").username
                         is not 'boy land')
+        self.assertTrue(User.objects.get(username="boyland123").role
+                        is not 'instructor')
+        self.assertEqual(User.objects.get(username="boyland123").role
+                         , 'TA')
+        self.assertTrue(User.objects.get(username="boyland123").address
+                        is not 'not address ')
+        self.assertEqual(User.objects.get(username="boyland123").address
+                         , 'address')
+        self.assertEqual(User.objects.get(username="boyland123").email
+                         , 'email@uwm.edu')
+        self.assertTrue(User.objects.get(username="boyland123").email
+                        is not 'address ')

@@ -13,80 +13,89 @@
                 <div class="container">
                     <div class="py-5 text-center">
                         <a href="?type=user">
-                            <button type="button" class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">Create User</button>
+                            <button type="button"
+                                    class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">
+                                Create User
+                            </button>
                         </a>
                         <a href="?type=course">
-                        <button type="button" class="btn btn-primary btn-lg {% if type == "course"  %}active{% endif %}">Create Course</button>
+                            <button type="button"
+                                    class="btn btn-primary btn-lg {% if type == "course" %}active{% endif %}">Create
+                                Course
+                            </button>
                         </a>
                         <a href="?type=lab">
-                            <button type="button" class="btn btn-primary btn-lg {% if type == "lab"  %}active{% endif %}">Create Lab Section</button>
+                            <button type="button"
+                                    class="btn btn-primary btn-lg {% if type == "lab" %}active{% endif %}">Create Lab
+                                Section
+                            </button>
                         </a>
                     </div>
 
                     {% if type == "user" or type == "" %}
                         <div class="row">
-                            <br>
-                            <div class="col-md-4 mb-4">
-                                <form method="post" action="#">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="command" value="create">
+                        <br>
+                        <div class="col-md-4 mb-4">
+                        <form method="post" action="#">
+                            {% csrf_token %}
+                            <input type="hidden" name="command" value="create">
 
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label>First name</label>
-                                            <input type="text" class="form-control" id="firstname" name="firstname">
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label>Last name</label>
-                                            <input type="text" class="form-control" id="lastname" name="lastname">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <label>Username</label>
-                                    <input class="form-control" type="Text" name="username">
-                                    <br>
-                                    <label>Password</label>
-                                    <input class="form-control" type="password" name="password">
-                                    <br>
-                                    <label>User Type</label>
-                                    <br>
-                                    <div class="d-block my-3">
-                                        <div class="custom-control custom-radio">
-                                            <input id="administrator" name="usertype" type="radio"
-                                                   class="custom-control-input" checked="" required=""
-                                                   value="Administrator">
-                                            <label class="custom-control-label">Administrator</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input id="instructor" name="usertype" type="radio"
-                                                   class="custom-control-input" checked="" required="" value="Instructor">
-                                            <label class="custom-control-label">Instructor</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input id="ta" name="usertype" type="radio"
-                                                   class="custom-control-input" checked="" required="" value="TA">
-                                            <label class="custom-control-label">TA</label>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <label>Email</label>
-                                    <input class="form-control" type="email" name="email">
-                                    <br>
-                                    <label>Phone Number</label>
-                                    <input class="form-control" type="text" name="phone">
-                                    <br>
-                                    <label>Address</label>
-                                    <input class="form-control" type="text" name="address">
-                                    <br>
-                                    <input class="btn btn-primary" type="Submit" value="Create User">
-                                </form>
-                            {% elif type == "course" %}
-                                make course
-                            {% elif type == "lab" %}
-                                make lab section
-                            {% endif %}
-                            <p>{{ message }}</p>
-                        </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" id="firstname" name="firstname">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" id="lastname" name="lastname">
+                                </div>
+                            </div>
+                            <br>
+                            <label>Username</label>
+                            <input class="form-control" type="Text" name="username">
+                            <br>
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password">
+                            <br>
+                            <label>User Type</label>
+                            <br>
+                            <div class="d-block my-3">
+                                <div class="custom-control custom-radio">
+                                    <input id="administrator" name="usertype" type="radio"
+                                           class="custom-control-input" checked="" required=""
+                                           value="Administrator">
+                                    <label class="custom-control-label">Administrator</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="instructor" name="usertype" type="radio"
+                                           class="custom-control-input" checked="" required="" value="Instructor">
+                                    <label class="custom-control-label">Instructor</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="ta" name="usertype" type="radio"
+                                           class="custom-control-input" checked="" required="" value="TA">
+                                    <label class="custom-control-label">TA</label>
+                                </div>
+                            </div>
+                            <br>
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email">
+                            <br>
+                            <label>Phone Number</label>
+                            <input class="form-control" type="text" name="phone">
+                            <br>
+                            <label>Address</label>
+                            <input class="form-control" type="text" name="address">
+                            <br>
+                            <input class="btn btn-primary" type="Submit" value="Create User">
+                        </form>
+                    {% elif type == "course" %}
+                        make course
+                    {% elif type == "lab" %}
+                        make lab section
+                    {% endif %}
+                    <p>{{ message }}</p>
+                    </div>
                     </div>
                 </div>
             </div>
