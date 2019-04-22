@@ -88,8 +88,19 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
+        user_list = None
+        course_list = None
+        if create_type == 'course':
+            search = {'strict_return': 'role',
+                      'string': "instructor"}
+            user_list = a.command('search', search)
+        elif create_type == 'lab':
+            search = {'strict_return': 'role',
+                      'string': "ta"}
+            user_list = a.command('search', search)
+
         return render(request, "main/create.html",
-                      {"navbar": "create", "user": user, "name": name, "type": create_type})
+                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -136,14 +147,19 @@ class Users(BaseView):
         name = ""
         if user is not None:
             name = user['name']
-        search_criteria = request.POST.get("search_criteria", "")
+
+        strict_return = request.POST.get("strictReturn", None)
         search_string = request.POST.get("search_string", "")
-        search = {'criteria': search_criteria,
+        search = {'strict_return': strict_return,
                   'string': search_string}
         response = a.command('search', search)
+        if response.count() == 0:
+            response = None
+
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
-        return render(request, 'main/users.html', {"navbar": "users", "message": response, "user": user, "name": name})
+        return render(request, 'main/users.html',
+                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string})
 
 
 class Courses(BaseView):
@@ -176,31 +192,18 @@ class Account(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
+        name_list = {}
         name = ""
         if user is not None:
             name = user['name']
-        first_name = name
+            name_list = name.split(' ')
 
-        user_name = request.POST.get("username", "")
-        last_name = user['username']
-
-        user_role = request.POST.get("role", "")
-        role = user['role']
-
-        user_phone = request.POST.get("phone", "")
-        Phone = user['phone']
-
-        user_email = request.POST.get("email", "")
-        Email = user['email']
-
-        user_address = request.POST.get("address", "")
-        address = user['address']
+        edit = request.GET.get("edit", False)
 
         response = ""
-        print(user_name)
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name, "first_name": first_name,
-                       "last_name": last_name, "role": role, "phone": Phone, "email": Email, "address": address})
+                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
+                       'name': name})
 
     def post(self, request):
         self.init_logged_in(request)
