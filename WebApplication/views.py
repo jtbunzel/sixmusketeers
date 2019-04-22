@@ -180,6 +180,7 @@ class Account(BaseView):
 
         user = a.get_loggedin(request.session.get("user", ""))
         name_list = {}
+        name = ""
         if user is not None:
             name = user['name']
             name_list = name.split(' ')
@@ -188,7 +189,8 @@ class Account(BaseView):
 
         response = ""
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name': name_list})
+                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
+                       'name': name})
 
     def post(self, request):
         self.init_logged_in(request)
