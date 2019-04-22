@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 class CourseCommandController:
     user = User
 
-    def createCourse(self, course_name, course_instructor, course_code):
+    def createCourse(self, course_name, course_code, course_instructor):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
@@ -17,18 +17,13 @@ class CourseCommandController:
         #        Create NewLabSection
         newCourse = Course()
         newCourse.course_name = course_name
-        newCourse.course_instructor = course_instructor
         newCourse.course_code = course_code
-
+        newCourse.course_instructor = course_instructor
         newCourse.save()
 
         return "Successfully created a new Course"
 
-        currentLabSection.save()
-
-        return "Lab Section has been edited."
-
-    def editCourse(self, course_name, course_instructor, course_code):
+    def editCourse(self, course_name, course_code, course_instructor):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
