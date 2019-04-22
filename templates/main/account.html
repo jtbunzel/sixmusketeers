@@ -10,91 +10,75 @@
         {% else %}
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
-                <div>
-                    <a href="?type=account_details">
-                        <button type="button" class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">Account Detail</button>
-                    </a>
-
-                </div>
-                <div class="row">
+                <div class="container">
+                    <h1>Account Details</h1>
                     <br>
-                    <div class="col-md-4 mb-4"> </div> </div>
 
-                <form method="post" action="">
-                    {% csrf_token %}
-                    <div>
-                        Username:<span class="account-text">{{name}}</span>  <br/>
-
-                    </div>
-
-                    <div>
-                        First Name:<span class="account-text"> {{first_name}}</span> <br/>
-                    </div>
-
-                    <div>
-                        Last Name:<span class="account-text"> {{last_name}}</span> <br/>
-                    </div>
-                    <div>
-                        Role:<span class="account-text"> {{role}}</span> <br/>
-                    </div>
-
-                    <div>
-                        Address: <span class="account-text"> {{address}}</span> <br/>
-                    </div>
-
-                    <div>
-                        Phone Number:<span class="account-text"> {{phone}}</span><br/>
-                    </div>
-
-                    <div>
-                        Email Address:<span class="account-text"> {{email}}</span> <br/>
-                    </div>
-                </form>
-
-
-            <div class="row">
-                <br>
-                <div class="col-md-4 mb-4"> </div> </div>
-            <div class="container_block">
-                <a href="?type=edit_account">
-                    <button type="button" class="btn btn-primary btn-lg {% if type == 'edit' or  type == "" %}active{% endif %}">Account Edit</button>
-                </a>
-
-            </div>
-                    <div class="row">
-                        <br>
-                        <div class="col-md-4 mb-4">
-                            <form method="post" action="">
+                    {% if edit == "true" %}
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <form method="post" action="/account/">
                                     {% csrf_token %}
-                                    <div>
-                                        Username:<input  type= text name="username"  >  <br/>
+                                    <input type="hidden" name="command" value="create">
 
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>First name</label>
+                                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder={{name.0}}>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Last name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder={{name.1}}>
+                                        </div>
                                     </div>
+                                    <br>
+                                    <label>Password</label>
+                                    <input class="form-control" type="password" name="password" placeholder={{user.password}}>
+                                    <br>
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" name="email" placeholder={{user.email}}>
+                                    <br>
+                                    <label>Phone Number</label>
+                                    <input class="form-control" type="text" name="phone" placeholder={{user.phone}}>
+                                    <br>
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" name="address" placeholder={{user.address}}>
+                                    <br>
+                                    <input class="btn btn-primary" type="Submit" value="Save">
+                                </form>
+                            </div>
+                        </div>
 
-                                    <div>
-                                        First Name:<input type ="text" name="firstName" value="{{ firstName }}"> <br/>
-                                    </div>
+                    {% else %}
+                        <label>Username: </label><br>
+                        <span class="account-text">{{ user.username }}</span>
 
-                                    <div>
-                                        Last Name:<input  type="Text"   name="lastName" value="{{ lastname}}"> <br/>
-                                    </div>
+                        <br><br>
+                        <label>Name: </label><br>
+                        <span class="account-text">{{ user.name }}</span>
 
-                                    <div>
-                                        Address:<input type="Text" name="Address" value="{{ Address}}"> <br/>
-                                    </div>
+                        <br><br>
+                        <label>Email: </label><br>
+                        <span class="account-text">{{ user.email }}</span>
 
-                                    <div>
-                                        Phone Number:<input type="Text" name="phoneNumber" value="{{ phoneNumber}}"> <br/>
-                                    </div>
+                        <br><br>
+                        <label>Phone Number: </label><br>
+                        <span class="account-text">{{ user.phone }}</span>
 
-                                    <div>
-                                        Email Address:<input type="Text" name="emailAddress" value="{{ emailAddress }}"> <br/>
-                                    </div>
-                                <input type="submit"/>
-                            </form>
+                        <br><br>
+                        <label>Address: </label><br>
+                        <span class="account-text">{{ user.address }}</span>
 
-                        <p>{{message}}</p>
-                    </div>
+                        <br><br>
+                        <a href="?edit=true">
+                            <button type="button"
+                                    class="btn btn-primary">
+                                Account Edit
+                            </button>
+                        </a>
+
+                    {% endif %}
+
                 </div>
             </div>
         {% endif %}

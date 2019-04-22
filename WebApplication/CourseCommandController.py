@@ -5,37 +5,32 @@ from django.core.exceptions import ObjectDoesNotExist
 class CourseCommandController:
     user = User
 
-    def createCourse(self, course_name, course_instructor, course_code):
+    def createCourse(self, course_name, course_code, course_instructor):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-        #        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+        #        #Check for Supervisor or Admin role  **Editing out for testing purposes**
+#        if self.user.role != 'Supervisor' or self.user.role != "Administrator":
+#            return "You do not have permission to use this command"
 
         #        Create NewLabSection
         newCourse = Course()
         newCourse.course_name = course_name
-        newCourse.course_instructor = course_instructor
         newCourse.course_code = course_code
-
+        newCourse.course_instructor = course_instructor
         newCourse.save()
 
         return "Successfully created a new Course"
 
-        currentLabSection.save()
-
-        return "Lab Section has been edited."
-
-    def editCourse(self, course_name, course_instructor, course_code):
+    def editCourse(self, course_name, course_code, course_instructor):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role **Editing out for testing purposes**
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
@@ -65,9 +60,9 @@ class CourseCommandController:
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role  **Editing out for testing purposes**
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
@@ -79,3 +74,11 @@ class CourseCommandController:
         currentCourse.delete()
 
         return "Course has been deleted."
+
+
+    def get_instructors(self):
+        instructors = User.objects.all().filter(role='INSTRUCTOR').values_list('name', flat=True)
+
+        print(instructors)
+        return instructors
+

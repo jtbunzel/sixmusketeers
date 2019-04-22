@@ -10,33 +10,27 @@ class LabSectionCommandController:
         if self.user is None:
             return "You must be logged in"
 
-        #        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+        #        #Check for Supervisor or Admin role  ** Edited out user no longer has rank **
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
         #        Create NewLabSection
         newLabSection = LabSection()
         newLabSection.lab_tas = TA
         newLabSection.lab_number = lab_number
         newLabSection.course = course
-
         newLabSection.save()
 
         return "Successfully created a new Lab Section"
-
-
-        currentLabSection.save()
-
-        return "Lab Section has been edited."
 
     def editLabSection(self, TA, lab_number, course):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role ** Edited out user no longer has rank **
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if LabSection exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
@@ -66,9 +60,9 @@ class LabSectionCommandController:
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
+#        #Check for Supervisor or Admin role ** Edited out user no longer has rank **
+#        if self.user.rank < 2:
+#            return "You do not have permission to use this command"
 
 #        Check if LabSection exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.

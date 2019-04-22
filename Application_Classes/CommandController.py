@@ -4,6 +4,7 @@ from WebApplication.models import User
 from WebApplication.AdminSuperCommandController import SuperUserCommandController
 from WebApplication.Searcher import Searcher
 from WebApplication.UserCommandController import UserCommandController
+from WebApplication.CourseCommandController import CourseCommandController
 
 
 class CommandController(object):
@@ -13,6 +14,7 @@ class CommandController(object):
         self.adminsuper_stuff = SuperUserCommandController()
         self.searcher = Searcher()
         self.UserCommandCntrl = UserCommandController()
+        self.CourseCommand = CourseCommandController()
 
     def parse(self, command, table_data):
         if command == 'create':
@@ -27,6 +29,8 @@ class CommandController(object):
         elif command == 'search':
             print(table_data)
             return self.searcher.searchuser(table_data)
+        elif command == 'get_instructors':
+            return self.CourseCommand.get_instructors()
         return
 
     def get_logged_in(self, username):
