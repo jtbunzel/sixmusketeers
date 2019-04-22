@@ -11,55 +11,79 @@ class Searcher:
         criteria = table_data['criteria']
         queryname = table_data['string']
         if criteria == "username":
-            # list =  list(User.objects.all())
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(username=queryname).exists():
-                return self.clean_query(queryname)
+                return_str = []
+                lists = (User.objects.filter(username=queryname).all())
+                return_str.append("Username: " + lists.get().username + " ")
+                return_str.append("Full name: " + lists.get().name + " ")
+                return_str.append("Email: " + lists.get().email + " ")
+                return_str.append("Address: " + lists.get().address + " ")
+                return_str.append("Phone: " + lists.get().phone + " ")
+                return return_str
             else:
                 return "username not found"
-        if criteria == "name":
-            # list =  list(User.objects.all())
+        elif criteria == "name":
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(name=queryname).exists():
-                return self.clean_query(queryname)
+                return_str = []
+                lists = (User.objects.filter(name=queryname).all())
+                return_str.append("Username: " + lists.get().username + " ")
+                return_str.append("Full name: " + lists.get().name + " ")
+                return_str.append("Email: " + lists.get().email + " ")
+                return_str.append("Address: " + lists.get().address + " ")
+                return_str.append("Phone: " + lists.get().phone + " ")
+                return return_str
             else:
-                return "username not found"
-        if criteria == "role":
-            # list =  list(User.objects.all())
+                return "name not found"
+        elif criteria == "role":
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(role=queryname).exists():
-                return self.clean_query(queryname)
+                return_str = []
+                lists = (User.objects.filter(role=queryname).all())
+                return_str.append("Username: " + lists.get().username + " ")
+                return_str.append("Full name: " + lists.get().name + " ")
+                return_str.append("Email: " + lists.get().email + " ")
+                return_str.append("Address: " + lists.get().address + " ")
+                return_str.append("Phone: " + lists.get().phone + " ")
+                return return_str
             else:
-                return "username not found"
-        if criteria == "email":
-            # list =  list(User.objects.all())
+                return "role not found"
+        elif criteria == "email":
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(email=queryname).exists():
-                return self.clean_query(queryname)
+                return_str = []
+                lists = (User.objects.filter(email=queryname).all())
+                return_str.append("Username: " + lists.get().username + " ")
+                return_str.append("Full name: " + lists.get().name + " ")
+                return_str.append("Email: " + lists.get().email + " ")
+                return_str.append("Address: " + lists.get().address + " ")
+                return_str.append("Phone: " + lists.get().phone + " ")
+                return return_str
             else:
-                return "username not found"
-        if criteria == "phone":
-            # list =  list(User.objects.all())
+                return "email not found"
+        elif criteria == "phone":
             for e in User.objects.all():
                 print(e.username)
             if User.objects.filter(phone=queryname).exists():
-                return self.clean_query(queryname)
+                return_str = []
+                lists = (User.objects.filter(phone=queryname).all())
+                return_str.append("Username: " + lists.get().username + " ")
+                return_str.append("Full name: " + lists.get().name + " ")
+                return_str.append("Email: " + lists.get().email + " ")
+                return_str.append("Address: " + lists.get().address + " ")
+                return_str.append("Phone: " + lists.get().phone + " ")
+                return return_str
             else:
-                return "username not found"
+                return "phone not found"
 
     def clean_query(self, queryname):
         strr = []
         lists = (User.objects.filter(username=queryname).all())
-        # strr = strr + "Username: " + lists.get().username + " "
-        # strr = strr + "Full name: " + lists.get().name + " "
-        # strr = strr + "Role: " + lists.get().role + " "
-        # strr = strr + "Email: " + lists.get().email + " "
-        # strr = strr + "Address: " + lists.get().address + " "
-        # strr = strr + "Phone: " + lists.get().phone + " "
         strr.append("Username: " + lists.get().username + " ")
         strr.append("Full name: " + lists.get().name + " ")
         strr.append("Email: " + lists.get().email + " ")
