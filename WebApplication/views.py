@@ -88,10 +88,19 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
-        instructors = a.command('get_instructors', None)
+        user_list = None
+        course_list = None
+        if create_type == 'course':
+            search = {'strict_return': 'role',
+                      'string': "instructor"}
+            user_list = a.command('search', search)
+        elif create_type == 'lab':
+            search = {'strict_return': 'role',
+                      'string': "ta"}
+            user_list = a.command('search', search)
 
         return render(request, "main/create.html",
-                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'instructors': instructors})
+                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -138,15 +147,19 @@ class Users(BaseView):
         name = ""
         if user is not None:
             name = user['name']
-        search_criteria = request.POST.get("search_criteria", "")
+
+        strict_return = request.POST.get("strictReturn", None)
         search_string = request.POST.get("search_string", "")
-        search = {'criteria': search_criteria,
+        search = {'strict_return': strict_return,
                   'string': search_string}
         response = a.command('search', search)
+        if response.count() == 0:
+            response = None
 
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
-        return render(request, 'main/users.html', {"navbar": "users", "message": response, "user": user, "name": name})
+        return render(request, 'main/users.html',
+                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string})
 
 
 class Courses(BaseView):

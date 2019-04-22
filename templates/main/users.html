@@ -9,26 +9,43 @@
         {% else %}
             {% include "main/navigation_bar.html" %}
             <div class="container_block">
-                <div>
-                    {#                    <a href="?type=user">#}
-                    <form action="#" method="post">
-                        {% csrf_token %}
-                        <input type="radio" name="search_criteria" value="name" checked> Full name<br>
-                        <input type="radio" name="search_criteria" value="username"> User name<br>
-                        <input type="radio" name="search_criteria" value="role"> role<br>
-                        <input type="radio" name="search_criteria" value="phone"> phone<br>
-                        <input type="radio" name="search_criteria" value="email"> email<br><br>
-                        <input type="text" name="search_string" placeholder="value"><br><br>
-                        <input class="btn btn-primary" type="Submit" value="Search"><br>
+            <div class="container">
 
-                    </form>
-                    {#                    </a>#}
-                </div>
-                <br>
-                {{ message }}
+            <form action="#" method="post" class="form-inline">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Users" name="search_string">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Role</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% if results == None or search == "" %}
+                    <h3>No search results</h3>
+                {% else %}
+                    <h3>Search results for: "{{ search }}"</h3>
+                    {% for i in results %}
+                            <tr>
+                                <td>{{ i.name }}</td>
+                                <td>{{ i.username }}</td>
+                                <td>{{ i.role }}</td>
+                                <td><button class="btn btn-primary btn-sm">View</button></td>
+                            </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+
             </form>
         {% endif %}
-
+        </div>
+        </div>
     </div>
 
 {% endblock content %}

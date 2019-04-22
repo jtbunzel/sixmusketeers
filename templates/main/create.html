@@ -101,8 +101,8 @@
                     <br>
                     <label>Course Instructor</label>
                     <select class="form-control" name="course_instructor">
-                        {% for i in instructors %}
-                            <option value={i}>{{ i }}</option>
+                        {% for i in users %}
+                            <option value={i}>{{ i.name }}</option>
                         {% endfor %}
                     </select>
                     <br>
@@ -119,7 +119,11 @@
                     {% csrf_token %}
                     <input type="hidden" name="command" value="createLabSection">
                     <label>Lab TA</label>
-                    <input class="form-control" type="text" name="TA">
+                    <select class="form-control" name="course_instructor">
+                        {% for i in users %}
+                            <option value={i}>{{ i.name }}</option>
+                        {% endfor %}
+                    </select>
                     <br>
                     <label>Lab Number</label>
                     <input class="form-control" type="text" name="lab_number">

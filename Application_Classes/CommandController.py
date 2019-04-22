@@ -29,8 +29,6 @@ class CommandController(object):
         elif command == 'search':
             print(table_data)
             return self.searcher.searchuser(table_data)
-        elif command == 'get_instructors':
-            return self.CourseCommand.get_instructors()
         return
 
     def get_logged_in(self, username):
