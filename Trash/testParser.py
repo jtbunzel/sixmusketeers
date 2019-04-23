@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.Parser import *
+from Trash.Parser import *
 
 class TestParser(unittest.TestCase):
 

@@ -1,4 +1,4 @@
-from Application_Classes.User import User
+from Trash.User import User
 from WebApplication.models import User
 from django.core.exceptions import ObjectDoesNotExist
 

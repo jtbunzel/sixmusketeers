@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.TA import *
+from Trash.TA import *
 
 
 class MyTestCase(unittest.TestCase):

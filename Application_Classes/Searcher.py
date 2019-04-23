@@ -1,4 +1,4 @@
-from .models import User
+from WebApplication.models import User
 from itertools import chain
 
 

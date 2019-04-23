@@ -1,6 +1,6 @@
 import unittest
-from Application_Classes.Course import *
-from Application_Classes.Supervisor import *
+from Trash.Course import *
+from Trash.Supervisor import *
 
 
 class MyTestCase(unittest.TestCase):

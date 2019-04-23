@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.Administrator import Administrator
+from Trash.Administrator import Administrator
 
 
 class MyTestCase(unittest.TestCase):

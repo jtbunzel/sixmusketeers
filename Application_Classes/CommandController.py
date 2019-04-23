@@ -1,7 +1,6 @@
-from Application_Classes.User import *
 from WebApplication.models import User
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
-from WebApplication.Searcher import Searcher
+from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
 from Application_Classes.CourseCommandController import CourseCommandController
 

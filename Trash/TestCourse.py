@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.Course import *
+from Trash.Course import *
 
 
 class MyTestCase(unittest.TestCase):

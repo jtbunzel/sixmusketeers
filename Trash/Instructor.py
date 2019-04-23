@@ -1,9 +1,7 @@
-from typing import List, Any
+from typing import List
 
-from Application_Classes.MOCK_user import *  # mock because testing classes is independent
-from Application_Classes.User import *
-from Application_Classes.Course import *
-from WebApplication.models import *
+#from Trash.Course import *
+#from WebApplication.models import *
 
 
 class Instructor(User):

@@ -1,4 +1,4 @@
-from Application_Classes.Instructor import *
+from Trash.Instructor import *
 from Application_Classes.MOCK_Instructor import *
 
 

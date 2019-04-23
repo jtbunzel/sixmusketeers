@@ -1,6 +1,6 @@
 import unittest
-from Application_Classes.Supervisor import *
-from Application_Classes.TA import *
+from Trash.Supervisor import *
+from Trash.TA import *
 from Application_Classes.App import *
 
 

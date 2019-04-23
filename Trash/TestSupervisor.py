@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.Supervisor import *
+from Trash.Supervisor import *
 
 
 class MyTestCase(unittest.TestCase):
