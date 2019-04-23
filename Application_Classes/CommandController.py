@@ -31,15 +31,15 @@ class CommandController(object):
             return self.searcher.searchuser(table_data)
         return
 
-    def get_logged_in(self, username):
-        user_object = User.objects.filter(username=username)
+    def get_user_by_username(self, username):
+        user_object = User.objects.filter(username__iexact=username)
         if user_object.count() == 0:
             return None
         else:
             return user_object.values()[0]
 
     def login(self, username, password):
-        user_logging_in = User.objects.filter(username=username)
+        user_logging_in = User.objects.filter(username__iexact=username)
         if user_logging_in.count() == 0:
             return 'Username not found.'
         if user_logging_in[0].password != password:

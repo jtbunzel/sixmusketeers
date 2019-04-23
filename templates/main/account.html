@@ -5,7 +5,7 @@
 
     <div class="container_block" style="width:100%">
         {% if user == None %}
-           <meta http-equiv="refresh" content="0; URL=''" />
+            <meta http-equiv="refresh" content="0; URL=''"/>
 
         {% else %}
             {% include "main/navigation_bar.html" %}
@@ -24,25 +24,29 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label>First name</label>
-                                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder={{name_list.0}}>
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                   placeholder={{ name_list.0 }}>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label>Last name</label>
-                                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder={{name_list.1}}>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                   placeholder={{ name_list.1 }}>
                                         </div>
                                     </div>
                                     <br>
                                     <label>Password</label>
-                                    <input class="form-control" type="password" name="password" placeholder='Change Password'>
+                                    <input class="form-control" type="password" name="password"
+                                           placeholder='Change Password'>
                                     <br>
                                     <label>Email</label>
-                                    <input class="form-control" type="email" name="email" placeholder={{user.email}}>
+                                    <input class="form-control" type="email" name="email" placeholder={{ user.email }}>
                                     <br>
                                     <label>Phone Number</label>
-                                    <input class="form-control" type="text" name="phone" placeholder={{user.phone}}>
+                                    <input class="form-control" type="text" name="phone" placeholder={{ user.phone }}>
                                     <br>
                                     <label>Address</label>
-                                    <input class="form-control" type="text" name="address" placeholder={{user.address}}>
+                                    <input class="form-control" type="text" name="address"
+                                           placeholder={{ user.address }}>
                                     <br>
                                     <input class="btn btn-primary" type="Submit" value="Save">
                                 </form>
@@ -56,6 +60,10 @@
                         <br><br>
                         <label>Name: </label><br>
                         <span class="account-text">{{ user.name }}</span>
+
+                        <br><br>
+                        <label>Role: </label><br>
+                        <span class="account-text">{{ user.role }}</span>
 
                         <br><br>
                         <label>Email: </label><br>
