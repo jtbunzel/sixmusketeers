@@ -109,6 +109,9 @@ class Create(BaseView):
         name = ""
         response = ""
         current_role = str(user['role'])
+
+        create_type = request.GET.get("type", "")
+
         if user is not None:
             if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
                 response = current_role + " type cannot create"
@@ -125,8 +128,9 @@ class Create(BaseView):
                     'address': request.POST.get("address", "")
                 }
                 response = a.command('create', userInfo)
+
         return render(request, 'main/create.html',
-                      {"navbar": "create", "message": response, "user": user, "name": name})
+                      {"navbar": "create", "message": response, "user": user, "type": create_type, "name": name})
 
 
 class Users(BaseView):
@@ -134,11 +138,21 @@ class Users(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
+        user_name_list = {}
         name = ""
         if user is not None:
             name = user['name']
 
-        return render(request, "main/users.html", {"navbar": "users", "user": user, "name": name})
+        edit = request.GET.get("edit", False)
+
+        user_profile = a.get_user(request.GET.get("user", ""))
+        if user_profile is not None:
+            user_name = user_profile["name"]
+            user_name_list = user_name.split(' ')
+
+        return render(request, "main/users.html",
+                      {"navbar": "users", "user": user, "name": name, "user_profile": user_profile,
+                       'user_profile_name': user_name_list, 'edit': edit})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -147,6 +161,14 @@ class Users(BaseView):
         name = ""
         if user is not None:
             name = user['name']
+
+        user_profile = a.get_user(request.GET.get("user", ""))
+        user_name_list = {}
+        if user_profile is not None:
+            user_name = user_profile["name"]
+            user_name_list = user_name.split(' ')
+
+        edit = request.GET.get("edit", False)
 
         strict_return = request.POST.get("strictReturn", None)
         search_string = request.POST.get("search_string", "")
@@ -159,7 +181,8 @@ class Users(BaseView):
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
         return render(request, 'main/users.html',
-                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string})
+                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit})
 
 
 class Courses(BaseView):
@@ -171,7 +194,9 @@ class Courses(BaseView):
         if user is not None:
             name = user['name']
 
-        return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name})
+        edit = request.GET.get("edit", False)
+
+        return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name, "edit": edit})
 
     def post(self, request):
         self.init_logged_in(request)

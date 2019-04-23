@@ -18,7 +18,12 @@ class App(object):
         return response
 
     def get_loggedin(self, username):
-        return self.command_controller.get_logged_in(username)
+        return self.command_controller.get_user_by_username(username)
+
+
+    def get_user(self, username):
+        return self.command_controller.get_user_by_username(username)
+
 
     def set_loggedin(self, new_loggedin):
         self.loggedin = new_loggedin
