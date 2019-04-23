@@ -32,11 +32,14 @@
                 </a>
             </div>
 
+            <h4>{{ message }}</h4>
+
+
             {% if type == "user" or type == "" %}
                 <div class="row">
                 <br>
                 <div class="col-md-4 mb-4">
-                <form method="post" action="#">
+                <form method="post" action="?type=user">
                     {% csrf_token %}
                     <input type="hidden" name="command" value="create">
 
@@ -93,7 +96,7 @@
                 <div class="row">
                 <br>
                 <div class="col-md-4 mb-4">
-                <form method="post" action="#">
+                <form method="post" action="?type=course">
                     {% csrf_token %}
                     <input type="hidden" name="command" value="createCourse">
                     <label>Course Name</label>
@@ -115,7 +118,7 @@
                 <div class="row">
                 <br>
                 <div class="col-md-4 mb-4">
-                <form method="post" action="#">
+                <form method="post" action="?type=lab">
                     {% csrf_token %}
                     <input type="hidden" name="command" value="createLabSection">
                     <label>Lab TA</label>
@@ -134,11 +137,6 @@
                     <input class="btn btn-primary" type="Submit" value="Create Lab Section">
                 </form>
             {% endif %}
-        <p>{{ message }}</p>
-        </div>
-        </div>
-        </div>
-        </div>
         {% endif %}
 
         </div>

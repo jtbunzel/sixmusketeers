@@ -109,6 +109,9 @@ class Create(BaseView):
         name = ""
         response = ""
         current_role = str(user['role'])
+
+        create_type = request.GET.get("type", "")
+
         if user is not None:
             if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
                 response = current_role + " type cannot create"
@@ -125,8 +128,9 @@ class Create(BaseView):
                     'address': request.POST.get("address", "")
                 }
                 response = a.command('create', userInfo)
+
         return render(request, 'main/create.html',
-                      {"navbar": "create", "message": response, "user": user, "name": name})
+                      {"navbar": "create", "message": response, "user": user, "type": create_type, "name": name})
 
 
 class Users(BaseView):
