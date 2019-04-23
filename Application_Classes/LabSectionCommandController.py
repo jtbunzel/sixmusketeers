@@ -1,4 +1,4 @@
-from .models import User, LabSection
+from WebApplication.models import User, LabSection
 from django.core.exceptions import ObjectDoesNotExist
 
 

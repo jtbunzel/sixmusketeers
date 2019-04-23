@@ -216,8 +216,9 @@ class Account(BaseView):
         # user, response = self.post_response(request, user)
         user_name = request.POST.get("username", "")
         user_first = request.POST.get("firstname", "")
+        user_last = request.POST.get("lastname", "")
         response = ""
-        print(user_first)
+        print(user_first + " " + user_last)
         print(user_name)
         return render(request, 'main/account.html',
                       {"navbar": "account", "message": response, "user": user, "name": name, "user_name": user_name,

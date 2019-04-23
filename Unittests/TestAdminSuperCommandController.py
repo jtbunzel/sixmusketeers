@@ -1,5 +1,4 @@
-from django.test import TestCase
-from WebApplication.AdminSuperCommandController import SuperUserCommandController
+from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from WebApplication.models import User
 from django.test import TestCase
 

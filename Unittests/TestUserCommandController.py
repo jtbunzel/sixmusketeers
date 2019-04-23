@@ -1,6 +1,6 @@
 from django.test import TestCase
 from WebApplication.models import User
-from WebApplication.UserCommandController import UserCommandController
+from Application_Classes.UserCommandController import UserCommandController
 
 class TestUserCommandController(TestCase):
 

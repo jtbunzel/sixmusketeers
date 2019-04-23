@@ -1,10 +1,9 @@
 from Application_Classes.User import *
-from Application_Classes.Course import *
 from WebApplication.models import User
-from WebApplication.AdminSuperCommandController import SuperUserCommandController
+from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from WebApplication.Searcher import Searcher
-from WebApplication.UserCommandController import UserCommandController
-from WebApplication.CourseCommandController import CourseCommandController
+from Application_Classes.UserCommandController import UserCommandController
+from Application_Classes.CourseCommandController import CourseCommandController
 
 
 class CommandController(object):
