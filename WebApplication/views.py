@@ -112,22 +112,45 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
-        if user is not None:
-            if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
-                response = current_role + " type cannot create"
-            else:
-                name = user['name']
-                userInfo = {
-                    'data_type': "user",
-                    'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
-                    'username': request.POST.get("username", ""),
-                    'password': request.POST.get("password", ""),
-                    'user_type': request.POST.get("usertype", "").upper(),
-                    'email': request.POST.get("email", ""),
-                    'phone': request.POST.get("phone", ""),
-                    'address': request.POST.get("address", "")
-                }
+        if create_type == 'user':
+            if user is not None:
+                if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
+                    response = current_role + " type cannot create"
+                else:
+                    name = user['name']
+                    userInfo = {
+                        'data_type': "user",
+                        'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
+                        'username': request.POST.get("username", ""),
+                        'password': request.POST.get("password", ""),
+                        'user_type': request.POST.get("usertype", "").upper(),
+                        'email': request.POST.get("email", ""),
+                        'phone': request.POST.get("phone", ""),
+                        'address': request.POST.get("address", "")
+                    }
+#Used to check when inside the page
+                #print("Inside create User")
                 response = a.command('create', userInfo)
+
+        elif create_type == 'course':
+            courseInfo = {
+            'course_name':  request.POST["course_name"],
+            'course_code': request.POST["course_code"],
+#            'course_instructor': request.POST["course_instructor"]
+            }
+ # Used to check when inside the page
+            #print("Inside create course")
+            response = a.command('createCourse', courseInfo)
+
+        elif create_type == 'lab':
+            labInfo = {
+#                'lab_tas': request.POST["lab_tas"],
+                'lab_number': request.POST["lab_number"],
+#                'course': request.POST["course"]
+            }
+# Used to check when inside the page
+            #print("Inside create lab section")
+            response = a.command('createLabSection', labInfo)
 
         return render(request, 'main/create.html',
                       {"navbar": "create", "message": response, "user": user, "type": create_type, "name": name})
