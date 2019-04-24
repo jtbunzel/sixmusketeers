@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sixmusketeers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sixmusketeers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -21,7 +19,7 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestAdministratorClass_py.coverage" NAME="Unittests in TestAdministratorClass.py Coverage Results" MODIFIED="1552436054823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv.coverage" NAME="Unittests for TestDiv.TestDiv Coverage Results" MODIFIED="1550167020127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sixmusketeers$manage.coverage" NAME="manage Coverage Results" MODIFIED="1554823459532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sixmusketeers2$Test__Unittests_TestUserCommandController_TestUserCommandController.coverage" NAME="Test: Unittests.TestUserCommandController.TestUserCommandController Coverage Results" MODIFIED="1555380817304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/sixmusketeers2$Test__Unittests_TestUserCommandController_TestUserCommandController.coverage" NAME="Test: Unittests.TestUserCommandController.TestUserCommandController Coverage Results" MODIFIED="1556071486990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_in_TestSupervisor_py.coverage" NAME="Unittests in TestSupervisor.py Coverage Results" MODIFIED="1552435747441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$TestTA.coverage" NAME="TestTA Coverage Results" MODIFIED="1552445976572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestDiv_TestDiv_test_DivisionOfTwoDifferentRationalNumbers.coverage" NAME="Unittests for TestDiv.TestDiv.test_DivisionOfTwoDifferentRationalNumbers Coverage Results" MODIFIED="1550354580608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -56,74 +54,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret column="67" lean-forward="true" selection-start-column="67" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="265">
+              <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/Searcher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sixmusketeers/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-197">
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/Supervisor.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -173,7 +131,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubProjectSettings">
@@ -184,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/school_database/models.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/MOCK_database.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/MOCK_app" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/User.py" />
@@ -233,8 +190,9 @@
         <option value="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestCourseCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestLabSectionCommandController.py" />
-        <option value="$PROJECT_DIR$/Unittests/TestUserCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/Searcher.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestUserCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/UserCommandController.py" />
       </list>
     </option>
   </component>
@@ -270,6 +228,12 @@
               <item name="sixmusketeers2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="sixmusketeers2" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -328,7 +292,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.Launch Server">
+  <component name="RunManager" selected="Django tests.Test: Unittests.TestUserCommandController.TestUserCommandController">
     <configuration name="Test: Unittests.TestLabSectionCommandController.TestCourseCommandController.test_delete_lab_section" type="DjangoTestsConfigurationType" temporary="true">
       <module name="sixmusketeers" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -560,13 +524,7 @@
       <workItem from="1555297861382" duration="14667000" />
       <workItem from="1555380589343" duration="4029000" />
       <workItem from="1555983823674" duration="5012000" />
-    </task>
-    <task id="LOCAL-00002" summary="I've pushed my tests and the Rational class">
-      <created>1550169655548</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1550169655548</updated>
+      <workItem from="1556068904243" duration="3112000" />
     </task>
     <task id="LOCAL-00003" summary="I've pushed my tests and the Rational class">
       <created>1550354747953</created>
@@ -904,31 +862,17 @@
       <option name="project" value="LOCAL" />
       <updated>1555380757379</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="show user test working">
+      <created>1556071982362</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1556071982362</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 32m 39s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_testDjangoModels - 2019.04.15 at 02h 34m 09s.xml">
-      <configuration name="Test: Unittests.testDjangoModels" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_TestLabSectionCommandController_TestCourseCommandController_test_delete_lab_section - 2019.04.15 at 02h 57m 12s.xml">
-      <configuration name="Test: Unittests.TestLabSectionCommandController.TestCourseCommandController.test_delete_lab_section" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_TestLabSectionCommandController_TestCourseCommandController_test_delete_lab_section - 2019.04.15 at 02h 57m 41s.xml">
-      <configuration name="Test: Unittests.TestLabSectionCommandController.TestCourseCommandController.test_delete_lab_section" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_TestCourseCommandController_TestCourseCommandController - 2019.04.15 at 02h 57m 53s.xml">
-      <configuration name="Test: Unittests.TestCourseCommandController.TestCourseCommandController" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_TestCourseCommandController_TestCourseCommandController - 2019.04.15 at 20h 33m 09s.xml">
-      <configuration name="Test: Unittests.TestCourseCommandController.TestCourseCommandController" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.15 at 20h 43m 43s.xml">
-      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
     <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.15 at 20h 45m 32s.xml">
       <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
@@ -938,9 +882,30 @@
     <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.15 at 21h 13m 45s.xml">
       <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 20h 36m 56s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 20h 39m 06s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 20h 40m 20s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 20h 41m 56s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 20h 59m 37s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 21h 02m 20s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 21h 04m 48s.xml">
+      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210875000" />
+    <option name="totallyTimeSpent" value="213987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -953,13 +918,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.1301059" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.13161875" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7344932" weight="0.28477904" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.73373675" visible="true" weight="0.28477904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31785715" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -967,7 +933,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49428055" weight="0.1526833" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3290461" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.2655068" side_tool="true" visible="true" weight="0.28477904" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26626325" side_tool="true" visible="true" weight="0.28477904" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4960867" weight="0.32577476" />
       <window_info anchor="bottom" id="manage.py@sixmusketeers" order="12" sideWeight="0.49577805" weight="0.32738096" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -999,7 +965,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;Skeleton_Classes/CommandController.py&#10;#&#9;Skeleton_Classes/User.py" />
     <MESSAGE value="Database:&#10;&#10;CRUD" />
     <MESSAGE value="Changing App" />
     <MESSAGE value="Fixing models" />
@@ -1024,7 +989,8 @@
     <MESSAGE value="*Still needs work* TestDjangoModels - Updated to work with database design changes." />
     <MESSAGE value="show user test" />
     <MESSAGE value="show user test complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="show user test complete" />
+    <MESSAGE value="show user test working" />
+    <option name="LAST_COMMIT_MESSAGE" value="show user test working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sixmusketeers$models.coverage" NAME="models Coverage Results" MODIFIED="1554671375947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebApplication" />
@@ -1062,34 +1028,6 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_remove_course.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_remove_course Coverage Results" MODIFIED="1554189958455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/main/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/courses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/navigation_bar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1114,22 +1052,6 @@
     <entry file="file://$PROJECT_DIR$/database.patch">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="67" lean-forward="true" selection-start-column="67" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sixmusketeers/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-768">
@@ -1137,82 +1059,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestTA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/Course.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/LabSection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/TA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestCourse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestLabSection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestTA.py" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/Course.py" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/LabSection.py" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/TA.py" />
+    <entry file="file://$PROJECT_DIR$/Unittests/TestCourse.py" />
+    <entry file="file://$PROJECT_DIR$/Unittests/TestLabSection.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0004_auto_20190411_2200.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0003_auto_20190411_1056.py" />
-    <entry file="file://$PROJECT_DIR$/Unittests/TestUser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="52" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestUser.py" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190414_1731.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190411_1049.py" />
-    <entry file="file://$PROJECT_DIR$/Unittests/TestInstructor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestInstructor.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1220,9 +1081,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/MOCK_course.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/MOCK_course.py" />
     <entry file="file://$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1233,46 +1092,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/CourseCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/testDjangoModels.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="62" lean-forward="true" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/LabSectionCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/CourseCommandController.py" />
+    <entry file="file://$PROJECT_DIR$/Unittests/testDjangoModels.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/LabSectionCommandController.py" />
     <entry file="file://$PROJECT_DIR$/Unittests/TestCourseCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1290,37 +1113,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/User.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/testParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/Parser.py" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/User.py" />
+    <entry file="file://$PROJECT_DIR$/Unittests/testParser.py" />
     <entry file="file://$PROJECT_DIR$/Unittests/TestLabSectionCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1331,50 +1126,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/Supervisor.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="69" column="26" lean-forward="true" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/Searcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/Commands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-410" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestSupervisor.py" />
+    <entry file="file://$PROJECT_DIR$/Application_Classes/Supervisor.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/Searcher.py" />
+    <entry file="file://$PROJECT_DIR$/WebApplication/Commands.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2617">
@@ -1385,6 +1141,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sixmusketeers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-103" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1504">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1392,13 +1166,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
+    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
+        <state relative-caret-position="191">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sixmusketeers/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/templates/main/users.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-423">
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret column="67" lean-forward="true" selection-start-column="67" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
