@@ -1,6 +1,6 @@
 import unittest
-from Application_Classes.Instructor import *
-from Application_Classes.MOCK_course import *
+from Trash.Instructor import *
+from Trash.MOCK_course import *
 
 
 class MyTestCase(unittest.TestCase):

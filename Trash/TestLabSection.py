@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.LabSection import *
+from Trash.LabSection import *
 
 
 class MyTestCase(unittest.TestCase):

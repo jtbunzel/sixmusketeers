@@ -1,5 +1,5 @@
 from django.test import TestCase
-from WebApplication.CourseCommandController import CourseCommandController
+from Application_Classes.CourseCommandController import CourseCommandController
 
 
 class TestCourseCommandController(TestCase):

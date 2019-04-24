@@ -1,6 +1,3 @@
-from Application_Classes.LabSection import *
-
-
 class Course:
     def __init__(self, course_name, course_instructor="n/a", course_number="n/a"):
         self.course_code = course_number

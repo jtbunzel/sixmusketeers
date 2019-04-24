@@ -1,4 +1,4 @@
-from Application_Classes.User import *
+from Trash.User import *
 
 class Supervisor(User):
 

@@ -1,5 +1,4 @@
-from django.test import TestCase
-from WebApplication.AdminSuperCommandController import SuperUserCommandController
+from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from WebApplication.models import User
 from django.test import TestCase
 
@@ -59,6 +58,23 @@ class TestAdminSuperCommandController(TestCase):
         cmd.create("TA", userInfo)
         action = cmd.deleteUser("johnDoe")
         result = "User successfully deleted."
+        self.assertEqual(result, action)
+
+    def test_delete_admin(self):
+        cmd = SuperUserCommandController()
+        userInfo = {
+            'data_type': "user",
+            'username': "admin",
+            'name': "jojo",
+            'password': "password",
+            'user_type': "SUPERVISOR".upper(),
+            'email': "MojoJojo@yahoo.com",
+            'phone': "4142247777",
+            'address': "777 fake st."
+        }
+        cmd.create("SUPERVISOR", userInfo)
+        action = cmd.deleteUser("admin")
+        result = "Can not delete Admin account"
         self.assertEqual(result, action)
 
     def test_showAll(self):

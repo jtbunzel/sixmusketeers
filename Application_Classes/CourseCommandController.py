@@ -1,4 +1,4 @@
-from .models import User, Course
+from WebApplication.models import User, Course
 from django.core.exceptions import ObjectDoesNotExist
 
 

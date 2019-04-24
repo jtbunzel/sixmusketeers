@@ -1,5 +1,5 @@
 import unittest
-from Application_Classes.User import User
+from Trash.User import User
 
 
 class MyTestCase(unittest.TestCase):

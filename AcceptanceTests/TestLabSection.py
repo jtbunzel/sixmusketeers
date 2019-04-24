@@ -1,4 +1,4 @@
-from Application_Classes.LabSection import LabSection
+from Trash.LabSection import LabSection
 from django.test import TestCase
 
 class TestLabSection(TestCase):

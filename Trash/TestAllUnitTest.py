@@ -1,8 +1,8 @@
 import unittest
-from Application_Classes.Administrator import Administrator
-from Application_Classes.Supervisor import *
-from Application_Classes.TA import *
-from Application_Classes.User import *
+from Trash.Administrator import Administrator
+from Trash.Supervisor import *
+from Trash.TA import *
+from Trash.User import *
 
 
 class MyTestCase(unittest.TestCase):
