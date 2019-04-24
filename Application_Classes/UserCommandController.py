@@ -5,53 +5,25 @@ from django.core.exceptions import ObjectDoesNotExist
 class UserCommandController:
     user = User()
 
-    def editUser(self,username, newInfo):
+    def editUser(self, username, newInfo):
 
-        #Check for user logged in
+        # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
+        # user doesn't have a name inputted
+        if newInfo['name'] == ' ':
+            newInfo['name'] = ""
 
-#        #Check if user exists
-#        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentUserInfo = User.objects.filter(username__iexact=username).first()
-        except ObjectDoesNotExist:
-            print("User could not be found.")
+            obj = User.objects.get(username__iexact=username)
+            for key, value in newInfo.items():
+                if value is not "":
+                    setattr(obj, key, value)
 
-#       #If data_type not blank edit data_type
-        if newInfo['data_type'] != '':
-            currentUserInfo.data_type = newInfo['data_type']
-
-#       #If username not blank edit username
-        if newInfo['username'] != '':
-            currentUserInfo.username = newInfo['username']
-
-#       #If name not blank edit name
-        if newInfo['name'] != '':
-            currentUserInfo.name = newInfo['name']
-
-#       #If Password not blank edit
-        if newInfo['password'] != '':
-            currentUserInfo.password = newInfo['password']
-
-#       #If user_type not blank edit
-        if newInfo['user_type'] != '':
-            currentUserInfo.user_type = newInfo['user_type']
-
-#       #If email not blank edit Name
-        if newInfo['email'] != '':
-            currentUserInfo.email = newInfo['email']
-
-#       #If Phone Number not blank edit Password
-        if newInfo['phone'] != '':
-            currentUserInfo.phone = newInfo['phone']
-
-#       #If Address not blank edit Address
-        if newInfo['address'] != '':
-            currentUserInfo.address = newInfo['address']
-
-        currentUserInfo.save()
+            obj.save()
+        except User.DoesNotExist:
+            return 'No user under this name'
 
         return "User information has been successfully updated"
 

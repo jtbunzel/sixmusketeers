@@ -248,17 +248,43 @@ class Account(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
-        name = "",
+        name_list = {}
+        name = ""
+        response = ""
         if user is not None:
             name = user['name']
+            name_list = name.split(' ')
 
-        # user, response = self.post_response(request, user)
-        user_name = request.POST.get("username", "")
-        user_first = request.POST.get("firstname", "")
-        user_last = request.POST.get("lastname", "")
-        response = ""
-        print(user_first + " " + user_last)
-        print(user_name)
+            current_role = user['role']
+
+            if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
+                response = current_role + " type cannot create"
+            else:
+                # Super complicated code because some reason we thought having one name field was easier
+                first = request.POST.get("firstname", "")
+                last = request.POST.get("lastname", "")
+                if first == "":
+                    first = name_list[0]
+                if last == "":
+                    last = name_list[1]
+                name = first + ' ' + last
+                if name == " ":
+                    name = user['name']
+
+                userInfo = {
+                    'name': name,
+                    'username': user['username'],
+                    'password': request.POST.get("password", ""),
+                    'role': current_role,
+                    'email': request.POST.get("email", ""),
+                    'phone': request.POST.get("phone", ""),
+                    'address': request.POST.get("address", "")
+                }
+                response = a.command('editUser', userInfo)
+
+        edit = request.GET.get("edit", False)
+        user = a.get_loggedin(request.session.get("user", ""))
+
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name, "user_name": user_name,
-                       "user_first": user_first})
+                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
+                       'name': name})
