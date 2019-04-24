@@ -129,8 +129,8 @@ class Create(BaseView):
                         'address': request.POST.get("address", "")
                     }
 #Used to check when inside the page
-                #print("Inside create User")
-                response = a.command('create', userInfo)
+                     #print("Inside create User")
+                    response = a.command('create', userInfo)
 
         elif create_type == 'course':
             courseInfo = {

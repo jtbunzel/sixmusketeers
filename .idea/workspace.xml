@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="UserCommandController - Rewrote showUser &#10;TestUserCommandController - Wrote test for showUser">
+    <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AcceptanceTests/TestEditAccount.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
     <ignored path="DanPatelDNC.txt" />
@@ -65,57 +68,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="847">
-              <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-795">
-              <caret line="206" column="62" lean-forward="true" selection-start-line="206" selection-start-column="62" selection-end-line="206" selection-end-column="62" />
+            <state relative-caret-position="307">
+              <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,8 +86,8 @@
       <list>
         <option value="HTML File" />
         <option value="Python Unit Test" />
-        <option value="Python Script" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -186,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebApplication/migrations/0003_auto_20190409_0104.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/App.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/CommandController.py" />
         <option value="$PROJECT_DIR$/ApplicationSession/Credentials.py" />
@@ -232,11 +189,12 @@
         <option value="$PROJECT_DIR$/Trash/Instructor.py" />
         <option value="$PROJECT_DIR$/templates/main/account.html" />
         <option value="$PROJECT_DIR$/Application_Classes/CommandController.py" />
-        <option value="$PROJECT_DIR$/WebApplication/views.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/UserCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestUserCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" />
         <option value="$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/UserCommandController.py" />
+        <option value="$PROJECT_DIR$/AcceptanceTests/TestEditAccount.py" />
+        <option value="$PROJECT_DIR$/WebApplication/views.py" />
       </list>
     </option>
   </component>
@@ -260,6 +218,11 @@
             <path>
               <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
               <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
+              <item name="AcceptanceTests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
@@ -367,7 +330,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: Unittests.TestUserCommandController.TestUserCommandController">
+  <component name="RunManager" selected="Django server.Launch Server">
+    <configuration name="Test: AcceptanceTests.TestEditAccount" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="sixmusketeers" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="AcceptanceTests.TestEditAccount" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Test: Unittests.TestAdminSuperCommandController" type="DjangoTestsConfigurationType" temporary="true">
       <module name="sixmusketeers" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -382,26 +365,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="Unittests.TestAdminSuperCommandController" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_delete_user" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="sixmusketeers" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_delete_user" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -535,19 +498,19 @@
     <list>
       <item itemvalue="Django server.Launch Server" />
       <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController" />
-      <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_delete_user" />
       <item itemvalue="Django tests.Test: Unittests.TestCourseCommandController" />
       <item itemvalue="Django tests.Test: Unittests.TestUserCommandController.TestUserCommandController" />
       <item itemvalue="Python.Rational" />
       <item itemvalue="Python tests.Unittests in TestCommandController.py" />
+      <item itemvalue="Django tests.Test: AcceptanceTests.TestEditAccount" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: AcceptanceTests.TestEditAccount" />
         <item itemvalue="Django tests.Test: Unittests.TestUserCommandController.TestUserCommandController" />
         <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController" />
         <item itemvalue="Python tests.Unittests in TestCommandController.py" />
         <item itemvalue="Django tests.Test: Unittests.TestCourseCommandController" />
-        <item itemvalue="Django tests.Test: Unittests.TestAdminSuperCommandController.TestAdminSuperCommandController.test_delete_user" />
       </list>
     </recent_temporary>
   </component>
@@ -612,14 +575,7 @@
       <workItem from="1555873105652" duration="10542000" />
       <workItem from="1555904612287" duration="18836000" />
       <workItem from="1556039699926" duration="1052000" />
-      <workItem from="1556060287736" duration="16127000" />
-    </task>
-    <task id="LOCAL-00024" summary="Fixing models">
-      <created>1554786313221</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1554786313221</updated>
+      <workItem from="1556060287736" duration="20602000" />
     </task>
     <task id="LOCAL-00025" summary="Fixing models">
       <created>1554787043159</created>
@@ -957,43 +913,50 @@
       <option name="project" value="LOCAL" />
       <updated>1556073657485</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="UserCommandController - Rewrote showUser (again)">
+      <created>1556077759308</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1556077759308</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 08m 23s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 31m 19s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 20m 15s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 32m 07s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 20m 49s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 32m 45s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 21m 15s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 33m 01s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 21m 32s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 33m 27s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 22m 26s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 33m 45s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 23m 13s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 34m 14s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 24m 10s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 34m 36s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestAdminSuperCommandController - 2019.04.23 at 22h 25m 17s.xml">
-      <configuration name="Test: Unittests.TestAdminSuperCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 34m 48s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__Unittests_TestUserCommandController_TestUserCommandController - 2019.04.23 at 22h 43m 33s.xml">
-      <configuration name="Test: Unittests.TestUserCommandController.TestUserCommandController" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__AcceptanceTests_TestEditAccount - 2019.04.23 at 23h 35m 32s.xml">
+      <configuration name="Test: AcceptanceTests.TestEditAccount" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320007000" />
+    <option name="totallyTimeSpent" value="324482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1006,14 +969,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.12082671" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.12082671" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72496027" visible="true" weight="0.32048374" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.72496027" visible="true" weight="0.32048374" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49682036" weight="0.3159486" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1053,7 +1015,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added LabSectionCommandController Class&#10;Implemented editLabSection and deleteLabSection" />
     <MESSAGE value="Implemented createCourse and createLabSection" />
     <MESSAGE value="Implemented showAll in AdminSuperCommandController&#10;Implemented get_public_contact_info in Users.py&#10;Added new lines to showUser in UserCommandController" />
     <MESSAGE value="TestUser - Repaired TestPublicInfo&#10;User - Repaired publicInfo" />
@@ -1078,9 +1039,11 @@
     <MESSAGE value="CommandController - Tried adding editUser **Doesnt fully work**&#10;account.html - changed filler command to editUser" />
     <MESSAGE value="UserCommandController - Removed whitespace&#10;views.py - Separated create User/Course/Lab" />
     <MESSAGE value="UserCommandController - Rewrote showUser &#10;TestUserCommandController - Wrote test for showUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserCommandController - Rewrote showUser &#10;TestUserCommandController - Wrote test for showUser" />
+    <MESSAGE value="UserCommandController - Rewrote showUser (again)" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserCommandController - Rewrote showUser (again)" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sixmusketeers$Test__AcceptanceTests_TestEditAccount.coverage" NAME="Test: AcceptanceTests.TestEditAccount Coverage Results" MODIFIED="1556080531949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/sixmusketeers$models.coverage" NAME="models Coverage Results" MODIFIED="1554671375947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebApplication" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_add_courses.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_add_courses Coverage Results" MODIFIED="1554189655192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestCourse_MyTestCase.coverage" NAME="Unittests for TestCourse.MyTestCase Coverage Results" MODIFIED="1554535652997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
@@ -1123,56 +1086,6 @@
     <SUITE FILE_PATH="coverage/sixmusketeers$Unittests_for_TestInstructor_MyTestCase_test_remove_course.coverage" NAME="Unittests for TestInstructor.MyTestCase.test_remove_course Coverage Results" MODIFIED="1554189958455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Unittests" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python36_64/Lib/site-packages/django/db/models/query.py" />
-    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/fashionable_create.css" />
-    <entry file="file://$PROJECT_DIR$/Trash/TA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestEdit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/MOCK_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/MOCK_course.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/Supervisor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/Administrator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="75" lean-forward="true" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/LabSection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/management/base.py" />
     <entry file="file://$PROJECT_DIR$/sixmusketeers/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1235,16 +1148,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/UserCommandController.py" />
     <entry file="file://$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" />
-    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/CourseCommandController.py" />
     <entry file="file://$PROJECT_DIR$/templates/main/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1356,57 +1259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/Searcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-795">
-          <caret line="206" column="62" lean-forward="true" selection-start-line="206" selection-start-column="62" selection-end-line="206" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-271">
@@ -1414,12 +1266,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="847">
+        <state relative-caret-position="647">
           <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
           <folding>
             <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestEditAccount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/Searcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestDelete.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestCreate.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignNotAuthorized.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignments.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignAsSupervisor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAssignAsInstructor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAllAcceptance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestAccess.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="131" column="20" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
