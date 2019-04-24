@@ -1,4 +1,3 @@
-from Trash.User import User
 from WebApplication.models import User
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -26,7 +25,7 @@ class SuperUserCommandController:
 #        if self.user.username == currentUser.username:
 #            return "You can not delete your own account"
 
-        if self.user.username == 'Admin'.casefold():
+        if currentUser.filter(username='Admin'.casefold()):
             return "Can not delete Admin account"
 
         currentUser.delete()

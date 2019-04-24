@@ -1,58 +1,55 @@
-from Trash.User import User
 from WebApplication.models import User
 from django.core.exceptions import ObjectDoesNotExist
 
 
 class UserCommandController:
-    user = User
+    user = User()
 
-    def editUser(self, userInfo, newInfo):
+    def editUser(self,username, newInfo):
+
         #Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role
-        if self.user.rank < 2:
-            return "You do not have permission to use this command"
 
 #        #Check if user exists
 #        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentUserInfo = User.objects.filter(username__iexact=userInfo[0])
+            currentUserInfo = User.objects.filter(username__iexact=username).first()
         except ObjectDoesNotExist:
             print("User could not be found.")
 
-#       #If Username not blank edit Username
-        if newInfo[0] != '':
-            currentUserInfo.username = newInfo[0]
+#       #If data_type not blank edit data_type
+        if newInfo['data_type'] != '':
+            currentUserInfo.data_type = newInfo['data_type']
 
-#       #If Password not blank edit Password
-        if newInfo[1] != '':
-            currentUserInfo.password = newInfo[1]
+#       #If username not blank edit username
+        if newInfo['username'] != '':
+            currentUserInfo.username = newInfo['username']
 
-#       #If First Name not blank edit First Name
-        if newInfo[2] != '':
-            currentUserInfo.name = newInfo[2]
+#       #If name not blank edit name
+        if newInfo['name'] != '':
+            currentUserInfo.name = newInfo['name']
 
-#       #If Last Name not blank edit Last Name
-        if newInfo[3] != '':
-            currentUserInfo.last_name = newInfo[3]
+#       #If Password not blank edit
+        if newInfo['password'] != '':
+            currentUserInfo.password = newInfo['password']
 
-#       #If Phone Number not blank edit Phone Number
-        if newInfo[4] != '':
-            currentUserInfo.phone_number = newInfo[4]
+#       #If user_type not blank edit
+        if newInfo['user_type'] != '':
+            currentUserInfo.user_type = newInfo['user_type']
+
+#       #If email not blank edit Name
+        if newInfo['email'] != '':
+            currentUserInfo.email = newInfo['email']
+
+#       #If Phone Number not blank edit Password
+        if newInfo['phone'] != '':
+            currentUserInfo.phone = newInfo['phone']
 
 #       #If Address not blank edit Address
-        if newInfo[5] != '':
-            currentUserInfo.address = newInfo[5]
-
-#       #If Email not blank edit Email
-        if newInfo[6] != '':
-            currentUserInfo.email = newInfo[6]
-
-#       #If Rank not blank edit Rank
-        if newInfo[7] != '':
-            currentUserInfo.rank = newInfo[7]
+        if newInfo['address'] != '':
+            currentUserInfo.address = newInfo['address']
 
         currentUserInfo.save()
 

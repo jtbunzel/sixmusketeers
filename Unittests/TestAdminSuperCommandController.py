@@ -60,6 +60,23 @@ class TestAdminSuperCommandController(TestCase):
         result = "User successfully deleted."
         self.assertEqual(result, action)
 
+    def test_delete_admin(self):
+        cmd = SuperUserCommandController()
+        userInfo = {
+            'data_type': "user",
+            'username': "admin",
+            'name': "jojo",
+            'password': "password",
+            'user_type': "SUPERVISOR".upper(),
+            'email': "MojoJojo@yahoo.com",
+            'phone': "4142247777",
+            'address': "777 fake st."
+        }
+        cmd.create("SUPERVISOR", userInfo)
+        action = cmd.deleteUser("admin")
+        result = "Can not delete Admin account"
+        self.assertEqual(result, action)
+
     def test_showAll(self):
         cmd = SuperUserCommandController()
         userInfo = {
