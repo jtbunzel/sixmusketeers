@@ -280,30 +280,27 @@ class Account(BaseView):
 
             current_role = user['role']
 
-            if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
-                response = current_role + " type cannot create"
-            else:
-                # Super complicated code because some reason we thought having one name field was easier
-                first = request.POST.get("firstname", "")
-                last = request.POST.get("lastname", "")
-                if first == "":
-                    first = name_list[0]
-                if last == "":
-                    last = name_list[1]
-                name = first + ' ' + last
-                if name == " ":
-                    name = user['name']
+            # Super complicated code because some reason we thought having one name field was easier
+            first = request.POST.get("firstname", "")
+            last = request.POST.get("lastname", "")
+            if first == "":
+                first = name_list[0]
+            if last == "":
+                last = name_list[1]
+            name = first + ' ' + last
+            if name == " ":
+                name = user['name']
 
-                userInfo = {
-                    'name': name,
-                    'username': user['username'],
-                    'password': request.POST.get("password", ""),
-                    'role': current_role,
-                    'email': request.POST.get("email", ""),
-                    'phone': request.POST.get("phone", ""),
-                    'address': request.POST.get("address", "")
-                }
-                response = a.command('editUser', userInfo)
+            userInfo = {
+                'name': name,
+                'username': user['username'],
+                'password': request.POST.get("password", ""),
+                'role': current_role,
+                'email': request.POST.get("email", ""),
+                'phone': request.POST.get("phone", ""),
+                'address': request.POST.get("address", "")
+            }
+            response = a.command('editUser', userInfo)
 
         edit = request.GET.get("edit", False)
         user = a.get_loggedin(request.session.get("user", ""))
