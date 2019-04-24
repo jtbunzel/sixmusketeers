@@ -54,18 +54,18 @@ class UserCommandController:
 
         return "User information has been successfully updated"
 
-    def showUser(self):
+    def showUser(self, username):
         if self.user is None:
             return "you must be logged in"
 
-        name_table = self.user.name.split(" ")
-        first_name = name_table[0]
-        last_name = name_table[1]
+        if User.objects.count() < 0:
+            return "No User in database"
 
-        a = "First name = " + first_name + "\n"
-        b = "Last name = " + last_name + "\n"
-        c = "Address = " + self.user.address + "\n"
-        d = "Phone = " + self.user.phone + "\n"
-        e = "Email = " + self.user.email + "\n"
+        try:
+            currentUserInfo = User.objects.filter(username__iexact=username).first()
+        except ObjectDoesNotExist:
+            print("User could not be found.")
 
-        return a+b+c+d+e
+        userInfo = "Username: " + currentUserInfo.username + "Name: " + currentUserInfo.name + "Role: " + currentUserInfo.role + "Phone Number: " + currentUserInfo.phone + "Email: " + currentUserInfo.email + "Address: " + currentUserInfo.address
+
+        return userInfo

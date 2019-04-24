@@ -42,7 +42,20 @@ class TestUserCommandController(TestCase):
         self.assertEqual(result, action)
 
     def test_showUser(self):
-        user = UserCommandController()
-        action = user.showUser(self)
-        result = "First name = " + "Rock" + "\n" + "Last name = " + "gomez" + "\n" + "Address = " + "Milwaukee" + "\n" + "Phone = " + "4148563625" + "\n" + "Email = " + "rock@uwm.edu" + "\n"
-        self.assertEqual(action,result)
+
+        scmd = SuperUserCommandController()
+        userInfo = {
+            'data_type': "user",
+            'username': "johnDoe",
+            'name': "john",
+            'password': "password",
+            'user_type': "Instructor".upper(),
+            'email': "johnDoe123@yahoo.com",
+            'phone': "4142240088",
+            'address': "777 fake st."
+        }
+        scmd.create("Instructor", userInfo)
+
+        action = cmd.showUser("johnDoe")
+        result = "Username: " + "johnDoe" + "Name: " + "john" + "Role: " + "INSTRUCTOR" + "Phone Number: " + "4142240088" + "Email: " + "johnDoe123@yahoo.com" + "Address: " + "777 fake st."
+        self.assertEqual(result, action)
