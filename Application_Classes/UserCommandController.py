@@ -55,8 +55,8 @@ class UserCommandController:
         if self.user is None:
             return "you must be logged in"
         a = "Name = " + self.user.name + "\n"
-        c = "Address = " + self.user.address + "\n"
+        b = "Address = " + self.user.address + "\n"
         d = "Phone = " + self.user.phone + "\n"
         e = "Email = " + self.user.email + "\n"
 
-        return a+c+d+e
+        return a+b+d+e
