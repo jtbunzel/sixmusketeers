@@ -145,14 +145,25 @@ class Users(BaseView):
 
         edit = request.GET.get("edit", False)
 
+        strict_return = request.POST.get("strictReturn", None)
+        search_string = request.POST.get("search_string", "")
+        if strict_return is None and search_string == "":
+            strict_return = "all"
+
+        search = {'strict_return': strict_return,
+                  'string': search_string}
+        response = a.command('search', search)
+        if response.count() == 0:
+            response = None
+
         user_profile = a.get_user(request.GET.get("user", ""))
         if user_profile is not None:
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
 
         return render(request, "main/users.html",
-                      {"navbar": "users", "user": user, "name": name, "user_profile": user_profile,
-                       'user_profile_name': user_name_list, 'edit': edit})
+                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -172,6 +183,9 @@ class Users(BaseView):
 
         strict_return = request.POST.get("strictReturn", None)
         search_string = request.POST.get("search_string", "")
+        if strict_return is None and search_string == "":
+            strict_return = "all"
+
         search = {'strict_return': strict_return,
                   'string': search_string}
         response = a.command('search', search)
