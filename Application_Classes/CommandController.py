@@ -27,7 +27,9 @@ class CommandController(object):
         elif command == 'search':
             print(table_data)
             return self.searcher.searchuser(table_data)
-        return
+        elif command == 'editUser':
+            username = table_data['username']
+            return self.UserCommandCntrl.editUser(username, table_data)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)

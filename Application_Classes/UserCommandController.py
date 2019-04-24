@@ -8,7 +8,6 @@ class UserCommandController:
         if self.user is None:
             return "You must be logged in"
 
-
 #        #Check if user exists
 #        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
@@ -51,7 +50,6 @@ class UserCommandController:
         currentUserInfo.save()
 
         return "User information has been successfully updated"
-
 
     def showUser(self):
         if self.user is None:

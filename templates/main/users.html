@@ -20,7 +20,7 @@
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <div class="row">
                             <div class="col-md-4 mb-4">
-                                <form method="post" action="/users/?user={{ user_profile.username }}">
+                                <form method="post" action="/users/?user={{ user_profile.username }}" id="edit_account">
                                     {% csrf_token %}
                                     <input type="hidden" name="command" value="create">
 
@@ -73,8 +73,22 @@
                                 </form>
                                 <br>
                                 <form method="post" action="/users/">
-                                    <input class="btn btn-danger" type="Submit" value="Delete Account">
+                                    {% csrf_token %}
+                                    <input class="btn btn-danger" type="Submit" value="Delete Account" id="delete_account">
                                 </form>
+
+                                <script type="text/javascript">
+                                    var el = document.getElementById('edit_account');
+                                    var e2 = document.getElementById('delete_account');
+
+                                    el.addEventListener('submit', function () {
+                                        return confirm('Are you sure you want makes these changes to {{ user_profile.name }}?');
+                                    }, false);
+
+                                    e2.addEventListener('submit', function () {
+                                        return confirm('Are you sure you want to delete {{ user_profile.name }}?');
+                                    }, false);
+                                </script>
                             </div>
                         </div>
                     {% else %}
@@ -114,7 +128,6 @@
                             </button>
                         </a>
                     {% endif %}
-
                 {% endif %}
 
             {% else %}
@@ -135,10 +148,13 @@
                     </thead>
                     <tbody>
 
-                    {% if results == None or search == "" %}
-                        <h3>No search results</h3>
-                    {% else %}
-                        <h3>Search results for: "{{ search }}"</h3>
+                    {% if results is not None %}
+                        {% if search == "" %}
+                            <h3>Showing all users</h3>
+                        {% else %}
+                            <h3>Search results for: "{{ search }}"</h3>
+                        {% endif %}
+
                         {% for i in results %}
                             <tr>
                                 <td>{{ i.username }}</td>
@@ -151,6 +167,8 @@
                                 </td>
                             </tr>
                         {% endfor %}
+                    {% else %}
+                        <h3>No search results for "{{ search }}"</h3>
                     {% endif %}
                 </table>
 

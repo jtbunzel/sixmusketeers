@@ -25,6 +25,8 @@ class Searcher:
                 results = User.objects.filter(email__contains=string_search)
             elif specific == "phone":
                 results = User.objects.filter(phone__contains=string_search)
+            elif specific == "all":
+                results = User.objects.all()
 
         else:
             usernames = User.objects.filter(username__contains=string_search)
