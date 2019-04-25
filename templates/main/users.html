@@ -162,9 +162,9 @@
 
                         {% for i in results %}
                             <tr>
-                                <td>{{ i.username }}</td>
-                                <td>{{ i.name }}</td>
-                                <td>{{ i.role }}</td>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.username }}</td>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.name }}</td>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.role }}</td>
                                 <td>
                                     <a href="?user={{ i.username }}">
                                         <button class="btn btn-primary btn-sm">View</button>

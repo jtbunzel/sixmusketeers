@@ -32,3 +32,8 @@ html, body{
 .account-text {
   margin-left:100px;
 }
+
+.currentUser-text {
+  font-weight: bold;
+  color: royalblue;
+}

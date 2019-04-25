@@ -173,6 +173,9 @@ class Users(BaseView):
         search_string = ""
 
         if user_profile is not None:
+            if user_profile['username'] == user['username']:
+                return redirect('/account/')
+
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
         else:
@@ -208,15 +211,16 @@ class Users(BaseView):
 
         command_type = request.POST.get("command", False)
         command_string = request.POST.get("commandStr", "")
-        print(command_type)
 
         if command_type == 'deleteAccount':
-            print('delete')
             userInfo = {'username': command_string}
             a.command('deleteAccount', userInfo)
             return redirect('/users/')
 
         if user_profile is not None:
+            if user_profile['username'] == user['username']:
+                return redirect('/account/')
+
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
 
