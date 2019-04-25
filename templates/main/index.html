@@ -39,11 +39,10 @@
     {% else %}
         {% include "main/navigation_bar.html" %}
         <div class="container_block">
-            <form method="post" action="">
-              {% csrf_token %}
-              Command: <input type="text" name="command"><br/>
-              <input type="submit"/>
-            </form>
+            <center>
+                <br>
+                <h1>Welcome to S.A.S.S!</h1>
+            </center>
             <br>
             <p>{{message}}</p>
         </div>

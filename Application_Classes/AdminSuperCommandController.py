@@ -7,30 +7,20 @@ class SuperUserCommandController:
 
     def deleteUser(self, targetUser):
         # Check for user logged in
+        print('deleting' + targetUser)
         if self.user is None:
             return "You must be logged in"
 
-#        #Check for Supervisor or Admin role  ** Edited out because we removed User Rank **
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
+        user_object = User.objects.filter(username__iexact=targetUser)
+        user_role = User.objects.filter(username__iexact=targetUser).values('role')
+        print(user_role)
+        if user_role is not "SUPERVISOR":
+            user_object.delete()
+            response = targetUser + " deleted successfully."
+        else:
+            response = targetUser + " is a Supervisor and cannot be deleted."
 
-        #        #Check if user exists
-        #        #if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
-        try:
-            currentUser = User.objects.filter(username=targetUser)
-        except ObjectDoesNotExist:
-            print("User could not be found.")
-
-#       #Check if user is attempting to delete its own account
-#        if self.user.username == currentUser.username:
-#            return "You can not delete your own account"
-
-        if currentUser.filter(username='Admin'.casefold()):
-            return "Can not delete Admin account"
-
-        currentUser.delete()
-
-        return "User successfully deleted."
+        return response
 
     #   #Display public info for all users in database.
     def showAll(self):

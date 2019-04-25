@@ -16,13 +16,14 @@
                 <h1>Account Details for {{ user_profile.name }}</h1>
                 <br>
 
+                <!-- on user profile, editing -->
                 {% if edit == "true" %}
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <div class="row">
                             <div class="col-md-4 mb-4">
                                 <form method="post" action="/users/?user={{ user_profile.username }}" id="edit_account">
                                     {% csrf_token %}
-                                    <input type="hidden" name="command" value="create">
+                                    <input type="hidden" name="command" value="editUser">
 
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
@@ -44,9 +45,6 @@
                                     <label>Role</label>
 
                                     <select name="role" class="form-control">
-                                        <option value="SUPERVISOR" {% if user_profile.role == "SUPERVISOR" %}
-                                                selected {% endif %}>Supervisor
-                                        </option>
                                         <option value="ADMINISTRATOR" {% if user_profile.role == "ADMINISTRATOR" %}
                                                 selected {% endif %}>Administrator
                                         </option>
@@ -74,9 +72,12 @@
                                 <br>
                                 <form method="post" action="/users/">
                                     {% csrf_token %}
+                                    <input type="hidden" name="command" value="deleteAccount">
+                                    <input type="hidden" name="commandStr" value={{ user_profile.username }}>
                                     <input class="btn btn-danger" type="Submit" value="Delete Account" id="delete_account">
                                 </form>
 
+                                <!--
                                 <script type="text/javascript">
                                     var el = document.getElementById('edit_account');
                                     var e2 = document.getElementById('delete_account');
@@ -89,12 +90,15 @@
                                         return confirm('Are you sure you want to delete {{ user_profile.name }}?');
                                     }, false);
                                 </script>
+                                -->
+
                             </div>
                         </div>
                     {% else %}
                         <h1>You do not have permission to edit accounts</h1>
                     {% endif %}
 
+                <!-- on user profile, not editing -->
                 {% else %}
                     <label>Username: </label><br>
                     <span class="account-text">{{ user_profile.username }}</span>
@@ -130,6 +134,7 @@
                     {% endif %}
                 {% endif %}
 
+            <!-- searching -->
             {% else %}
                 <form action="#" method="post" class="form-inline">
                     {% csrf_token %}

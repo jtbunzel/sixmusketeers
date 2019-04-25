@@ -30,6 +30,9 @@ class CommandController(object):
         elif command == 'editUser':
             username = table_data['username']
             return self.UserCommandCntrl.editUser(username, table_data)
+        elif command == 'deleteAccount':
+            username = table_data['username']
+            return self.adminsuper_stuff.deleteUser(username)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from Application_Classes.App import App
 
@@ -128,28 +128,28 @@ class Create(BaseView):
                         'phone': request.POST.get("phone", ""),
                         'address': request.POST.get("address", "")
                     }
-#Used to check when inside the page
-                     #print("Inside create User")
+                    # Used to check when inside the page
+                    # print("Inside create User")
                     response = a.command('create', userInfo)
 
         elif create_type == 'course':
             courseInfo = {
-            'course_name':  request.POST["course_name"],
-            'course_code': request.POST["course_code"],
-#            'course_instructor': request.POST["course_instructor"]
+                'course_name': request.POST["course_name"],
+                'course_code': request.POST["course_code"],
+                #            'course_instructor': request.POST["course_instructor"]
             }
- # Used to check when inside the page
-            #print("Inside create course")
+            # Used to check when inside the page
+            # print("Inside create course")
             response = a.command('createCourse', courseInfo)
 
         elif create_type == 'lab':
             labInfo = {
-#                'lab_tas': request.POST["lab_tas"],
+                #                'lab_tas': request.POST["lab_tas"],
                 'lab_number': request.POST["lab_number"],
-#                'course': request.POST["course"]
+                #                'course': request.POST["course"]
             }
-# Used to check when inside the page
-            #print("Inside create lab section")
+            # Used to check when inside the page`
+            # print("Inside create lab section")
             response = a.command('createLabSection', labInfo)
 
         return render(request, 'main/create.html',
@@ -168,21 +168,24 @@ class Users(BaseView):
 
         edit = request.GET.get("edit", False)
 
-        strict_return = request.POST.get("strictReturn", None)
-        search_string = request.POST.get("search_string", "")
-        if strict_return is None and search_string == "":
-            strict_return = "all"
-
-        search = {'strict_return': strict_return,
-                  'string': search_string}
-        response = a.command('search', search)
-        if response.count() == 0:
-            response = None
-
+        response = ""
         user_profile = a.get_user(request.GET.get("user", ""))
+        search_string = ""
+
         if user_profile is not None:
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('search', search)
+            if response.count() == 0:
+                response = None
 
         return render(request, "main/users.html",
                       {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
@@ -196,24 +199,65 @@ class Users(BaseView):
         if user is not None:
             name = user['name']
 
+        edit = request.GET.get("edit", False)
+
+        response = ""
         user_profile = a.get_user(request.GET.get("user", ""))
+        search_string = ""
         user_name_list = {}
+
+        command_type = request.POST.get("command", False)
+        command_string = request.POST.get("commandStr", "")
+        print(command_type)
+
+        if command_type == 'deleteAccount':
+            print('delete')
+            userInfo = {'username': command_string}
+            a.command('deleteAccount', userInfo)
+            return redirect('/users/')
+
         if user_profile is not None:
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
 
-        edit = request.GET.get("edit", False)
+            # Super complicated code because some reason we thought having one name field was easier
+            first = request.POST.get("firstname", "")
+            last = request.POST.get("lastname", "")
+            if first == "":
+                first = user_name_list[0]
+            if last == "":
+                if len(user_name_list) == 2:
+                    last = user_name_list[1]
+                else:
+                    last = "Undefined"
+            user_name = first + ' ' + last
+            if user_name == " ":
+                user_name = user_profile['name']
 
-        strict_return = request.POST.get("strictReturn", None)
-        search_string = request.POST.get("search_string", "")
-        if strict_return is None and search_string == "":
-            strict_return = "all"
+            userInfo = {
+                'name': user_name,
+                'username': user_profile['username'],
+                'password': request.POST.get("password", ""),
+                'role': request.POST.get("role", ""),
+                'email': request.POST.get("email", ""),
+                'phone': request.POST.get("phone", ""),
+                'address': request.POST.get("address", "")
+            }
+            response = a.command('editUser', userInfo)
 
-        search = {'strict_return': strict_return,
-                  'string': search_string}
-        response = a.command('search', search)
-        if response.count() == 0:
-            response = None
+            user_profile = a.get_user(request.GET.get("user", ""))
+
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('search', search)
+            if response.count() == 0:
+                response = None
 
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
@@ -286,7 +330,10 @@ class Account(BaseView):
             if first == "":
                 first = name_list[0]
             if last == "":
-                last = name_list[1]
+                if len(name_list) == 2:
+                    last = name_list[1]
+                else:
+                    last = "Undefined"
             name = first + ' ' + last
             if name == " ":
                 name = user['name']
