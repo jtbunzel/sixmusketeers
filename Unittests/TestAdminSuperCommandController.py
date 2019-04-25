@@ -57,14 +57,14 @@ class TestAdminSuperCommandController(TestCase):
         }
         cmd.create("TA", userInfo)
         action = cmd.deleteUser("johnDoe")
-        result = "User successfully deleted."
+        result = (userInfo['username'] + " deleted successfully.")
         self.assertEqual(result, action)
 
-    def test_delete_admin(self):
+    def test_delete_supervisor(self):
         cmd = SuperUserCommandController()
         userInfo = {
             'data_type': "user",
-            'username': "admin",
+            'username': "admin123",
             'name': "jojo",
             'password': "password",
             'user_type': "SUPERVISOR".upper(),
@@ -72,9 +72,9 @@ class TestAdminSuperCommandController(TestCase):
             'phone': "4142247777",
             'address': "777 fake st."
         }
-        cmd.create("SUPERVISOR", userInfo)
-        action = cmd.deleteUser("admin")
-        result = "Can not delete Admin account"
+        cmd.create("Supervisor", userInfo)
+        action = cmd.deleteUser("admin123")
+        result = (userInfo['username'] + " is a Supervisor and cannot be deleted.")
         self.assertEqual(result, action)
 
     def test_showAll(self):

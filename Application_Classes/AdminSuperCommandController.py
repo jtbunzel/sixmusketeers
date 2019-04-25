@@ -7,20 +7,21 @@ class SuperUserCommandController:
 
     def deleteUser(self, targetUser):
         # Check for user logged in
-        print('deleting' + targetUser)
+        print('\ndeleting ' + targetUser)
         if self.user is None:
             return "You must be logged in"
 
         user_object = User.objects.filter(username__iexact=targetUser)
-        user_role = User.objects.filter(username__iexact=targetUser).values('role')
-        print(user_role)
-        if user_role is not "SUPERVISOR":
+        role = user_object.get(username__iexact=targetUser).role.upper()
+        print("\n")
+        print(role)
+        if (role != "supervisor".upper()):
             user_object.delete()
             response = targetUser + " deleted successfully."
+            return response
         else:
             response = targetUser + " is a Supervisor and cannot be deleted."
-
-        return response
+            return response
 
     #   #Display public info for all users in database.
     def showAll(self):
