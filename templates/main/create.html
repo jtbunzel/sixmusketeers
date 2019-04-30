@@ -111,7 +111,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="command" value="createLabSection">
                         <label>Lab TA</label>
-                        <select class="form-control" name="course_instructor">
+                        <select class="form-control" name="lab_TA">
                             {% for i in users %}
                                 <option value={{i.username}}>{{ i.name }}</option>
                             {% endfor %}
