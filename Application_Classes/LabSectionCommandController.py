@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 class LabSectionCommandController:
     user = User
 
-    def createLabSection(self, TA, lab_number, course):
+    def createLabSection(self, lab_TA, lab_number, course):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
@@ -16,7 +16,7 @@ class LabSectionCommandController:
 
         #        Create NewLabSection
         newLabSection = LabSection()
-        newLabSection.lab_tas = TA
+        newLabSection.lab_tas = lab_TA
         newLabSection.lab_number = lab_number
         newLabSection.course = course
         newLabSection.save()

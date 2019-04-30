@@ -144,12 +144,13 @@ class Create(BaseView):
             print(courseInfo['course_instructor'])
             response = a.command('create', courseInfo)
 
+#Add A drop down menu for avilable courses
         elif create_type == 'lab':
             labInfo = {
                 'data_type': "Lab",
                 'lab_ta': a.get_user_object(request.POST.get("lab_TA", "")),
                 'lab_number': request.POST.get("lab_number", ""),
-                'course': request.POST.get("course", "")
+                'course': a.get_request.POST.get("course", "")
             }
 
             response = a.command('create', labInfo)
