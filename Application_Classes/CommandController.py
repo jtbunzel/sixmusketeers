@@ -25,7 +25,6 @@ class CommandController(object):
         elif command == 'logout':
             return self.logout()
         elif command == 'search':
-            print(table_data)
             return self.searcher.searchuser(table_data)
         elif command == 'editUser':
             username = table_data['username']
@@ -40,6 +39,10 @@ class CommandController(object):
             return None
         else:
             return user_object.values()[0]
+
+    def get_user_object(self, username):
+        user_object = User.objects.get(username__iexact=username)
+        return user_object
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)

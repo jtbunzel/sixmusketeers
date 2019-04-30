@@ -94,7 +94,7 @@
                         <label>Course Instructor</label>
                         <select class="form-control" name="course_instructor">
                             {% for i in users %}
-                                <option value={i}>{{ i.name }}</option>
+                                <option value={{i.username}}>{{ i.name }}</option>
                             {% endfor %}
                         </select>
                         <br>
@@ -113,7 +113,7 @@
                         <label>Lab TA</label>
                         <select class="form-control" name="course_instructor">
                             {% for i in users %}
-                                <option value={i}>{{ i.name }}</option>
+                                <option value={{i.username}}>{{ i.name }}</option>
                             {% endfor %}
                         </select>
                         <br>

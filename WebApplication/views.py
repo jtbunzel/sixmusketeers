@@ -133,24 +133,26 @@ class Create(BaseView):
                     response = a.command('create', userInfo)
 
         elif create_type == 'course':
+            print(request.POST.get("course_instructor", ""))
+
             courseInfo = {
-                'course_name': request.POST["course_name"],
-                'course_code': request.POST["course_code"],
-                #            'course_instructor': request.POST["course_instructor"]
+                'data_type': "Course",
+                'course_name': request.POST.get("course_name", ""),
+                'course_code': request.POST.get("course_code", ""),
+                'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
             }
-            # Used to check when inside the page
-            # print("Inside create course")
-            response = a.command('createCourse', courseInfo)
+            print(courseInfo['course_instructor'])
+            response = a.command('create', courseInfo)
 
         elif create_type == 'lab':
             labInfo = {
-                #                'lab_tas': request.POST["lab_tas"],
-                'lab_number': request.POST["lab_number"],
-                #                'course': request.POST["course"]
+                'data_type': "Lab",
+                'lab_ta': a.get_user_object(request.POST.get("lab_TA", "")),
+                'lab_number': request.POST.get("lab_number", ""),
+                'course': request.POST.get("course", "")
             }
-            # Used to check when inside the page`
-            # print("Inside create lab section")
-            response = a.command('createLabSection', labInfo)
+
+            response = a.command('create', labInfo)
 
         return render(request, 'main/create.html',
                       {"navbar": "create", "message": response, "user": user, "type": create_type, "name": name})

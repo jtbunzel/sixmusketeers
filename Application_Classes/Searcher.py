@@ -1,5 +1,5 @@
 from WebApplication.models import User
-from WebApplication.models import LabSection
+from WebApplication.models import Course
 from itertools import chain
 
 
@@ -52,32 +52,36 @@ class Searcher:
         print(strr)
         return strr
 
-    def searchLabSection(self, table_data):
-       #check if user is logged in
+    def searchCourse(self, table_data):
         if self.user is None:
-            return "You must be logged in"
+            return "Your must be logged in"
+
         specific = table_data['strict_return']
         string_search = table_data['string']
 
         results = None
 
         if specific is not None:
-
-           if specific == "lab_tas":
-               results= LabSection.objects.filter(lab_ta_contains=string_search)
-           elif specific == "lab_number":
-               results= LabSection.objects.filter(lab_number_contains=string_search)
-           elif specific == "course":
-               results= LabSection.objects.filter(course_contains=string_search)
+            if specific == "course_name":
+                results = Course.objects.filter(course_name__contains = string_search)
+            elif specific == 'course_code':
+                results = Course.objects.filter(course_code__contains= string_search)
+            elif specific == 'course_intructor':
+                results = Course.objects.filter(course_instructor= string_search)
+            elif specific == 'course_time':
+                results = Course.objects.filter(course_time= string_search)
+            elif specific == 'couse_tas':
+                results = Course.objects.filter(course_tas= string_search)
+            elif specific == 'all':
+                results = Course.objects.all()
 
         else:
-           lab_tas =  LabSection.objects.filter(lab_ta_contains=string_search)
-           lab_number = LabSection.objects.filter(lab_number_contains=string_search)
-           course = LabSection.objects.filter(course_contains=string_search)
+            courseNames = Course.objects.filter(course_name__contains= string_search)
+            courseCode = Course.objects.filter(course_code__contains= string_search)
+            couseInstructor = Course.objects.filter(course_instructor= string_search)
+            courseTime = Course.objects.filter(course_time= string_search)
+            courseTAs = Course.objects.filter(course_tas= string_search)
 
-           results=(lab_tas | lab_number | course)
+            results = (courseNames | courseCode | couseInstructor | courseTime | courseTAs).distinct()
 
         return results
-
-
-

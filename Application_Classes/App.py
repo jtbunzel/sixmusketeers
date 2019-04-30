@@ -22,6 +22,9 @@ class App(object):
     def get_user(self, username):
         return self.command_controller.get_user_by_username(username)
 
+    def get_user_object(self, user):
+        return self.command_controller.get_user_object(user)
+
 
     def set_loggedin(self, new_loggedin):
         self.loggedin = new_loggedin
