@@ -30,3 +30,4 @@ class LabSection(models.Model):
     lab_ta = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=None)
     lab_number = models.CharField(max_length=5, default='')
     course = models.ForeignKey(Course, on_delete=models.CASCADE, default=None)
+    lab_time = models.CharField(max_length=50, default='')
