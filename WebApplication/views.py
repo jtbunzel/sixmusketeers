@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from Application_Classes.App import App
 
@@ -112,22 +112,45 @@ class Create(BaseView):
 
         create_type = request.GET.get("type", "")
 
-        if user is not None:
-            if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
-                response = current_role + " type cannot create"
-            else:
-                name = user['name']
-                userInfo = {
-                    'data_type': "user",
-                    'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
-                    'username': request.POST.get("username", ""),
-                    'password': request.POST.get("password", ""),
-                    'user_type': request.POST.get("usertype", "").upper(),
-                    'email': request.POST.get("email", ""),
-                    'phone': request.POST.get("phone", ""),
-                    'address': request.POST.get("address", "")
-                }
-                response = a.command('create', userInfo)
+        if create_type == 'user':
+            if user is not None:
+                if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
+                    response = current_role + " type cannot create"
+                else:
+                    name = user['name']
+                    userInfo = {
+                        'data_type': "user",
+                        'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
+                        'username': request.POST.get("username", ""),
+                        'password': request.POST.get("password", ""),
+                        'user_type': request.POST.get("usertype", "").upper(),
+                        'email': request.POST.get("email", ""),
+                        'phone': request.POST.get("phone", ""),
+                        'address': request.POST.get("address", "")
+                    }
+                    # Used to check when inside the page
+                    # print("Inside create User")
+                    response = a.command('create', userInfo)
+
+        elif create_type == 'course':
+            courseInfo = {
+                'course_name': request.POST["course_name"],
+                'course_code': request.POST["course_code"],
+                #            'course_instructor': request.POST["course_instructor"]
+            }
+            # Used to check when inside the page
+            # print("Inside create course")
+            response = a.command('createCourse', courseInfo)
+
+        elif create_type == 'lab':
+            labInfo = {
+                #                'lab_tas': request.POST["lab_tas"],
+                'lab_number': request.POST["lab_number"],
+                #                'course': request.POST["course"]
+            }
+            # Used to check when inside the page`
+            # print("Inside create lab section")
+            response = a.command('createLabSection', labInfo)
 
         return render(request, 'main/create.html',
                       {"navbar": "create", "message": response, "user": user, "type": create_type, "name": name})
@@ -145,14 +168,31 @@ class Users(BaseView):
 
         edit = request.GET.get("edit", False)
 
+        response = ""
         user_profile = a.get_user(request.GET.get("user", ""))
+        search_string = ""
+
         if user_profile is not None:
+            if user_profile['username'] == user['username']:
+                return redirect('/account/')
+
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('search', search)
+            if response.count() == 0:
+                response = None
 
         return render(request, "main/users.html",
-                      {"navbar": "users", "user": user, "name": name, "user_profile": user_profile,
-                       'user_profile_name': user_name_list, 'edit': edit})
+                      {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -162,21 +202,66 @@ class Users(BaseView):
         if user is not None:
             name = user['name']
 
+        edit = request.GET.get("edit", False)
+
+        response = ""
         user_profile = a.get_user(request.GET.get("user", ""))
+        search_string = ""
         user_name_list = {}
+
+        command_type = request.POST.get("command", False)
+        command_string = request.POST.get("commandStr", "")
+
+        if command_type == 'deleteAccount':
+            userInfo = {'username': command_string}
+            a.command('deleteAccount', userInfo)
+            return redirect('/users/')
+
         if user_profile is not None:
+            if user_profile['username'] == user['username']:
+                return redirect('/account/')
+
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
 
-        edit = request.GET.get("edit", False)
+            # Super complicated code because some reason we thought having one name field was easier
+            first = request.POST.get("firstname", "")
+            last = request.POST.get("lastname", "")
+            if first == "":
+                first = user_name_list[0]
+            if last == "":
+                if len(user_name_list) == 2:
+                    last = user_name_list[1]
+                else:
+                    last = "Undefined"
+            user_name = first + ' ' + last
+            if user_name == " ":
+                user_name = user_profile['name']
 
-        strict_return = request.POST.get("strictReturn", None)
-        search_string = request.POST.get("search_string", "")
-        search = {'strict_return': strict_return,
-                  'string': search_string}
-        response = a.command('search', search)
-        if response.count() == 0:
-            response = None
+            userInfo = {
+                'name': user_name,
+                'username': user_profile['username'],
+                'password': request.POST.get("password", ""),
+                'role': request.POST.get("role", ""),
+                'email': request.POST.get("email", ""),
+                'phone': request.POST.get("phone", ""),
+                'address': request.POST.get("address", "")
+            }
+            response = a.command('editUser', userInfo)
+
+            user_profile = a.get_user(request.GET.get("user", ""))
+
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('search', search)
+            if response.count() == 0:
+                response = None
 
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
@@ -234,17 +319,43 @@ class Account(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
-        name = "",
+        name_list = {}
+        name = ""
+        response = ""
         if user is not None:
             name = user['name']
+            name_list = name.split(' ')
 
-        # user, response = self.post_response(request, user)
-        user_name = request.POST.get("username", "")
-        user_first = request.POST.get("firstname", "")
-        user_last = request.POST.get("lastname", "")
-        response = ""
-        print(user_first + " " + user_last)
-        print(user_name)
+            current_role = user['role']
+
+            # Super complicated code because some reason we thought having one name field was easier
+            first = request.POST.get("firstname", "")
+            last = request.POST.get("lastname", "")
+            if first == "":
+                first = name_list[0]
+            if last == "":
+                if len(name_list) == 2:
+                    last = name_list[1]
+                else:
+                    last = "Undefined"
+            name = first + ' ' + last
+            if name == " ":
+                name = user['name']
+
+            userInfo = {
+                'name': name,
+                'username': user['username'],
+                'password': request.POST.get("password", ""),
+                'role': current_role,
+                'email': request.POST.get("email", ""),
+                'phone': request.POST.get("phone", ""),
+                'address': request.POST.get("address", "")
+            }
+            response = a.command('editUser', userInfo)
+
+        edit = request.GET.get("edit", False)
+        user = a.get_loggedin(request.session.get("user", ""))
+
         return render(request, 'main/account.html',
-                      {"navbar": "account", "message": response, "user": user, "name": name, "user_name": user_name,
-                       "user_first": user_first})
+                      {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
+                       'name': name})
