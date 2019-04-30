@@ -1,25 +1,14 @@
-from WebApplication.models import User, Course
+from WebApplication.models import User, Course, LabSection
 from django.core.exceptions import ObjectDoesNotExist
 
 
 class CourseCommandController:
     user = User
 
-    def createCourse(self, course_name, course_code, course_instructor):
+    def createCourse(self, create_type, credential_array):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
-
-        #        #Check for Supervisor or Admin role  **Editing out for testing purposes**
-#        if self.user.role != 'Supervisor' or self.user.role != "Administrator":
-#            return "You do not have permission to use this command"
-
-        #        Create NewLabSection
-        newCourse = Course()
-        newCourse.course_name = course_name
-        newCourse.course_code = course_code
-        newCourse.course_instructor = course_instructor
-        newCourse.save()
 
         return "Successfully created a new Course"
 
