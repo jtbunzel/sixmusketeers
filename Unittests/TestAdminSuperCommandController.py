@@ -104,3 +104,19 @@ class TestAdminSuperCommandController(TestCase):
         result = cmd.showAll()
         newResult = "johnDoe john TA 4142240088 johnDoe123@yahoo.com 1234 fake st.\nHarryPotter Harry INSTRUCTOR 4142245326 HarryPotter@yahoo.com 123 fake st.\n"
         self.assertEqual(result, newResult)
+
+
+    def test_User_can_editOtherAccount(self):
+        with self.assertRaises(Exception):
+            User.objects.get(username="boyland123").username
+        userInfo = {
+            'data_type': "user",
+            'username': "boyland123",
+            'name': "boyland123",
+            'password': "password",
+            'user_type': "TA".upper(),
+            'email': "email@uwm.edu",
+            'phone': "phone",
+            'address': "address"
+        }
+        a = cmd.edit("instructor", userInfo)

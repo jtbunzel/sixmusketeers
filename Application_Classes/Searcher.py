@@ -1,4 +1,5 @@
 from WebApplication.models import User
+from WebApplication.models import LabSection
 from itertools import chain
 
 
@@ -50,3 +51,33 @@ class Searcher:
 
         print(strr)
         return strr
+
+    def searchLabSection(self, table_data):
+       #check if user is logged in
+        if self.user is None:
+            return "You must be logged in"
+        specific = table_data['strict_return']
+        string_search = table_data['string']
+
+        results = None
+
+        if specific is not None:
+
+           if specific == "lab_tas":
+               results= LabSection.objects.filter(lab_ta_contains=string_search)
+           elif specific == "lab_number":
+               results= LabSection.objects.filter(lab_number_contains=string_search)
+           elif specific == "course":
+               results= LabSection.objects.filter(course_contains=string_search)
+
+        else:
+           lab_tas =  LabSection.objects.filter(lab_ta_contains=string_search)
+           lab_number = LabSection.objects.filter(lab_number_contains=string_search)
+           course = LabSection.objects.filter(course_contains=string_search)
+
+           results=(lab_tas | lab_number | course)
+
+        return results
+
+
+

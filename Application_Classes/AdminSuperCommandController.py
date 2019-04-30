@@ -64,3 +64,4 @@ class SuperUserCommandController:
         else:
             user1.save()
             return user1.username + " created as " + user1.role + "."
+
