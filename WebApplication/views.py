@@ -134,13 +134,14 @@ class Create(BaseView):
 
         elif create_type == 'course':
             courseInfo = {
+                'data_type': "course",
                 'course_name': request.POST["course_name"],
                 'course_code': request.POST["course_code"],
-                #            'course_instructor': request.POST["course_instructor"]
+                'course_instructor': request.POST["course_instructor"]
             }
             # Used to check when inside the page
             # print("Inside create course")
-            response = a.command('createCourse', courseInfo)
+            response = a.command('create', courseInfo)
 
         elif create_type == 'lab':
             labInfo = {

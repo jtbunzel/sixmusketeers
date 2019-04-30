@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class User(models.Model):
     ROLE_CHOICES = (
         ("SUPERVISOR", "Supervisor"),
@@ -21,7 +20,7 @@ class User(models.Model):
 class Course(models.Model):
     course_name = models.CharField(max_length=50, default='')
     course_code = models.CharField(max_length=5, default='')
-    course_instructor = models.ForeignKey(User, on_delete=models.CASCADE)
+    course_instructor = models.ForeignKey(User, on_delete=models.CASCADE, null= True )
 
 
 class LabSection(models.Model):
