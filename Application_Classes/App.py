@@ -25,6 +25,9 @@ class App(object):
     def get_user_object(self, user):
         return self.command_controller.get_user_object(user)
 
+    def get_course_object(self, course_name):
+        return self.command_controller.get_course_object(course_name)
+
 
     def set_loggedin(self, new_loggedin):
         self.loggedin = new_loggedin

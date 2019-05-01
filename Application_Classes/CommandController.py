@@ -1,4 +1,5 @@
 from WebApplication.models import User
+from WebApplication.models import Course
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
@@ -26,6 +27,8 @@ class CommandController(object):
             return self.logout()
         elif command == 'search':
             return self.searcher.searchuser(table_data)
+        elif command == 'searchCourse':
+            return self.searcher.searchCourse(table_data)
         elif command == 'editUser':
             username = table_data['username']
             return self.UserCommandCntrl.editUser(username, table_data)
@@ -43,6 +46,14 @@ class CommandController(object):
     def get_user_object(self, username):
         user_object = User.objects.get(username__iexact=username)
         return user_object
+
+    def get_course_object(self, course_name):
+        course_object = Course.objects.filter(course_name__iexact=course_name)
+        if course_object.count() == 0:
+            return None
+        else:
+            return course_object.values()[0]
+
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)
