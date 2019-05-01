@@ -119,10 +119,19 @@
                         <br>
                         <label>Lab Number</label>
                         <input class="form-control" type="text" name="lab_number">
+                        <label>Course Name</label>
+                        <select class="form-control" name="course_name">
+                            {% for i in courses %}
+                                <option value= {{i.course}}>{{i.course_name}}</option>
+                            {% endfor %}
+                        </select>
                         <br>
+  <!---                      <br>
                         <label>Course</label>
                         <input class="form-control" type="text" name="course">
                         <br>
+                        -->
+
                         <input class="btn btn-primary" type="Submit" value="Create Lab Section">
                     </form>
                 {% endif %}

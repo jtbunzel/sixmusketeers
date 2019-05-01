@@ -98,9 +98,12 @@ class Create(BaseView):
             search = {'strict_return': 'role',
                       'string': "ta"}
             user_list = a.command('search', search)
+            course_search = {'strict_return': 'all',
+                             'string': ""}
+            course_list = a.command('searchCourse', course_search)
 
         return render(request, "main/create.html",
-                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list})
+                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list, 'courses': course_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -119,7 +122,7 @@ class Create(BaseView):
                 else:
                     name = user['name']
                     userInfo = {
-                        'data_type': "user",
+                        'data_type': "User",
                         'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
                         'username': request.POST.get("username", ""),
                         'password': request.POST.get("password", ""),
@@ -128,8 +131,6 @@ class Create(BaseView):
                         'phone': request.POST.get("phone", ""),
                         'address': request.POST.get("address", "")
                     }
-                    # Used to check when inside the page
-                    # print("Inside create User")
                     response = a.command('create', userInfo)
 
         elif create_type == 'course':
@@ -150,9 +151,8 @@ class Create(BaseView):
                 'data_type': "Lab",
                 'lab_ta': a.get_user_object(request.POST.get("lab_TA", "")),
                 'lab_number': request.POST.get("lab_number", ""),
-                'course': a.get_request.POST.get("course", "")
+                'course_name': a.get_course_object(request.POST.get("course_name", ""))
             }
-
             response = a.command('create', labInfo)
 
         return render(request, 'main/create.html',
