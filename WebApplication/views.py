@@ -134,7 +134,7 @@ class Create(BaseView):
                     response = a.command('create', userInfo)
 
         elif create_type == 'course':
-            print(request.POST.get("course_instructor", ""))
+            print("instructor " + request.POST.get("course_instructor", ""))
 
             courseInfo = {
                 'data_type': "Course",
@@ -142,10 +142,8 @@ class Create(BaseView):
                 'course_code': request.POST.get("course_code", ""),
                 'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
             }
-            print(courseInfo['course_instructor'])
             response = a.command('create', courseInfo)
 
-#Add A drop down menu for avilable courses
         elif create_type == 'lab':
             labInfo = {
                 'data_type': "Lab",
@@ -278,13 +276,32 @@ class Courses(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
+        user_name_list = {}
         name = ""
         if user is not None:
             name = user['name']
 
         edit = request.GET.get("edit", False)
 
-        return render(request, "main/courses.html", {"navbar": "courses", "user": user, "name": name, "edit": edit})
+        response = ""
+        course = a.get_course(request.GET.get("course", ""))
+        search_string = ""
+
+        if course is None:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('searchCourse', search)
+            if response.count() == 0:
+                response = None
+
+        return render(request, "main/courses.html",
+                      {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
+                       "course": course, 'edit': edit})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -294,10 +311,49 @@ class Courses(BaseView):
         if user is not None:
             name = user['name']
 
-        user, response = self.post_response(request, user)
+        edit = request.GET.get("edit", False)
 
+        response = ""
+        course = a.get_user(request.GET.get("course", ""))
+        search_string = ""
+
+        command_type = request.POST.get("command", False)
+        command_string = request.POST.get("commandStr", "")
+
+        if command_type == 'deleteCourse':
+            course_info = {'course': command_string}
+            a.command('deleteCourse', course_info)
+            return redirect('/courses/')
+
+        if course is not None:
+            course_info = {
+                'data_type': "Course",
+                'course_name': request.POST.get("course_name", ""),
+                'course_code': request.POST.get("course_code", ""),
+                'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
+            }
+            response = a.command('editCourse', course_info)
+
+            course = a.get_course(request.GET.get("course", ""))
+
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('searchCourse', search)
+            if response is not None:
+                if response.count() == 0:
+                    response = None
+
+        # user, response = self.post_response(request, user)
+        # response = search_criteria + search_string
         return render(request, 'main/courses.html',
-                      {"navbar": "courses", "message": response, "user": user, "name": name})
+                      {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
+                       "course": course, 'edit': edit})
 
 
 class Account(BaseView):

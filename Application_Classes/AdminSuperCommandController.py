@@ -67,7 +67,9 @@ class SuperUserCommandController:
             course = Course()
             course.course_name = credential_array["course_name"]
             course.course_code = credential_array["course_code"]
-            course.course_instructor = credential_array["course_instructor"]
+            print(credential_array["course_instructor"])
+            if credential_array["course_instructor"] is not None:
+                course.course_instructor = credential_array["course_instructor"]
 
             if Course.objects.filter(course_name=course.course_name).exists():
                 return "Course is already in use!"
@@ -79,8 +81,10 @@ class SuperUserCommandController:
         elif create_type == "Lab":
             lab = LabSection()
             lab.lab_number = credential_array["lab_number"]
-            lab.course = None
-            lab.lab_ta = credential_array["lab_ta"]
+            if credential_array["course_name"] is not None:
+                lab.course = credential_array["course_name"]
+            if credential_array["lab_ta"] is not None:
+                lab.lab_ta = credential_array["lab_ta"]
 
             if LabSection.objects.filter(lab_number=lab.lab_number).exists():
                 return "Course is already in use!"
@@ -88,3 +92,46 @@ class SuperUserCommandController:
                 lab.save()
 
             return lab.lab_number + " created for " + "none" + "."
+
+
+    def assign_instructor(self, course, user):
+        if course is not None and user is not None:
+            try:
+                setattr(course, 'course_instructor', user)
+
+                course.save()
+            except User.DoesNotExist:
+                return 'User does not exist'
+            except Course.DoesNotExist:
+                return 'Course does not exist'
+
+        return user.username + ' successfully assigned to ' + course.course_name
+
+
+    def assign_ta(self, labsection, user):
+        if labsection is not None and user is not None:
+            try:
+                setattr(labsection, 'lab_ta', user)
+
+                labsection.save()
+            except User.DoesNotExist:
+                return 'User does not exist'
+            except LabSection.DoesNotExist:
+                return 'Lab Section does not exist'
+
+        return user.username + ' successfully assigned to ' + labsection.lab_number
+
+
+    def link_course(self, course, labsection):
+        if course is not None and labsection is not None:
+            try:
+                setattr(labsection, 'course', course)
+
+                labsection.save()
+            except Course.DoesNotExist:
+                return 'Course does not exist'
+            except LabSection.DoesNotExist:
+                return 'Lab Section does not exist'
+
+        return labsection.lab_number + ' successfully assigned to ' + course.course_name
+

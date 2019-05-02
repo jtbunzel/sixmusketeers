@@ -1,5 +1,4 @@
-from WebApplication.models import User
-from WebApplication.models import Course
+from WebApplication.models import User, Course
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
@@ -43,11 +42,27 @@ class CommandController(object):
         else:
             return user_object.values()[0]
 
+    def get_course_by_name(self, name):
+        course_object = Course.objects.filter(course_name__iexact=name)
+        if course_object.count() == 0:
+            return None
+        else:
+            return course_object.values()[0]
+
+
     def get_user_object(self, username):
+        print("object: " + username)
+        if username == "None":
+            return None
+
         user_object = User.objects.get(username__iexact=username)
         return user_object
 
+
     def get_course_object(self, course_name):
+        if course_name == "None":
+            return None
+
         course_object = Course.objects.filter(course_name__iexact=course_name)
         if course_object.count() == 0:
             return None

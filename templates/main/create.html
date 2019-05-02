@@ -93,6 +93,7 @@
                         <br>
                         <label>Course Instructor</label>
                         <select class="form-control" name="course_instructor">
+                            <option value="None"></option>
                             {% for i in users %}
                                 <option value={{i.username}}>{{ i.name }}</option>
                             {% endfor %}
@@ -112,6 +113,7 @@
                         <input type="hidden" name="command" value="createLabSection">
                         <label>Lab TA</label>
                         <select class="form-control" name="lab_TA">
+                            <option value="None"></option>
                             {% for i in users %}
                                 <option value={{i.username}}>{{ i.name }}</option>
                             {% endfor %}
@@ -119,8 +121,10 @@
                         <br>
                         <label>Lab Number</label>
                         <input class="form-control" type="text" name="lab_number">
+                        <br>
                         <label>Course Name</label>
                         <select class="form-control" name="course_name">
+                            <option value="None"></option>
                             {% for i in courses %}
                                 <option value= {{i.course}}>{{i.course_name}}</option>
                             {% endfor %}

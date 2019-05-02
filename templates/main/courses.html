@@ -2,46 +2,136 @@
 {% load staticfiles %}
 
 {% block content %}
+    <div class="container_block" style="width:100%">
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
 
-    <form class="container_block" style="width:100%">
-    {% if user == None %}
-       <meta http-equiv="refresh" content="0; URL=''" />
-
-    {% else %}
-        {% include "main/navigation_bar.html" %}
+        {% else %}
+            {% include "main/navigation_bar.html" %}
             <div class="container_block">
-                <div class="container">
-                    <div>
-                        <label>
-                        <a href="?type=course">
-                            <button type="button" class="btn btn-primary btn-lg{% if type == "course"  %}active{% endif %}"> Course</button>
-                        </a>
-                        </label>
-                        <label>
-                        <a href="?type=lab">
-                            <button type="button" class="btn btn-primary btn-lg{% if type == "lab"  %}active{% endif %}">Lab Section</button>
-                        </a>
-                        </label>
-                    </div>
+            <div class="container">
 
-                    {% if type == "course"%}
-                        <form>
-                            <h3> List of Courses </h3>  <br/>
-                        </form>
+            {% if course is not None %}
 
-                        {% elif type == "Lab" %}
-                        <form>
-                            <h3> List of Lab Sections </h3> <br/>
-                        </form>
+                <h1>Course Details for {{ course.course_name }}</h1>
+                <br>
+
+                <!-- on user profile, editing -->
+                {% if edit == "true" %}
+                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <form method="post" action="/courses/?course={{ course.course_name }}" id="edit_course">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="command" value="editCourse">
+                                    <br>
+                                    <label>Course Name</label>
+                                    <input class="form-control" type="text" name="course_name">
+                                    <br>
+                                    <label>Course Instructor</label>
+                                    <select class="form-control" name="course_instructor">
+                                        <option value='None'></option>
+                                        {% for i in courses %}
+                                            <option value={{ i.course_name }}>{{ i.course_name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <br>
+                                    <label>Course Code</label>
+                                    <input class="form-control" type="text" name="course_code">
+                                    <br>
+                                    <input class="btn btn-primary" type="Submit" value="Save">
+                                </form>
+                                <br>
+                                <form method="post" action="/courses/">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="command" value="deleteCourse">
+                                    <input type="hidden" name="commandStr" value={{ course.course_name }}>
+                                    <input class="btn btn-danger" type="Submit" value="Delete Course"
+                                           id="delete_course">
+                                </form>
+
+                                <!--
+                                <script type="text/javascript">
+                                    var el = document.getElementById('edit_account');
+                                    var e2 = document.getElementById('delete_account');
+
+                                    el.addEventListener('submit', function () {
+                                        return confirm('Are you sure you want makes these changes to {{ user_profile.name }}?');
+                                    }, false);
+
+                                    e2.addEventListener('submit', function () {
+                                        return confirm('Are you sure you want to delete {{ user_profile.name }}?');
+                                    }, false);
+                                </script>
+                                -->
+
+                            </div>
+                        </div>
+                    {% else %}
+                        <h1>You do not have permission to edit accounts</h1>
                     {% endif %}
 
+                    <!-- on user profile, not editing -->
+                {% else %}
+                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                        <br><br>
+                        <a href="?course={{ course.course_name }}&edit=true">
+                            <button type="button"
+                                    class="btn btn-primary">
+                                Course Edit
+                            </button>
+                        </a>
+                    {% endif %}
+                {% endif %}
 
-                <p>{{message}}</p>
-                </div>
-            </div>
+                <!-- searching -->
+            {% else %}
+                <form action="#" method="post" class="form-inline">
+                    {% csrf_token %}
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Courses"
+                           name="search_string">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Course Number</th>
+                        <th scope="col">Instructor</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-    {% endif %}
+                    {% if results is not None %}
+                        {% if search == "" %}
+                            <h3>Showing all courses</h3>
+                        {% else %}
+                            <h3>Search results for: "{{ search }}"</h3>
+                        {% endif %}
 
+                        {% for i in results %}
+                            <tr>
+                                <td>{{ i.course_name }}</td>
+                                <td>{{ i.course_code }}</td>
+                                <td>{{ i.course_instructor }}</td>
+                                <td>
+                                    <a href="?course={{ i.course_name }}">
+                                        <button class="btn btn-primary btn-sm">View</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <h3>No search results for "{{ search }}"</h3>
+                    {% endif %}
+                </table>
+
+                </form>
+            {% endif %}
+        {% endif %}
+        </div>
+        </div>
     </div>
 
 {% endblock content %}

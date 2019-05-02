@@ -1,10 +1,17 @@
-from WebApplication.models import User
-from WebApplication.models import Course
+from WebApplication.models import User, Course, LabSection
 from itertools import chain
 
 
 class Searcher:
     user = User
+
+    def get_user_object(self, username):
+        print("object: " + username)
+        if username == "None":
+            return None
+
+        user_object = User.objects.get(username__iexact=username)
+        return user_object
 
     def searchuser(self, table_data):
         # Check for user logged in
@@ -63,25 +70,37 @@ class Searcher:
 
         if specific is not None:
             if specific == "course_name":
-                results = Course.objects.filter(course_name__contains = string_search)
+                results = Course.objects.filter(course_name__contains=string_search)
             elif specific == 'course_code':
-                results = Course.objects.filter(course_code__contains= string_search)
+                try:
+                    code = int(string_search)
+                    results = Course.objects.filter(course_code=code)
+                except ValueError:
+                    courseCode = ""
             elif specific == 'course_intructor':
-                results = Course.objects.filter(course_instructor= string_search)
-            elif specific == 'course_time':
-                results = Course.objects.filter(course_time= string_search)
-            elif specific == 'couse_tas':
-                results = Course.objects.filter(course_tas= string_search)
+                try:
+                    instructor = self.get_user_object(string_search)
+                except User.DoesNotExist:
+                    instructor = None
+                results = Course.objects.filter(course_instructor=instructor)
             elif specific == 'all':
                 results = Course.objects.all()
 
         else:
-            courseNames = Course.objects.filter(course_name__contains= string_search)
-            courseCode = Course.objects.filter(course_code__contains= string_search)
-            couseInstructor = Course.objects.filter(course_instructor= string_search)
-            courseTime = Course.objects.filter(course_time= string_search)
-            courseTAs = Course.objects.filter(course_tas= string_search)
+            courseNames = Course.objects.filter(course_name__contains=string_search)
+            courseCode = Course.objects.none()
+            courseInstructor = Course.objects.none()
+            try:
+                code = int(string_search)
+                courseCode = Course.objects.filter(course_code=code)
+            except ValueError:
+                pass
+            try:
+                instructor = self.get_user_object(string_search)
+                courseInstructor = Course.objects.filter(course_instructor=instructor)
+            except User.DoesNotExist:
+                pass
 
-            results = (courseNames | courseCode | couseInstructor | courseTime | courseTAs).distinct()
+            results = (courseNames | courseCode | courseInstructor).distinct()
 
         return results
