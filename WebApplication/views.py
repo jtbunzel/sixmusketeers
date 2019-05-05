@@ -321,7 +321,7 @@ class Courses(BaseView):
         command_string = request.POST.get("commandStr", "")
 
         if command_type == 'deleteCourse':
-            course_info = {'course': command_string}
+            course_info = {'course_name': command_string}
             a.command('deleteCourse', course_info)
             return redirect('/courses/')
 

@@ -1,50 +1,40 @@
-from WebApplication.models import User, Course, LabSection
+from WebApplication.models import User, Course
 from django.core.exceptions import ObjectDoesNotExist
 
 
 class CourseCommandController:
-    user = User
+    user = User()
 
-    def createCourse(self, create_type, credential_array):
+    def editCourse(self, course_name, newInfo):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-        return "Successfully created a new Course"
+#        try:
+#            currentCourse = Course.objects.get(course_name__iexact=course_name)
+#        except ObjectDoesNotExist:
+#            print("Course could not be found or does not exist.")
 
-    def editCourse(self, course_name, course_code, course_instructor):
-        # Check for user logged in
-        if self.user is None:
-            return "You must be logged in"
+#        currentCourse.course_name = newInfo['course_name']
+#        currentCourse.course_code = newInfo['course_code']
+#        currentCourse.course_instructor = newInfo['course_instructor']
 
-#        #Check for Supervisor or Admin role **Editing out for testing purposes**
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
+#        currentCourse.save()
 
-#        Check if course exists
-#        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
+#        return "Course has been edited."
         try:
-            currentCourse = Course.objects.filter(course_code=course_code)
-        except ObjectDoesNotExist:
-            print("Course could not be found or does not exist.")
+            obj = Course.objects.get(course_name__iexact=course_name)
+            for key, value in newInfo.items():
+                if value is not "":
+                    setattr(obj, key, value)
+            obj.save()
+        except Course.DoesNotExist:
+            return 'No course under this name'
 
-#       #If Course Name not blank edit Course Name
-        if course_name != '':
-            currentCourse.course_name = course_name
+        return "Course information has been successfully updated"
 
-#       #If Course Code not blank edit Course Code
-        if course_code != '':
-            currentCourse.course_code = course_code
 
-#       #If Course Instructor not blank edit Course Instructor
-        if course_instructor != '':
-            currentCourse.course_instructor = course_instructor
-
-        currentCourse.save()
-
-        return "Course has been edited."
-
-    def deleteCourse(self, course_code):
+    def deleteCourse(self, course_name):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
@@ -56,7 +46,7 @@ class CourseCommandController:
 #        Check if course exists
 #        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentCourse = Course.objects.filter(course_code=course_code)
+            currentCourse = Course.objects.filter(course_name__iexact=course_name)
         except ObjectDoesNotExist:
             print("Course could not be found or does not exist.")
 

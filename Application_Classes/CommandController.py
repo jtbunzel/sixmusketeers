@@ -34,6 +34,12 @@ class CommandController(object):
         elif command == 'deleteAccount':
             username = table_data['username']
             return self.adminsuper_stuff.deleteUser(username)
+        elif command == 'editCourse':
+            course_name = table_data['course_name']
+            return self.CourseCommand.editCourse(course_name, table_data)
+        elif command == 'deleteCourse':
+            course_name = table_data['course_name']
+            return self.CourseCommand.deleteCourse(course_name)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)
@@ -49,7 +55,6 @@ class CommandController(object):
         else:
             return course_object.values()[0]
 
-
     def get_user_object(self, username):
         print("object: " + username)
         if username == "None":
@@ -58,17 +63,11 @@ class CommandController(object):
         user_object = User.objects.get(username__iexact=username)
         return user_object
 
-
     def get_course_object(self, course_name):
         if course_name == "None":
             return None
-
-        course_object = Course.objects.filter(course_name__iexact=course_name)
-        if course_object.count() == 0:
-            return None
-        else:
-            return course_object.values()[0]
-
+        course_object = Course.objects.filter(course_name__icontains=course_name)
+        return course_object.first()
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)

@@ -80,18 +80,18 @@ class SuperUserCommandController:
 
         elif create_type == "Lab":
             lab = LabSection()
+            if credential_array["lab_ta"] is not None:
+                lab.lab_ta = credential_array["lab_ta"]
             lab.lab_number = credential_array["lab_number"]
             if credential_array["course_name"] is not None:
                 lab.course = credential_array["course_name"]
-            if credential_array["lab_ta"] is not None:
-                lab.lab_ta = credential_array["lab_ta"]
 
             if LabSection.objects.filter(lab_number=lab.lab_number).exists():
-                return "Course is already in use!"
+                return "Lab Section has already been created!"
             else:
                 lab.save()
 
-            return lab.lab_number + " created for " + "none" + "."
+            return " Lab section " + lab.lab_number + " created for " + lab.course.course_name + "."
 
 
     def assign_instructor(self, course, user):

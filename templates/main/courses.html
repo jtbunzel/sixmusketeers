@@ -26,18 +26,20 @@
                                     <input type="hidden" name="command" value="editCourse">
                                     <br>
                                     <label>Course Name</label>
-                                    <input class="form-control" type="text" name="course_name">
+                                    <input class="form-control" type="text" name="course_name"
+                                            placeholder={{ course.course_name }}>
+                                    <br>
+                                    <label>Course Code</label>
+                                    <input class="form-control" type="text" name="course_code"
+                                           placeholder={{ course.course_code }}>
                                     <br>
                                     <label>Course Instructor</label>
                                     <select class="form-control" name="course_instructor">
                                         <option value='None'></option>
-                                        {% for i in courses %}
-                                            <option value={{ i.course_name }}>{{ i.course_name }}</option>
+                                        {% for i in course %}
+                                            <option value={{ i.course_instructor }}>{{ i.course_instructor }}</option>
                                         {% endfor %}
                                     </select>
-                                    <br>
-                                    <label>Course Code</label>
-                                    <input class="form-control" type="text" name="course_code">
                                     <br>
                                     <input class="btn btn-primary" type="Submit" value="Save">
                                 </form>
@@ -71,8 +73,19 @@
                         <h1>You do not have permission to edit accounts</h1>
                     {% endif %}
 
-                    <!-- on user profile, not editing -->
+                    <!-- on course profile, not editing -->
                 {% else %}
+                    <label>Course Name: </label><br>
+                    <span class="account-text">{{  course.course_name }}</span>
+
+                    <br><br>
+                    <label>Course Number: </label><br>
+                    <span class="account-text">{{  course.course_code }}</span>
+
+                    <br><br>
+                    <label>Instructor: </label><br>
+                    <span class="account-text">{{  course.course_instructor }}</span>
+
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <br><br>
                         <a href="?course={{ course.course_name }}&edit=true">
