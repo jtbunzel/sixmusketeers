@@ -1,6 +1,5 @@
 from Application_Classes.UserCommandController import UserCommandController
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
-from WebApplication.models import User
 from django.test import TestCase
 
 cmd = UserCommandController()
@@ -12,23 +11,23 @@ class TestUserCommandController(TestCase):
     def test_edit_user(self):
         scmd = SuperUserCommandController()
         userInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "johnDoe",
             'name': "john",
             'password': "password",
-            'user_type': "Instructor".upper(),
+            'role': "Instructor".upper(),
             'email': "johnDoe123@yahoo.com",
             'phone': "4142240088",
             'address': "777 fake st."
         }
-        scmd.create("Instructor", userInfo)
+        scmd.create("User", userInfo)
 
         newInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "Mojojojo",
             'name': "Mojo",
             'password': "pass",
-            'user_type': "Instructor".upper(),
+            'role': "Instructor".upper(),
             'email': "Mojo@yahoo.com",
             'phone': "4147771111",
             'address': "777 real st."
@@ -45,16 +44,16 @@ class TestUserCommandController(TestCase):
 
         scmd = SuperUserCommandController()
         userInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "johnDoe",
             'name': "john",
             'password': "password",
-            'user_type': "Instructor".upper(),
+            'role': "Instructor".upper(),
             'email': "johnDoe123@yahoo.com",
             'phone': "4142240088",
             'address': "777 fake st."
         }
-        scmd.create("Instructor", userInfo)
+        scmd.create("User", userInfo)
 
         action = cmd.showUser("johnDoe")
         result = "Username: " + "johnDoe" + "Name: " + "john" + "Role: " + "INSTRUCTOR" + "Phone Number: " + "4142240088" + "Email: " + "johnDoe123@yahoo.com" + "Address: " + "777 fake st."
