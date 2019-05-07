@@ -9,19 +9,6 @@ class CourseCommandController:
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
-
-#        try:
-#            currentCourse = Course.objects.get(course_name__iexact=course_name)
-#        except ObjectDoesNotExist:
-#            print("Course could not be found or does not exist.")
-
-#        currentCourse.course_name = newInfo['course_name']
-#        currentCourse.course_code = newInfo['course_code']
-#        currentCourse.course_instructor = newInfo['course_instructor']
-
-#        currentCourse.save()
-
-#        return "Course has been edited."
         try:
             obj = Course.objects.get(course_name__iexact=course_name)
             for key, value in newInfo.items():
@@ -35,20 +22,14 @@ class CourseCommandController:
 
 
     def deleteCourse(self, course_name):
+        currentCourse = Course()
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
-
-#        #Check for Supervisor or Admin role  **Editing out for testing purposes**
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
-
-#        Check if course exists
-#        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentCourse = Course.objects.filter(course_name__iexact=course_name)
+            currentCourse = Course.objects.get(course_name__iexact=course_name)
         except ObjectDoesNotExist:
-            print("Course could not be found or does not exist.")
+            return "Course could not be found or does not exist."
 
         currentCourse.delete()
 
