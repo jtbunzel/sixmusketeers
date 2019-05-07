@@ -27,6 +27,9 @@ class App(object):
     def get_user_object(self, user):
         return self.command_controller.get_user_object(user)
 
+    def get_user_object_byid(self, id):
+        return self.command_controller.get_user_object_byid(id)
+
     def get_course_object(self, course_name):
         return self.command_controller.get_course_object(course_name)
 

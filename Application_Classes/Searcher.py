@@ -11,7 +11,7 @@ class Searcher:
         if username == "None":
             return None
 
-        user_object = User.objects.get(username__contains=username)
+        user_object = User.objects.get(username=username)
         return user_object
 
     def searchuser(self, table_data):
@@ -97,8 +97,13 @@ class Searcher:
             except ValueError:
                 pass
             try:
-                instructor = self.get_user_object(string_search)
-                courseInstructor = Course.objects.filter(course_instructor=instructor)
+                possible_instructors = User.objects.filter(username__contains=string_search)
+                for i in possible_instructors:
+                    instructor = self.get_user_object(i.username)
+                    new_list = Course.objects.filter(course_instructor=instructor)
+
+                    courseInstructor = (courseInstructor | new_list)
+
             except User.DoesNotExist:
                 pass
 

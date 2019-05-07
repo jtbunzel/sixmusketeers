@@ -276,7 +276,6 @@ class Courses(BaseView):
         self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
-        user_name_list = {}
         name = ""
         if user is not None:
             name = user['name']
@@ -287,6 +286,11 @@ class Courses(BaseView):
         course = a.get_course(request.GET.get("course", ""))
         search_string = ""
 
+        search = {'strict_return': 'role',
+                  'string': "instructor"}
+        user_list = a.command('search', search)
+        course_obj = None
+
         if course is None:
             strict_return = request.POST.get("strictReturn", None)
             search_string = request.POST.get("search_string", "")
@@ -296,12 +300,15 @@ class Courses(BaseView):
             search = {'strict_return': strict_return,
                       'string': search_string}
             response = a.command('searchCourse', search)
+
             if response.count() == 0:
                 response = None
+        else:
+            course_obj = a.get_course_object(request.GET.get("course", ""))
 
         return render(request, "main/courses.html",
                       {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
-                       "course": course, 'edit': edit})
+                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -320,6 +327,11 @@ class Courses(BaseView):
         command_type = request.POST.get("command", False)
         command_string = request.POST.get("commandStr", "")
 
+        search = {'strict_return': 'role',
+                  'string': "instructor"}
+        user_list = a.command('search', search)
+        course_obj = None
+
         if command_type == 'deleteCourse':
             course_info = {'course_name': command_string}
             a.command('deleteCourse', course_info)
@@ -327,7 +339,6 @@ class Courses(BaseView):
 
         if course is not None:
             course_info = {
-#                'data_type': "Course",
                 'course_name': course['course_name'],
                 'course_code': request.POST.get("course_code", ""),
                 'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
@@ -335,6 +346,7 @@ class Courses(BaseView):
             response = a.command('editCourse', course_info)
 
             course = a.get_course(request.GET.get("course", ""))
+            course_obj = a.get_course_object(request.GET.get("course", ""))
 
         else:
             strict_return = request.POST.get("strictReturn", None)
@@ -353,7 +365,7 @@ class Courses(BaseView):
         # response = search_criteria + search_string
         return render(request, 'main/courses.html',
                       {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
-                       "course": course, 'edit': edit})
+                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list})
 
 
 class Account(BaseView):

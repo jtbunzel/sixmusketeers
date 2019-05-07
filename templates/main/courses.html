@@ -32,8 +32,8 @@
                                     <label>Course Instructor</label>
                                     <select class="form-control" name="course_instructor">
                                         <option value="None"></option>
-                                        {% for i in course %}
-                                            <option value={{ i.course_instructor_id }}> {{ i.course_name }}</option>
+                                        {% for i in users %}
+                                            <option value={{ i.username }} {% if i.name == course_obj.course_instructor.name %}Selected{% endif %}> {{ i.name }}</option>
                                         {% endfor %}
                                     </select>
                                     <br>
@@ -79,8 +79,12 @@
                     <span class="account-text">{{  course.course_code }}</span>
 
                     <br><br>
-                    <label>Instructor id: </label><br>
-                    <span class="account-text">{{  course.course_instructor_id }}</span>
+                    <label>Instructor: </label><br>
+                    {% if course_obj.course_instructor is None %}
+                        <span class="account-text">No instructor assigned</span>
+                    {% else %}
+                        <span class="account-text">{{ course_obj.course_instructor.name }}</span>
+                        {% endif %}
 
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <br><br>

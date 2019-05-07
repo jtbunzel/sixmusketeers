@@ -63,11 +63,20 @@ class CommandController(object):
         user_object = User.objects.get(username__iexact=username)
         return user_object
 
+    def get_user_object_byid(self, id):
+        print("object: " + id)
+        if id is None:
+            return None
+
+        user_object = User.objects.get(id=id)
+        return user_object
+
     def get_course_object(self, course_name):
         if course_name == "None":
             return None
-        course_object = Course.objects.filter(course_name__icontains=course_name)
-        return course_object.first()
+
+        course_object = Course.objects.get(course_name=course_name)
+        return course_object
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)
