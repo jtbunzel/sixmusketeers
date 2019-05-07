@@ -31,13 +31,10 @@ class UserCommandController:
         if self.user is None:
             return "you must be logged in"
 
-        if User.objects.count() < 0:
-            return "No User in database"
-
         try:
-            currentUserInfo = User.objects.filter(username__iexact=username).first()
-        except ObjectDoesNotExist:
-            print("User could not be found.")
+            currentUserInfo = User.objects.get(username__iexact=username)
+        except User.DoesNotExist:
+            return "User could not be found."
 
         userInfo = "Username: " + currentUserInfo.username + "Name: " + currentUserInfo.name + "Role: " + currentUserInfo.role + "Phone Number: " + currentUserInfo.phone + "Email: " + currentUserInfo.email + "Address: " + currentUserInfo.address
 

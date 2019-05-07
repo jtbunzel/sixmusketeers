@@ -107,6 +107,12 @@ class TestAdminSuperCommandController(TestCase):
         newResult = "johnDoe john TA 4142240088 johnDoe123@yahoo.com 1234 fake st.\nHarryPotter Harry INSTRUCTOR 4142245326 HarryPotter@yahoo.com 123 fake st.\n"
         self.assertEqual(result, newResult)
 
+    def test_showAll_empty_database(self):
+        cmd = SuperUserCommandController()
+        result = cmd.showAll()
+        newResult = ""
+        self.assertEqual(result, newResult)
+
     def test_create_course(self):
         cmd = SuperUserCommandController()
 
@@ -134,3 +140,38 @@ class TestAdminSuperCommandController(TestCase):
         action = cmd.create("Course", courseInfo)
         result = "Intro to CS created as 007."
         self.assertEqual(result,action)
+
+    def test_create_course_already_exists(self):
+        cmd = SuperUserCommandController()
+
+        userInfo = {
+            'data_type': "User",
+            'username': "HarryPotter",
+            'name': "Harry",
+            'password': "password",
+            'role': "Instructor".upper(),
+            'email': "HarryPotter@yahoo.com",
+            'phone': "4142245326",
+            'address': "123 fake st."
+        }
+
+        cmd.create("User", userInfo)
+        user1 = User.objects.get(username__iexact="HarryPotter")
+
+        courseInfo = {
+            'data_type': "Course",
+            'course_name': "Intro to CS",
+            'course_code': "007",
+            'course_instructor': user1
+        }
+        cmd.create("Course", courseInfo)
+        courseInfo2 = {
+            'data_type': "Course",
+            'course_name': "Intro to CS",
+            'course_code': "111",
+            'course_instructor': user1
+        }
+
+        action = cmd.create("Course", courseInfo2)
+        result = "Course is already in use!"
+        self.assertEqual(result, action)
