@@ -3,21 +3,24 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 class SuperUserCommandController:
-    user = User
+    user = User()
 
     def deleteUser(self, targetUser):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
 
-        user_object = User.objects.filter(username__iexact=targetUser)
-        user_role = User.objects.filter(username__iexact=targetUser).values('role')
-        if user_role is not "SUPERVISOR":
-            user_object.delete()
-            response = targetUser + " deleted successfully."
-        else:
-            response = targetUser + " is a Supervisor and cannot be deleted."
+        user_obj = User.objects.get(username__iexact=targetUser)
+        user_object = User.objects.get(username__iexact=targetUser).role
 
+        user_to_str = str(user_object).upper()
+        args = "SUPERVISOR".upper()
+        response = "Delete User Malfunction"
+        if user_to_str == args:
+            response = targetUser + " is a Supervisor and cannot be deleted."
+        else:
+            user_obj.delete()
+            response = targetUser + " deleted successfully."
         return response
 
     #   #Display public info for all users in database.
@@ -53,7 +56,7 @@ class SuperUserCommandController:
             user1.name = credential_array['name']
             user1.username = credential_array['username']
             user1.password = credential_array['password']
-            user1.role = credential_array['user_type']
+            user1.role = credential_array['role']
             user1.email = credential_array['email']
             user1.phone = credential_array['phone']
             user1.address = credential_array['address']

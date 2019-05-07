@@ -126,7 +126,7 @@ class Create(BaseView):
                         'name': request.POST.get("firstname", "") + " " + request.POST.get("lastname", ""),
                         'username': request.POST.get("username", ""),
                         'password': request.POST.get("password", ""),
-                        'user_type': request.POST.get("usertype", "").upper(),
+                        'role': request.POST.get("role", "").upper(),
                         'email': request.POST.get("email", ""),
                         'phone': request.POST.get("phone", ""),
                         'address': request.POST.get("address", "")

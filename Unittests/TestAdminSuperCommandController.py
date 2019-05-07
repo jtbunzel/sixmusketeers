@@ -46,16 +46,16 @@ class TestAdminSuperCommandController(TestCase):
     def test_delete_user(self):
         cmd = SuperUserCommandController()
         userInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "johnDoe",
             'name': "john",
             'password': "password",
-            'user_type': "TA".upper(),
+            'role': "TA".upper(),
             'email': "johnDoe123@yahoo.com",
             'phone': "4142240088",
             'address': "1234 fake st."
         }
-        cmd.create("TA", userInfo)
+        cmd.create("User", userInfo)
         action = cmd.deleteUser("johnDoe")
         result = (userInfo['username'] + " deleted successfully.")
         self.assertEqual(result, action)
@@ -63,16 +63,18 @@ class TestAdminSuperCommandController(TestCase):
     def test_delete_supervisor(self):
         cmd = SuperUserCommandController()
         userInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "admin123",
             'name': "jojo",
             'password': "password",
-            'user_type': "SUPERVISOR".upper(),
+            'role': "SUPERVISOR".upper(),
             'email': "MojoJojo@yahoo.com",
             'phone': "4142247777",
             'address': "777 fake st."
         }
-        cmd.create("Supervisor", userInfo)
+        a123 = cmd.create("User", userInfo)
+        print(a123)
+
         action = cmd.deleteUser("admin123")
         result = (userInfo['username'] + " is a Supervisor and cannot be deleted.")
         self.assertEqual(result, action)
@@ -80,11 +82,11 @@ class TestAdminSuperCommandController(TestCase):
     def test_showAll(self):
         cmd = SuperUserCommandController()
         userInfo = {
-            'data_type': "user",
+            'data_type': "User",
             'username': "johnDoe",
             'name': "john",
             'password': "password",
-            'user_type': "TA".upper(),
+            'role': "TA".upper(),
             'email': "johnDoe123@yahoo.com",
             'phone': "4142240088",
             'address': "1234 fake st."
@@ -94,29 +96,13 @@ class TestAdminSuperCommandController(TestCase):
             'username': "HarryPotter",
             'name': "Harry",
             'password': "password",
-            'user_type': "Instructor".upper(),
+            'role': "Instructor".upper(),
             'email': "HarryPotter@yahoo.com",
             'phone': "4142245326",
             'address': "123 fake st."
         }
-        cmd.create("TA", userInfo)
-        cmd.create("Instructor", userInfo2)
+        cmd.create("User", userInfo)
+        cmd.create("User", userInfo2)
         result = cmd.showAll()
         newResult = "johnDoe john TA 4142240088 johnDoe123@yahoo.com 1234 fake st.\nHarryPotter Harry INSTRUCTOR 4142245326 HarryPotter@yahoo.com 123 fake st.\n"
         self.assertEqual(result, newResult)
-
-
-    def test_User_can_editOtherAccount(self):
-        with self.assertRaises(Exception):
-            User.objects.get(username="boyland123").username
-        userInfo = {
-            'data_type': "user",
-            'username': "boyland123",
-            'name': "boyland123",
-            'password': "password",
-            'user_type': "TA".upper(),
-            'email': "email@uwm.edu",
-            'phone': "phone",
-            'address': "address"
-        }
-        a = cmd.edit("instructor", userInfo)
