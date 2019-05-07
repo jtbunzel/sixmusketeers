@@ -314,7 +314,7 @@ class Courses(BaseView):
         edit = request.GET.get("edit", False)
 
         response = ""
-        course = a.get_user(request.GET.get("course", ""))
+        course = a.get_course(request.GET.get("course", ""))
         search_string = ""
 
         command_type = request.POST.get("command", False)
@@ -327,8 +327,8 @@ class Courses(BaseView):
 
         if course is not None:
             course_info = {
-                'data_type': "Course",
-                'course_name': request.POST.get("course_name", ""),
+#                'data_type': "Course",
+                'course_name': course['course_name'],
                 'course_code': request.POST.get("course_code", ""),
                 'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
             }

@@ -3,14 +3,15 @@ from itertools import chain
 
 
 class Searcher:
-    user = User
+    user = User()
+
 
     def get_user_object(self, username):
         print("object: " + username)
         if username == "None":
             return None
 
-        user_object = User.objects.get(username__iexact=username)
+        user_object = User.objects.get(username__contains=username)
         return user_object
 
     def searchuser(self, table_data):
@@ -74,10 +75,10 @@ class Searcher:
             elif specific == 'course_code':
                 try:
                     code = int(string_search)
-                    results = Course.objects.filter(course_code=code)
+                    results = Course.objects.filter(course_code__contains=code)
                 except ValueError:
                     courseCode = ""
-            elif specific == 'course_intructor':
+            elif specific == 'course_instructor':
                 try:
                     instructor = self.get_user_object(string_search)
                 except User.DoesNotExist:
@@ -92,7 +93,7 @@ class Searcher:
             courseInstructor = Course.objects.none()
             try:
                 code = int(string_search)
-                courseCode = Course.objects.filter(course_code=code)
+                courseCode = Course.objects.filter(course_code__contains=code)
             except ValueError:
                 pass
             try:
@@ -101,7 +102,7 @@ class Searcher:
             except User.DoesNotExist:
                 pass
 
-            results = (courseNames | courseCode | couseInstructor | courseTime | courseTAs).distinct()
+            results = (courseNames | courseCode | courseInstructor).distinct()
 
         return results
 

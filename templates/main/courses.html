@@ -25,19 +25,15 @@
                                     {% csrf_token %}
                                     <input type="hidden" name="command" value="editCourse">
                                     <br>
-                                    <label>Course Name</label>
-                                    <input class="form-control" type="text" name="course_name"
-                                            placeholder={{ course.course_name }}>
-                                    <br>
                                     <label>Course Code</label>
                                     <input class="form-control" type="text" name="course_code"
                                            placeholder={{ course.course_code }}>
                                     <br>
                                     <label>Course Instructor</label>
                                     <select class="form-control" name="course_instructor">
-                                        <option value='None'></option>
+                                        <option value="None"></option>
                                         {% for i in course %}
-                                            <option value={{ i.course_instructor }}>{{ i.course_instructor }}</option>
+                                            <option value={{ i.course_instructor_id }}> {{ i.course_name }}</option>
                                         {% endfor %}
                                     </select>
                                     <br>
@@ -79,12 +75,12 @@
                     <span class="account-text">{{  course.course_name }}</span>
 
                     <br><br>
-                    <label>Course Number: </label><br>
+                    <label>Course Code: </label><br>
                     <span class="account-text">{{  course.course_code }}</span>
 
                     <br><br>
-                    <label>Instructor: </label><br>
-                    <span class="account-text">{{  course.course_instructor }}</span>
+                    <label>Instructor id: </label><br>
+                    <span class="account-text">{{  course.course_instructor_id }}</span>
 
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <br><br>
@@ -110,8 +106,8 @@
                     <thead>
                     <tr>
                         <th scope="col">Course Name</th>
-                        <th scope="col">Course Number</th>
-                        <th scope="col">Instructor</th>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Instructor Name</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -127,7 +123,7 @@
                             <tr>
                                 <td>{{ i.course_name }}</td>
                                 <td>{{ i.course_code }}</td>
-                                <td>{{ i.course_instructor }}</td>
+                                <td>{{ i.course_instructor.name }}</td>
                                 <td>
                                     <a href="?course={{ i.course_name }}">
                                         <button class="btn btn-primary btn-sm">View</button>
