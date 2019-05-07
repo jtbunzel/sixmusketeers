@@ -160,14 +160,7 @@ class TestCourseCommandController(TestCase):
         }
         scmd.create("Course", course1)
 
-        course2 = {
-            'data_type': "Course",
-            'course_name': "Intro to Calculus",
-            'course_code': "111",
-            'course_instructor': user1
-        }
-
-        action = cmd.editCourse("Intro to", course2)
+        action = cmd.editCourse("Intro to", course1)
         result = 'No course under this name'
         self.assertEqual(result, action)
 
