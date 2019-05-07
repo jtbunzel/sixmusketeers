@@ -19,50 +19,42 @@
                 <!-- on user profile, editing -->
                 {% if edit == "true" %}
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <form method="post" action="/courses/?course={{ course.course_name }}" id="edit_course">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="command" value="editCourse">
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                                    <form method="post" action="/courses/?course={{ course.course_name }}"
+                                          id="edit_course">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="editCourse">
+                                        <br>
+                                        <label>Course Code</label>
+                                        <input class="form-control" type="text" name="course_code"
+                                               placeholder={{ course.course_code }}>
+                                        <br>
+                                        <label>Course Instructor</label>
+                                        <select class="form-control" name="course_instructor">
+                                            <option value="None"></option>
+                                            {% for i in users %}
+                                                <option value={{ i.username }} {% if i.name == course_obj.course_instructor.name %}Selected{% endif %}> {{ i.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br>
+                                        <input class="btn btn-primary" type="Submit" value="Save">
+                                    </form>
                                     <br>
-                                    <label>Course Code</label>
-                                    <input class="form-control" type="text" name="course_code"
-                                           placeholder={{ course.course_code }}>
-                                    <br>
-                                    <label>Course Instructor</label>
-                                    <select class="form-control" name="course_instructor">
-                                        <option value="None"></option>
-                                        {% for i in users %}
-                                            <option value={{ i.username }} {% if i.name == course_obj.course_instructor.name %}Selected{% endif %}> {{ i.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <br>
-                                    <input class="btn btn-primary" type="Submit" value="Save">
-                                </form>
-                                <br>
-                                <form method="post" action="/courses/">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="command" value="deleteCourse">
-                                    <input type="hidden" name="commandStr" value={{ course.course_name }}>
-                                    <input class="btn btn-danger" type="Submit" value="Delete Course"
-                                           id="delete_course">
-                                </form>
-
-                                <!--
-                                <script type="text/javascript">
-                                    var el = document.getElementById('edit_account');
-                                    var e2 = document.getElementById('delete_account');
-
-                                    el.addEventListener('submit', function () {
-                                        return confirm('Are you sure you want makes these changes to {{ user_profile.name }}?');
-                                    }, false);
-
-                                    e2.addEventListener('submit', function () {
-                                        return confirm('Are you sure you want to delete {{ user_profile.name }}?');
-                                    }, false);
-                                </script>
-                                -->
-
+                                    <form method="post" action="/courses/">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="deleteCourse">
+                                        <input type="hidden" name="commandStr" value={{ course.course_name }}>
+                                        <input class="btn btn-danger" type="Submit" value="Delete Course"
+                                               id="delete_course">
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                                    <label>Lab Sections</label><br>
+                                </div>
                             </div>
                         </div>
                     {% else %}
@@ -71,30 +63,41 @@
 
                     <!-- on course profile, not editing -->
                 {% else %}
-                    <label>Course Name: </label><br>
-                    <span class="account-text">{{  course.course_name }}</span>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                                <label>Course Name: </label><br>
+                                <span class="account-text">{{ course.course_name }}</span>
 
-                    <br><br>
-                    <label>Course Code: </label><br>
-                    <span class="account-text">{{  course.course_code }}</span>
+                                <br><br>
+                                <label>Course Code: </label><br>
+                                <span class="account-text">{{ course.course_code }}</span>
 
-                    <br><br>
-                    <label>Instructor: </label><br>
-                    {% if course_obj.course_instructor is None %}
-                        <span class="account-text">No instructor assigned</span>
-                    {% else %}
-                        <span class="account-text">{{ course_obj.course_instructor.name }}</span>
-                        {% endif %}
+                                <br><br>
+                                <label>Instructor: </label><br>
+                                {% if course_obj.course_instructor is None %}
+                                    <span class="account-text">No instructor assigned</span>
+                                {% else %}
+                                    <span class="account-text">{{ course_obj.course_instructor.name }}</span>
+                                {% endif %}
 
-                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
-                        <br><br>
-                        <a href="?course={{ course.course_name }}&edit=true">
-                            <button type="button"
-                                    class="btn btn-primary">
-                                Course Edit
-                            </button>
-                        </a>
-                    {% endif %}
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <a href="?course={{ course.course_name }}&edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Course Edit
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                                <label>Lab Sections</label><br>
+                            </div>
+                        </div>
+                    </div>
                 {% endif %}
 
                 <!-- searching -->

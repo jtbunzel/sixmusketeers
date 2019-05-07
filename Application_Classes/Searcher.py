@@ -127,8 +127,6 @@ class Searcher:
                 results = LabSection .objects.filter(lab_number__contains= string_search)
             elif specific == 'course':
                 results = LabSection.objects.filter(course= string_search)
-            elif specific == 'lab_time':
-                results = LabSection.objects.filter(lab_time= string_search)
             elif specific == 'all':
                 results = LabSection.objects.all()
 
@@ -136,7 +134,6 @@ class Searcher:
             labTa = LabSection.objects.filter(lab_ta__contains= string_search)
             labNumber = LabSection.objects.filter(lab_number__contains= string_search)
             course = LabSection.objects.filter(course= string_search)
-            labTime = LabSection.objects.filter(lab_time= string_search)
-            results = (labTa| labNumber | course | labTime ).distinct()
+            results = (labTa| labNumber | course ).distinct()
 
         return results
