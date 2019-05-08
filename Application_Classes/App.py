@@ -25,7 +25,7 @@ class App(object):
         return self.command_controller.get_course_by_name(name)
 
     def get_lab(self, number):
-        return self.command_controller.get_lab_by_number(number)
+        return self.command_controller.get_lab(number)
 
     def get_user_object(self, user):
         return self.command_controller.get_user_object(user)

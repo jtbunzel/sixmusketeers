@@ -300,7 +300,8 @@ class Users(BaseView):
         # response = search_criteria + search_string
         return render(request, 'main/users.html',
                       {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
-                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit, 'labs': lab_list, "courses":course_list})
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit,
+                       'labs': lab_list, "courses": course_list})
 
 
 class Courses(BaseView):
@@ -371,6 +372,7 @@ class Courses(BaseView):
                   'string': "instructor"}
         user_list = a.command('search', search)
         course_obj = None
+        lab_list = None
 
         if command_type == 'deleteCourse':
             course_info = {'course_name': command_string}
@@ -424,15 +426,23 @@ class Labs(BaseView):
         edit = request.GET.get("edit", False)
 
         response = ""
-        lab = a.get_lab(request.GET.get("lab_number", ""))
+        lab_number_id = request.GET.get("id", "")
         search_string = ""
 
-        search = {'strict_return': 'lab_number',
-                  'string': ""}
+        search = {'strict_return': 'role',
+                  'string': "ta"}
         user_list = a.command('search', search)
+
+        search = {'strict_return': 'all',
+                  'string': ""}
+        course_list = a.command('searchCourse', search)
+
         lab_obj = None
 
-        if lab is None:
+        if lab_number_id != "":
+            lab_obj = a.get_lab_object(lab_number_id)
+
+        else:
             strict_return = request.POST.get("strictReturn", None)
             search_string = request.POST.get("search_string", "")
             if strict_return is None and search_string == "":
@@ -440,20 +450,17 @@ class Labs(BaseView):
 
             search = {'strict_return': strict_return,
                       'string': search_string}
-            response = a.command('searchLabSection', search)
+            response = a.command('searchLab', search)
 
             if response.count() == 0:
                 response = None
-        else:
-            lab_obj = a.get_lab_object(request.GET.get("lab_number", ""))
 
         return render(request, "main/labs.html",
-                      {"navbar": "labs", "results": response, "user": user, "name": name,
-                       'search': search_string,
-                       "lab": lab, 'lab_obj': lab_obj, 'edit': edit, 'users': user_list})
+                      {"navbar": "labs", "results": response, "user": user, "name": name, 'search': search_string,
+                       'lab_obj': lab_obj, 'edit': edit, 'users': user_list, 'courses': course_list})
 
     def post(self, request):
-        self.logged_in = self.init_logged_in(request)
+        self.init_logged_in(request)
 
         user = a.get_loggedin(request.session.get("user", ""))
         name = ""
@@ -463,32 +470,40 @@ class Labs(BaseView):
         edit = request.GET.get("edit", False)
 
         response = ""
-        lab = a.get_lab(request.GET.get("labSection", ""))
+        lab_number_id = request.GET.get("id", "")
         search_string = ""
 
         command_type = request.POST.get("command", False)
         command_string = request.POST.get("commandStr", "")
 
         search = {'strict_return': 'role',
-                  'string': "instructor"}
+                  'string': "ta"}
         user_list = a.command('search', search)
+
+        search = {'strict_return': 'all',
+                  'string': ""}
+        course_list = a.command('searchCourse', search)
+
         lab_obj = None
 
-        if command_type == 'deleteLabSection':
-            course_info = {'lab_number': command_string}
-            a.command('deleteLabSection', course_info)
+        if command_type == 'deleteLab':
+            lab_info = {'lab_id': command_string}
+            a.command('deleteLab', lab_info)
             return redirect('/labs/')
 
-        if lab is not None:
-            lab_info = {
-                'lab_ta': lab['lab_ta'],
-                'lab_number': request.POST.get("lab_number", ""),
-                'course': a.get_user_object(request.POST.get("course", ""))
-            }
-            response = a.command('editLabSection', lab_info)
+        if lab_number_id != "":
+            lab_obj = a.get_lab_object(lab_number_id)
 
-            lab = a.get_lab(request.GET.get("labSection", ""))
-            lab_obj = a.get_lab_object(request.GET.get("labSection", ""))
+            if lab_obj is not None:
+                lab_info = {
+                    'lab_id': lab_obj.id,
+                    'course': a.get_course_object(request.POST.get("course", "")),
+                    'lab_number': request.POST.get("lab_number", ""),
+                    'lab_ta': a.get_user_object(request.POST.get("lab_ta", ""))
+                }
+                response = a.command('editLab', lab_info)
+
+                lab_obj = a.get_lab_object(lab_number_id)
 
         else:
             strict_return = request.POST.get("strictReturn", None)
@@ -498,17 +513,16 @@ class Labs(BaseView):
 
             search = {'strict_return': strict_return,
                       'string': search_string}
-            response = a.command('searchLabSection', search)
+            response = a.command('searchLab', search)
             if response is not None:
                 if response.count() == 0:
                     response = None
 
         # user, response = self.post_response(request, user)
         # response = search_criteria + search_string
-        return render(request, 'main/labs.html',
-                      {"navbar": "labs", "results": response, "user": user, "name": name,
-                       'search': search_string,
-                       "lab": lab, 'lab_obj': lab_obj, 'edit': edit, 'users': user_list})
+        return render(request, "main/labs.html",
+                      {"navbar": "labs", "results": response, "user": user, "name": name, 'search': search_string,
+                       'lab_obj': lab_obj, 'edit': edit, 'users': user_list, 'courses': course_list})
 
 
 class Account(BaseView):

@@ -1,4 +1,4 @@
-from WebApplication.models import User, Course
+from WebApplication.models import User, Course, LabSection
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
 from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
@@ -42,13 +42,13 @@ class CommandController(object):
             course_name = table_data['course_name']
             return self.CourseCommand.editCourse(course_name, table_data)
         elif command == 'editLab':
-            lab_number = table_data['lab_number']
+            lab_number = table_data['lab_id']
             return self.LabCommand.editLabSection(lab_number, table_data)
         elif command == 'deleteCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.deleteCourse(course_name)
         elif command == 'deleteLab':
-            lab_number = table_data['lab_number']
+            lab_number = table_data['lab_id']
             return self.LabCommand.deleteLabSection(lab_number)
 
     def get_user_by_username(self, username):
@@ -65,8 +65,8 @@ class CommandController(object):
         else:
             return course_object.values()[0]
 
-    def get_lab_by_number(self, number):
-        lab_object = Course.objects.filter(lab_number__iexact=number)
+    def get_lab(self, number):
+        lab_object = LabSection.objects.filter(id=number)
         if lab_object.count() == 0:
             return None
         else:
@@ -92,6 +92,8 @@ class CommandController(object):
         if course_name == "None":
             return None
 
+        print("name " + course_name)
+
         course_object = Course.objects.get(course_name=course_name)
         return course_object
 
@@ -99,7 +101,7 @@ class CommandController(object):
         if lab_number == "None":
             return None
 
-        lab_object = Course.objects.get(lab_number=lab_number)
+        lab_object = LabSection.objects.get(id=lab_number)
         return lab_object
 
     def login(self, username, password):

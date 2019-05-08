@@ -11,85 +11,102 @@
             <div class="container_block">
             <div class="container">
 
-            {% if lab is not None %}
+            {% if lab_obj is not None %}
 
-                <h1>Lab Details for {{ lab.lab_name }}</h1>
+                <h1>Lab Details for Lab {{ lab_obj.lab_number }} of {{ lab_obj.course.course_name }}</h1>
                 <br>
 
-                <!-- on user profile, editing -->
+                <!-- on lab profile, editing -->
                 {% if edit == "true" %}
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <form method="post" action="/labs/?lab={{ lab.lab_name }}" id="edit_lab">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="command" value="editLab">
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <form method="post" action="/labs/?id={{ lab_obj.id }}"
+                                          id="lab">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="editLab">
+                                        <label>Course</label>
+                                        <select class="form-control" name="course">
+                                            <option value="None"></option>
+                                            {% for i in courses %}
+                                                <option value="{{ i.course_name }}"
+                                                        {% if i.course_name == lab_obj.course.course_name %}Selected{% endif %}> {{ i.course_name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br>
+                                        <label>Lab Number</label>
+                                        <input class="form-control" type="text" name="lab_number"
+                                               placeholder={{ lab_obj.lab_number }}>
+                                        <br>
+                                        <label>Lab TA</label>
+                                        <select class="form-control" name="lab_ta">
+                                            <option value="None"></option>
+                                            {% for i in users %}
+                                                <option value={{ i.username }} {% if i.name == lab_obj.lab_ta.name %}Selected{% endif %}> {{ i.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br>
+                                        <input class="btn btn-primary" type="Submit" value="Save">
+                                    </form>
                                     <br>
-                                    <label>Lab Number</label>
-                                    <input class="form-control" type="text" name="lab_number"
-                                           placeholder={{ lab.lab_number }}>
-                                    <br>
-                                    <label>Lab TA</label>
-                                    <select class="form-control" name="lab_ta">
-                                        <option value="None"></option>
-                                        {% for i in users %}
-                                            <option value={{ i.username }} {% if i.name == lab_obj.lab_ta.name %}Selected{% endif %}> {{ i.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <br>
-                                    <input class="btn btn-primary" type="Submit" value="Save">
-                                </form>
-                                <br>
-                                <form method="post" action="/labs/">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="command" value="deleteLab">
-                                    <input type="hidden" name="commandStr" value={{ lab.lab_name }}>
-                                    <input class="btn btn-danger" type="Submit" value="Delete Lab"
-                                           id="delete_lab">
-                                </form>
-
-                                <!--
-                                <script type="text/javascript">
-                                    var el = document.getElementById('edit_account');
-                                    var e2 = document.getElementById('delete_account');
-
-                                    el.addEventListener('submit', function () {
-                                        return confirm('Are you sure you want makes these changes to {{ user_profile.name }}?');
-                                    }, false);
-
-                                    e2.addEventListener('submit', function () {
-                                        return confirm('Are you sure you want to delete {{ user_profile.name }}?');
-                                    }, false);
-                                </script>
-                                -->
-
+                                    <form method="post" action="/labs/">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="deleteLab">
+                                        <input type="hidden" name="commandStr" value={{ lab_obj.id }}>
+                                        <input class="btn btn-danger" type="Submit" value="Delete Lab"
+                                               id="delete_lab">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     {% else %}
-                        <h1>You do not have permission to edit accounts</h1>
+                        <h1>You do not have permission to edit labs</h1>
                     {% endif %}
 
                     <!-- on lab profile, not editing -->
                 {% else %}
-                    <label>Lab TA: </label><br>
-                    <span class="account-text">{{  lab.lab_ta }}</span>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <label>Course: </label><br>
+                                {% if lab_obj.course is None %}
+                                    <span class="account-text"><i>No course assigned</i></span>
+                                {% else %}
+                                    <span class="account-text">{{ lab_obj.course.course_name }}</span>
+                                {% endif %}
 
-                    <br><br>
-                    <label>Lab Number: </label><br>
-                    <span class="account-text">{{  lab.lab_number }}</span>
+                                <br><br>
+                                <label>Lab Number: </label><br>
+                                <span class="account-text">{{ lab_obj.lab_number }}</span>
 
-                    <br><br>
-                    <label>Course: </label><br>
-                    <span class="account-text">{{  lab.course }}</span>
+                                <br><br>
+                                <label>Lab TA: </label><br>
+                                {% if lab_obj.lab_ta is None %}
+                                    <span class="account-text"><i>No TA assigned</i></span>
+                                {% else %}
+                                    <span class="account-text">{{ lab_obj.lab_ta.name }}</span>
+                                {% endif %}
 
-
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <a href="?id={{ lab_obj.id }}&edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Edit Lab
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 {% endif %}
 
                 <!-- searching -->
             {% else %}
                 <form action="#" method="post" class="form-inline">
                     {% csrf_token %}
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search Courses"
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Labs"
                            name="search_string">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -97,27 +114,39 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">lab_ta</th>
-                        <th scope="col">lab_number</th>
-                        <th scope="col">course/th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Lab Number</th>
+                        <th scope="col">TA Name</th>
                     </tr>
                     </thead>
                     <tbody>
 
                     {% if results is not None %}
                         {% if search == "" %}
-                            <h3>Showing all Labs</h3>
+                            <h3>Showing all labs</h3>
                         {% else %}
                             <h3>Search results for: "{{ search }}"</h3>
                         {% endif %}
 
                         {% for i in results %}
                             <tr>
-                                <td>{{ i.lab_ta }}</td>
-                                <td>{{ i.lab_number }}</td>
-                                <td>{{ i.course.name }}</td>
                                 <td>
-                                    <a href="?lab={{ i.lab_number }}">
+                                    {% if i.course is None %}
+                                        <i>No course assigned</i>
+                                    {% else %}
+                                        {{ i.course.course_name }}
+                                    {% endif %}
+                                </td>
+                                <td>{{ i.lab_number }}</td>
+                                <td{% if i.lab_ta.username == user.username %} class="currentUser-text" {% endif %}>
+                                    {% if i.lab_ta is None %}
+                                        <i>No TA assigned</i>
+                                    {% else %}
+                                        {{ i.lab_ta.name }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="?id={{ i.id }}">
                                         <button class="btn btn-primary btn-sm">View</button>
                                     </a>
                                 </td>

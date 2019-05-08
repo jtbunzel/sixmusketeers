@@ -129,15 +129,20 @@
                                             <tbody>
 
                                             {% for i in labs %}
-                                                <tr>
-                                                    <td>{{ i.course.course_name }}</td>
-                                                    <td>{{ i.lab_number }}</td>
-                                                    <td>
-                                                        <a href="/labs/?course={{ i.course.course_name }}&">
-                                                            <button class="btn btn-primary btn-sm">View</button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                <td>
+                                                    {% if i.course is None %}
+                                                        <i>No course assigned</i>
+                                                    {% else %}
+                                                        {{ i.course.course_name }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{ i.lab_number }}</td>
+                                                <td>
+                                                    <a href="/labs/?id={{ i.id }}">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                                </td>
                                             {% endfor %}
                                             </tbody>
                                         </table>

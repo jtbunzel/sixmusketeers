@@ -10,7 +10,7 @@ class LabSectionCommandController:
         if self.user is None:
             return "You must be logged in"
         try:
-            obj = LabSection.objects.get(lab_number__exact=lab_number)
+            obj = LabSection.objects.get(id=lab_number)
             for key, value in newLabData.items():
                 if value is not "":
                     setattr(obj, key, value)
@@ -21,12 +21,11 @@ class LabSectionCommandController:
         return "Lab Section information has been successfully updated"
 
     def deleteLabSection(self, lab_number):
-        currentLab = LabSection()
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
         try:
-            currentLab = LabSection.objects.get(lab_number__iexact=lab_number)
+            currentLab = LabSection.objects.get(id=lab_number)
         except LabSection.DoesNotExist:
             return "Failed to delete, Lab Section does not exist!"
 

@@ -152,7 +152,7 @@ class Searcher:
                     ta = self.get_user_object(i.username)
                     new_list = LabSection.objects.filter(lab_ta=ta)
 
-                    labTa = (ta | new_list)
+                    labTa = (labTa | new_list)
             except User.DoesNotExist:
                 pass
 
@@ -162,7 +162,7 @@ class Searcher:
                     course = self.get_course_object(i.course_name)
                     new_list = LabSection.objects.filter(course=course)
 
-                    courses = (course | new_list)
+                    courses = (courses | new_list)
             except LabSection.DoesNotExist:
                 pass
 

@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     {% else %}
-                        <h1>You do not have permission to edit accounts</h1>
+                        <h1>You do not have permission to edit courses</h1>
                     {% endif %}
 
                     <!-- on course profile, not editing -->
@@ -80,7 +80,7 @@
                                     <a href="?course={{ course.course_name }}&edit=true">
                                         <button type="button"
                                                 class="btn btn-primary">
-                                            Course Edit
+                                            Edit Course
                                         </button>
                                     </a>
                                 {% endif %}
@@ -102,9 +102,15 @@
                                         {% for i in labs %}
                                             <tr>
                                                 <td>{{ i.lab_number }}</td>
-                                                <td>{{ i.lab_ta.name }}</td>
                                                 <td>
-                                                    <a href="?course={{ i.course.course_name }}&">
+                                                    {% if i.lab_ta is None %}
+                                                        <i>No TA assigned</i>
+                                                    {% else %}
+                                                        {{ i.lab_ta.name }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    <a href="/labs/?id={{ i.id }}">
                                                         <button class="btn btn-primary btn-sm">View</button>
                                                     </a>
                                                 </td>
@@ -148,7 +154,14 @@
                             <tr>
                                 <td>{{ i.course_name }}</td>
                                 <td>{{ i.course_code }}</td>
-                                <td {% if i.course_instructor.username == user.username %}class="currentUser-text"{% endif %}>{{ i.course_instructor.name }}</td>
+                                <td{% if i.course_instructor.username == user.username %}
+                                    class="currentUser-text" {% endif %}>
+                                    {% if i.course_instructor is None %}
+                                        <i>No Instructor assigned</i>
+                                    {% else %}
+                                        {{ i.course_instructor.name }}
+                                    {% endif %}
+                                </td>
                                 <td>
                                     <a href="?course={{ i.course_name }}">
                                         <button class="btn btn-primary btn-sm">View</button>
