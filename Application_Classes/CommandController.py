@@ -3,6 +3,7 @@ from Application_Classes.AdminSuperCommandController import SuperUserCommandCont
 from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
 from Application_Classes.CourseCommandController import CourseCommandController
+from Application_Classes.LabSectionCommandController import LabSectionCommandController
 
 
 class CommandController(object):
@@ -13,6 +14,7 @@ class CommandController(object):
         self.searcher = Searcher()
         self.UserCommandCntrl = UserCommandController()
         self.CourseCommand = CourseCommandController()
+        self.LabCommand = LabSectionCommandController()
 
     def parse(self, command, table_data):
         if command == 'create':
@@ -41,13 +43,13 @@ class CommandController(object):
             return self.CourseCommand.editCourse(course_name, table_data)
         elif command == 'editLab':
             lab_number = table_data['lab_number']
-            return self.CourseCommand.editCourse(lab_number, table_data)
+            return self.LabCommand.editLabSection(lab_number, table_data)
         elif command == 'deleteCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.deleteCourse(course_name)
         elif command == 'deleteLab':
             lab_number = table_data['lab_number']
-            return self.CourseCommand.deleteCourse(lab_number)
+            return self.LabCommand.deleteLabSection(lab_number)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)
