@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import include, path
 from django.contrib import admin
-from WebApplication.views import Home, Create, Users, Courses, Account
+from WebApplication.views import Home, Create, Users, Courses, Labs, Account
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('create/', Create.as_view()),
     path('users/', Users.as_view()),
     path('courses/', Courses.as_view()),
+    path('labs/', Labs.as_view()),
     path('account/', Account.as_view()),
 ]
