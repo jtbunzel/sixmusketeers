@@ -412,6 +412,105 @@ class Courses(BaseView):
                        "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list, 'labs': lab_list})
 
 
+class Labs(BaseView):
+    def get(self, request):
+        self.init_logged_in(request)
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
+
+        edit = request.GET.get("edit", False)
+
+        response = ""
+        lab = a.get_lab(request.GET.get("lab_number", ""))
+        search_string = ""
+
+        search = {'strict_return': 'lab_number',
+                  'string': ""}
+        user_list = a.command('search', search)
+        lab_obj = None
+
+        if lab is None:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('searchLabSection', search)
+
+            if response.count() == 0:
+                response = None
+        else:
+            lab_obj = a.get_lab_object(request.GET.get("lab_number", ""))
+
+        return render(request, "main/labs.html",
+                      {"navbar": "labs", "results": response, "user": user, "name": name,
+                       'search': search_string,
+                       "lab": lab, 'lab_obj': lab_obj, 'edit': edit, 'users': user_list})
+
+    def post(self, request):
+        self.logged_in = self.init_logged_in(request)
+
+        user = a.get_loggedin(request.session.get("user", ""))
+        name = ""
+        if user is not None:
+            name = user['name']
+
+        edit = request.GET.get("edit", False)
+
+        response = ""
+        lab = a.get_lab(request.GET.get("labSection", ""))
+        search_string = ""
+
+        command_type = request.POST.get("command", False)
+        command_string = request.POST.get("commandStr", "")
+
+        search = {'strict_return': 'role',
+                  'string': "instructor"}
+        user_list = a.command('search', search)
+        lab_obj = None
+
+        if command_type == 'deleteLabSection':
+            course_info = {'lab_number': command_string}
+            a.command('deleteLabSection', course_info)
+            return redirect('/labs/')
+
+        if lab is not None:
+            lab_info = {
+                'lab_ta': lab['lab_ta'],
+                'lab_number': request.POST.get("lab_number", ""),
+                'course': a.get_user_object(request.POST.get("course", ""))
+            }
+            response = a.command('editLabSection', lab_info)
+
+            lab = a.get_lab(request.GET.get("labSection", ""))
+            lab_obj = a.get_lab_object(request.GET.get("labSection", ""))
+
+        else:
+            strict_return = request.POST.get("strictReturn", None)
+            search_string = request.POST.get("search_string", "")
+            if strict_return is None and search_string == "":
+                strict_return = "all"
+
+            search = {'strict_return': strict_return,
+                      'string': search_string}
+            response = a.command('searchLabSection', search)
+            if response is not None:
+                if response.count() == 0:
+                    response = None
+
+        # user, response = self.post_response(request, user)
+        # response = search_criteria + search_string
+        return render(request, 'main/labs.html',
+                      {"navbar": "labs", "results": response, "user": user, "name": name,
+                       'search': search_string,
+                       "lab": lab, 'lab_obj': lab_obj, 'edit': edit, 'users': user_list})
+
+
 class Account(BaseView):
     def get(self, request):
         self.init_logged_in(request)
