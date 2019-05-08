@@ -28,6 +28,8 @@ class CommandController(object):
             return self.searcher.searchuser(table_data)
         elif command == 'searchCourse':
             return self.searcher.searchCourse(table_data)
+        elif command == 'searchLab':
+            return self.searcher.searchLabSection(table_data)
         elif command == 'editUser':
             username = table_data['username']
             return self.UserCommandCntrl.editUser(username, table_data)
@@ -37,9 +39,15 @@ class CommandController(object):
         elif command == 'editCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.editCourse(course_name, table_data)
+        elif command == 'editLab':
+            lab_number = table_data['lab_number']
+            return self.CourseCommand.editCourse(lab_number, table_data)
         elif command == 'deleteCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.deleteCourse(course_name)
+        elif command == 'deleteLab':
+            lab_number = table_data['lab_number']
+            return self.CourseCommand.deleteCourse(lab_number)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)
@@ -54,6 +62,13 @@ class CommandController(object):
             return None
         else:
             return course_object.values()[0]
+
+    def get_lab_by_number(self, number):
+        lab_object = Course.objects.filter(lab_number__iexact=number)
+        if lab_object.count() == 0:
+            return None
+        else:
+            return lab_object.values()[0]
 
     def get_user_object(self, username):
         print("object: " + username)
@@ -77,6 +92,13 @@ class CommandController(object):
 
         course_object = Course.objects.get(course_name=course_name)
         return course_object
+
+    def get_lab_object(self, lab_number):
+        if lab_number == "None":
+            return None
+
+        lab_object = Course.objects.get(lab_number=lab_number)
+        return lab_object
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)
