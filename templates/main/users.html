@@ -74,7 +74,8 @@
                                     {% csrf_token %}
                                     <input type="hidden" name="command" value="deleteAccount">
                                     <input type="hidden" name="commandStr" value={{ user_profile.username }}>
-                                    <input class="btn btn-danger" type="Submit" value="Delete Account" id="delete_account">
+                                    <input class="btn btn-danger" type="Submit" value="Delete Account"
+                                           id="delete_account">
                                 </form>
 
                                 <!--
@@ -98,43 +99,103 @@
                         <h1>You do not have permission to edit accounts</h1>
                     {% endif %}
 
-                <!-- on user profile, not editing -->
+                    <!-- on user profile, not editing -->
                 {% else %}
-                    <label>Username: </label><br>
-                    <span class="account-text">{{ user_profile.username }}</span>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <label>Username: </label><br>
+                                <span class="account-text">{{ user_profile.username }}</span>
 
-                    <br><br>
-                    <label>Name: </label><br>
-                    <span class="account-text">{{ user_profile.name }}</span>
+                                <br><br>
+                                <label>Name: </label><br>
+                                <span class="account-text">{{ user_profile.name }}</span>
 
-                    <br><br>
-                    <label>Role: </label><br>
-                    <span class="account-text">{{ user_profile.role }}</span>
+                                <br><br>
+                                <label>Role: </label><br>
+                                <span class="account-text">{{ user_profile.role }}</span>
 
-                    <br><br>
-                    <label>Email: </label><br>
-                    <span class="account-text">{{ user_profile.email }}</span>
+                                <br><br>
+                                <label>Email: </label><br>
+                                <span class="account-text">{{ user_profile.email }}</span>
 
-                    <br><br>
-                    <label>Phone Number: </label><br>
-                    <span class="account-text">{{ user_profile.phone }}</span>
+                                <br><br>
+                                <label>Phone Number: </label><br>
+                                <span class="account-text">{{ user_profile.phone }}</span>
 
-                    <br><br>
-                    <label>Address: </label><br>
-                    <span class="account-text">{{ user_profile.address }}</span>
+                                <br><br>
+                                <label>Address: </label><br>
+                                <span class="account-text">{{ user_profile.address }}</span>
 
-                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
-                        <br><br>
-                        <a href="?user={{ user_profile.username }}&edit=true">
-                            <button type="button"
-                                    class="btn btn-primary">
-                                Account Edit
-                            </button>
-                        </a>
-                    {% endif %}
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <a href="?user={{ user_profile.username }}&edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Account Edit
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                {% if courses is not None %}
+                                    <h4>Associated Courses</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Course Name</th>
+                                            <th scope="col">Course Code</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in courses %}
+                                            <tr>
+                                                <td>{{ i.course_name }}</td>
+                                                <td>{{ i.course_code }}</td>
+                                                <td>
+                                                    <a href="/courses/?course={{ i.course_name }}">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
+                                {% if labs is not None %}
+                                    <h4>Associated Labs</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Linked Course</th>
+                                            <th scope="col">Lab Number</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in labs %}
+                                            <tr>
+                                                <td>{{ i.course.course_name }}</td>
+                                                <td>{{ i.lab_number }}</td>
+                                                <td>
+                                                    <a href="/labs/?course={{ i.course.course_name }}&">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 {% endif %}
 
-            <!-- searching -->
+                <!-- searching -->
             {% else %}
                 <form action="#" method="post" class="form-inline">
                     {% csrf_token %}

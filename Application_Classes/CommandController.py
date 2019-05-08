@@ -28,6 +28,8 @@ class CommandController(object):
             return self.searcher.searchuser(table_data)
         elif command == 'searchCourse':
             return self.searcher.searchCourse(table_data)
+        elif command == 'searchLab':
+            return self.searcher.searchLabSection(table_data)
         elif command == 'editUser':
             username = table_data['username']
             return self.UserCommandCntrl.editUser(username, table_data)

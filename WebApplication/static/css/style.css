@@ -37,3 +37,7 @@ html, body{
   font-weight: bold;
   color: royalblue;
 }
+
+.double-column {
+  margin: 20px;
+}

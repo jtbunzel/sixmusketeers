@@ -16,17 +16,16 @@
                 <h1>Course Details for {{ course.course_name }}</h1>
                 <br>
 
-                <!-- on user profile, editing -->
+                <!-- on course profile, editing -->
                 {% if edit == "true" %}
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                         <div class="row mb-2">
                             <div class="col-md-6">
-                                <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
                                     <form method="post" action="/courses/?course={{ course.course_name }}"
                                           id="edit_course">
                                         {% csrf_token %}
                                         <input type="hidden" name="command" value="editCourse">
-                                        <br>
                                         <label>Course Code</label>
                                         <input class="form-control" type="text" name="course_code"
                                                placeholder={{ course.course_code }}>
@@ -51,11 +50,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="row flex-md-row mb-4 h-md-250 position-relative">
-                                    <label>Lab Sections</label><br>
-                                </div>
-                            </div>
                         </div>
                     {% else %}
                         <h1>You do not have permission to edit accounts</h1>
@@ -65,7 +59,7 @@
                 {% else %}
                     <div class="row mb-2">
                         <div class="col-md-6">
-                            <div class="row flex-md-row mb-4 h-md-250 position-relative">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
                                 <label>Course Name: </label><br>
                                 <span class="account-text">{{ course.course_name }}</span>
 
@@ -93,8 +87,32 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="row flex-md-row mb-4 h-md-250 position-relative">
-                                <label>Lab Sections</label><br>
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                {% if labs is not None %}
+                                    <h4>Associated Labs</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Lab Number</th>
+                                            <th scope="col">TA Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in labs %}
+                                            <tr>
+                                                <td>{{ i.lab_number }}</td>
+                                                <td>{{ i.lab_ta.name }}</td>
+                                                <td>
+                                                    <a href="?course={{ i.course.course_name }}&">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -130,7 +148,7 @@
                             <tr>
                                 <td>{{ i.course_name }}</td>
                                 <td>{{ i.course_code }}</td>
-                                <td>{{ i.course_instructor.name }}</td>
+                                <td {% if i.course_instructor.username == user.username %}class="currentUser-text"{% endif %}>{{ i.course_instructor.name }}</td>
                                 <td>
                                     <a href="?course={{ i.course_name }}">
                                         <button class="btn btn-primary btn-sm">View</button>

@@ -103,7 +103,8 @@ class Create(BaseView):
             course_list = a.command('searchCourse', course_search)
 
         return render(request, "main/create.html",
-                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list, 'courses': course_list})
+                      {"navbar": "create", "user": user, "name": name, "type": create_type, 'users': user_list,
+                       'courses': course_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -172,6 +173,8 @@ class Users(BaseView):
         response = ""
         user_profile = a.get_user(request.GET.get("user", ""))
         search_string = ""
+        lab_list = None
+        course_list = None
 
         if user_profile is not None:
             if user_profile['username'] == user['username']:
@@ -179,6 +182,20 @@ class Users(BaseView):
 
             user_name = user_profile["name"]
             user_name_list = user_name.split(' ')
+
+            search = {'strict_return': 'course_instructor',
+                      'string': user_profile['username']}
+            course_list = a.command('searchCourse', search)
+
+            if course_list.count() == 0:
+                course_list = None
+
+            search = {'strict_return': 'lab_ta',
+                      'string': user_profile['username']}
+            lab_list = a.command('searchLab', search)
+
+            if lab_list.count() == 0:
+                lab_list = None
         else:
             strict_return = request.POST.get("strictReturn", None)
             search_string = request.POST.get("search_string", "")
@@ -193,7 +210,8 @@ class Users(BaseView):
 
         return render(request, "main/users.html",
                       {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
-                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit})
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit,
+                       'labs': lab_list, 'courses': course_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -252,6 +270,20 @@ class Users(BaseView):
 
             user_profile = a.get_user(request.GET.get("user", ""))
 
+            search = {'strict_return': 'course_instructor',
+                      'string': user_profile['username']}
+            course_list = a.command('searchCourse', search)
+
+            if course_list.count() == 0:
+                course_list = None
+
+            search = {'strict_return': 'lab_ta',
+                      'string': user_profile['username']}
+            lab_list = a.command('searchLab', search)
+
+            if lab_list.count() == 0:
+                lab_list = None
+
         else:
             strict_return = request.POST.get("strictReturn", None)
             search_string = request.POST.get("search_string", "")
@@ -268,7 +300,7 @@ class Users(BaseView):
         # response = search_criteria + search_string
         return render(request, 'main/users.html',
                       {"navbar": "users", "results": response, "user": user, "name": name, 'search': search_string,
-                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit})
+                       "user_profile": user_profile, 'user_profile_name': user_name_list, 'edit': edit, 'labs': lab_list, "courses":course_list})
 
 
 class Courses(BaseView):
@@ -285,6 +317,7 @@ class Courses(BaseView):
         response = ""
         course = a.get_course(request.GET.get("course", ""))
         search_string = ""
+        lab_list = {}
 
         search = {'strict_return': 'role',
                   'string': "instructor"}
@@ -306,9 +339,16 @@ class Courses(BaseView):
         else:
             course_obj = a.get_course_object(request.GET.get("course", ""))
 
+            search = {'strict_return': 'course',
+                      'string': course_obj.course_name}
+            lab_list = a.command('searchLab', search)
+
+            if lab_list.count() == 0:
+                lab_list = None
+
         return render(request, "main/courses.html",
                       {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
-                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list})
+                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list, 'labs': lab_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -348,6 +388,10 @@ class Courses(BaseView):
             course = a.get_course(request.GET.get("course", ""))
             course_obj = a.get_course_object(request.GET.get("course", ""))
 
+            search = {'strict_return': 'course',
+                      'string': course_obj.course_name}
+            lab_list = a.command('searchLab', search)
+
         else:
             strict_return = request.POST.get("strictReturn", None)
             search_string = request.POST.get("search_string", "")
@@ -365,7 +409,7 @@ class Courses(BaseView):
         # response = search_criteria + search_string
         return render(request, 'main/courses.html',
                       {"navbar": "courses", "results": response, "user": user, "name": name, 'search': search_string,
-                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list})
+                       "course": course, 'course_obj': course_obj, 'edit': edit, 'users': user_list, 'labs': lab_list})
 
 
 class Account(BaseView):
@@ -379,12 +423,26 @@ class Account(BaseView):
             name = user['name']
             name_list = name.split(' ')
 
+            search = {'strict_return': 'course_instructor',
+                      'string': user['username']}
+            course_list = a.command('searchCourse', search)
+
+            if course_list.count() == 0:
+                course_list = None
+
+            search = {'strict_return': 'lab_ta',
+                      'string': user['username']}
+            lab_list = a.command('searchLab', search)
+
+            if lab_list.count() == 0:
+                lab_list = None
+
         edit = request.GET.get("edit", False)
 
         response = ""
         return render(request, 'main/account.html',
                       {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
-                       'name': name})
+                       'name': name, 'labs': lab_list, 'courses': course_list})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -424,9 +482,23 @@ class Account(BaseView):
             }
             response = a.command('editUser', userInfo)
 
+            search = {'strict_return': 'course_instructor',
+                      'string': user['username']}
+            course_list = a.command('searchCourse', search)
+
+            if course_list.count() == 0:
+                course_list = None
+
+            search = {'strict_return': 'lab_ta',
+                      'string': user['username']}
+            lab_list = a.command('searchLab', search)
+
+            if lab_list.count() == 0:
+                lab_list = None
+
         edit = request.GET.get("edit", False)
         user = a.get_loggedin(request.session.get("user", ""))
 
         return render(request, 'main/account.html',
                       {"navbar": "account", "message": response, "user": user, 'edit': edit, 'name_list': name_list,
-                       'name': name})
+                       'name': name, 'labs': lab_list, 'courses': course_list})
