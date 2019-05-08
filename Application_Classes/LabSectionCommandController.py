@@ -3,74 +3,33 @@ from django.core.exceptions import ObjectDoesNotExist
 
 
 class LabSectionCommandController:
-    user = User
+    user = User()
 
-    def createLabSection(self, lab_TA, lab_number, course):
+    def editLabSection(self, lab_number, newLabData):
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
-
-        #        #Check for Supervisor or Admin role  ** Edited out user no longer has rank **
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
-
-        #        Create NewLabSection
-        newLabSection = LabSection()
-        newLabSection.lab_tas = lab_TA
-        newLabSection.lab_number = lab_number
-        newLabSection.course = course
-        newLabSection.save()
-
-        return "Successfully created a new Lab Section"
-
-    def editLabSection(self, TA, lab_number, course):
-        # Check for user logged in
-        if self.user is None:
-            return "You must be logged in"
-
-#        #Check for Supervisor or Admin role ** Edited out user no longer has rank **
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
-
-#        Check if LabSection exists
-#        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentLabSection = LabSection.objects.filter(lab_number=lab_number)
-        except ObjectDoesNotExist:
-            print("Lab Section could not be found or does not exist.")
+            obj = LabSection.objects.get(lab_number__exact=lab_number)
+            for key, value in newLabData.items():
+                if value is not "":
+                    setattr(obj, key, value)
+            obj.save()
+        except LabSection.DoesNotExist:
+            return 'No Lab Section under this number'
 
-#       #If TA not blank edit TA
-        if TA != '':
-            currentLabSection.TA = TA
-
-#       #If Lab Number not blank edit Lab Number
-        if lab_number != '':
-            currentLabSection.lab_number = lab_number
-
-#       #If Course not blank edit Course
-        if course != '':
-            currentLabSection.course = course
-
-        currentLabSection.save()
-
-        return "Lab Section has been edited."
+        return "Lab Section information has been successfully updated"
 
     def deleteLabSection(self, lab_number):
+        currentLab = LabSection()
         # Check for user logged in
         if self.user is None:
             return "You must be logged in"
-
-#        #Check for Supervisor or Admin role ** Edited out user no longer has rank **
-#        if self.user.rank < 2:
-#            return "You do not have permission to use this command"
-
-#        Check if LabSection exists
-#        if there is no Entry object with a primary key of 1, Django will raise Entry.DoesNotExist.
         try:
-            currentLabSection = LabSection.objects.filter(lab_number=lab_number)
-        except ObjectDoesNotExist:
-            print("Lab Section could not be found or does not exist.")
+            currentLab = LabSection.objects.get(lab_number__iexact=lab_number)
+        except LabSection.DoesNotExist:
+            return "Failed to delete, Lab Section does not exist!"
 
-        currentLabSection.delete()
+        currentLab.delete()
 
         return "Lab Section has been deleted."

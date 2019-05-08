@@ -24,6 +24,9 @@ class App(object):
     def get_course(self, name):
         return self.command_controller.get_course_by_name(name)
 
+    def get_lab(self, number):
+        return self.command_controller.get_lab_by_number(number)
+
     def get_user_object(self, user):
         return self.command_controller.get_user_object(user)
 
@@ -32,6 +35,9 @@ class App(object):
 
     def get_course_object(self, course_name):
         return self.command_controller.get_course_object(course_name)
+
+    def get_lab_object(self, lab_number):
+        return self.command_controller.get_lab_object(lab_number)
 
 
     def set_loggedin(self, new_loggedin):

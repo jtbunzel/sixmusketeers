@@ -3,6 +3,7 @@ from Application_Classes.AdminSuperCommandController import SuperUserCommandCont
 from Application_Classes.Searcher import Searcher
 from Application_Classes.UserCommandController import UserCommandController
 from Application_Classes.CourseCommandController import CourseCommandController
+from Application_Classes.LabSectionCommandController import LabSectionCommandController
 
 
 class CommandController(object):
@@ -13,6 +14,7 @@ class CommandController(object):
         self.searcher = Searcher()
         self.UserCommandCntrl = UserCommandController()
         self.CourseCommand = CourseCommandController()
+        self.LabCommand = LabSectionCommandController()
 
     def parse(self, command, table_data):
         if command == 'create':
@@ -39,9 +41,15 @@ class CommandController(object):
         elif command == 'editCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.editCourse(course_name, table_data)
+        elif command == 'editLab':
+            lab_number = table_data['lab_number']
+            return self.LabCommand.editLabSection(lab_number, table_data)
         elif command == 'deleteCourse':
             course_name = table_data['course_name']
             return self.CourseCommand.deleteCourse(course_name)
+        elif command == 'deleteLab':
+            lab_number = table_data['lab_number']
+            return self.LabCommand.deleteLabSection(lab_number)
 
     def get_user_by_username(self, username):
         user_object = User.objects.filter(username__iexact=username)
@@ -56,6 +64,13 @@ class CommandController(object):
             return None
         else:
             return course_object.values()[0]
+
+    def get_lab_by_number(self, number):
+        lab_object = Course.objects.filter(lab_number__iexact=number)
+        if lab_object.count() == 0:
+            return None
+        else:
+            return lab_object.values()[0]
 
     def get_user_object(self, username):
         print("object: " + username)
@@ -79,6 +94,13 @@ class CommandController(object):
 
         course_object = Course.objects.get(course_name=course_name)
         return course_object
+
+    def get_lab_object(self, lab_number):
+        if lab_number == "None":
+            return None
+
+        lab_object = Course.objects.get(lab_number=lab_number)
+        return lab_object
 
     def login(self, username, password):
         user_logging_in = User.objects.filter(username__iexact=username)
