@@ -11,18 +11,14 @@ class BaseView(View):
     def init_logged_in(self, request):
         username = request.session.get("user", "")
         if "user" in request.session and username != "":
-            print("logged in: " + username)
             request.session["user"] = username
         else:
-            print("no session")
             return False
 
     def post_response(self, request, user):
         command_type = request.POST.get("command", False)
         command_input = request.POST.get("commandStr", False)
         response = ""
-        print(command_type)
-        print(command_input)
         if user is not None:
             if command_type is not False:
                 if command_type == 'logout':

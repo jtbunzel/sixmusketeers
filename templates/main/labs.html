@@ -13,12 +13,13 @@
 
             {% if lab_obj is not None %}
 
-                <h1>Lab Details for Lab {{ lab_obj.lab_number }} of {{ lab_obj.course.course_name }}</h1>
+                <h1>Lab Details for Lab {{ lab_obj.lab_number }}{% if lab_obj.course is not None %} of
+                    {{ lab_obj.course.course_name }}{% endif %}</h1>
                 <br>
 
                 <!-- on lab profile, editing -->
                 {% if edit == "true" %}
-                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" or user.role == "INSTRUCTOR" %}
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
@@ -26,19 +27,23 @@
                                           id="lab">
                                         {% csrf_token %}
                                         <input type="hidden" name="command" value="editLab">
-                                        <label>Course</label>
-                                        <select class="form-control" name="course">
-                                            <option value="None"></option>
-                                            {% for i in courses %}
-                                                <option value="{{ i.course_name }}"
-                                                        {% if i.course_name == lab_obj.course.course_name %}Selected{% endif %}> {{ i.course_name }}</option>
-                                            {% endfor %}
-                                        </select>
-                                        <br>
-                                        <label>Lab Number</label>
-                                        <input class="form-control" type="text" name="lab_number"
-                                               placeholder={{ lab_obj.lab_number }}>
-                                        <br>
+                                        {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                            <label>Course</label>
+                                            <select class="form-control" name="course">
+                                                <option value="None"></option>
+                                                {% for i in courses %}
+                                                    <option value="{{ i.course_name }}"
+                                                            {% if i.course_name == lab_obj.course.course_name %}Selected{% endif %}> {{ i.course_name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <br>
+                                            <label>Lab Number</label>
+                                            <input class="form-control" type="text" name="lab_number"
+                                                   placeholder={{ lab_obj.lab_number }}>
+                                            <br>
+                                        {% else %}
+                                            <input type="hidden" name="course" value="{{ lab_obj.course.course_name }}">
+                                        {% endif %}
                                         <label>Lab TA</label>
                                         <select class="form-control" name="lab_ta">
                                             <option value="None"></option>
@@ -50,13 +55,15 @@
                                         <input class="btn btn-primary" type="Submit" value="Save">
                                     </form>
                                     <br>
-                                    <form method="post" action="/labs/">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="command" value="deleteLab">
-                                        <input type="hidden" name="commandStr" value={{ lab_obj.id }}>
-                                        <input class="btn btn-danger" type="Submit" value="Delete Lab"
-                                               id="delete_lab">
-                                    </form>
+                                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                        <form method="post" action="/labs/">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="command" value="deleteLab">
+                                            <input type="hidden" name="commandStr" value={{ lab_obj.id }}>
+                                            <input class="btn btn-danger" type="Submit" value="Delete Lab"
+                                                   id="delete_lab">
+                                        </form>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -88,7 +95,7 @@
                                     <span class="account-text">{{ lab_obj.lab_ta.name }}</span>
                                 {% endif %}
 
-                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR"  or user.role == "INSTRUCTOR" %}
                                     <br><br>
                                     <a href="?id={{ lab_obj.id }}&edit=true">
                                         <button type="button"
