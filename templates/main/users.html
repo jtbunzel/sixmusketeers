@@ -65,7 +65,7 @@
                                     <br>
                                     <label>Address</label>
                                     <input class="form-control" type="text" name="address"
-                                           placeholder={{ user_profile.address }}>
+                                           placeholder="{{ user_profile.address }}">
                                     <br>
                                     <input class="btn btn-primary" type="Submit" value="Save">
                                 </form>
@@ -119,15 +119,15 @@
                                 <label>Email: </label><br>
                                 <span class="account-text">{{ user_profile.email }}</span>
 
-                                <br><br>
-                                <label>Phone Number: </label><br>
-                                <span class="account-text">{{ user_profile.phone }}</span>
-
-                                <br><br>
-                                <label>Address: </label><br>
-                                <span class="account-text">{{ user_profile.address }}</span>
-
                                 {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <label>Phone Number: </label><br>
+                                    <span class="account-text">{{ user_profile.phone }}</span>
+
+                                    <br><br>
+                                    <label>Address: </label><br>
+                                    <span class="account-text">{{ user_profile.address }}</span>
+
                                     <br><br>
                                     <a href="?user={{ user_profile.username }}&edit=true">
                                         <button type="button"
