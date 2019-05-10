@@ -88,4 +88,4 @@ class SuperUserCommandController:
             else:
                 lab.save()
 
-            return " Lab section " + lab.lab_number + " created for " + lab.course.course_name + "."
+            return "Lab section " + lab.lab_number + " created for " + lab.course.course_name + "."

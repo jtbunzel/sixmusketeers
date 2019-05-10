@@ -1,5 +1,5 @@
 from Application_Classes.AdminSuperCommandController import SuperUserCommandController
-from WebApplication.models import User
+from WebApplication.models import User, Course
 from django.test import TestCase
 
 cmd = SuperUserCommandController()
@@ -175,3 +175,87 @@ class TestAdminSuperCommandController(TestCase):
         action = cmd.create("Course", courseInfo2)
         result = "Course is already in use!"
         self.assertEqual(result, action)
+
+    def test_create_lab(self):
+        scmd = SuperUserCommandController()
+
+        userInfo = {
+            'data_type': "User",
+            'username': "HarryPotter",
+            'name': "Harry",
+            'password': "password",
+            'role': "Instructor".upper(),
+            'email': "HarryPotter@yahoo.com",
+            'phone': "4142245326",
+            'address': "123 fake st."
+        }
+
+        scmd.create("User", userInfo)
+        user1 = User.objects.get(username__iexact="HarryPotter")
+
+        courseInfo = {
+            'data_type': "Course",
+            'course_name': "Intro to CS",
+            'course_code': "007",
+            'course_instructor': user1
+        }
+
+        scmd.create("Course", courseInfo)
+        course1 = Course.objects.get(course_name__iexact="Intro to CS")
+
+        labInfo = {
+            'data_type': "Course",
+            'lab_ta': user1,
+            'lab_number': "007",
+            'course_name': course1
+        }
+
+        action = scmd.create("Lab", labInfo)
+        result = "Lab section 007 created for Intro to CS."
+        self.assertEqual(result,action)
+
+    def test_create_lab_already_exists(self):
+        scmd = SuperUserCommandController()
+
+        userInfo = {
+            'data_type': "User",
+            'username': "HarryPotter",
+            'name': "Harry",
+            'password': "password",
+            'role': "Instructor".upper(),
+            'email': "HarryPotter@yahoo.com",
+            'phone': "4142245326",
+            'address': "123 fake st."
+        }
+
+        scmd.create("User", userInfo)
+        user1 = User.objects.get(username__iexact="HarryPotter")
+
+        courseInfo = {
+            'data_type': "Course",
+            'course_name': "Intro to CS",
+            'course_code': "007",
+            'course_instructor': user1
+        }
+
+        scmd.create("Course", courseInfo)
+        course1 = Course.objects.get(course_name__iexact="Intro to CS")
+
+        labInfo = {
+            'data_type': "LabSection",
+            'lab_ta': user1,
+            'lab_number': "007",
+            'course_name': course1
+        }
+        scmd.create("Lab", labInfo)
+
+        labInfo2 = {
+            'data_type': "LabSection",
+            'lab_ta': user1,
+            'lab_number': "007",
+            'course_name': course1
+        }
+
+        action = scmd.create("Lab", labInfo2)
+        result = "Lab Section has already been created!"
+        self.assertEqual(result,action)
