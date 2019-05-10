@@ -41,9 +41,11 @@ class TestLabSectionCommandController(TestCase):
             'lab_number': "007",
             'course_name': course1
         }
-        scmd.create("Lab", labInfo)
+        lab1 = scmd.create("Lab", labInfo)
 
-        action = lcmd.deleteLabSection(self, labInfo['lab_number'])
+
+        action = lcmd.deleteLabSection(lab1['lab_number'])
+
         result = "Lab Section has been deleted."
         self.assertEqual(result, action)
 
@@ -81,16 +83,10 @@ class TestLabSectionCommandController(TestCase):
             'lab_number': "007",
             'course_name': course1
         }
-        scmd.create("Lab", labInfo)
+        lab1 = scmd.create("Lab", labInfo)
 
-        labInfo2 = {
-            'data_type': "LabSection",
-            'lab_ta': user1,
-            'lab_number': "777",
-            'course_name': course1
-        }
 
-        action = lcmd.deleteLabSection(self, labInfo2['lab_number'])
+        action = lcmd.deleteLabSection(lab1['lab_number'])
         result = "Failed to delete, Lab Section does not exist!"
         self.assertEqual(result, action)
 
