@@ -46,7 +46,7 @@
                                     <br>
                                     <label>Address</label>
                                     <input class="form-control" type="text" name="address"
-                                           placeholder={{ user.address }}>
+                                           placeholder="{{ user.address }}">
                                     <br>
                                     <input class="btn btn-primary" type="Submit" value="Save">
                                 </form>
@@ -130,10 +130,16 @@
 
                                             {% for i in labs %}
                                                 <tr>
-                                                    <td>{{ i.course.course_name }}</td>
+                                                    <td>
+                                                        {% if i.course is None %}
+                                                            <i>No course assigned</i>
+                                                        {% else %}
+                                                            {{ i.course.course_name }}
+                                                        {% endif %}
+                                                    </td>
                                                     <td>{{ i.lab_number }}</td>
                                                     <td>
-                                                        <a href="/labs/?course={{ i.course.course_name }}&">
+                                                        <a href="/labs/?id={{ i.id }}">
                                                             <button class="btn btn-primary btn-sm">View</button>
                                                         </a>
                                                     </td>
