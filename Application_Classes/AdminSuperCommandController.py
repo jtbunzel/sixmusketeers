@@ -21,6 +21,7 @@ class SuperUserCommandController:
         else:
             user_obj.delete()
             response = targetUser + " deleted successfully."
+        print(response)
         return response
 
     #   #Display public info for all users in database.
@@ -36,7 +37,8 @@ class SuperUserCommandController:
             if user.name == "":
                 return ""
             else:
-                userInfo += (user.username + " " + user.name + " " + user.role + " " + user.phone + " " + user.email + " " + user.address + "\n")
+                userInfo += (
+                            user.username + " " + user.name + " " + user.role + " " + user.phone + " " + user.email + " " + user.address + "\n")
         return userInfo
 
     def create(self, create_type, credential_array):

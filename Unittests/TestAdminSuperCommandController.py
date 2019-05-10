@@ -8,40 +8,41 @@ cmd = SuperUserCommandController()
 class TestAdminSuperCommandController(TestCase):
 
     # database testing for create
-#    def test_User_can_create(self):
-#        with self.assertRaises(Exception):
-#            User.objects.get(username="boyland123").username
-#        userInfo = {
-#            'data_type': "user",
-#            'username': "boyland123",
-#            'name': "boyland123",
-#            'password': "password",
-#            'user_type': "TA".upper(),
-#            'email': "email@uwm.edu",
-#            'phone': "phone",
-#            'address': "address"
-#        }
-#        str = cmd.create("instructor", userInfo)
-#        self.assertEqual(User.objects.get(username="boyland123").username
-#                         , 'boyland123')
-#        self.assertEqual(User.objects.get(username="boyland123").password
-#                         , 'password')
-#        self.assertTrue(User.objects.get(username="boyland123").password
-#                        is not 'passwordddd')
-#        self.assertTrue(User.objects.get(username="boyland123").username
-#                        is not 'boy land')
-#        self.assertTrue(User.objects.get(username="boyland123").role
-#                        is not 'instructor')
-#        self.assertEqual(User.objects.get(username="boyland123").role
-#                         , 'TA')
-#        self.assertTrue(User.objects.get(username="boyland123").address
-#                        is not 'not address ')
-#        self.assertEqual(User.objects.get(username="boyland123").address
-#                         , 'address')
-#        self.assertEqual(User.objects.get(username="boyland123").email
-#                         , 'email@uwm.edu')
-#        self.assertTrue(User.objects.get(username="boyland123").email
-#                        is not 'address ')
+    def test_User(self):
+        with self.assertRaises(Exception):
+            User.objects.get(username="boyland123").username
+        userInfo = {
+            'data_type': "user",
+            'username': "boyland123",
+            'name': "boyland123",
+            'password': "password",
+            'role': "TA".upper(),
+            'email': "email@uwm.edu",
+            'phone': "phone",
+            'address': "address"
+        }
+        str = cmd.create("User", userInfo)
+        print(str)
+        self.assertEqual(User.objects.get(username="boyland123").username
+                         , 'boyland123')
+        self.assertEqual(User.objects.get(username="boyland123").password
+                         , 'password')
+        self.assertTrue(User.objects.get(username="boyland123").password
+                        is not 'passwordddd')
+        self.assertTrue(User.objects.get(username="boyland123").username
+                        is not 'boy land')
+        self.assertTrue(User.objects.get(username="boyland123").role
+                        is not 'instructor')
+        self.assertEqual(User.objects.get(username="boyland123").role
+                         , 'TA')
+        self.assertTrue(User.objects.get(username="boyland123").address
+                        is not 'not address ')
+        self.assertEqual(User.objects.get(username="boyland123").address
+                         , 'address')
+        self.assertEqual(User.objects.get(username="boyland123").email
+                         , 'email@uwm.edu')
+        self.assertTrue(User.objects.get(username="boyland123").email
+                        is not 'address ')
 
     def test_delete_user(self):
         cmd = SuperUserCommandController()
@@ -139,7 +140,7 @@ class TestAdminSuperCommandController(TestCase):
 
         action = cmd.create("Course", courseInfo)
         result = "Intro to CS created as 007."
-        self.assertEqual(result,action)
+        self.assertEqual(result, action)
 
     def test_create_course_already_exists(self):
         cmd = SuperUserCommandController()
