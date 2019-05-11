@@ -153,8 +153,8 @@ class Create(BaseView):
             }
             response = a.command('create', course_info)  # create a course
 
+            # mass create labs if entered
             num_labs = request.POST.get("lab_count", 0)
-
             for i in range(int(num_labs)):
                 lab_info = {
                     'data_type': "Lab",
