@@ -17,7 +17,6 @@ class SuperUserCommandController:
 
         return response
 
-
     def create(self, create_type, credential_array):
         # creation type is  user
         if create_type == "User":
@@ -25,20 +24,27 @@ class SuperUserCommandController:
             if credential_array['username'] == "" or credential_array['password'] == "":
                 return "Fields are missing or empty."
 
-            user1 = User()
-            user1.name = credential_array['name']
-            user1.username = credential_array['username']
-            user1.password = credential_array['password']
-            user1.role = credential_array['role']
-            user1.email = credential_array['email']
-            user1.phone = credential_array['phone']
-            user1.address = credential_array['address']
+            user = User()
+            user.name = credential_array['name']
+            user.username = credential_array['username']
+            user.password = credential_array['password']
+            user.role = credential_array['role']
+            user.email = credential_array['email']
+            user.phone = credential_array['phone']
+            user.address = credential_array['address']
 
-            if User.objects.filter(username=user1.username).exists():
+            if User.objects.filter(username=user.username).exists():
                 return "Username is already in use!"
             else:
-                user1.save()
-                return user1.username + " created as " + user1.role + "."
+                user.save()
+
+            # style return
+            if user.role:
+                response = "User " + user.username + " created as " + user.role + "."
+            else:
+                response = "User " + user.username + " created."
+
+            return response
 
         # creation type is a course
         if create_type == "Course":
@@ -56,7 +62,13 @@ class SuperUserCommandController:
             else:
                 course.save()
 
-            return course.course_name + " created as " + course.course_code + "."
+            # style return
+            if course.course_code:
+                response = "Course " + course.course_name + " created with code " + course.course_code + "."
+            else:
+                response = "Course " + course.course_name + " created."
+
+            return response
 
         # creation type is a lab
         elif create_type == "Lab":
@@ -74,4 +86,10 @@ class SuperUserCommandController:
 
             lab.save()
 
-            return "Lab section " + lab.lab_number + " created for " + lab.course.course_name + "."
+            # style return
+            if lab.course:
+                response = "Lab section " + lab.lab_number + " created for " + lab.course.course_name + "."
+            else:
+                response = "Lab section " + lab.lab_number + " created."
+
+            return response

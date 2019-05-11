@@ -81,7 +81,7 @@
                                 <form method="post" action="/users/">
                                     {% csrf_token %}
                                     <input type="hidden" name="command" value="deleteAccount">
-                                    <input type="hidden" name="commandStr" value={{ user_profile.username }}>
+                                    <input type="hidden" name="commandStr" value="{{ user_profile.username }}">
                                     <input class="btn btn-danger" type="Submit" value="Delete Account"
                                            id="delete_account">
                                 </form>

@@ -50,7 +50,7 @@
                                     <form method="post" action="/courses/">
                                         {% csrf_token %}
                                         <input type="hidden" name="command" value="deleteCourse">
-                                        <input type="hidden" name="commandStr" value={{ course.course_name }}>
+                                        <input type="hidden" name="commandStr" value="{{ course.course_name }}">
                                         <!-- delete course -->
                                         <input class="btn btn-danger" type="Submit" value="Delete Course"
                                                id="delete_course">

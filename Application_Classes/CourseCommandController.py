@@ -21,7 +21,7 @@ class CourseCommandController:
     # removes the course from the database
     def deleteCourse(self, course_name):
         try:
-            current_course = Course.objects.get(course_name__iexact=course_name)
+            current_course = Course.objects.get(course_name=course_name)
         except ObjectDoesNotExist:
             return "Course could not be found or does not exist."
 

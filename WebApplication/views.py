@@ -59,9 +59,9 @@ class Home(BaseView):
         if user is not None:  # user exists
             name = user['name']
 
-        response = a.get_database_count()
+        num_count = a.get_database_count()
 
-        return render(request, "main/index.html", {"navbar": "home", "user": user, "name": name, 'count': response})
+        return render(request, "main/index.html", {"navbar": "home", "user": user, "name": name, 'count': num_count})
 
     def post(self, request):
         self.init_logged_in(request)
@@ -72,8 +72,10 @@ class Home(BaseView):
             name = user['name']
 
         user, response = self.post_response(request, user)  # response tells what is wrong with the login
+        num_count = a.get_database_count()
 
-        return render(request, 'main/index.html', {"navbar": "home", "message": response, "user": user, "name": name})
+        return render(request, 'main/index.html',
+                      {"navbar": "home", "message": response, "user": user, "name": name, 'count': num_count})
 
 
 class Create(BaseView):
@@ -365,6 +367,7 @@ class Courses(BaseView):
 
             if response.count() == 0:
                 response = None
+
         # course object exist
         else:
             course_obj = a.get_course_object(request.GET.get("course", ""))  # get the ?course in the url
@@ -417,7 +420,8 @@ class Courses(BaseView):
             response = a.command('editCourse', course_info)
 
             # refresh the course object
-            course_obj = a.get_course_object(request.GET.get("course", ""))
+            course_obj = a.get_course_object(course['course_name'])
+            course = a.get_course(course['course_name'])
 
             # grab a list of labs associated with the course
             search = {'strict_return': 'course',
