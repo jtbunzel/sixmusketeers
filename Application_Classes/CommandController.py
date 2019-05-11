@@ -110,7 +110,7 @@ class CommandController(object):
     def login(self, username, password):
         # try to grab user
         try:
-            user_logging_in = User.objects.get(username=username)
+            user_logging_in = User.objects.get(username__iexact=username)
 
             if user_logging_in.password == password:
                 # everything looks good!
