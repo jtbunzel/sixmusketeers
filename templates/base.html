@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- determine what the title will be for the page -->
     {% if navbar == "home" %}
         {% if user != None %}
             <title>S.A.S.S. - Home</title>
@@ -17,6 +18,7 @@
     {% if navbar == "labs" %}<title>S.A.S.S. - Labs</title>{% endif %}
     {% if navbar == "account" %}<title>S.A.S.S. - Account</title>{% endif %}
 
+    <!-- display the favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
@@ -37,6 +39,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <!-- personal stylesheets -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/floating-labels.css' %}">
 </head>

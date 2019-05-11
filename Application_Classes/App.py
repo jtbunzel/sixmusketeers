@@ -39,6 +39,5 @@ class App(object):
     def get_lab_object(self, lab_number):
         return self.command_controller.get_lab_object(lab_number)
 
-    def set_loggedin(self, new_loggedin):
-        self.loggedin = new_loggedin
-        pass
+    def get_database_count(self):
+        return self.command_controller.get_database_count()

@@ -4,14 +4,23 @@
 {% block content %}
 
     <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
         {% if user == None %}
             <meta http-equiv="refresh" content="0; URL=''"/>
+
+            <!-- user is logged in -->
         {% else %}
+            <!-- load navigation bar -->
             {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
             <div class="container_block">
             {% if user.role == "INSTRUCTOR" or user.role == "TA" %}
+                <!-- user cannot create objects -->
                 <h1>You do not have permission to create Users or Courses</h1>
             {% else %}
+                <!-- user has permission to create objects -->
+                <!-- display object selection buttons -->
                 <div class="container">
                 <div class="py-5 text-center">
                     <a href="?type=user">
@@ -34,13 +43,16 @@
                     </a>
                 </div>
 
+                <!-- the message -->
                 <h4>{{ message }}</h4>
 
 
+                <!-- the user wishes to create a user object -->
                 {% if type == "user" or type == "" %}
                     <div class="row">
                     <br>
                     <div class="col-md-4 mb-4">
+                    <!-- the user creation form -->
                     <form method="post" action="?type=user">
                         {% csrf_token %}
                         <input type="hidden" name="command" value="create">
@@ -64,7 +76,7 @@
                         <br>
                         <label>User Type</label>
                         <br>
-                        <select name="usertype" class="form-control">
+                        <select name="role" class="form-control">
                             <option value="ADMINISTRATOR">Administrator</option>
                             <option value="INSTRUCTOR">Instructor</option>
                             <option value="TA" selected="selected">TA</option>
@@ -81,10 +93,13 @@
                         <br>
                         <input class="btn btn-primary" type="Submit" value="Create User">
                     </form>
+
+                    <!-- the user wishes to create a course -->
                 {% elif type == "course" %}
                     <div class="row">
                     <br>
                     <div class="col-md-4 mb-4">
+                    <!-- the form to create courses -->
                     <form method="post" action="?type=course">
                         {% csrf_token %}
                         <input type="hidden" name="command" value="createCourse">
@@ -95,7 +110,7 @@
                         <select class="form-control" name="course_instructor">
                             <option value="None"></option>
                             {% for i in users %}
-                                <option value={{i.username}}>{{ i.name }}</option>
+                                <option value={{ i.username }}>{{ i.name }}</option>
                             {% endfor %}
                         </select>
                         <br>
@@ -104,10 +119,13 @@
                         <br>
                         <input class="btn btn-primary" type="Submit" value="Create Course">
                     </form>
+
+                    <!-- the user wishes to create a lab -->
                 {% elif type == "lab" %}
                     <div class="row">
                     <br>
                     <div class="col-md-4 mb-4">
+                    <!-- the form to create a lab -->
                     <form method="post" action="?type=lab">
                         {% csrf_token %}
                         <input type="hidden" name="command" value="createLabSection">
@@ -115,7 +133,7 @@
                         <select class="form-control" name="lab_TA">
                             <option value="None"></option>
                             {% for i in users %}
-                                <option value={{i.username}}>{{ i.name }}</option>
+                                <option value={{ i.username }}>{{ i.name }}</option>
                             {% endfor %}
                         </select>
                         <br>
@@ -123,25 +141,18 @@
                         <input class="form-control" type="text" name="lab_number">
                         <br>
                         <label>Course Name</label>
-                        <select class="form-control" name="course">
+                        <select class="form-control" name="course_name">
                             <option value="None"></option>
                             {% for i in courses %}
-                                <option value="{{i.course_name}}">{{i.course_name}}</option>
+                                <option value="{{ i.course_name }}">{{ i.course_name }}</option>
                             {% endfor %}
                         </select>
                         <br>
-  <!---                      <br>
-                        <label>Course</label>
-                        <input class="form-control" type="text" name="course">
-                        <br>
-                        -->
-
                         <input class="btn btn-primary" type="Submit" value="Create Lab Section">
                     </form>
                 {% endif %}
             {% endif %}
         {% endif %}
-
         </div>
 
 {% endblock content %}

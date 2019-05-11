@@ -3,14 +3,20 @@
 
 {% block content %}
     <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
         {% if user == None %}
             <meta http-equiv="refresh" content="0; URL=''"/>
 
+            <!-- user is logged in -->
         {% else %}
+            <!-- load navigation bar -->
             {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
             <div class="container_block">
             <div class="container">
 
+            <!-- the user does not have a lab selected to view -->
             {% if lab_obj is not None %}
 
                 <h1>Lab Details for Lab {{ lab_obj.lab_number }}{% if lab_obj.course is not None %} of
@@ -19,6 +25,7 @@
 
                 <!-- on lab profile, editing -->
                 {% if edit == "true" %}
+                    <!-- the user matches the roleset -->
                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" or user.role == "INSTRUCTOR" %}
                         <div class="row mb-2">
                             <div class="col-md-6">
@@ -27,6 +34,7 @@
                                           id="lab">
                                         {% csrf_token %}
                                         <input type="hidden" name="command" value="editLab">
+                                        <!-- the user has permission to assign a course -->
                                         {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                                             <label>Course</label>
                                             <select class="form-control" name="course">
@@ -41,9 +49,13 @@
                                             <input class="form-control" type="text" name="lab_number"
                                                    placeholder={{ lab_obj.lab_number }}>
                                             <br>
+
+                                            <!-- the user cannot assign a course, send preset course to prevent errors -->
                                         {% else %}
                                             <input type="hidden" name="course" value="{{ lab_obj.course.course_name }}">
                                         {% endif %}
+
+                                        <!-- assigning a TA to the course -->
                                         <label>Lab TA</label>
                                         <select class="form-control" name="lab_ta">
                                             <option value="None"></option>
@@ -55,6 +67,8 @@
                                         <input class="btn btn-primary" type="Submit" value="Save">
                                     </form>
                                     <br>
+
+                                    <!-- the user has permission to delete a lab -->
                                     {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                                         <form method="post" action="/labs/">
                                             {% csrf_token %}
@@ -68,6 +82,7 @@
                             </div>
                         </div>
                     {% else %}
+                        <!-- the user cannot edit labs -->
                         <h1>You do not have permission to edit labs</h1>
                     {% endif %}
 
@@ -95,6 +110,7 @@
                                     <span class="account-text">{{ lab_obj.lab_ta.name }}</span>
                                 {% endif %}
 
+                                <!-- the user meets the roleset to edit labs -->
                                 {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR"  or user.role == "INSTRUCTOR" %}
                                     <br><br>
                                     <a href="?id={{ lab_obj.id }}&edit=true">
@@ -128,6 +144,7 @@
                     </thead>
                     <tbody>
 
+                    <!-- show the results of the search -->
                     {% if results is not None %}
                         {% if search == "" %}
                             <h3>Showing all labs</h3>
@@ -160,15 +177,12 @@
                             </tr>
                         {% endfor %}
                     {% else %}
+                        <!-- no search results -->
                         <h3>No search results for "{{ search }}"</h3>
                     {% endif %}
                 </table>
-
-                </form>
             {% endif %}
         {% endif %}
         </div>
-        </div>
-    </div>
 
 {% endblock content %}

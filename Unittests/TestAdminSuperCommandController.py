@@ -80,39 +80,6 @@ class TestAdminSuperCommandController(TestCase):
         result = (userInfo['username'] + " is a Supervisor and cannot be deleted.")
         self.assertEqual(result, action)
 
-    def test_showAll(self):
-        cmd = SuperUserCommandController()
-        userInfo = {
-            'data_type': "User",
-            'username': "johnDoe",
-            'name': "john",
-            'password': "password",
-            'role': "TA".upper(),
-            'email': "johnDoe123@yahoo.com",
-            'phone': "4142240088",
-            'address': "1234 fake st."
-        }
-        userInfo2 = {
-            'data_type': "User",
-            'username': "HarryPotter",
-            'name': "Harry",
-            'password': "password",
-            'role': "Instructor".upper(),
-            'email': "HarryPotter@yahoo.com",
-            'phone': "4142245326",
-            'address': "123 fake st."
-        }
-        cmd.create("User", userInfo)
-        cmd.create("User", userInfo2)
-        result = cmd.showAll()
-        newResult = "johnDoe john TA 4142240088 johnDoe123@yahoo.com 1234 fake st.\nHarryPotter Harry INSTRUCTOR 4142245326 HarryPotter@yahoo.com 123 fake st.\n"
-        self.assertEqual(result, newResult)
-
-    def test_showAll_empty_database(self):
-        cmd = SuperUserCommandController()
-        result = cmd.showAll()
-        newResult = ""
-        self.assertEqual(result, newResult)
 
     def test_create_course(self):
         cmd = SuperUserCommandController()

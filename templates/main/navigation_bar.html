@@ -5,17 +5,23 @@
         <div class="navbar-header">
             <img src="{% static 'images/logo.svg' %}" alt="" height="30px" width="30px" class="d-inline-block nav-logo">
         </div>
+
+        <!-- this ugly mess creates the individual buttons for the navigation bar -->
         <ul class="nav navbar-nav">
             <li class="{% if navbar == 'home' %}active{% endif %}"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+            <!-- if the user matches the roles to create, display the button -->
             {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
                 <li class="{% if navbar == 'create' %}active{% endif %}"><a href="/create"><span class="glyphicon glyphicon-plus-sign"></span> Create</a></li>
             {% endif %}
+
             <li class="{% if navbar == 'users' %}active{% endif %}"><a href="/users"><span class="glyphicon glyphicon-user"></span> Users</a></li>
             <li class="{% if navbar == 'courses' %}active{% endif %}"><a href="/courses"><span class="glyphicon glyphicon-education"></span> Courses</a></li>
             <li class="{% if navbar == 'labs' %}active{% endif %}"><a href="/labs"><span class="glyphicon glyphicon-pencil"></span> Labs</a></li>
             <li class="{% if navbar == 'account' %}active{% endif %}"><a href="/account"><span class="	glyphicon glyphicon-cog"></span> Account</a></li>
         </ul>
 
+        <!-- the logout button -->
         <form method="post" action="/" id="logout-form">
             {% csrf_token %}
             <input type="hidden" name="command" value="logout">

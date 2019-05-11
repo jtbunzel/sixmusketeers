@@ -396,8 +396,8 @@ class MyTestCase(unittest.TestCase):
         admin = Administrator("dan", "213")
         sup = Supervisor("jon", "556")
         ins = Instructor("jat", "778")
-        com1 = app.set_loggedin(ta.username)
-        com2 = app.set_loggedin(sup.username)
+        com1 = app.login(ta.username)
+        com2 = app.login(sup.username)
         self.assertFalse(com1)
         self.assertTrue(com2)
 

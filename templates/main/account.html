@@ -4,19 +4,27 @@
 {% block content %}
 
     <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
         {% if user == None %}
             <meta http-equiv="refresh" content="0; URL=''"/>
 
+            <!-- user is logged in -->
         {% else %}
+            <!-- load navigation bar -->
             {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
             <div class="container_block">
                 <div class="container">
                     <h1>Account Details</h1>
                     <br>
 
+                    <!-- the user is editing -->
                     {% if edit == "true" %}
                         <div class="row">
                             <div class="col-md-4 mb-4">
+
+                                <!-- form to edit their account -->
                                 <form method="post" action="/account/">
                                     {% csrf_token %}
                                     <input type="hidden" name="command" value="editUser">
@@ -53,10 +61,13 @@
                             </div>
                         </div>
 
+                        <!-- the user is not editing -->
                     {% else %}
+                        <!-- create two columns on the page -->
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- display their user information -->
                                     <label>Username: </label><br>
                                     <span class="account-text">{{ user.username }}</span>
 
@@ -81,6 +92,7 @@
                                     <span class="account-text">{{ user.address }}</span>
 
                                     <br><br>
+                                    <!-- edit button -->
                                     <a href="?edit=true">
                                         <button type="button"
                                                 class="btn btn-primary">
@@ -90,8 +102,10 @@
                                 </div>
                             </div>
 
+                            <!-- column for displaying their assignments -->
                             <div class="col-md-6">
                                 <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- display the courses they teach -->
                                     {% if courses is not None %}
                                         <h4>Associated Courses</h4>
                                         <table class="table table-striped">
@@ -117,6 +131,8 @@
                                             </tbody>
                                         </table>
                                     {% endif %}
+
+                                    <!-- display the labs their TA for -->
                                     {% if labs is not None %}
                                         <h4>Associated Labs</h4>
                                         <table class="table table-striped">

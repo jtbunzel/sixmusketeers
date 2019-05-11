@@ -2,6 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
+    # list of choices for roles
     ROLE_CHOICES = (
         ("SUPERVISOR", "Supervisor"),
         ("ADMINISTRATOR", "Administrator"),

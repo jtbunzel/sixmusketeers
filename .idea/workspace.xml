@@ -5,17 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e02c0463-820f-4765-8ce9-5460cfb04a8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WebApplication/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application_Classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application_Classes/CommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/CommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application_Classes/CourseCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/CourseCommandController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application_Classes/Searcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/Searcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application_Classes/UserCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application_Classes/UserCommandController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database" beforeDir="false" afterPath="$PROJECT_DIR$/Database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Trash/TestAllUnitTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Trash/TestAllUnitTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unittests/TestUserCommandController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Unittests/TestUserCommandController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApplication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/courses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/labs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/labs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/navigation_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/navigation_bar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/users.html" afterDir="false" />
     </list>
     <ignored path="DanPatel.txt" />
@@ -79,10 +91,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application_Classes/Searcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
+            <state relative-caret-position="465">
+              <caret line="169" column="42" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -90,47 +111,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main/courses.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="101" column="59" lean-forward="true" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main/users.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/main/labs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/main/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="128" column="65" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
+            <state relative-caret-position="238">
+              <caret line="143" column="70" selection-start-line="143" selection-start-column="70" selection-end-line="143" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/main/account.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="132" column="48" lean-forward="true" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="135" column="29" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +144,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="153">
+              <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
               </folding>
@@ -148,34 +163,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py">
+        <entry file="file://$PROJECT_DIR$/Application_Classes/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="258">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+        <entry file="file://$PROJECT_DIR$/templates/main/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="476" column="59" lean-forward="true" selection-start-line="476" selection-start-column="59" selection-end-line="476" selection-end-column="59" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -194,36 +199,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clean_query</find>
-      <find>get_logged_in</find>
-      <find>showall</find>
-      <find>searc</find>
-      <find>last ==</find>
-      <find>views</find>
-      <find>course e</find>
-      <find>Course Details for</find>
-      <find>users</find>
-      <find>model_type</find>
-      <find>user_type</find>
-      <find>view</find>
-      <find>searchlabsection</find>
-      <find>course</find>
-      <find>results</find>
-      <find>?num</find>
-      <find>lab</find>
-      <find>assigned</find>
-      <find>edit</find>
-      <find>ed</find>
-      <find>lab.</find>
-      <find>i.cours</find>
-      <find>delete</find>
-      <find>get_course</find>
-      <find>course=</find>
-      <find>no course</find>
       <find>labs</find>
       <find>showing all labs</find>
       <find>ta</find>
       <find>linked</find>
+      <find>of</find>
+      <find>render</find>
+      <find>print</find>
+      <find>address</find>
+      <find>logged in</find>
+      <find>post_res</find>
+      <find>post_response</find>
+      <find>init_logged_in</find>
+      <find>logout</find>
+      <find>test_verify</find>
+      <find>set_pointer_to_app</find>
+      <find>set_loggedin</find>
+      <find>clean_query</find>
+      <find>coursecode</find>
+      <find>coursenames</find>
+      <find>coursein</find>
+      <find>labnumbe</find>
+      <find>showuser</find>
+      <find>home</find>
+      <find>home`</find>
+      <find>username  o</find>
+      <find>user</find>
+      <find>showAll</find>
+      <find>login</find>
+      <find>try</find>
+      <find>create</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -246,8 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sixmusketeers/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/WebApplication/SuperUserCommandController.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/LabSection.py" />
         <option value="$PROJECT_DIR$/Skeleton_Classes/Course.py" />
@@ -270,41 +273,41 @@
         <option value="$PROJECT_DIR$/WebApplication/Searcher.py" />
         <option value="$PROJECT_DIR$/WebApplication/CourseCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/AdminSuperCommandController.py" />
-        <option value="$PROJECT_DIR$/templates/main/navigation_bar.html" />
         <option value="$PROJECT_DIR$/Trash/Instructor.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/UserCommandController.py" />
         <option value="$PROJECT_DIR$/AcceptanceTests/TestEditAccount.py" />
-        <option value="$PROJECT_DIR$/templates/main/index.html" />
         <option value="$PROJECT_DIR$/Unittests/UnitTestSuite.py" />
         <option value="$PROJECT_DIR$/Unittests/TestCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestSearcher.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py" />
-        <option value="$PROJECT_DIR$/Unittests/TestUserCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestLabSectionCommandController.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/CourseCommandController.py" />
         <option value="$PROJECT_DIR$/Unittests/TestCourseCommandController.py" />
-        <option value="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" />
-        <option value="$PROJECT_DIR$/WebApplication/static/css/style.css" />
         <option value="$PROJECT_DIR$/WebApplication/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/WebApplication/models.py" />
+        <option value="$PROJECT_DIR$/Trash/TestAllUnitTest.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/CourseCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/Searcher.py" />
+        <option value="$PROJECT_DIR$/Unittests/TestUserCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/UserCommandController.py" />
+        <option value="$PROJECT_DIR$/templates/main/account.html" />
+        <option value="$PROJECT_DIR$/templates/main/courses.html" />
+        <option value="$PROJECT_DIR$/templates/main/navigation_bar.html" />
         <option value="$PROJECT_DIR$/Application_Classes/App.py" />
+        <option value="$PROJECT_DIR$/templates/main/index.html" />
+        <option value="$PROJECT_DIR$/templates/main/users.html" />
+        <option value="$PROJECT_DIR$/templates/main/labs.html" />
+        <option value="$PROJECT_DIR$/WebApplication/static/css/style.css" />
+        <option value="$PROJECT_DIR$/WebApplication/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/CommandController.py" />
+        <option value="$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py" />
         <option value="$PROJECT_DIR$/WebApplication/views.py" />
         <option value="$PROJECT_DIR$/templates/main/create.html" />
-        <option value="$PROJECT_DIR$/Application_Classes/Searcher.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py" />
-        <option value="$PROJECT_DIR$/Application_Classes/CommandController.py" />
-        <option value="$PROJECT_DIR$/templates/main/courses.html" />
-        <option value="$PROJECT_DIR$/templates/main/labs.html" />
-        <option value="$PROJECT_DIR$/templates/main/users.html" />
-        <option value="$PROJECT_DIR$/templates/main/account.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="235" />
-    <option name="y" value="346" />
-    <option name="width" value="1920" />
-    <option name="height" value="1041" />
+    <option name="width" value="2561" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -353,11 +356,6 @@
             <path>
               <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
               <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,18 +367,7 @@
             <path>
               <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
               <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="Unittests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
               <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sixmusketeers" type="462c0819:PsiDirectoryNode" />
-              <item name="WebApplication" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sixmusketeers" type="b2602c69:ProjectViewProjectNode" />
@@ -693,21 +680,7 @@
       <workItem from="1557106022491" duration="607000" />
       <workItem from="1557192526147" duration="12595000" />
       <workItem from="1557260873010" duration="8615000" />
-      <workItem from="1557271785235" duration="16116000" />
-    </task>
-    <task id="LOCAL-00032" summary="Added active toggle for navigation bar buttons">
-      <created>1555036929573</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1555036929573</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Fixed User model's role.">
-      <created>1555038171639</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1555038171639</updated>
+      <workItem from="1557271785235" duration="31764000" />
     </task>
     <task id="LOCAL-00034" summary="Added courses, users, and account pages">
       <created>1555114726151</created>
@@ -1038,7 +1011,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557280972515</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Added labs page&#10;Added viewing lab details&#10;Added lab editing&#10;Added lab deleting&#10;Added lab linking to course&#10;Added lab linking to users and account&#10;Added &quot;no instructor/course/ta assigned&quot; to search list/profile if nothing assigned&#10;Fixed lab searching&#10;Fixed lab deleting&#10;Fixed lab editing">
+      <created>1557340635636</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1557340635636</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Restricted personal information&#10;Allowed instructors to edit labs&#10;Restricted deleting labs to just admins and supervisor&#10;Fixed issue with labs displaying on account page">
+      <created>1557419893244</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1557419893244</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1074,7 +1061,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395204000" />
+    <option name="totallyTimeSpent" value="410852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1089,6 +1076,31 @@
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.121011436" />
+      <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
+      <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49880764" weight="0.32821637" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71222156" visible="true" weight="0.40128204" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49562797" weight="0.31443688" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32955405" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.48946416" weight="0.15" />
+      <window_info anchor="bottom" id="Database Changes" order="9" sideWeight="0.6339554" weight="0.32820514" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.28777844" side_tool="true" visible="true" weight="0.40128204" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48946416" weight="0.33333334" />
+      <window_info anchor="bottom" id="manage.py@sixmusketeers" order="12" sideWeight="0.4924744" weight="0.32692307" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Python Console" order="14" sideWeight="0.6014449" weight="0.32692307" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984948" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.17217484" />
+    </layout>
+    <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49894738" visible="true" weight="0.121011436" />
       <window_info id="Structure" order="1" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
       <window_info id="Favorites" order="2" sideWeight="0.5010526" side_tool="true" weight="0.15817694" />
@@ -1112,14 +1124,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24984948" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.17217484" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Styled create to make it pretty" />
-    <MESSAGE value="account, courses and users .html not done yet" />
     <MESSAGE value="jlejljlke" />
     <MESSAGE value="able to read data base for user/account details" />
     <MESSAGE value="AdminSuperCommandController - Added a space for clearer format.&#10;Views - Fixed &quot;Account&quot; tab to show the correct account details. *Last Name still having issues&quot;" />
@@ -1143,7 +1153,9 @@
     <MESSAGE value="TestUserCommandController - Modified two tests to work with new Create Command." />
     <MESSAGE value="CourseCommandController - Cleaned up and fixed Edit/Delete Course.&#10;TestAdminSuperCommandController - Fixed ShowAll test - Added Create Course test&#10;TestCourseCommandController - Added the following tests - Edit_Course_Name, Edit_Course_Code, Edit_Course_Instructor, Edit_Course_DNE, Delete_Course_DNE, Delete_Course" />
     <MESSAGE value="Added course and lab viewing on User page&#10;Added course and lab viewing on Account page&#10;Fixed up lab section searching" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added course and lab viewing on User page&#10;Added course and lab viewing on Account page&#10;Fixed up lab section searching" />
+    <MESSAGE value="Added labs page&#10;Added viewing lab details&#10;Added lab editing&#10;Added lab deleting&#10;Added lab linking to course&#10;Added lab linking to users and account&#10;Added &quot;no instructor/course/ta assigned&quot; to search list/profile if nothing assigned&#10;Fixed lab searching&#10;Fixed lab deleting&#10;Fixed lab editing" />
+    <MESSAGE value="Restricted personal information&#10;Allowed instructors to edit labs&#10;Restricted deleting labs to just admins and supervisor&#10;Fixed issue with labs displaying on account page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restricted personal information&#10;Allowed instructors to edit labs&#10;Restricted deleting labs to just admins and supervisor&#10;Fixed issue with labs displaying on account page" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1211,32 +1223,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebApplication/CourseCommandController.py" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc" />
-    <entry file="file://$PROJECT_DIR$/WebApplication/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trash/Instructor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/navigation_bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestEditAccount.py" />
     <entry file="file://$PROJECT_DIR$/AcceptanceTests/TestDelete.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1263,13 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/middleware/clickjacking.py" />
-    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/UnitTestSuite.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/db/models/fields/related_descriptors.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/db/backends/sqlite3/base.py" />
@@ -1277,18 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/database.patch">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#22#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/django_test_manage.py">
@@ -1303,36 +1270,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebApplication/migrations/0002_auto_20190430_1202.py" />
     <entry file="file://$PROJECT_DIR$/Unittests/TestSearcher.py" />
-    <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="1" column="86" selection-start-line="1" selection-start-column="86" selection-end-line="1" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Unittests/TestLabSectionCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1344,23 +1287,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1385,112 +1311,213 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/Searcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="144" lean-forward="true" selection-start-line="144" selection-end-line="144" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="476" column="59" lean-forward="true" selection-start-line="476" selection-start-column="59" selection-end-line="476" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application_Classes/LabSectionCommandController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="198">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
+    <entry file="file://$PROJECT_DIR$/Trash/Commands.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state relative-caret-position="130">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestUserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sixmusketeers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/App.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/navigation_bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="19" column="122" selection-start-line="19" selection-start-column="116" selection-end-line="19" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1836">
+          <caret line="6" selection-start-line="6" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="202" column="12" selection-start-line="202" selection-start-column="12" selection-end-line="202" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/labs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="134" column="23" lean-forward="true" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestAdminSuperCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unittests/TestCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/CourseCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/CommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="125" column="23" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/Searcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="169" column="42" selection-start-line="169" selection-start-column="42" selection-end-line="169" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/UserCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application_Classes/AdminSuperCommandController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebApplication/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="135" column="29" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/main/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="128" column="65" selection-start-line="128" selection-start-column="65" selection-end-line="128" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/courses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="101" column="59" lean-forward="true" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/labs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="106" column="64" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="132" column="48" lean-forward="true" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
+        <state relative-caret-position="238">
+          <caret line="143" column="70" selection-start-line="143" selection-start-column="70" selection-end-line="143" selection-end-column="70" />
         </state>
       </provider>
     </entry>

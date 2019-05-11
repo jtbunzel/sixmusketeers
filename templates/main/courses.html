@@ -3,14 +3,19 @@
 
 {% block content %}
     <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
         {% if user == None %}
             <meta http-equiv="refresh" content="0; URL=''"/>
 
+            <!-- user is logged in -->
         {% else %}
+            <!-- load navigation bar -->
             {% include "main/navigation_bar.html" %}
-            <div class="container_block">
+
+            <!-- main body -->
             <div class="container">
 
+            <!-- the user has a course they are viewing -->
             {% if course is not None %}
 
                 <h1>Course Details for {{ course.course_name }}</h1>
@@ -22,6 +27,7 @@
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- edit form -->
                                     <form method="post" action="/courses/?course={{ course.course_name }}"
                                           id="edit_course">
                                         {% csrf_token %}
@@ -45,6 +51,7 @@
                                         {% csrf_token %}
                                         <input type="hidden" name="command" value="deleteCourse">
                                         <input type="hidden" name="commandStr" value={{ course.course_name }}>
+                                        <!-- delete course -->
                                         <input class="btn btn-danger" type="Submit" value="Delete Course"
                                                id="delete_course">
                                     </form>
@@ -52,11 +59,13 @@
                             </div>
                         </div>
                     {% else %}
+                        <!-- the user cannot edit courses -->
                         <h1>You do not have permission to edit courses</h1>
                     {% endif %}
 
                     <!-- on course profile, not editing -->
                 {% else %}
+                    <!-- create two columns to display labs -->
                     <div class="row mb-2">
                         <div class="col-md-6">
                             <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
@@ -86,8 +95,11 @@
                                 {% endif %}
                             </div>
                         </div>
+
+                        <!-- second column -->
                         <div class="col-md-6">
                             <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <!-- display labs associated with the course -->
                                 {% if labs is not None %}
                                     <h4>Associated Labs</h4>
                                     <table class="table table-striped">
@@ -124,7 +136,7 @@
                     </div>
                 {% endif %}
 
-                <!-- searching -->
+            <!-- searching -->
             {% else %}
                 <form action="#" method="post" class="form-inline">
                     {% csrf_token %}
@@ -143,13 +155,16 @@
                     </thead>
                     <tbody>
 
+                    <!-- results were found -->
                     {% if results is not None %}
                         {% if search == "" %}
+                            <!-- no search input -->
                             <h3>Showing all courses</h3>
                         {% else %}
                             <h3>Search results for: "{{ search }}"</h3>
                         {% endif %}
 
+                        <!-- display results -->
                         {% for i in results %}
                             <tr>
                                 <td>{{ i.course_name }}</td>
@@ -170,6 +185,7 @@
                             </tr>
                         {% endfor %}
                     {% else %}
+                        <!-- search input, but no results -->
                         <h3>No search results for "{{ search }}"</h3>
                     {% endif %}
                 </table>
@@ -178,7 +194,7 @@
             {% endif %}
         {% endif %}
         </div>
-        </div>
+    </div>
     </div>
 
 {% endblock content %}
