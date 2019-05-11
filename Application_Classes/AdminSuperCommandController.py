@@ -58,7 +58,7 @@ class SuperUserCommandController:
 
             # check for existing course
             if Course.objects.filter(course_name=course.course_name).exists():
-                return "Course is already exists!"
+                return "Course already exists!"
             else:
                 course.save()
 

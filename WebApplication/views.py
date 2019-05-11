@@ -125,7 +125,7 @@ class Create(BaseView):
         # create type user
         if create_type == 'user':
             if user is not None:
-                if current_role is not "ADMINISTRATOR" and current_role != "SUPERVISOR":
+                if current_role != "ADMINISTRATOR" and current_role != "SUPERVISOR":
                     response = current_role + " type cannot create"
                 else:
                     # grab all the information to create a user from the form
@@ -152,6 +152,17 @@ class Create(BaseView):
                 'course_instructor': a.get_user_object(request.POST.get("course_instructor", ""))
             }
             response = a.command('create', course_info)  # create a course
+
+            num_labs = request.POST.get("lab_count", 0)
+
+            for i in range(int(num_labs)):
+                lab_info = {
+                    'data_type': "Lab",
+                    'lab_ta': a.get_user_object("None"),
+                    'lab_number': str(100+i),
+                    'course_name': a.get_course_object(course_info["course_name"])
+                }
+                a.command('create', lab_info)  # create a lab
 
         # create type lab
         elif create_type == 'lab':

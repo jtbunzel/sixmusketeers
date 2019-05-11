@@ -118,6 +118,36 @@
                         <label>Course Code</label>
                         <input class="form-control" type="text" name="course_code">
                         <br>
+
+                        <label>Create Labs</label>
+                        <div class="input-group" style="width:50%">
+                            <span class="input-group-btn">
+                                <button class="btn btn-white btn-minuse"
+                                        type="button">-</button>
+                            </span>
+                            <input name="lab_count" type="text" class="form-control no-padding add-color text-center height-25"
+                                   maxlength="3" value="0">
+                            <span class="input-group-btn">
+                                <button class="btn btn-red btn-pluss" type="button">+</button>
+                            </span>
+                        </div>
+
+
+                        <script>
+                            $(document).ready(function () {
+                                $('.btn-minuse').on('click', function () {
+                                    if (parseInt($(this).parent().siblings('input').val()) > 0) {
+                                        $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
+                                    }
+                                })
+
+                                $('.btn-pluss').on('click', function () {
+                                    $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
+                                })
+                            });
+                        </script>
+
+                        <br>
                         <input class="btn btn-primary" type="Submit" value="Create Course">
                     </form>
 
