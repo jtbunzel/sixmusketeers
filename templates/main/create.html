@@ -135,14 +135,14 @@
                         <!-- increment and decrement the value of the lab count input -->
                         <script>
                             $(document).ready(function () {
+                                $('.btn-plus').on('click', function () {
+                                    $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
+                                });
+
                                 $('.btn-minus').on('click', function () {
                                     if (parseInt($(this).parent().siblings('input').val()) > 0) {
                                         $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
                                     }
-                                });
-
-                                $('.btn-plus').on('click', function () {
-                                    $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
                                 });
                             });
                         </script>
