@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <!-- user does not exist, display login page -->
+    {% if user == None %}
+        <div class="sign-in-container">
+            <form class="form-signin" method="post" action="">
+                <!-- the logo -->
+                <div class="text-center mb-4">
+                    <img class="signin-logo" src="{% static 'images/logo-2.svg' %}">
+                    <h1 class="h3 mb-3 font-weight-normal">Super Awesome Scheduling System</h1>
+                    <p>Sign into your account below</p>
+                    <p class="login-message">{{ message }}</p>
+                </div>
+
+                <!-- signin form -->
+                <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username"
+                           required autofocus>
+                    <label for="inputUsername">Username</label>
+                </div>
+
+                <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                           name="password" required>
+                    <label for="inputPassword">Password</label>
+                </div>
+
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="command" value="login">
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+        </div>
+
+        <!-- a user is logged in -->
+    {% else %}
+        <!-- display navigation bar -->
+        {% include "main/navigation_bar.html" %}
+        <div class="container_block" style="width:100%">
+                <div class="container" align="center">
+                    <h1>Welcome to S.A.S.S</h1>
+                    <h3>Providing happiness and time-saving scheduling to...</h3>
+                    <br>
+                    <!-- display different sections -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h1>{{ count.num_users }}</h1>
+                            <h3>Users</h3>
+                            <br>
+                            <span class="glyphicon glyphicon-user" style="font-size:200px"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <h1>{{ count.num_courses }}</h1>
+                            <h3>Courses</h3>
+                            <br>
+                            <span class="glyphicon glyphicon-education" style="font-size:200px"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <h1>{{ count.num_labs }}</h1>
+                            <h3>Lab Sections</h3>
+                            <br>
+                            <span class="glyphicon glyphicon-pencil" style="font-size:200px"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <h3>...without any sass in return!</h3>
+                </div>
+        </div>
+    {% endif %}
+
+
+{% endblock content %}

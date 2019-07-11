@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
+
+            <!-- user is logged in -->
+        {% else %}
+            <!-- load navigation bar -->
+            {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
+            <div class="container_block">
+                <div class="container">
+                    <h1>Account Details</h1>
+                    <br>
+
+                    <!-- the user is editing -->
+                    {% if edit == "true" %}
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+
+                                <!-- form to edit their account -->
+                                <form method="post" action="/account/">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="command" value="editUser">
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>First name</label>
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                   placeholder={{ name_list.0 }}>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Last name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                   placeholder={{ name_list.1 }}>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <label>Password</label>
+                                    <input class="form-control" type="password" name="password"
+                                           placeholder='Change Password'>
+                                    <br>
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" name="email" placeholder={{ user.email }}>
+                                    <br>
+                                    <label>Phone Number</label>
+                                    <input class="form-control" type="text" name="phone" placeholder={{ user.phone }}>
+                                    <br>
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" name="address"
+                                           placeholder="{{ user.address }}">
+                                    <br>
+                                    <input class="btn btn-primary" type="Submit" value="Save">
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- the user is not editing -->
+                    {% else %}
+                        <!-- create two columns on the page -->
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- display their user information -->
+                                    <label>Username: </label><br>
+                                    <span class="account-text">{{ user.username }}</span>
+
+                                    <br><br>
+                                    <label>Name: </label><br>
+                                    <span class="account-text">{{ user.name }}</span>
+
+                                    <br><br>
+                                    <label>Role: </label><br>
+                                    <span class="account-text">{{ user.role }}</span>
+
+                                    <br><br>
+                                    <label>Email: </label><br>
+                                    <span class="account-text">{{ user.email }}</span>
+
+                                    <br><br>
+                                    <label>Phone Number: </label><br>
+                                    <span class="account-text">{{ user.phone }}</span>
+
+                                    <br><br>
+                                    <label>Address: </label><br>
+                                    <span class="account-text">{{ user.address }}</span>
+
+                                    <br><br>
+                                    <!-- edit button -->
+                                    <a href="?edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Account Edit
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- column for displaying their assignments -->
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- display the courses they teach -->
+                                    {% if courses is not None %}
+                                        <h4>Associated Courses</h4>
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Course Name</th>
+                                                <th scope="col">Course Code</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {% for i in courses %}
+                                                <tr>
+                                                    <td>{{ i.course_name }}</td>
+                                                    <td>{{ i.course_code }}</td>
+                                                    <td>
+                                                        <a href="/courses/?course={{ i.course_name }}">
+                                                            <button class="btn btn-primary btn-sm">View</button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    {% endif %}
+
+                                    <!-- display the labs their TA for -->
+                                    {% if labs is not None %}
+                                        <h4>Associated Labs</h4>
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Linked Course</th>
+                                                <th scope="col">Lab Number</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            {% for i in labs %}
+                                                <tr>
+                                                    <td>
+                                                        {% if i.course is None %}
+                                                            <i>No course assigned</i>
+                                                        {% else %}
+                                                            {{ i.course.course_name }}
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>{{ i.lab_number }}</td>
+                                                    <td>
+                                                        <a href="/labs/?id={{ i.id }}">
+                                                            <button class="btn btn-primary btn-sm">View</button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}

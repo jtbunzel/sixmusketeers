@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
+
+            <!-- user is logged in -->
+        {% else %}
+            <!-- load navigation bar -->
+            {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
+            <div class="container_block">
+            {% if user.role == "INSTRUCTOR" or user.role == "TA" %}
+                <!-- user cannot create objects -->
+                <h1>You do not have permission to create Users or Courses</h1>
+            {% else %}
+                <!-- user has permission to create objects -->
+                <!-- display object selection buttons -->
+                <div class="container">
+                <div class="py-5 text-center">
+                    <a href="?type=user">
+                        <button type="button"
+                                class="btn btn-primary btn-lg {% if type == 'user' or  type == "" %}active{% endif %}">
+                            Create User
+                        </button>
+                    </a>
+                    <a href="?type=course">
+                        <button type="button"
+                                class="btn btn-primary btn-lg {% if type == "course" %}active{% endif %}">Create
+                            Course
+                        </button>
+                    </a>
+                    <a href="?type=lab">
+                        <button type="button"
+                                class="btn btn-primary btn-lg {% if type == "lab" %}active{% endif %}">Create Lab
+                            Section
+                        </button>
+                    </a>
+                </div>
+
+                <!-- the message -->
+                <h4>{{ message }}</h4>
+
+
+                <!-- the user wishes to create a user object -->
+                {% if type == "user" or type == "" %}
+                    <div class="row">
+                    <br>
+                    <div class="col-md-4 mb-4">
+                    <!-- the user creation form -->
+                    <form method="post" action="?type=user">
+                        {% csrf_token %}
+                        <input type="hidden" name="command" value="create">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>First name</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Last name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname">
+                            </div>
+                        </div>
+                        <br>
+                        <label>Username</label>
+                        <input class="form-control" type="Text" name="username">
+                        <br>
+                        <label>Password</label>
+                        <input class="form-control" type="password" name="password">
+                        <br>
+                        <label>User Type</label>
+                        <br>
+                        <select name="role" class="form-control">
+                            <option value="" selected="selected"></option>
+                            <option value="ADMINISTRATOR">Administrator</option>
+                            <option value="INSTRUCTOR">Instructor</option>
+                            <option value="TA">TA</option>
+                        </select>
+                        <br>
+                        <label>Email</label>
+                        <input class="form-control" type="email" name="email">
+                        <br>
+                        <label>Phone Number</label>
+                        <input class="form-control" type="text" name="phone">
+                        <br>
+                        <label>Address</label>
+                        <input class="form-control" type="text" name="address">
+                        <br>
+                        <input class="btn btn-primary" type="Submit" value="Create User">
+                    </form>
+
+                    <!-- the user wishes to create a course -->
+                {% elif type == "course" %}
+                    <div class="row">
+                    <br>
+                    <div class="col-md-4 mb-4">
+                    <!-- the form to create courses -->
+                    <form method="post" action="?type=course">
+                        {% csrf_token %}
+                        <input type="hidden" name="command" value="createCourse">
+                        <label>Course Name</label>
+                        <input class="form-control" type="text" name="course_name">
+                        <br>
+                        <label>Course Instructor</label>
+                        <select class="form-control" name="course_instructor">
+                            <option value="None"></option>
+                            {% for i in users %}
+                                <option value={{ i.username }}>{{ i.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <label>Course Code</label>
+                        <input class="form-control" type="text" name="course_code">
+                        <br>
+
+                        <label>Create Labs</label>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-white btn-minus"
+                                        type="button">-</button>
+                            </span>
+                            <input name="lab_count" type="number" min="0" class="form-control no-padding add-color text-center height-25"
+                                   maxlength="3" value="0">
+                            <span class="input-group-btn">
+                                <button class="btn btn-red btn-plus" type="button">+</button>
+                            </span>
+                        </div>
+
+                        <!-- increment and decrement the value of the lab count input -->
+                        <script>
+                            $(document).ready(function () {
+                                $('.btn-plus').on('click', function () {
+                                    $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
+                                });
+
+                                $('.btn-minus').on('click', function () {
+                                    if (parseInt($(this).parent().siblings('input').val()) > 0) {
+                                        $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <br>
+                        <input class="btn btn-primary" type="Submit" value="Create Course">
+                    </form>
+
+                    <!-- the user wishes to create a lab -->
+                {% elif type == "lab" %}
+                    <div class="row">
+                    <br>
+                    <div class="col-md-4 mb-4">
+                    <!-- the form to create a lab -->
+                    <form method="post" action="?type=lab">
+                        {% csrf_token %}
+                        <input type="hidden" name="command" value="createLabSection">
+                        <label>Lab TA</label>
+                        <select class="form-control" name="lab_TA">
+                            <option value="None"></option>
+                            {% for i in users %}
+                                <option value={{ i.username }}>{{ i.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <label>Lab Number</label>
+                        <input class="form-control" type="text" name="lab_number">
+                        <br>
+                        <label>Course Name</label>
+                        <select class="form-control" name="course_name">
+                            <option value="None"></option>
+                            {% for i in courses %}
+                                <option value="{{ i.course_name }}">{{ i.course_name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <input class="btn btn-primary" type="Submit" value="Create Lab Section">
+                    </form>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        </div>
+
+{% endblock content %}

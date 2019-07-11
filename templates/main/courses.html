@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
+
+            <!-- user is logged in -->
+        {% else %}
+            <!-- load navigation bar -->
+            {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
+            <div class="container">
+
+            <!-- the user has a course they are viewing -->
+            {% if course is not None %}
+
+                <h1>Course Details for {{ course.course_name }}</h1>
+                <br>
+
+                <!-- on course profile, editing -->
+                {% if edit == "true" %}
+                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                    <!-- edit form -->
+                                    <form method="post" action="/courses/?course={{ course.course_name }}"
+                                          id="edit_course">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="editCourse">
+                                        <label>Course Code</label>
+                                        <input class="form-control" type="text" name="course_code"
+                                               placeholder={{ course.course_code }}>
+                                        <br>
+                                        <label>Course Instructor</label>
+                                        <select class="form-control" name="course_instructor">
+                                            <option value="None"></option>
+                                            {% for i in users %}
+                                                <option value={{ i.username }} {% if i.name == course_obj.course_instructor.name %}Selected{% endif %}> {{ i.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br>
+                                        <input class="btn btn-primary" type="Submit" value="Save">
+                                    </form>
+                                    <br>
+                                    <form method="post" action="/courses/">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="command" value="deleteCourse">
+                                        <input type="hidden" name="commandStr" value="{{ course.course_name }}">
+                                        <!-- delete course -->
+                                        <input class="btn btn-danger" type="Submit" value="Delete Course"
+                                               id="delete_course">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- the user cannot edit courses -->
+                        <h1>You do not have permission to edit courses</h1>
+                    {% endif %}
+
+                    <!-- on course profile, not editing -->
+                {% else %}
+                    <!-- create two columns to display labs -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <label>Course Name: </label><br>
+                                <span class="account-text">{{ course.course_name }}</span>
+
+                                <br><br>
+                                <label>Course Code: </label><br>
+                                <span class="account-text">{{ course.course_code }}</span>
+
+                                <br><br>
+                                <label>Instructor: </label><br>
+                                {% if course_obj.course_instructor is None %}
+                                    <span class="account-text">No instructor assigned</span>
+                                {% else %}
+                                    <span class="account-text">{{ course_obj.course_instructor.name }}</span>
+                                {% endif %}
+
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <a href="?course={{ course.course_name }}&edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Edit Course
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- second column -->
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <!-- display labs associated with the course -->
+                                {% if labs is not None %}
+                                    <h4>Associated Labs</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Lab Number</th>
+                                            <th scope="col">TA Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in labs %}
+                                            <tr>
+                                                <td>{{ i.lab_number }}</td>
+                                                <td>
+                                                    {% if i.lab_ta is None %}
+                                                        <i>No TA assigned</i>
+                                                    {% else %}
+                                                        {{ i.lab_ta.name }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    <a href="/labs/?id={{ i.id }}">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            <!-- searching -->
+            {% else %}
+                <form action="#" method="post" class="form-inline">
+                    {% csrf_token %}
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Courses"
+                           name="search_string">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Instructor Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <!-- results were found -->
+                    {% if results is not None %}
+                        {% if search == "" %}
+                            <!-- no search input -->
+                            <h3>Showing all courses</h3>
+                        {% else %}
+                            <h3>Search results for: "{{ search }}"</h3>
+                        {% endif %}
+
+                        <!-- display results -->
+                        {% for i in results %}
+                            <tr>
+                                <td>{{ i.course_name }}</td>
+                                <td>{{ i.course_code }}</td>
+                                <td{% if i.course_instructor.username == user.username %}
+                                    class="currentUser-text" {% endif %}>
+                                    {% if i.course_instructor is None %}
+                                        <i>No Instructor assigned</i>
+                                    {% else %}
+                                        {{ i.course_instructor.name }}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="?course={{ i.course_name }}">
+                                        <button class="btn btn-primary btn-sm">View</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <!-- search input, but no results -->
+                        <h3>No search results for "{{ search }}"</h3>
+                    {% endif %}
+                </table>
+
+                </form>
+            {% endif %}
+        {% endif %}
+        </div>
+    </div>
+    </div>
+
+{% endblock content %}

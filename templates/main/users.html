@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container_block" style="width:100%">
+        <!-- no user, send them to homepage -->
+        {% if user == None %}
+            <meta http-equiv="refresh" content="0; URL=''"/>
+
+            <!-- user is logged in -->
+        {% else %}
+            <!-- load navigation bar -->
+            {% include "main/navigation_bar.html" %}
+
+            <!-- main body -->
+            <div class="container_block">
+            <div class="container">
+
+            <!-- the user is on a profile page of an exisiting user -->
+            {% if user_profile is not None %}
+
+                <h1>Account Details for {{ user_profile.name }}</h1>
+                <br>
+
+                <!-- on user profile, editing -->
+                {% if edit == "true" %}
+                    {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <!-- the form to edit the user -->
+                                <form method="post" action="/users/?user={{ user_profile.username }}" id="edit_account">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="command" value="editUser">
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label>First name</label>
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                   placeholder={{ user_profile_name.0 }}>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label>Last name</label>
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                   placeholder={{ user_profile_name.1 }}>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <label>Password</label>
+                                    <input class="form-control" type="password" name="password"
+                                           placeholder='Change Password'>
+                                    <br>
+                                    <label>Role</label>
+
+                                    <select name="role" class="form-control">
+                                        <option value="ADMINISTRATOR" {% if user_profile.role == "ADMINISTRATOR" %}
+                                                selected {% endif %}>Administrator
+                                        </option>
+                                        <option value="INSTRUCTOR" {% if user_profile.role == "INSTRUCTOR" %}
+                                                selected {% endif %}>Instructor
+                                        </option>
+                                        <option value="TA" {% if user_profile.role == "TA" %} selected {% endif %}>TA
+                                        </option>
+                                    </select>
+                                    <br>
+                                    <label>Email</label>
+                                    <input class="form-control" type="email" name="email"
+                                           placeholder={{ user_profile.email }}>
+                                    <br>
+                                    <label>Phone Number</label>
+                                    <input class="form-control" type="text" name="phone"
+                                           placeholder={{ user_profile.phone }}>
+                                    <br>
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" name="address"
+                                           placeholder="{{ user_profile.address }}">
+                                    <br>
+                                    <input class="btn btn-primary" type="Submit" value="Save">
+                                </form>
+                                <br>
+                                <!-- delete button -->
+                                <form method="post" action="/users/">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="command" value="deleteAccount">
+                                    <input type="hidden" name="commandStr" value="{{ user_profile.username }}">
+                                    <input class="btn btn-danger" type="Submit" value="Delete Account"
+                                           id="delete_account">
+                                </form>
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- the user cannot edit accounts -->
+                        <h1>You do not have permission to edit accounts</h1>
+                    {% endif %}
+
+                    <!-- on user profile, not editing -->
+                {% else %}
+                    <!-- create two columns -->
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <label>Username: </label><br>
+                                <span class="account-text">{{ user_profile.username }}</span>
+
+                                <br><br>
+                                <label>Name: </label><br>
+                                <span class="account-text">{{ user_profile.name }}</span>
+
+                                <br><br>
+                                <label>Role: </label><br>
+                                <span class="account-text">{{ user_profile.role }}</span>
+
+                                <br><br>
+                                <label>Email: </label><br>
+                                <span class="account-text">{{ user_profile.email }}</span>
+
+                                {% if user.role == "SUPERVISOR" or user.role == "ADMINISTRATOR" %}
+                                    <br><br>
+                                    <label>Phone Number: </label><br>
+                                    <span class="account-text">{{ user_profile.phone }}</span>
+
+                                    <br><br>
+                                    <label>Address: </label><br>
+                                    <span class="account-text">{{ user_profile.address }}</span>
+
+                                    <br><br>
+                                    <!-- button to edit the user -->
+                                    <a href="?user={{ user_profile.username }}&edit=true">
+                                        <button type="button"
+                                                class="btn btn-primary">
+                                            Account Edit
+                                        </button>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- second column -->
+                        <div class="col-md-6">
+                            <div class="row flex-md-row mb-4 h-md-250 position-relative double-column">
+                                <!-- display all the courses that the user instructs -->
+                                {% if courses is not None %}
+                                    <h4>Associated Courses</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Course Name</th>
+                                            <th scope="col">Course Code</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in courses %}
+                                            <tr>
+                                                <td>{{ i.course_name }}</td>
+                                                <td>{{ i.course_code }}</td>
+                                                <td>
+                                                    <a href="/courses/?course={{ i.course_name }}">
+                                                        <button class="btn btn-primary btn-sm">View</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
+
+                                <!-- display all the labs the user is a TA for -->
+                                {% if labs is not None %}
+                                    <h4>Associated Labs</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Linked Course</th>
+                                            <th scope="col">Lab Number</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        {% for i in labs %}
+                                            <td>
+                                                {% if i.course is None %}
+                                                    <i>No course assigned</i>
+                                                {% else %}
+                                                    {{ i.course.course_name }}
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ i.lab_number }}</td>
+                                            <td>
+                                                <a href="/labs/?id={{ i.id }}">
+                                                    <button class="btn btn-primary btn-sm">View</button>
+                                                </a>
+                                            </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            <!-- searching -->
+            {% else %}
+                <form action="#" method="post" class="form-inline">
+                    {% csrf_token %}
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Users"
+                           name="search_string">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <!-- there is search results -->
+                    {% if results is not None %}
+                        {% if search == "" %}
+                            <!-- default -->
+                            <h3>Showing all users</h3>
+                        {% else %}
+                            <h3>Search results for: "{{ search }}"</h3>
+                        {% endif %}
+
+                        <!-- display results -->
+                        {% for i in results %}
+                            <tr>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.username }}</td>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.name }}</td>
+                                <td {% if i.username == user.username %}class="currentUser-text"{% endif %}>{{ i.role }}</td>
+                                <td>
+                                    <a href="?user={{ i.username }}">
+                                        <button class="btn btn-primary btn-sm">View</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <!-- no search results for search string -->
+                        <h3>No search results for "{{ search }}"</h3>
+                    {% endif %}
+                </table>
+
+                </form>
+            {% endif %}
+        {% endif %}
+        </div>
+        </div>
+    </div>
+
+{% endblock content %}
